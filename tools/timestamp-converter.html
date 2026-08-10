@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Unix Timestamp Converter Online | EasyTools365</title>
+<meta name="description" content="Convert Unix timestamps to readable local, UTC and ISO 8601 dates, or convert dates to Unix seconds and milliseconds online for free.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/timestamp-converter.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Unix Timestamp Converter | EasyTools365">
+<meta property="og:description" content="Convert Unix timestamps and dates online. Supports seconds, milliseconds, local time, UTC and ISO 8601.">
+<meta property="og:url" content="https://easytools365.com/tools/timestamp-converter.html">
+<meta property="og:site_name" content="EasyTools365">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{padding:45px 15px 70px}.tool-wrapper{max-width:950px;margin:auto}
+.tool-header{text-align:center;margin-bottom:30px}.tool-icon{width:68px;height:68px;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;border-radius:18px;background:rgba(37,99,235,.1);color:var(--primary);font-size:30px}
+.tool-header h1{font-size:38px;font-weight:800;margin-bottom:8px}.tool-header p{max-width:760px;margin:auto;color:var(--text-light);line-height:1.7}.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.current-time-box,.converter-card,.content-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow)}
+.current-time-box{padding:18px;margin-bottom:22px;text-align:center}.current-time-box span{display:block;margin-bottom:5px;color:var(--text-light);font-size:12px}.current-time-box strong{color:var(--primary);font-family:monospace;font-size:20px}
+.converter-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.converter-card{padding:25px}.converter-card h2{font-size:20px;font-weight:800;margin-bottom:8px}.converter-card>p{min-height:42px;color:var(--text-light);font-size:13px;line-height:1.6}
+.form-group{margin-bottom:15px}.form-group label{display:block;margin-bottom:7px;font-size:13px;font-weight:700}.input-control{width:100%;padding:13px 14px;border:1px solid var(--border);border-radius:11px;background:var(--background);color:var(--text);outline:none}.input-control:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.button-row{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:18px}.primary-btn,.secondary-btn{padding:13px 16px;border-radius:11px;font-weight:700}.primary-btn{border:none;background:var(--primary);color:#fff}.secondary-btn{border:1px solid var(--border);background:var(--background);color:var(--text)}
+.result-box{display:none;margin-top:18px;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--background)}.result-row{padding:10px 0;border-bottom:1px solid var(--border)}.result-row:last-child{border-bottom:none}.result-row>span{display:block;margin-bottom:4px;color:var(--text-light);font-size:11px}.result-value-row{display:flex;align-items:center;gap:8px}.result-value-row strong{flex:1;overflow-wrap:anywhere;font-size:13px}.copy-btn{flex-shrink:0;width:34px;height:34px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--primary)}
+.error-box,.status-box{display:none;margin-top:15px;padding:12px;border-radius:10px;text-align:center;font-size:13px;font-weight:600}.error-box{background:rgba(220,38,38,.1);color:#dc2626}.status-box{background:rgba(22,163,74,.08);color:#16a34a}
+.privacy-note{margin-top:22px;padding:14px;border-radius:12px;background:rgba(22,163,74,.07);color:var(--text-light);text-align:center;font-size:13px;line-height:1.6}
+.content-card{margin-top:24px;padding:28px}.content-card h2{font-size:24px;font-weight:700;margin-bottom:14px}.content-card h3{font-size:17px;font-weight:700;margin-top:20px}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.related-grid a{text-decoration:none}
+.tip-box{padding:15px;border-radius:12px;background:rgba(37,99,235,.07);border:1px solid rgba(37,99,235,.15)}
+@media(max-width:750px){.converter-grid,.related-grid{grid-template-columns:1fr}.tool-card,.content-card{padding:20px}.tool-header h1{font-size:31px}.button-row{grid-template-columns:1fr}}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 Unix Timestamp Converter","url":"https://easytools365.com/tools/timestamp-converter.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","description":"Free online Unix timestamp converter for seconds, milliseconds, local time, UTC and ISO 8601.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is a Unix timestamp?","acceptedAnswer":{"@type":"Answer","text":"A Unix timestamp represents a point in time as the number of seconds elapsed since January 1, 1970 at 00:00:00 UTC. Millisecond timestamps use milliseconds instead of seconds."}},
+{"@type":"Question","name":"Does this tool support seconds and milliseconds?","acceptedAnswer":{"@type":"Answer","text":"Yes. Timestamp to Date supports both Unix seconds and Unix milliseconds."}},
+{"@type":"Question","name":"Can I convert a date to a Unix timestamp?","acceptedAnswer":{"@type":"Answer","text":"Yes. Select a local date and time to get Unix timestamps in both seconds and milliseconds."}},
+{"@type":"Question","name":"What date formats does the result include?","acceptedAnswer":{"@type":"Answer","text":"Timestamp conversion provides local time, UTC time and ISO 8601 output. Date conversion provides Unix seconds, milliseconds and ISO 8601."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb" class="mb-4">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../index.html#tools">Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">Unix Timestamp Converter</li>
+</ol>
+</nav>
+
+<section class="tool-header">
+<div class="tool-icon"><i class="bi bi-clock-history"></i></div>
+<h1>Free Unix Timestamp Converter</h1>
+<p>Convert Unix timestamps to readable dates or convert dates and times back into Unix timestamps. Supports seconds, milliseconds, local time, UTC and ISO 8601.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</section>
+
+<div class="current-time-box">
+<span>Current Unix Timestamp</span>
+<strong id="currentTimestamp">-</strong>
+</div>
+
+<section class="converter-grid">
+
+<div class="converter-card">
+<h2>Timestamp to Date</h2>
+<p>Convert Unix seconds or milliseconds into readable date and time formats.</p>
+
+<div class="form-group">
+<label for="timestampInput">Unix Timestamp</label>
+<input id="timestampInput" class="input-control" type="text" inputmode="numeric" placeholder="1750000000">
+</div>
+
+<div class="form-group">
+<label for="timestampUnit">Timestamp Unit</label>
+<select id="timestampUnit" class="input-control">
+<option value="seconds">Seconds</option>
+<option value="milliseconds">Milliseconds</option>
+</select>
+</div>
+
+<div class="button-row">
+<button id="convertTimestampButton" class="primary-btn" type="button"><i class="bi bi-arrow-repeat"></i> Convert</button>
+<button id="nowTimestampButton" class="secondary-btn" type="button">Now</button>
+</div>
+
+<div id="timestampError" class="error-box"></div>
+
+<div id="timestampResult" class="result-box">
+<div class="result-row"><span>Local Time</span><div class="result-value-row"><strong id="localTime">-</strong><button class="copy-btn" type="button" data-copy="localTime"><i class="bi bi-copy"></i></button></div></div>
+<div class="result-row"><span>UTC Time</span><div class="result-value-row"><strong id="utcTime">-</strong><button class="copy-btn" type="button" data-copy="utcTime"><i class="bi bi-copy"></i></button></div></div>
+<div class="result-row"><span>ISO 8601</span><div class="result-value-row"><strong id="isoTime">-</strong><button class="copy-btn" type="button" data-copy="isoTime"><i class="bi bi-copy"></i></button></div></div>
+</div>
+</div>
+
+<div class="converter-card">
+<h2>Date to Timestamp</h2>
+<p>Select a local date and time and convert it into Unix seconds and milliseconds.</p>
+
+<div class="form-group">
+<label for="dateInput">Date &amp; Time</label>
+<input id="dateInput" class="input-control" type="datetime-local" step="1">
+</div>
+
+<div class="button-row">
+<button id="convertDateButton" class="primary-btn" type="button"><i class="bi bi-arrow-repeat"></i> Convert</button>
+<button id="nowDateButton" class="secondary-btn" type="button">Now</button>
+</div>
+
+<div id="dateError" class="error-box"></div>
+
+<div id="dateResult" class="result-box">
+<div class="result-row"><span>Unix Timestamp — Seconds</span><div class="result-value-row"><strong id="secondsResult">-</strong><button class="copy-btn" type="button" data-copy="secondsResult"><i class="bi bi-copy"></i></button></div></div>
+<div class="result-row"><span>Unix Timestamp — Milliseconds</span><div class="result-value-row"><strong id="millisecondsResult">-</strong><button class="copy-btn" type="button" data-copy="millisecondsResult"><i class="bi bi-copy"></i></button></div></div>
+<div class="result-row"><span>ISO 8601</span><div class="result-value-row"><strong id="dateIsoResult">-</strong><button class="copy-btn" type="button" data-copy="dateIsoResult"><i class="bi bi-copy"></i></button></div></div>
+</div>
+</div>
+
+</section>
+
+<div id="statusBox" class="status-box"></div>
+<div class="privacy-note"><i class="bi bi-shield-check"></i> All conversions are performed locally in your browser.</div>
+
+<section class="content-card">
+<h2>What Is a Unix Timestamp?</h2>
+<p>A Unix timestamp is a numeric representation of a point in time. The standard Unix timestamp counts seconds from January 1, 1970 at 00:00:00 UTC. Some systems and APIs use milliseconds instead, so it is important to know which unit a timestamp uses.</p>
+</section>
+
+<section class="content-card">
+<h2>How to Convert a Unix Timestamp</h2>
+<ol class="mb-0">
+<li>Enter the Unix timestamp.</li>
+<li>Select <strong>Seconds</strong> or <strong>Milliseconds</strong>.</li>
+<li>Click <strong>Convert</strong>.</li>
+<li>Review the local time, UTC time and ISO 8601 result.</li>
+<li>Use the copy button beside any result to copy it.</li>
+</ol>
+</section>
+
+<section class="content-card">
+<h2>How to Convert a Date to Unix Timestamp</h2>
+<ol class="mb-0">
+<li>Select a date and time in the Date &amp; Time field.</li>
+<li>Click <strong>Convert</strong>.</li>
+<li>The tool returns Unix seconds, Unix milliseconds and ISO 8601.</li>
+<li>Click a copy button to copy the value you need.</li>
+</ol>
+</section>
+
+<section class="content-card">
+<h2>Why Developers Use Unix Timestamps</h2>
+<p>Unix timestamps are common in APIs, databases, server logs, programming languages and web applications because a numeric time value is convenient for storing and exchanging a moment in time. Timestamp conversion is especially useful when debugging an API response or checking a log entry.</p>
+<div class="tip-box"><i class="bi bi-info-circle"></i> Always check whether the system expects seconds or milliseconds. Using the wrong unit can produce a date far from the intended time.</div>
+</section>
+
+<section class="content-card">
+<h2>Frequently Asked Questions</h2>
+<div class="accordion" id="timestampFaq">
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">What is a Unix timestamp?</button></h3><div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#timestampFaq"><div class="accordion-body">A Unix timestamp represents a point in time as the number of seconds elapsed since January 1, 1970 at 00:00:00 UTC. Millisecond timestamps use milliseconds instead of seconds.</div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Does this tool support seconds and milliseconds?</button></h3><div id="faq2" class="accordion-collapse collapse" data-bs-parent="#timestampFaq"><div class="accordion-body">Yes. Timestamp to Date supports both Unix seconds and Unix milliseconds.</div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Can I convert a date to a Unix timestamp?</button></h3><div id="faq3" class="accordion-collapse collapse" data-bs-parent="#timestampFaq"><div class="accordion-body">Yes. Select a local date and time to get Unix timestamps in both seconds and milliseconds.</div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">What date formats does the result include?</button></h3><div id="faq4" class="accordion-collapse collapse" data-bs-parent="#timestampFaq"><div class="accordion-body">Timestamp conversion provides local time, UTC time and ISO 8601 output. Date conversion provides Unix seconds, milliseconds and ISO 8601.</div></div></div>
+</div>
+</section>
+
+<section class="content-card">
+<h2>Related Developer Tools</h2>
+<p>Explore other EasyTools365 utilities for common developer and text-processing tasks.</p>
+<div class="related-grid">
+<a href="json-formatter.html" class="btn btn-outline-primary">JSON Formatter</a>
+<a href="sql-formatter.html" class="btn btn-outline-primary">SQL Formatter</a>
+<a href="regex-tester.html" class="btn btn-outline-primary">Regex Tester</a>
+</div>
+</section>
+
+<section class="content-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for developer, SEO, PDF, image and text tasks.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+const currentTimestamp =
+    document.getElementById("currentTimestamp");
+
+const timestampInput =
+    document.getElementById("timestampInput");
+
+const timestampUnit =
+    document.getElementById("timestampUnit");
+
+const timestampResult =
+    document.getElementById("timestampResult");
+
+const timestampError =
+    document.getElementById("timestampError");
+
+const dateInput =
+    document.getElementById("dateInput");
+
+const dateResult =
+    document.getElementById("dateResult");
+
+const dateError =
+    document.getElementById("dateError");
+
+const statusBox =
+    document.getElementById("statusBox");
+
+
+function updateCurrentTimestamp() {
+
+    currentTimestamp.textContent =
+        Math.floor(Date.now() / 1000);
+
+}
+
+
+updateCurrentTimestamp();
+
+setInterval(
+    updateCurrentTimestamp,
+    1000
+);
+
+
+function formatDateForInput(date) {
+
+    const pad =
+        function(value) {
+
+            return String(value)
+                .padStart(2, "0");
+
+        };
+
+
+    return (
+        date.getFullYear() +
+        "-" +
+        pad(date.getMonth() + 1) +
+        "-" +
+        pad(date.getDate()) +
+        "T" +
+        pad(date.getHours()) +
+        ":" +
+        pad(date.getMinutes()) +
+        ":" +
+        pad(date.getSeconds())
+    );
+
+}
+
+
+function setCurrentDate() {
+
+    dateInput.value =
+        formatDateForInput(
+            new Date()
+        );
+
+}
+
+
+setCurrentDate();
+
+
+function convertTimestamp() {
+
+    timestampError.style.display =
+        "none";
+
+    timestampResult.style.display =
+        "none";
+
+
+    const raw =
+        timestampInput.value.trim();
+
+
+    if (raw === "") {
+
+        showTimestampError(
+            "Please enter a Unix timestamp."
+        );
+
+        return;
+
+    }
+
+
+    const timestamp =
+        Number(raw);
+
+
+    if (
+        !Number.isFinite(timestamp)
+    ) {
+
+        showTimestampError(
+            "Please enter a valid numeric timestamp."
+        );
+
+        return;
+
+    }
+
+
+    let milliseconds;
+
+
+    if (
+        timestampUnit.value ===
+        "seconds"
+    ) {
+
+        milliseconds =
+            timestamp * 1000;
+
+    }
+
+    else {
+
+        milliseconds =
+            timestamp;
+
+    }
+
+
+    const date =
+        new Date(milliseconds);
+
+
+    if (
+        Number.isNaN(
+            date.getTime()
+        )
+    ) {
+
+        showTimestampError(
+            "This timestamp is outside the supported date range."
+        );
+
+        return;
+
+    }
+
+
+    document.getElementById(
+        "localTime"
+    ).textContent =
+        date.toLocaleString();
+
+
+    document.getElementById(
+        "utcTime"
+    ).textContent =
+        date.toUTCString();
+
+
+    document.getElementById(
+        "isoTime"
+    ).textContent =
+        date.toISOString();
+
+
+    timestampResult.style.display =
+        "block";
+
+}
+
+
+function showTimestampError(message) {
+
+    timestampError.textContent =
+        message;
+
+    timestampError.style.display =
+        "block";
+
+}
+
+
+function convertDate() {
+
+    dateError.style.display =
+        "none";
+
+    dateResult.style.display =
+        "none";
+
+
+    if (
+        dateInput.value === ""
+    ) {
+
+        showDateError(
+            "Please select a date and time."
+        );
+
+        return;
+
+    }
+
+
+    const date =
+        new Date(
+            dateInput.value
+        );
+
+
+    const milliseconds =
+        date.getTime();
+
+
+    if (
+        Number.isNaN(milliseconds)
+    ) {
+
+        showDateError(
+            "Please select a valid date and time."
+        );
+
+        return;
+
+    }
+
+
+    const seconds =
+        Math.floor(
+            milliseconds / 1000
+        );
+
+
+    document.getElementById(
+        "secondsResult"
+    ).textContent =
+        seconds;
+
+
+    document.getElementById(
+        "millisecondsResult"
+    ).textContent =
+        milliseconds;
+
+
+    document.getElementById(
+        "dateIsoResult"
+    ).textContent =
+        date.toISOString();
+
+
+    dateResult.style.display =
+        "block";
+
+}
+
+
+function showDateError(message) {
+
+    dateError.textContent =
+        message;
+
+    dateError.style.display =
+        "block";
+
+}
+
+
+document.getElementById(
+    "convertTimestampButton"
+).addEventListener(
+    "click",
+    convertTimestamp
+);
+
+
+document.getElementById(
+    "convertDateButton"
+).addEventListener(
+    "click",
+    convertDate
+);
+
+
+document.getElementById(
+    "nowTimestampButton"
+).addEventListener(
+    "click",
+    function() {
+
+        if (
+            timestampUnit.value ===
+            "seconds"
+        ) {
+
+            timestampInput.value =
+                Math.floor(
+                    Date.now() / 1000
+                );
+
+        }
+
+        else {
+
+            timestampInput.value =
+                Date.now();
+
+        }
+
+
+        convertTimestamp();
+
+    }
+);
+
+
+document.getElementById(
+    "nowDateButton"
+).addEventListener(
+    "click",
+    function() {
+
+        setCurrentDate();
+        convertDate();
+
+    }
+);
+
+
+timestampInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter"
+        ) {
+
+            convertTimestamp();
+
+        }
+
+    }
+);
+
+
+async function copyText(text) {
+
+    try {
+
+        await navigator.clipboard.writeText(
+            text
+        );
+
+    }
+
+    catch (error) {
+
+        const textarea =
+            document.createElement(
+                "textarea"
+            );
+
+        textarea.value =
+            text;
+
+        textarea.style.position =
+            "fixed";
+
+        textarea.style.opacity =
+            "0";
+
+        document.body.appendChild(
+            textarea
+        );
+
+        textarea.select();
+
+        document.execCommand(
+            "copy"
+        );
+
+        textarea.remove();
+
+    }
+
+
+    showStatus(
+        "Copied to clipboard!"
+    );
+
+}
+
+
+document.querySelectorAll(
+    ".copy-btn"
+).forEach(
+    function(button) {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                const targetId =
+                    button.dataset.copy;
+
+                const target =
+                    document.getElementById(
+                        targetId
+                    );
+
+
+                copyText(
+                    target.textContent
+                        .trim()
+                );
+
+            }
+        );
+
+    }
+);
+
+
+function showStatus(message) {
+
+    statusBox.textContent =
+        message;
+
+    statusBox.style.display =
+        "block";
+
+
+    clearTimeout(
+        showStatus.timer
+    );
+
+
+    showStatus.timer =
+        setTimeout(
+            function() {
+
+                statusBox.style.display =
+                    "none";
+
+            },
+            2000
+        );
+
+}
+
+</script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free PDF Splitter | Extract PDF Pages Online | EasyTools365</title>
+<meta name="description" content="Free online PDF Splitter. Extract selected pages from a PDF, use page ranges or odd and even pages, and download a new PDF directly in your browser.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/pdf-splitter.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free PDF Splitter | EasyTools365">
+<meta property="og:description" content="Extract selected pages from a PDF directly in your browser with flexible page ranges.">
+<meta property="og:url" content="https://easytools365.com/tools/pdf-splitter.html">
+<meta property="og:site_name" content="EasyTools365">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+<style>
+.tool-page{padding:45px 15px 70px}
+.tool-wrapper{max-width:900px;margin:auto}
+.tool-header{text-align:center;margin-bottom:30px}
+.tool-icon{width:68px;height:68px;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;border-radius:18px;background:rgba(220,38,38,.10);color:#dc2626;font-size:30px}
+.tool-header h1{font-size:38px;font-weight:800;margin-bottom:8px}
+.tool-header p{max-width:720px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.tool-card,.content-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow)}
+.tool-card{padding:28px}
+.drop-zone{padding:45px 20px;border:2px dashed var(--border);border-radius:18px;text-align:center;cursor:pointer;transition:.2s}
+.drop-zone:hover,.drop-zone.drag-over{border-color:var(--primary);background:rgba(37,99,235,.05)}
+.drop-zone i{display:block;margin-bottom:15px;color:#dc2626;font-size:42px}
+.drop-zone h2{font-size:19px;font-weight:700}
+.drop-zone p{margin:7px 0 0;color:var(--text-light);font-size:14px}
+#fileInput{display:none}
+.pdf-info{display:none;margin-top:22px;padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--background)}
+.pdf-info-row{display:flex;align-items:center;gap:14px}
+.pdf-icon{width:48px;height:48px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(220,38,38,.10);color:#dc2626;font-size:23px}
+.pdf-details{min-width:0;flex:1}
+.pdf-name{overflow:hidden;font-weight:700;text-overflow:ellipsis;white-space:nowrap}
+.pdf-meta{margin-top:4px;color:var(--text-light);font-size:13px}
+.remove-file{width:38px;height:38px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:#dc2626}
+.split-settings{display:none;margin-top:22px;padding:20px;border:1px solid var(--border);border-radius:15px}
+.split-settings h2{margin-bottom:15px;font-size:18px;font-weight:700}
+.form-label-custom{display:block;margin-bottom:8px;font-size:14px;font-weight:700}
+.page-input{width:100%;padding:13px 15px;border:1px solid var(--border);border-radius:11px;background:var(--background);color:var(--text);outline:none}
+.page-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.input-help{margin-top:8px;color:var(--text-light);font-size:12px;line-height:1.6}
+.quick-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.quick-btn{padding:7px 12px;border:1px solid var(--border);border-radius:9px;background:var(--background);color:var(--text);font-size:12px;font-weight:600}
+.main-actions{display:none;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.secondary-btn,.split-btn{padding:14px;border-radius:12px;font-weight:700}
+.secondary-btn{border:1px solid var(--border);background:var(--background);color:var(--text)}
+.split-btn{border:none;background:var(--primary);color:#fff}
+.split-btn:disabled{opacity:.65;cursor:not-allowed}
+.status-box{display:none;margin-top:20px;padding:15px;border-radius:12px;text-align:center;line-height:1.6}
+.status-processing{display:block;background:rgba(37,99,235,.08);color:var(--primary)}
+.status-success{display:block;background:rgba(22,163,74,.10);color:#16a34a}
+.status-error{display:block;background:rgba(220,38,38,.10);color:#dc2626}
+.privacy-note{margin-top:22px;padding:14px;border-radius:12px;background:rgba(22,163,74,.07);color:var(--text-light);text-align:center;font-size:13px;line-height:1.6}
+.share-row{display:flex;justify-content:center;gap:10px;margin-top:18px}
+.content-card{margin-top:24px;padding:28px}
+.content-card h2{font-size:24px;font-weight:700;margin-bottom:14px}
+.content-card h3{font-size:17px;font-weight:700;margin-top:18px}
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.feature-item{padding:16px;border:1px solid var(--border);border-radius:12px}
+.feature-item i{color:var(--primary)}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.related-grid a{text-decoration:none}
+@media(max-width:600px){.main-actions,.feature-grid,.related-grid{grid-template-columns:1fr}.tool-card,.content-card{padding:20px}.tool-header h1{font-size:31px}}
+</style>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebApplication",
+"name":"EasyTools365 PDF Splitter",
+"url":"https://easytools365.com/tools/pdf-splitter.html",
+"applicationCategory":"UtilitiesApplication",
+"operatingSystem":"Any",
+"description":"Free browser-based PDF splitter for extracting selected pages from PDF documents.",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{"@type":"Question","name":"Is the PDF Splitter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. EasyTools365 PDF Splitter is free to use online."}},
+{"@type":"Question","name":"Are my PDF files uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"The selected PDF is processed locally in your browser and is not uploaded to the EasyTools365 server."}},
+{"@type":"Question","name":"Can I extract specific pages from a PDF?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter individual page numbers or ranges such as 1-3, 5, 8-10 to extract the pages you need."}},
+{"@type":"Question","name":"Can I extract odd or even pages?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool provides quick actions for selecting all pages, odd pages, or even pages."}}
+]
+}
+</script>
+</head>
+
+<body>
+<nav class="navbar bg-white border-bottom shadow-sm">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb" class="mb-4">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../index.html#tools">Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">PDF Splitter</li>
+</ol>
+</nav>
+
+<section class="tool-header">
+<div class="tool-icon"><i class="bi bi-scissors"></i></div>
+<h1>Free PDF Splitter</h1>
+<p>Extract selected pages from a PDF and create a new PDF document directly in your browser.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</section>
+
+<section class="tool-card">
+<div id="dropZone" class="drop-zone">
+<i class="bi bi-cloud-arrow-up"></i>
+<h2>Select a PDF File</h2>
+<p>Click here or drag &amp; drop one PDF file</p>
+<input id="fileInput" type="file" accept="application/pdf,.pdf">
+</div>
+
+<div id="pdfInfo" class="pdf-info">
+<div class="pdf-info-row">
+<div class="pdf-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+<div class="pdf-details">
+<div id="pdfName" class="pdf-name"></div>
+<div id="pdfMeta" class="pdf-meta"></div>
+</div>
+<button id="removeFile" class="remove-file" type="button" title="Remove PDF" aria-label="Remove PDF"><i class="bi bi-trash"></i></button>
+</div>
+</div>
+
+<div id="splitSettings" class="split-settings">
+<h2><i class="bi bi-file-earmark-break"></i> Select Pages</h2>
+<label for="pageRange" class="form-label-custom">Pages to extract</label>
+<input id="pageRange" class="page-input" type="text" placeholder="Example: 1-3, 5, 8-10">
+<div id="rangeHelp" class="input-help">Enter page numbers or ranges separated by commas.</div>
+<div class="quick-actions">
+<button id="allPagesButton" class="quick-btn" type="button">All Pages</button>
+<button id="oddPagesButton" class="quick-btn" type="button">Odd Pages</button>
+<button id="evenPagesButton" class="quick-btn" type="button">Even Pages</button>
+<button id="clearPagesButton" class="quick-btn" type="button">Clear</button>
+</div>
+</div>
+
+<div id="mainActions" class="main-actions">
+<button id="changeFileButton" class="secondary-btn" type="button"><i class="bi bi-arrow-repeat"></i> Change PDF</button>
+<button id="splitButton" class="split-btn" type="button"><i class="bi bi-scissors"></i> Extract Pages</button>
+</div>
+
+<div id="statusBox" class="status-box"></div>
+
+<div class="privacy-note"><i class="bi bi-shield-check"></i> Your PDF is processed locally in your browser. EasyTools365 does not upload the selected document to a server.</div>
+</section>
+
+<div class="share-row">
+<button id="shareButton" class="btn btn-primary btn-sm" type="button"><i class="bi bi-share-fill"></i> Share</button>
+<button id="copyLinkButton" class="btn btn-success btn-sm" type="button"><i class="bi bi-link-45deg"></i> Copy Link</button>
+</div>
+
+<section class="content-card">
+<h2>What Is a PDF Splitter?</h2>
+<p>A PDF splitter extracts selected pages from an existing PDF and creates a new document containing only those pages. It is useful when you need a specific chapter, invoice, form, report section, or other part of a larger document.</p>
+<p class="mb-0">EasyTools365 processes the selected PDF directly in your browser, so you can extract pages without uploading the document to a server.</p>
+</section>
+
+<section class="content-card">
+<h2>How to Split a PDF</h2>
+<ol class="mb-0">
+<li>Select a PDF file or drag it into the upload area.</li>
+<li>Enter the pages you want to extract, such as <strong>1-3, 5, 8-10</strong>.</li>
+<li>Use <strong>All Pages</strong>, <strong>Odd Pages</strong>, or <strong>Even Pages</strong> for quick selection.</li>
+<li>Click <strong>Extract Pages</strong>.</li>
+<li>The new PDF will be downloaded automatically.</li>
+</ol>
+</section>
+
+<section class="content-card">
+<h2>PDF Page Selection Examples</h2>
+<div class="feature-grid">
+<div class="feature-item"><h3><i class="bi bi-check-circle"></i> Individual Pages</h3><p class="mb-0">Enter pages such as <strong>2, 5, 9</strong> to extract specific pages.</p></div>
+<div class="feature-item"><h3><i class="bi bi-check-circle"></i> Page Ranges</h3><p class="mb-0">Use ranges such as <strong>1-5</strong> or <strong>8-12</strong> for consecutive pages.</p></div>
+<div class="feature-item"><h3><i class="bi bi-check-circle"></i> Odd Pages</h3><p class="mb-0">Quickly select pages 1, 3, 5 and so on.</p></div>
+<div class="feature-item"><h3><i class="bi bi-check-circle"></i> Even Pages</h3><p class="mb-0">Quickly select pages 2, 4, 6 and so on.</p></div>
+</div>
+</section>
+
+<section class="content-card">
+<h2>Why Split PDF Documents?</h2>
+<ul class="mb-0">
+<li>Extract only the pages you need from a large document.</li>
+<li>Create smaller PDF files for easier sharing and storage.</li>
+<li>Separate chapters, invoices, forms, or report sections.</li>
+<li>Prepare selected pages for submission or archiving.</li>
+<li>Keep unrelated pages out of the final document.</li>
+</ul>
+</section>
+
+<section class="content-card">
+<h2>Tips Before Extracting PDF Pages</h2>
+<ul class="mb-0">
+<li>Check the PDF page count before entering page numbers.</li>
+<li>Use commas for separate pages and hyphens for ranges.</li>
+<li>Review the selected page order before extracting.</li>
+<li>Keep a copy of the original PDF if the document is important.</li>
+<li>Very large PDFs may require additional browser memory and processing time.</li>
+</ul>
+</section>
+
+<section class="content-card">
+<h2>Frequently Asked Questions</h2>
+<div class="accordion" id="faqAccordion">
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Is the PDF Splitter free?</button></h3>
+<div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. EasyTools365 PDF Splitter is free to use online.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Are my PDF files uploaded to a server?</button></h3>
+<div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">The selected PDF is processed locally in your browser and is not uploaded to the EasyTools365 server.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Can I extract specific pages from a PDF?</button></h3>
+<div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Enter individual page numbers or ranges such as 1-3, 5, 8-10 to extract the pages you need.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Can I extract odd or even pages?</button></h3>
+<div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. The tool provides quick actions for selecting all pages, odd pages, or even pages.</div></div>
+</div>
+</div>
+</section>
+
+<section class="content-card">
+<h2>Related PDF Tools</h2>
+<p>Explore more EasyTools365 tools for everyday PDF tasks.</p>
+<div class="related-grid">
+<a href="pdf-merger.html" class="btn btn-outline-primary">PDF Merger</a>
+<a href="pdf-compressor.html" class="btn btn-outline-primary">PDF Compressor</a>
+<a href="image-to-pdf.html" class="btn btn-outline-primary">Image to PDF</a>
+</div>
+</section>
+
+<section class="content-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for PDF, images, text, calculators and more.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+const fileInput =
+    document.getElementById("fileInput");
+
+const dropZone =
+    document.getElementById("dropZone");
+
+const pdfInfo =
+    document.getElementById("pdfInfo");
+
+const pdfName =
+    document.getElementById("pdfName");
+
+const pdfMeta =
+    document.getElementById("pdfMeta");
+
+const removeFile =
+    document.getElementById("removeFile");
+
+const splitSettings =
+    document.getElementById("splitSettings");
+
+const pageRange =
+    document.getElementById("pageRange");
+
+const rangeHelp =
+    document.getElementById("rangeHelp");
+
+const mainActions =
+    document.getElementById("mainActions");
+
+const changeFileButton =
+    document.getElementById("changeFileButton");
+
+const splitButton =
+    document.getElementById("splitButton");
+
+const allPagesButton =
+    document.getElementById("allPagesButton");
+
+const oddPagesButton =
+    document.getElementById("oddPagesButton");
+
+const evenPagesButton =
+    document.getElementById("evenPagesButton");
+
+const clearPagesButton =
+    document.getElementById("clearPagesButton");
+
+const statusBox =
+    document.getElementById("statusBox");
+
+
+let selectedFile = null;
+let sourcePdf = null;
+let totalPages = 0;
+
+
+dropZone.addEventListener(
+    "click",
+    function() {
+
+        fileInput.click();
+
+    }
+);
+
+
+changeFileButton.addEventListener(
+    "click",
+    function() {
+
+        fileInput.click();
+
+    }
+);
+
+
+fileInput.addEventListener(
+    "change",
+    function(event) {
+
+        if (event.target.files.length) {
+
+            loadPdf(
+                event.target.files[0]
+            );
+
+        }
+
+        fileInput.value = "";
+
+    }
+);
+
+
+dropZone.addEventListener(
+    "dragover",
+    function(event) {
+
+        event.preventDefault();
+
+        dropZone.classList.add(
+            "drag-over"
+        );
+
+    }
+);
+
+
+dropZone.addEventListener(
+    "dragleave",
+    function() {
+
+        dropZone.classList.remove(
+            "drag-over"
+        );
+
+    }
+);
+
+
+dropZone.addEventListener(
+    "drop",
+    function(event) {
+
+        event.preventDefault();
+
+        dropZone.classList.remove(
+            "drag-over"
+        );
+
+
+        if (
+            event.dataTransfer.files.length
+        ) {
+
+            loadPdf(
+                event.dataTransfer.files[0]
+            );
+
+        }
+
+    }
+);
+
+
+async function loadPdf(file) {
+
+    if (
+        file.type !== "application/pdf" &&
+        !file.name.toLowerCase()
+            .endsWith(".pdf")
+    ) {
+
+        showStatus(
+            "Please select a PDF file.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if (
+        typeof PDFLib === "undefined"
+    ) {
+
+        showStatus(
+            "PDF library could not be loaded. Check your internet connection and refresh the page.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    showStatus(
+        '<i class="bi bi-hourglass-split"></i> Reading PDF...',
+        "processing"
+    );
+
+
+    try {
+
+        const bytes =
+            await file.arrayBuffer();
+
+
+        sourcePdf =
+            await PDFLib.PDFDocument.load(
+                bytes
+            );
+
+
+        selectedFile = file;
+
+        totalPages =
+            sourcePdf.getPageCount();
+
+
+        pdfName.textContent =
+            file.name;
+
+
+        pdfMeta.textContent =
+            totalPages +
+            (
+                totalPages === 1
+                    ? " page Ã¢â‚¬Â¢ "
+                    : " pages Ã¢â‚¬Â¢ "
+            ) +
+            formatBytes(file.size);
+
+
+        rangeHelp.textContent =
+            "This PDF has " +
+            totalPages +
+            (
+                totalPages === 1
+                    ? " page. "
+                    : " pages. "
+            ) +
+            "Example: 1-3, 5, 8-10";
+
+
+        pageRange.value =
+            totalPages === 1
+                ? "1"
+                : "1-" + totalPages;
+
+
+        pdfInfo.style.display =
+            "block";
+
+        splitSettings.style.display =
+            "block";
+
+        mainActions.style.display =
+            "grid";
+
+
+        hideStatus();
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        resetPdf();
+
+
+        showStatus(
+            '<i class="bi bi-x-circle"></i> Unable to read this PDF. It may be corrupted, encrypted or password protected.',
+            "error"
+        );
+
+    }
+
+}
+
+
+removeFile.addEventListener(
+    "click",
+    function() {
+
+        resetPdf();
+
+        hideStatus();
+
+    }
+);
+
+
+function resetPdf() {
+
+    selectedFile = null;
+    sourcePdf = null;
+    totalPages = 0;
+
+    pdfName.textContent = "";
+    pdfMeta.textContent = "";
+    pageRange.value = "";
+
+    pdfInfo.style.display =
+        "none";
+
+    splitSettings.style.display =
+        "none";
+
+    mainActions.style.display =
+        "none";
+
+}
+
+
+allPagesButton.addEventListener(
+    "click",
+    function() {
+
+        if (!totalPages) {
+            return;
+        }
+
+        pageRange.value =
+            totalPages === 1
+                ? "1"
+                : "1-" + totalPages;
+
+    }
+);
+
+
+oddPagesButton.addEventListener(
+    "click",
+    function() {
+
+        if (!totalPages) {
+            return;
+        }
+
+
+        const pages = [];
+
+
+        for (
+            let i = 1;
+            i <= totalPages;
+            i += 2
+        ) {
+
+            pages.push(i);
+
+        }
+
+
+        pageRange.value =
+            pages.join(", ");
+
+    }
+);
+
+
+evenPagesButton.addEventListener(
+    "click",
+    function() {
+
+        if (!totalPages) {
+            return;
+        }
+
+
+        const pages = [];
+
+
+        for (
+            let i = 2;
+            i <= totalPages;
+            i += 2
+        ) {
+
+            pages.push(i);
+
+        }
+
+
+        pageRange.value =
+            pages.join(", ");
+
+    }
+);
+
+
+clearPagesButton.addEventListener(
+    "click",
+    function() {
+
+        pageRange.value = "";
+
+        pageRange.focus();
+
+    }
+);
+
+
+function parsePageRange(
+    value,
+    maximumPage
+) {
+
+    const cleaned =
+        value.replace(/\s+/g, "");
+
+
+    if (!cleaned) {
+
+        throw new Error(
+            "Enter at least one page number."
+        );
+
+    }
+
+
+    const parts =
+        cleaned.split(",");
+
+    const pages = [];
+
+
+    for (const part of parts) {
+
+        if (!part) {
+
+            throw new Error(
+                "Invalid page range."
+            );
+
+        }
+
+
+        if (part.includes("-")) {
+
+            const range =
+                part.split("-");
+
+
+            if (
+                range.length !== 2 ||
+                !/^\d+$/.test(range[0]) ||
+                !/^\d+$/.test(range[1])
+            ) {
+
+                throw new Error(
+                    'Invalid range "' +
+                    part +
+                    '".'
+                );
+
+            }
+
+
+            const start =
+                Number(range[0]);
+
+            const end =
+                Number(range[1]);
+
+
+            if (
+                start < 1 ||
+                end < 1 ||
+                start > maximumPage ||
+                end > maximumPage
+            ) {
+
+                throw new Error(
+                    "Page numbers must be between 1 and " +
+                    maximumPage +
+                    "."
+                );
+
+            }
+
+
+            if (start > end) {
+
+                throw new Error(
+                    'Range "' +
+                    part +
+                    '" must go from a lower page to a higher page.'
+                );
+
+            }
+
+
+            for (
+                let page = start;
+                page <= end;
+                page++
+            ) {
+
+                pages.push(page);
+
+            }
+
+        }
+
+        else {
+
+            if (!/^\d+$/.test(part)) {
+
+                throw new Error(
+                    'Invalid page "' +
+                    part +
+                    '".'
+                );
+
+            }
+
+
+            const page =
+                Number(part);
+
+
+            if (
+                page < 1 ||
+                page > maximumPage
+            ) {
+
+                throw new Error(
+                    "Page numbers must be between 1 and " +
+                    maximumPage +
+                    "."
+                );
+
+            }
+
+
+            pages.push(page);
+
+        }
+
+    }
+
+
+    /*
+       Remove duplicate page numbers
+       while preserving the selected order.
+    */
+
+    return [
+        ...new Set(pages)
+    ];
+
+}
+
+
+splitButton.addEventListener(
+    "click",
+    async function() {
+
+        if (
+            !selectedFile ||
+            !sourcePdf
+        ) {
+
+            showStatus(
+                "Please select a PDF first.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        let selectedPages;
+
+
+        try {
+
+            selectedPages =
+                parsePageRange(
+                    pageRange.value,
+                    totalPages
+                );
+
+        }
+
+        catch (error) {
+
+            showStatus(
+                '<i class="bi bi-exclamation-circle"></i> ' +
+                error.message,
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if (!selectedPages.length) {
+
+            showStatus(
+                "Please select at least one page.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        splitButton.disabled = true;
+
+
+        showStatus(
+            '<i class="bi bi-hourglass-split"></i> Extracting ' +
+            selectedPages.length +
+            (
+                selectedPages.length === 1
+                    ? " page..."
+                    : " pages..."
+            ),
+            "processing"
+        );
+
+
+        try {
+
+            const outputPdf =
+                await PDFLib.PDFDocument.create();
+
+
+            /*
+               PDF-Lib uses zero-based page indexes.
+               User page 1 = index 0.
+            */
+
+            const pageIndexes =
+                selectedPages.map(
+                    function(page) {
+
+                        return page - 1;
+
+                    }
+                );
+
+
+            const copiedPages =
+                await outputPdf.copyPages(
+                    sourcePdf,
+                    pageIndexes
+                );
+
+
+            copiedPages.forEach(
+                function(page) {
+
+                    outputPdf.addPage(page);
+
+                }
+            );
+
+
+            const outputBytes =
+                await outputPdf.save();
+
+
+            const blob =
+                new Blob(
+                    [outputBytes],
+                    {
+                        type:
+                            "application/pdf"
+                    }
+                );
+
+
+            const url =
+                URL.createObjectURL(
+                    blob
+                );
+
+
+            const link =
+                document.createElement(
+                    "a"
+                );
+
+
+            link.href = url;
+
+            link.download =
+                createDownloadName(
+                    selectedFile.name
+                );
+
+
+            document.body.appendChild(
+                link
+            );
+
+            link.click();
+
+            link.remove();
+
+
+            setTimeout(
+                function() {
+
+                    URL.revokeObjectURL(
+                        url
+                    );
+
+                },
+                1000
+            );
+
+
+            showStatus(
+                '<i class="bi bi-check-circle"></i> ' +
+                selectedPages.length +
+                (
+                    selectedPages.length === 1
+                        ? " page extracted successfully."
+                        : " pages extracted successfully."
+                ) +
+                " Your download has started.",
+                "success"
+            );
+
+        }
+
+        catch (error) {
+
+            console.error(error);
+
+
+            showStatus(
+                '<i class="bi bi-x-circle"></i> Unable to extract the selected pages.',
+                "error"
+            );
+
+        }
+
+        finally {
+
+            splitButton.disabled =
+                false;
+
+        }
+
+    }
+);
+
+
+function createDownloadName(
+    originalName
+) {
+
+    const baseName =
+        originalName.replace(
+            /\.pdf$/i,
+            ""
+        );
+
+
+    return (
+        baseName +
+        "-extracted-easytools365.pdf"
+    );
+
+}
+
+
+function formatBytes(bytes) {
+
+    if (bytes === 0) {
+        return "0 Bytes";
+    }
+
+
+    const units =
+        [
+            "Bytes",
+            "KB",
+            "MB",
+            "GB"
+        ];
+
+
+    const index =
+        Math.floor(
+            Math.log(bytes) /
+            Math.log(1024)
+        );
+
+
+    return (
+        (
+            bytes /
+            Math.pow(
+                1024,
+                index
+            )
+        ).toFixed(
+            index === 0 ? 0 : 2
+        ) +
+        " " +
+        units[index]
+    );
+
+}
+
+
+function showStatus(
+    message,
+    type
+) {
+
+    statusBox.className =
+        "status-box status-" +
+        type;
+
+    statusBox.innerHTML =
+        message;
+
+}
+
+
+function hideStatus() {
+
+    statusBox.className =
+        "status-box";
+
+    statusBox.innerHTML = "";
+
+}
+
+</script>
+
+<script>
+document.getElementById("shareButton").addEventListener("click", async function(){
+try{
+if(navigator.share){
+await navigator.share({title:"EasyTools365 PDF Splitter",text:"Free online PDF Splitter",url:window.location.href});
+}else{
+await navigator.clipboard.writeText(window.location.href);
+this.innerHTML='<i class="bi bi-check-lg"></i> Link Copied!';
+setTimeout(()=>this.innerHTML='<i class="bi bi-share-fill"></i> Share',1500);
+}
+}catch(error){}
+});
+
+document.getElementById("copyLinkButton").addEventListener("click", async function(){
+try{
+await navigator.clipboard.writeText(window.location.href);
+this.innerHTML='<i class="bi bi-check-lg"></i> Link Copied!';
+setTimeout(()=>this.innerHTML='<i class="bi bi-link-45deg"></i> Copy Link',1500);
+}catch(error){}
+});
+</script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

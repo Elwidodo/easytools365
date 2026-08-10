@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free URL Encoder & Decoder Online | EasyTools365</title>
+<meta name="description" content="Encode or decode URLs and text online for free. Convert special characters to URL-safe percent-encoding or decode encoded URL values directly in your browser.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/url-encoder-decoder.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free URL Encoder & Decoder | EasyTools365">
+<meta property="og:description" content="Encode or decode URLs, query parameters and text instantly in your browser. Fast, simple and free.">
+<meta property="og:url" content="https://easytools365.com/tools/url-encoder-decoder.html">
+<meta property="og:site_name" content="EasyTools365">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{padding:45px 15px 70px}.tool-wrapper{max-width:950px;margin:auto}
+.tool-header{text-align:center;margin-bottom:30px}.tool-icon{width:68px;height:68px;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;border-radius:18px;background:rgba(37,99,235,.1);color:var(--primary);font-size:30px}
+.tool-header h1{font-size:38px;font-weight:800;margin-bottom:8px}.tool-header p{max-width:760px;margin:auto;color:var(--text-light);line-height:1.7}.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.tool-card,.content-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow)}.tool-card{padding:28px}
+.input-label{display:block;margin-bottom:9px;font-weight:700}.url-input{width:100%;min-height:260px;padding:18px;border:1px solid var(--border);border-radius:14px;background:var(--background);color:var(--text);outline:none;resize:vertical;line-height:1.7;font-family:Consolas,Monaco,monospace}.url-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.counter{margin-top:7px;text-align:right;color:var(--text-light);font-size:12px}.main-buttons,.action-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px}.main-buttons{margin-top:22px}.action-buttons{margin-top:12px}
+.tool-btn{padding:14px;border-radius:12px;font-weight:700}.encode-btn{border:none;background:var(--primary);color:#fff}.decode-btn,.action-btn{border:1px solid var(--border);background:var(--background);color:var(--text)}.decode-btn:hover,.action-btn:hover{border-color:var(--primary);color:var(--primary)}
+.message{display:none;margin-top:20px;padding:14px;border-radius:12px;font-size:14px}.message.success{display:block;color:#16a34a;background:rgba(22,163,74,.1);border:1px solid rgba(22,163,74,.25)}.message.error{display:block;color:#dc2626;background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.25)}
+.privacy-note{margin-top:22px;padding:14px;border-radius:12px;background:rgba(37,99,235,.07);color:var(--text-light);text-align:center;font-size:13px;line-height:1.6}
+.content-card{margin-top:24px;padding:28px}.content-card h2{font-size:24px;font-weight:700;margin-bottom:14px}.content-card h3{font-size:17px;font-weight:700;margin-top:20px}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.related-grid a{text-decoration:none}
+.tip-box{padding:15px;border-radius:12px;background:rgba(37,99,235,.07);border:1px solid rgba(37,99,235,.15)}
+@media(max-width:650px){.main-buttons,.action-buttons,.related-grid{grid-template-columns:1fr}.tool-card,.content-card{padding:20px}.tool-header h1{font-size:31px}}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 URL Encoder & Decoder","url":"https://easytools365.com/tools/url-encoder-decoder.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","description":"Free browser-based URL encoder and decoder for URLs, query parameters and text.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is URL encoding?","acceptedAnswer":{"@type":"Answer","text":"URL encoding, also called percent-encoding, represents certain characters using a percent sign followed by hexadecimal values so they can be safely represented in URL data."}},
+{"@type":"Question","name":"What does a URL decoder do?","acceptedAnswer":{"@type":"Answer","text":"A URL decoder converts percent-encoded URL data back into readable text."}},
+{"@type":"Question","name":"Can I encode query parameters with this tool?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can enter text or URL values and encode them using JavaScript's encodeURIComponent function."}},
+{"@type":"Question","name":"Is my URL uploaded to EasyTools365?","acceptedAnswer":{"@type":"Answer","text":"No. The conversion is performed locally in your browser and the entered value is not uploaded to the EasyTools365 server by this tool."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb" class="mb-4">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../index.html#tools">Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">URL Encoder &amp; Decoder</li>
+</ol>
+</nav>
+
+<section class="tool-header">
+<div class="tool-icon"><i class="bi bi-link-45deg"></i></div>
+<h1>Free URL Encoder &amp; Decoder</h1>
+<p>Encode or decode URLs, query parameters and text instantly in your browser. Fast, simple and free.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</section>
+
+<section class="tool-card">
+<label for="urlInput" class="input-label">Enter URL or Text</label>
+<textarea id="urlInput" class="url-input" spellcheck="false" placeholder="Enter URL or text here..."></textarea>
+<div class="counter"><span id="characterCount">0</span> characters</div>
+
+<div class="main-buttons">
+<button id="encodeButton" class="tool-btn encode-btn" type="button"><i class="bi bi-lock"></i> Encode URL</button>
+<button id="decodeButton" class="tool-btn decode-btn" type="button"><i class="bi bi-unlock"></i> Decode URL</button>
+</div>
+
+<div class="action-buttons">
+<button id="copyButton" class="tool-btn action-btn" type="button"><i class="bi bi-copy"></i> Copy Result</button>
+<button id="clearButton" class="tool-btn action-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+
+<div id="messageBox" class="message"></div>
+<div class="privacy-note"><i class="bi bi-shield-check"></i> Your data is processed locally in your browser and is not uploaded to our server.</div>
+</section>
+
+<section class="content-card">
+<h2>What Is a URL Encoder and Decoder?</h2>
+<p>A URL encoder converts text and special characters into a format that can be safely represented in URL data. This is useful because some characters have reserved meanings in web addresses and query parameters.</p>
+<p class="mb-0">A URL decoder performs the reverse operation, converting percent-encoded values back into readable text so encoded URLs and parameters are easier to inspect and troubleshoot.</p>
+</section>
+
+<section class="content-card">
+<h2>How to Use the URL Encoder &amp; Decoder</h2>
+<ol class="mb-0">
+<li>Enter or paste a URL, query parameter or text.</li>
+<li>Click <strong>Encode URL</strong> to percent-encode the value.</li>
+<li>Click <strong>Decode URL</strong> to restore encoded text.</li>
+<li>Review the converted value in the same text area.</li>
+<li>Click <strong>Copy Result</strong> to copy the result.</li>
+</ol>
+</section>
+
+<section class="content-card">
+<h2>What Is Percent-Encoding?</h2>
+<p>Percent-encoding represents certain characters with a percent sign followed by hexadecimal values. It is commonly encountered in query strings and other URL components when a character needs a safe encoded representation.</p>
+<div class="tip-box"><i class="bi bi-info-circle"></i> Example: a space in the text <strong>Hello World</strong> is represented by <strong>%20</strong> when encoded with <code>encodeURIComponent()</code>.</div>
+</section>
+
+<section class="content-card">
+<h2>When Is URL Encoding Useful?</h2>
+<ul class="mb-0">
+<li>Preparing query parameter values for web applications.</li>
+<li>Working with API requests and responses.</li>
+<li>Sharing URLs that contain special characters.</li>
+<li>Inspecting encoded parameters while debugging.</li>
+<li>Testing URL values during web development.</li>
+<li>Converting encoded text back into a readable form.</li>
+</ul>
+</section>
+
+<section class="content-card">
+<h2>URL Encoding vs URL Decoding</h2>
+<div class="table-responsive">
+<table class="table align-middle mb-0">
+<thead><tr><th>Operation</th><th>Purpose</th><th>Example direction</th></tr></thead>
+<tbody>
+<tr><td><strong>Encode</strong></td><td>Convert text into percent-encoded URL data.</td><td>Hello World → Hello%20World</td></tr>
+<tr><td><strong>Decode</strong></td><td>Convert percent-encoded data back into readable text.</td><td>Hello%20World → Hello World</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="content-card">
+<h2>Frequently Asked Questions</h2>
+<div class="accordion" id="urlFaq">
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">What is URL encoding?</button></h3><div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#urlFaq"><div class="accordion-body">URL encoding, also called percent-encoding, represents certain characters using a percent sign followed by hexadecimal values so they can be safely represented in URL data.</div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">What does a URL decoder do?</button></h3><div id="faq2" class="accordion-collapse collapse" data-bs-parent="#urlFaq"><div class="accordion-body">A URL decoder converts percent-encoded URL data back into readable text.</div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Can I encode query parameters with this tool?</button></h3><div id="faq3" class="accordion-collapse collapse" data-bs-parent="#urlFaq"><div class="accordion-body">Yes. You can enter text or URL values and encode them using JavaScript's encodeURIComponent function.</div></div></div>
+<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Is my URL uploaded to EasyTools365?</button></h3><div id="faq4" class="accordion-collapse collapse" data-bs-parent="#urlFaq"><div class="accordion-body">No. The conversion is performed locally in your browser and the entered value is not uploaded to the EasyTools365 server by this tool.</div></div></div>
+</div>
+</section>
+
+<section class="content-card">
+<h2>Related Developer Tools</h2>
+<p>Explore other EasyTools365 utilities for common developer and text-processing tasks.</p>
+<div class="related-grid">
+<a href="json-formatter.html" class="btn btn-outline-primary">JSON Formatter</a>
+<a href="sql-formatter.html" class="btn btn-outline-primary">SQL Formatter</a>
+<a href="regex-tester.html" class="btn btn-outline-primary">Regex Tester</a>
+</div>
+</section>
+
+<section class="content-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for developer, SEO, PDF, image and text tasks.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+        const urlInput =
+            document.getElementById("urlInput");
+
+        const encodeButton =
+            document.getElementById("encodeButton");
+
+        const decodeButton =
+            document.getElementById("decodeButton");
+
+        const copyButton =
+            document.getElementById("copyButton");
+
+        const clearButton =
+            document.getElementById("clearButton");
+
+        const characterCount =
+            document.getElementById("characterCount");
+
+        const messageBox =
+            document.getElementById("messageBox");
+
+
+        function updateCount() {
+
+            characterCount.textContent =
+                urlInput.value.length;
+        }
+
+
+        function showMessage(text, type) {
+
+            messageBox.textContent = text;
+
+            messageBox.className =
+                "message " + type;
+        }
+
+
+        function hideMessage() {
+
+            messageBox.className = "message";
+
+            messageBox.textContent = "";
+        }
+
+
+        /*
+        ==========================
+        ENCODE
+        ==========================
+        */
+
+        encodeButton.addEventListener(
+            "click",
+            function () {
+
+                const value =
+                    urlInput.value;
+
+                if (!value) {
+
+                    showMessage(
+                        "Please enter a URL or text to encode.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+                try {
+
+                    urlInput.value =
+                        encodeURIComponent(value);
+
+                    updateCount();
+
+                    showMessage(
+                        "URL encoded successfully.",
+                        "success"
+                    );
+
+                } catch (error) {
+
+                    showMessage(
+                        "Unable to encode this value.",
+                        "error"
+                    );
+                }
+
+            }
+        );
+
+
+        /*
+        ==========================
+        DECODE
+        ==========================
+        */
+
+        decodeButton.addEventListener(
+            "click",
+            function () {
+
+                const value =
+                    urlInput.value;
+
+                if (!value) {
+
+                    showMessage(
+                        "Please enter an encoded URL.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+                try {
+
+                    urlInput.value =
+                        decodeURIComponent(value);
+
+                    updateCount();
+
+                    showMessage(
+                        "URL decoded successfully.",
+                        "success"
+                    );
+
+                } catch (error) {
+
+                    showMessage(
+                        "Invalid encoded URL.",
+                        "error"
+                    );
+                }
+
+            }
+        );
+
+
+        /*
+        ==========================
+        COPY
+        ==========================
+        */
+
+        copyButton.addEventListener(
+            "click",
+            async function () {
+
+                if (!urlInput.value) {
+                    return;
+                }
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        urlInput.value
+                    );
+
+                    copyButton.innerHTML =
+                        '<i class="bi bi-check-lg"></i> Copied!';
+
+                    setTimeout(
+                        function () {
+
+                            copyButton.innerHTML =
+                                '<i class="bi bi-copy"></i> Copy Result';
+
+                        },
+                        1500
+                    );
+
+                } catch (error) {
+
+                    urlInput.select();
+
+                    document.execCommand("copy");
+                }
+
+            }
+        );
+
+
+        /*
+        ==========================
+        CLEAR
+        ==========================
+        */
+
+        clearButton.addEventListener(
+            "click",
+            function () {
+
+                urlInput.value = "";
+
+                updateCount();
+
+                hideMessage();
+
+                urlInput.focus();
+            }
+        );
+
+
+        urlInput.addEventListener(
+            "input",
+            function () {
+
+                updateCount();
+
+                hideMessage();
+            }
+        );
+
+
+        updateCount();
+
+    </script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

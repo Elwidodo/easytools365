@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Meta Tag Generator | SEO Meta Tags, Open Graph &amp; Twitter Cards | EasyTools365</title>
+    <meta name="description" content="Free online Meta Tag Generator to create SEO title, description, canonical, Open Graph and Twitter Card HTML tags quickly.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="EasyTools365">
+    <link rel="canonical" href="https://easytools365.com/tools/meta-tag-generator.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Meta Tag Generator | EasyTools365">
+    <meta property="og:description" content="Generate SEO meta tags, canonical tags, Open Graph tags and Twitter Card tags instantly.">
+    <meta property="og:url" content="https://easytools365.com/tools/meta-tag-generator.html">
+    <meta property="og:site_name" content="EasyTools365">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N002NWTJ23');
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .tool-page { padding:45px 15px 70px; }
+        .tool-wrapper { max-width:1000px; margin:auto; }
+        .tool-header { text-align:center; margin-bottom:30px; }
+        .tool-icon-large {
+            width:68px;height:68px;display:flex;align-items:center;justify-content:center;
+            margin:0 auto 15px;border-radius:18px;background:rgba(37,99,235,.10);
+            color:var(--primary);font-size:30px;
+        }
+        .tool-header h1 { font-size:38px;font-weight:800;margin-bottom:8px; }
+        .tool-header p { max-width:760px;margin:auto;color:var(--text-light);line-height:1.7; }
+        .updated { margin-top:10px;color:var(--text-light);font-size:12px; }
+        .tool-card,.content-card {
+            background:var(--surface);border:1px solid var(--border);
+            border-radius:20px;box-shadow:var(--shadow);
+        }
+        .tool-card { padding:28px; }
+        .form-label { font-weight:600; }
+        .form-control {
+            background:var(--background);color:var(--text);border-color:var(--border);
+        }
+        .form-control:focus {
+            background:var(--background);color:var(--text);
+            border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.10);
+        }
+        .counter { display:block;margin-top:5px;font-size:11px;color:var(--text-light); }
+        .button-grid {
+            display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px;
+        }
+        .tool-btn {
+            padding:13px;border:1px solid var(--border);border-radius:11px;
+            background:var(--background);color:var(--text);font-weight:700;
+        }
+        .tool-btn.primary { border-color:var(--primary);background:var(--primary);color:#fff; }
+        .tool-btn:hover { border-color:var(--primary);color:var(--primary); }
+        .tool-btn.primary:hover { color:#fff;opacity:.92; }
+        #outputCode {
+            min-height:280px;font-family:Consolas,Monaco,monospace;font-size:13px;
+            line-height:1.6;
+        }
+        .privacy-note {
+            margin-top:20px;padding:14px;border-radius:11px;text-align:center;
+            background:rgba(22,163,74,.07);color:var(--text-light);font-size:12px;
+        }
+        .share-row { display:flex;justify-content:center;gap:10px;margin-top:18px; }
+        .content-card { margin-top:24px;padding:28px; }
+        .content-card h2 { font-size:24px;font-weight:700;margin-bottom:14px; }
+        .content-card h3 { font-size:17px;font-weight:700;margin-top:18px; }
+        .feature-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:16px; }
+        .feature-item { padding:16px;border:1px solid var(--border);border-radius:12px; }
+        .feature-item i { color:var(--primary); }
+        .related-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:10px; }
+        .related-grid a { text-decoration:none; }
+        @media(max-width:700px) {
+            .button-grid,.feature-grid,.related-grid { grid-template-columns:1fr; }
+            .tool-card,.content-card { padding:20px; }
+            .tool-header h1 { font-size:31px; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebApplication",
+      "name":"EasyTools365 Meta Tag Generator",
+      "url":"https://easytools365.com/tools/meta-tag-generator.html",
+      "applicationCategory":"DeveloperApplication",
+      "operatingSystem":"Any",
+      "description":"Free online generator for SEO meta tags, canonical tags, Open Graph tags and Twitter Card tags.",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Is this Meta Tag Generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. EasyTools365 Meta Tag Generator is free to use online."}},
+        {"@type":"Question","name":"Does this tool generate Open Graph tags?","acceptedAnswer":{"@type":"Answer","text":"Yes. The generated HTML includes basic Open Graph tags together with Twitter Card tags."}},
+        {"@type":"Question","name":"Do I need coding knowledge?","acceptedAnswer":{"@type":"Answer","text":"No. Fill in the form, generate the code and copy the resulting HTML into the head section of your webpage."}},
+        {"@type":"Question","name":"Is my data uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"The generator creates the HTML directly in your browser and does not require sending the entered form values to a server."}}
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-decoration-none" href="../index.html">
+            <i class="bi bi-tools"></i> EasyTools365
+        </a>
+        <button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode">
+            <i class="bi bi-moon-stars"></i>
+        </button>
+    </div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="../index.html#tools">Tools</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Meta Tag Generator</li>
+        </ol>
+    </nav>
+
+    <section class="tool-header">
+        <div class="tool-icon-large"><i class="bi bi-code-square"></i></div>
+        <h1>Free Meta Tag Generator</h1>
+        <p>Generate SEO meta tags including title, description, keywords, canonical URL, Open Graph and Twitter Card tags.</p>
+        <div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+    </section>
+
+    <section class="tool-card">
+        <div class="row g-3">
+
+            <div class="col-md-6">
+                <label for="titleInput" class="form-label">Page Title</label>
+                <input type="text" id="titleInput" class="form-control"
+                       maxlength="60" placeholder="My Awesome Website">
+                <small id="titleCount" class="counter">0 / 60 characters</small>
+            </div>
+
+            <div class="col-md-6">
+                <label for="urlInput" class="form-label">Canonical URL</label>
+                <input type="url" id="urlInput" class="form-control"
+                       placeholder="https://example.com">
+            </div>
+
+            <div class="col-12">
+                <label for="descriptionInput" class="form-label">Meta Description</label>
+                <textarea id="descriptionInput" class="form-control" rows="4"
+                          maxlength="160"
+                          placeholder="Write a clear description of your page..."></textarea>
+                <small id="descriptionCount" class="counter">0 / 160 characters</small>
+            </div>
+
+            <div class="col-12">
+                <label for="keywordsInput" class="form-label">Keywords</label>
+                <input type="text" id="keywordsInput" class="form-control"
+                       placeholder="seo, meta tags, generator">
+                <small class="counter">Optional. Separate keywords with commas.</small>
+            </div>
+
+        </div>
+
+        <div class="button-grid">
+            <button id="generateButton" class="tool-btn primary" type="button">
+                <i class="bi bi-code-square"></i> Generate
+            </button>
+            <button id="copyButton" class="tool-btn" type="button">
+                <i class="bi bi-copy"></i> Copy
+            </button>
+            <button id="clearButton" class="tool-btn" type="button">
+                <i class="bi bi-trash"></i> Reset
+            </button>
+        </div>
+
+        <div class="mt-4">
+            <label for="outputCode" class="form-label">Generated HTML</label>
+            <textarea id="outputCode" class="form-control" rows="12" readonly
+                      placeholder="Your generated meta tags will appear here..."></textarea>
+        </div>
+
+        <div class="privacy-note">
+            <i class="bi bi-shield-check"></i>
+            Your form data is processed locally in your browser.
+        </div>
+    </section>
+
+    <div class="share-row">
+        <button id="shareButton" class="btn btn-primary btn-sm" type="button">
+            <i class="bi bi-share-fill"></i> Share
+        </button>
+        <button id="copyLinkButton" class="btn btn-success btn-sm" type="button">
+            <i class="bi bi-link-45deg"></i> Copy Link
+        </button>
+    </div>
+
+    <section class="content-card">
+        <h2>What Is a Meta Tag Generator?</h2>
+        <p>A Meta Tag Generator is an online SEO utility that creates common HTML metadata for a webpage. It can save time when preparing a page title, meta description, canonical URL, Open Graph tags and Twitter Card tags.</p>
+        <p class="mb-0">Instead of writing each tag manually, enter your page information and copy the generated HTML into the <code>&lt;head&gt;</code> section of your webpage.</p>
+    </section>
+
+    <section class="content-card">
+        <h2>How to Use the Meta Tag Generator</h2>
+        <ol class="mb-0">
+            <li>Enter your page title.</li>
+            <li>Write a clear and useful meta description.</li>
+            <li>Enter the canonical URL of the page.</li>
+            <li>Add keywords if they are useful for your workflow.</li>
+            <li>Click <strong>Generate</strong>.</li>
+            <li>Click <strong>Copy</strong> and paste the generated HTML into your page's <code>&lt;head&gt;</code> section.</li>
+        </ol>
+    </section>
+
+    <section class="content-card">
+        <h2>What Meta Tags Does This Tool Generate?</h2>
+        <p>The generated code includes a page title, meta description, meta keywords, canonical link, Open Graph title, Open Graph description, Open Graph URL, Open Graph type, and basic Twitter Card metadata.</p>
+        <p class="mb-0">The output is intended as a convenient starting point. Always review the generated values and adjust them to match the actual page content.</p>
+    </section>
+
+    <section class="content-card">
+        <h2>Meta Tag Generator Features</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3><i class="bi bi-check-circle"></i> SEO Metadata</h3>
+                <p class="mb-0">Generate title and description tags quickly.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="bi bi-check-circle"></i> Canonical URL</h3>
+                <p class="mb-0">Create a canonical link element from your page URL.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="bi bi-check-circle"></i> Open Graph</h3>
+                <p class="mb-0">Generate basic Open Graph metadata for sharing previews.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="bi bi-check-circle"></i> Twitter Cards</h3>
+                <p class="mb-0">Generate basic Twitter Card metadata for social sharing.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-card">
+        <h2>Tips for Better Meta Tags</h2>
+        <ul class="mb-0">
+            <li>Make the title accurately describe the page.</li>
+            <li>Write a useful description that matches the visible page content.</li>
+            <li>Use a canonical URL that points to the preferred version of the page.</li>
+            <li>Keep social metadata consistent with the page content.</li>
+            <li>Review generated HTML before publishing it.</li>
+        </ul>
+    </section>
+
+    <section class="content-card">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        Is this Meta Tag Generator free?
+                    </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Yes. EasyTools365 Meta Tag Generator is free to use online.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        Does this tool generate Open Graph tags?
+                    </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Yes. The generated HTML includes basic Open Graph tags together with Twitter Card tags.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        Do I need coding knowledge?
+                    </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">No. Fill in the form, generate the code and copy the resulting HTML into the head section of your webpage.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                        Is my data uploaded to a server?
+                    </button>
+                </h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">The generator creates the HTML directly in your browser and does not require sending the entered form values to a server.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-card">
+        <h2>Related SEO Tools</h2>
+        <p>Explore more EasyTools365 utilities for website SEO and metadata.</p>
+        <div class="related-grid">
+            <a href="robots-txt-generator.html" class="btn btn-outline-primary">Robots.txt Generator</a>
+            <a href="xml-sitemap-generator.html" class="btn btn-outline-primary">XML Sitemap Generator</a>
+            <a href="open-graph-generator.html" class="btn btn-outline-primary">Open Graph Generator</a>
+        </div>
+    </section>
+
+    <section class="content-card text-center bg-primary text-white">
+        <h2>Need More Free Online Tools?</h2>
+        <p>Explore EasyTools365 tools for SEO, text, images, PDF, calculators and developer tasks.</p>
+        <a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+    </section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+    <div class="container text-center">
+        <p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+const titleInput = document.getElementById("titleInput");
+const descriptionInput = document.getElementById("descriptionInput");
+const keywordsInput = document.getElementById("keywordsInput");
+const urlInput = document.getElementById("urlInput");
+
+const generateButton = document.getElementById("generateButton");
+const copyButton = document.getElementById("copyButton");
+const clearButton = document.getElementById("clearButton");
+const outputCode = document.getElementById("outputCode");
+
+generateButton.addEventListener("click", function () {
+
+    const title = titleInput.value.trim();
+    const desc = descriptionInput.value.trim();
+    const keywords = keywordsInput.value.trim();
+    const url = urlInput.value.trim();
+
+    outputCode.value =
+`<title>${title}</title>
+
+<meta name="description" content="${desc}">
+<meta name="keywords" content="${keywords}">
+<link rel="canonical" href="${url}">
+
+<meta property="og:title" content="${title}">
+<meta property="og:description" content="${desc}">
+<meta property="og:url" content="${url}">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${title}">
+<meta name="twitter:description" content="${desc}">`;
+
+});
+
+copyButton.addEventListener("click", async function () {
+
+    if (!outputCode.value) return;
+
+    await navigator.clipboard.writeText(outputCode.value);
+
+    copyButton.innerHTML = '<i class="bi bi-check-lg"></i> Copied';
+
+    setTimeout(function () {
+        copyButton.innerHTML = '<i class="bi bi-copy"></i> Copy';
+    }, 1500);
+
+});
+
+clearButton.addEventListener("click", function () {
+
+    titleInput.value = "";
+    descriptionInput.value = "";
+    keywordsInput.value = "";
+    urlInput.value = "";
+    outputCode.value = "";
+
+});
+</script>
+
+<script>
+function updateCounters() {
+    document.getElementById("titleCount").textContent =
+        `${titleInput.value.length} / 60 characters`;
+
+    document.getElementById("descriptionCount").textContent =
+        `${descriptionInput.value.length} / 160 characters`;
+}
+
+titleInput.addEventListener("input", updateCounters);
+descriptionInput.addEventListener("input", updateCounters);
+
+document.getElementById("shareButton").addEventListener("click", async function () {
+    try {
+        if (navigator.share) {
+            await navigator.share({
+                title: "EasyTools365 Meta Tag Generator",
+                text: "Free online Meta Tag Generator",
+                url: window.location.href
+            });
+        } else {
+            await navigator.clipboard.writeText(window.location.href);
+            this.innerHTML = '<i class="bi bi-check-lg"></i> Link Copied!';
+            setTimeout(() => this.innerHTML = '<i class="bi bi-share-fill"></i> Share', 1500);
+        }
+    } catch (error) {}
+});
+
+document.getElementById("copyLinkButton").addEventListener("click", async function () {
+    try {
+        await navigator.clipboard.writeText(window.location.href);
+        this.innerHTML = '<i class="bi bi-check-lg"></i> Link Copied!';
+        setTimeout(() => this.innerHTML = '<i class="bi bi-link-45deg"></i> Copy Link', 1500);
+    } catch (error) {
+        const temp = document.createElement("input");
+        temp.value = window.location.href;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        temp.remove();
+    }
+});
+
+updateCounters();
+</script>
+
+<script src="../assets/js/app.js"></script>
+
+</body>
+</html>

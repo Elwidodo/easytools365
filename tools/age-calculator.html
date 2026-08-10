@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Age Calculator - Calculate Your Exact Age Online | EasyTools365</title>
+<meta name="description" content="Calculate your exact age in years, months and days with the free EasyTools365 Age Calculator. See total days, weeks, months and days until your next birthday.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/age-calculator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Age Calculator | Calculate Exact Age | EasyTools365">
+<meta property="og:description" content="Calculate exact age in years, months and days, plus total months, weeks, days and next birthday.">
+<meta property="og:url" content="https://easytools365.com/tools/age-calculator.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Age Calculator | EasyTools365">
+<meta name="twitter:description" content="Calculate your exact age in years, months and days online for free.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:45px 15px 70px}
+.tool-wrapper{max-width:900px;margin:auto}
+.breadcrumb{margin-bottom:28px}
+.tool-header{text-align:center;margin-bottom:32px}
+.tool-icon{display:inline-flex;width:74px;height:74px;align-items:center;justify-content:center;margin-bottom:18px;border-radius:22px;background:rgba(37,99,235,.1);color:var(--primary);font-size:34px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:700px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.calculator-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.calculator-card{padding:30px}
+.input-label{display:block;margin-bottom:9px;font-weight:600}
+#birthDate{width:100%;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none}
+#birthDate:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.calculate-btn{width:100%;margin-top:18px;padding:15px;border:0;border-radius:12px;background:var(--primary);color:#fff;font-weight:700;font-size:16px}
+.calculate-btn:hover{opacity:.92}
+.error-message{display:none;margin-top:10px;color:#dc2626;font-size:14px}
+.result-area{display:none;margin-top:28px}
+.result-title{margin-bottom:18px;text-align:center;font-size:20px;font-weight:700}
+.main-age,.extra-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.age-box,.stat-box{padding:20px 10px;text-align:center;border:1px solid var(--border);border-radius:15px;background:var(--background)}
+.age-number{display:block;color:var(--primary);font-size:32px;font-weight:800}
+.age-label{color:var(--text-light);font-size:13px}
+.extra-stats{margin-top:15px}
+.stat-box strong{display:block;margin-bottom:4px;color:var(--primary);font-size:18px}
+.stat-box span{color:var(--text-light);font-size:12px}
+.birthday-box{margin-top:16px;padding:17px;text-align:center;border-radius:13px;background:rgba(124,58,237,.08);color:var(--text)}
+.birthday-box strong{color:var(--primary)}
+.privacy-note{margin-top:22px;padding:14px;text-align:center;border-radius:12px;background:rgba(37,99,235,.08);color:var(--text-light);font-size:13px}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:20px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+body.dark-mode #birthDate{background:#0f172a}
+body.dark-mode .tool-icon{background:#1e3a8a}
+@media(max-width:700px){
+.calculator-card,.info-card{padding:20px}
+.tool-header h1{font-size:31px}
+.main-age,.extra-stats,.related-grid{grid-template-columns:1fr}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 Age Calculator","url":"https://easytools365.com/tools/age-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free browser-based calculator for exact age in years, months and days.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the Age Calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 Age Calculator is free to use."}},
+{"@type":"Question","name":"Do I need to create an account?","acceptedAnswer":{"@type":"Answer","text":"No. You can use the calculator without registration or login."}},
+{"@type":"Question","name":"Can it calculate age in months and days?","acceptedAnswer":{"@type":"Answer","text":"Yes. The calculator provides age in years, months and days, along with additional age statistics."}},
+{"@type":"Question","name":"Can I use it on a mobile phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Age Calculator works in a modern browser on phones, tablets and computers."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/calculator.html">Calculator Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">Age Calculator</li>
+</ol>
+</nav>
+
+<header class="tool-header">
+<div class="tool-icon"><i class="bi bi-calendar-heart"></i></div>
+<h1>Age Calculator</h1>
+<p>Calculate your exact age in years, months and days instantly. You can also see total months, weeks, days and the time remaining until your next birthday.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="calculator-card">
+<label for="birthDate" class="input-label">Select Your Date of Birth</label>
+<input type="date" id="birthDate" aria-label="Date of birth">
+
+<div id="errorMessage" class="error-message">Please select a valid date of birth.</div>
+
+<button id="calculateButton" class="calculate-btn" type="button">
+<i class="bi bi-calculator"></i> Calculate Age
+</button>
+
+<div id="resultArea" class="result-area">
+<div class="result-title">Your Age</div>
+
+<div class="main-age">
+<div class="age-box"><span id="years" class="age-number">0</span><span class="age-label">Years</span></div>
+<div class="age-box"><span id="months" class="age-number">0</span><span class="age-label">Months</span></div>
+<div class="age-box"><span id="days" class="age-number">0</span><span class="age-label">Days</span></div>
+</div>
+
+<div class="extra-stats">
+<div class="stat-box"><strong id="totalMonths">0</strong><span>Total Months</span></div>
+<div class="stat-box"><strong id="totalWeeks">0</strong><span>Total Weeks</span></div>
+<div class="stat-box"><strong id="totalDays">0</strong><span>Total Days</span></div>
+</div>
+
+<div class="birthday-box">
+<i class="bi bi-gift"></i>
+Next birthday: <strong id="nextBirthday">-</strong>
+</div>
+</div>
+
+<div class="privacy-note">
+<i class="bi bi-shield-check"></i>
+Your date of birth is processed locally in your browser and is not uploaded to our server.
+</div>
+</section>
+
+<section class="info-card">
+<h2>What Is an Age Calculator?</h2>
+<p>An age calculator is an online tool that calculates your age from your date of birth. Instead of manually counting years, months and days, you can get an instant result in your browser.</p>
+<p>The EasyTools365 Age Calculator also provides total months, total weeks, total days and the number of days remaining until your next birthday.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Use the Age Calculator</h2>
+<ol>
+<li>Select or enter your date of birth.</li>
+<li>Click <strong>Calculate Age</strong>.</li>
+<li>Your age will appear in years, months and days.</li>
+<li>Review the additional age statistics below the main result.</li>
+</ol>
+<p class="mb-0">No registration or installation is required.</p>
+</section>
+
+<section class="info-card">
+<h2>Why Use an Online Age Calculator?</h2>
+<p>Calculating an exact age manually can be confusing because months have different numbers of days and leap years affect date calculations. An online calculator makes this process faster and easier.</p>
+<ul class="mb-0">
+<li>Calculate exact age instantly.</li>
+<li>See years, months and days.</li>
+<li>View total months, weeks and days.</li>
+<li>See the time remaining until your next birthday.</li>
+<li>Use the tool for free without an account.</li>
+</ul>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the Age Calculator free?</h3>
+<p>Yes. The EasyTools365 Age Calculator is free to use.</p>
+
+<h3>Do I need to create an account?</h3>
+<p>No. You can use the calculator without registration or login.</p>
+
+<h3>Can it calculate age in months and days?</h3>
+<p>Yes. The calculator provides age in years, months and days, along with additional age statistics.</p>
+
+<h3>Can I use it on a mobile phone?</h3>
+<p>Yes. The Age Calculator works through a modern web browser on phones, tablets and computers.</p>
+</section>
+
+<section class="info-card">
+<h2>Related Calculator Tools</h2>
+<p>Try more free calculators from EasyTools365:</p>
+<div class="related-grid">
+<a href="bmi-calculator.html" class="btn btn-outline-primary">BMI Calculator</a>
+<a href="percentage-calculator.html" class="btn btn-outline-primary">Percentage Calculator</a>
+<a href="discount-calculator.html" class="btn btn-outline-primary">Discount Calculator</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 calculators, text tools, image tools, PDF tools and developer utilities.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+
+        const birthDate =
+            document.getElementById("birthDate");
+
+        const calculateButton =
+            document.getElementById("calculateButton");
+
+        const resultArea =
+            document.getElementById("resultArea");
+
+        const errorMessage =
+            document.getElementById("errorMessage");
+
+        const yearsOutput =
+            document.getElementById("years");
+
+        const monthsOutput =
+            document.getElementById("months");
+
+        const daysOutput =
+            document.getElementById("days");
+
+        const totalMonthsOutput =
+            document.getElementById("totalMonths");
+
+        const totalWeeksOutput =
+            document.getElementById("totalWeeks");
+
+        const totalDaysOutput =
+            document.getElementById("totalDays");
+
+        const nextBirthdayOutput =
+            document.getElementById("nextBirthday");
+
+
+        /*
+        ==========================
+        TODAY AS LOCAL DATE
+        ==========================
+        */
+
+        function getTodayLocal() {
+
+            const now = new Date();
+
+            return new Date(
+                now.getFullYear(),
+                now.getMonth(),
+                now.getDate()
+            );
+
+        }
+
+
+        /*
+        ==========================
+        CREATE LOCAL DATE
+        ==========================
+        */
+
+        function createLocalDate(dateString) {
+
+            const parts =
+                dateString.split("-");
+
+            return new Date(
+                Number(parts[0]),
+                Number(parts[1]) - 1,
+                Number(parts[2])
+            );
+
+        }
+
+
+        /*
+        ==========================
+        EXACT AGE
+        ==========================
+        */
+
+        function getExactAge(birth, today) {
+
+            let years =
+                today.getFullYear() -
+                birth.getFullYear();
+
+            let months =
+                today.getMonth() -
+                birth.getMonth();
+
+            let days =
+                today.getDate() -
+                birth.getDate();
+
+
+            if (days < 0) {
+
+                months--;
+
+                const previousMonth =
+                    new Date(
+                        today.getFullYear(),
+                        today.getMonth(),
+                        0
+                    );
+
+                days +=
+                    previousMonth.getDate();
+
+            }
+
+
+            if (months < 0) {
+
+                years--;
+                months += 12;
+
+            }
+
+
+            return {
+                years,
+                months,
+                days
+            };
+
+        }
+
+
+        /*
+        ==========================
+        NEXT BIRTHDAY
+        ==========================
+        */
+
+        function getNextBirthday(birth, today) {
+
+            let birthday =
+                new Date(
+                    today.getFullYear(),
+                    birth.getMonth(),
+                    birth.getDate()
+                );
+
+
+            if (birthday < today) {
+
+                birthday =
+                    new Date(
+                        today.getFullYear() + 1,
+                        birth.getMonth(),
+                        birth.getDate()
+                    );
+
+            }
+
+
+            const difference =
+                birthday.getTime() -
+                today.getTime();
+
+
+            return Math.ceil(
+                difference /
+                (1000 * 60 * 60 * 24)
+            );
+
+        }
+
+
+        /*
+        ==========================
+        CALCULATE
+        ==========================
+        */
+
+        function calculateAge() {
+
+            if (!birthDate.value) {
+
+                errorMessage.style.display =
+                    "block";
+
+                resultArea.style.display =
+                    "none";
+
+                return;
+
+            }
+
+
+            const birth =
+                createLocalDate(
+                    birthDate.value
+                );
+
+            const today =
+                getTodayLocal();
+
+
+            if (
+                isNaN(birth.getTime()) ||
+                birth > today
+            ) {
+
+                errorMessage.textContent =
+                    "Date of birth cannot be in the future.";
+
+                errorMessage.style.display =
+                    "block";
+
+                resultArea.style.display =
+                    "none";
+
+                return;
+
+            }
+
+
+            errorMessage.style.display =
+                "none";
+
+
+            const age =
+                getExactAge(
+                    birth,
+                    today
+                );
+
+
+            yearsOutput.textContent =
+                age.years;
+
+            monthsOutput.textContent =
+                age.months;
+
+            daysOutput.textContent =
+                age.days;
+
+
+            /*
+            TOTAL DAYS
+            */
+
+            const difference =
+                today.getTime() -
+                birth.getTime();
+
+
+            const totalDays =
+                Math.floor(
+                    difference /
+                    (1000 * 60 * 60 * 24)
+                );
+
+
+            /*
+            TOTAL WEEKS
+            */
+
+            const totalWeeks =
+                Math.floor(
+                    totalDays / 7
+                );
+
+
+            /*
+            TOTAL MONTHS
+            */
+
+            const totalMonths =
+                age.years * 12 +
+                age.months;
+
+
+            totalDaysOutput.textContent =
+                totalDays.toLocaleString();
+
+            totalWeeksOutput.textContent =
+                totalWeeks.toLocaleString();
+
+            totalMonthsOutput.textContent =
+                totalMonths.toLocaleString();
+
+
+            /*
+            NEXT BIRTHDAY
+            */
+
+            const birthdayDays =
+                getNextBirthday(
+                    birth,
+                    today
+                );
+
+
+            if (birthdayDays === 0) {
+
+                nextBirthdayOutput.textContent =
+                    "Today 🎉";
+
+            } else if (birthdayDays === 1) {
+
+                nextBirthdayOutput.textContent =
+                    "Tomorrow 🎉";
+
+            } else {
+
+                nextBirthdayOutput.textContent =
+                    birthdayDays +
+                    " days";
+
+            }
+
+
+            resultArea.style.display =
+                "block";
+
+        }
+
+
+        /*
+        ==========================
+        EVENTS
+        ==========================
+        */
+
+        calculateButton.addEventListener(
+            "click",
+            calculateAge
+        );
+
+
+        birthDate.addEventListener(
+            "change",
+            function() {
+
+                errorMessage.style.display =
+                    "none";
+
+            }
+        );
+
+
+        /*
+        Prevent future dates
+        */
+
+        const todayForInput =
+            getTodayLocal();
+
+        const year =
+            todayForInput.getFullYear();
+
+        const month =
+            String(
+                todayForInput.getMonth() + 1
+            ).padStart(2, "0");
+
+        const day =
+            String(
+                todayForInput.getDate()
+            ).padStart(2, "0");
+
+
+        birthDate.max =
+            `${year}-${month}-${day}`;
+
+    </script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

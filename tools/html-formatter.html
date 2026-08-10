@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HTML Formatter & Beautifier - Format HTML Online | EasyTools365</title>
+<meta name="description" content="Free online HTML Formatter and Beautifier. Format messy HTML code with consistent indentation, preview the formatted result and copy clean HTML directly in your browser.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/html-formatter.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="HTML Formatter & Beautifier | EasyTools365">
+<meta property="og:description" content="Format and beautify messy HTML code online with consistent indentation. Free, fast and browser-based.">
+<meta property="og:url" content="https://easytools365.com/tools/html-formatter.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML Formatter & Beautifier | EasyTools365">
+<meta name="twitter:description" content="Format messy HTML into a cleaner, more readable structure directly in your browser.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:45px 15px 70px}
+.tool-wrapper{max-width:1050px;margin:auto}
+.breadcrumb{margin-bottom:25px}
+.back-link{display:inline-flex;align-items:center;gap:8px;margin-bottom:25px;color:var(--primary);text-decoration:none;font-weight:600}
+.tool-header{text-align:center;margin-bottom:32px}
+.tool-icon-large{width:76px;height:76px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;border-radius:22px;background:rgba(37,99,235,.10);color:var(--primary);font-size:35px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:760px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.tool-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.tool-card{padding:30px}
+.editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.editor-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.editor-header label{font-size:14px;font-weight:700}
+.small-btn{padding:7px 10px;border:1px solid var(--border);border-radius:8px;background:var(--background);color:var(--text);font-size:12px;font-weight:600}
+.small-btn:hover{color:var(--primary);border-color:var(--primary)}
+.editor{width:100%;min-height:400px;padding:15px;resize:vertical;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.6}
+.editor:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.editor-meta{display:flex;justify-content:space-between;gap:10px;margin-top:7px;color:var(--text-light);font-size:11px}
+.button-row{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin-top:18px}
+.primary-btn,.secondary-btn{padding:13px;border-radius:11px;font-weight:700}
+.primary-btn{border:none;background:var(--primary);color:#fff}
+.primary-btn:hover{opacity:.92}
+.secondary-btn{border:1px solid var(--border);background:var(--background);color:var(--text)}
+.secondary-btn:hover{color:var(--primary);border-color:var(--primary)}
+.privacy-note{margin-top:20px;padding:14px;border-radius:12px;background:rgba(22,163,74,.07);color:var(--text-light);text-align:center;font-size:13px;line-height:1.6}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:22px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+body.dark-mode .editor,body.dark-mode .small-btn,body.dark-mode .secondary-btn{background:#0f172a}
+body.dark-mode .tool-icon-large{background:#1e3a8a}
+@media(max-width:750px){
+.editor-grid,.button-row,.related-grid{grid-template-columns:1fr}
+.tool-card,.info-card{padding:20px}
+.tool-header h1{font-size:31px}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 HTML Formatter","url":"https://easytools365.com/tools/html-formatter.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","description":"Free browser-based HTML formatter and beautifier for organizing HTML code with readable indentation.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Format HTML Code","description":"Format and beautify HTML code using EasyTools365.","step":[
+{"@type":"HowToStep","position":1,"name":"Paste HTML","text":"Paste your HTML source code into the HTML Input editor."},
+{"@type":"HowToStep","position":2,"name":"Format the code","text":"Click Format HTML to organize the markup with indentation."},
+{"@type":"HowToStep","position":3,"name":"Review the output","text":"Check the formatted HTML in the output editor."},
+{"@type":"HowToStep","position":4,"name":"Copy the result","text":"Click Copy to copy the formatted HTML to your clipboard."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the HTML Formatter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 HTML Formatter is free to use online."}},
+{"@type":"Question","name":"What does an HTML Formatter do?","acceptedAnswer":{"@type":"Answer","text":"It reorganizes HTML code into a more readable structure using consistent formatting and indentation."}},
+{"@type":"Question","name":"Does formatting change my HTML content?","acceptedAnswer":{"@type":"Answer","text":"Formatting is intended to improve the structure and readability of the code without changing its intended content, although this simple browser formatter should still be reviewed for complex markup."}},
+{"@type":"Question","name":"Do I need to install anything?","acceptedAnswer":{"@type":"Answer","text":"No. The EasyTools365 HTML Formatter works directly in your web browser."}},
+{"@type":"Question","name":"Is my HTML uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"The formatter runs in the browser, so your HTML does not need to be uploaded to the EasyTools365 server."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/developer-tools.html">Developer Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">HTML Formatter</li>
+</ol>
+</nav>
+
+<a href="../categories/developer-tools.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to Developer Tools</a>
+
+<header class="tool-header">
+<div class="tool-icon-large"><i class="bi bi-filetype-html"></i></div>
+<h1>HTML Formatter</h1>
+<p>Format and beautify messy HTML code into a cleaner, more readable structure directly in your browser.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="tool-card">
+
+<div class="editor-grid">
+
+<div>
+<div class="editor-header">
+<label for="htmlInput">HTML Input</label>
+<button id="sampleButton" class="small-btn" type="button"><i class="bi bi-file-earmark-code"></i> Load Sample</button>
+</div>
+<textarea id="htmlInput" class="editor" spellcheck="false" placeholder="Paste messy HTML here..."></textarea>
+<div class="editor-meta"><span>Input</span><span id="inputCount">0 characters</span></div>
+</div>
+
+<div>
+<div class="editor-header">
+<label for="htmlOutput">Formatted HTML</label>
+<button id="copyButton" class="small-btn" type="button"><i class="bi bi-copy"></i> Copy</button>
+</div>
+<textarea id="htmlOutput" class="editor" readonly spellcheck="false" placeholder="Formatted HTML will appear here..."></textarea>
+<div class="editor-meta"><span>Output</span><span id="outputCount">0 characters</span></div>
+</div>
+
+</div>
+
+<div class="button-row">
+<button id="formatButton" class="primary-btn" type="button"><i class="bi bi-text-indent-left"></i> Format HTML</button>
+<button id="clearButton" class="secondary-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+
+<div class="privacy-note">
+<i class="bi bi-shield-check"></i>
+Your HTML code is processed locally in your browser and does not need to be uploaded.
+</div>
+
+</section>
+
+<section class="info-card">
+<h2>What Is an HTML Formatter?</h2>
+<p>An HTML Formatter is an online developer tool that helps organize HTML code into a cleaner and more readable structure. Proper indentation can make nested elements easier to inspect, edit, debug and maintain.</p>
+<p>The EasyTools365 HTML Formatter works directly in your browser and provides a quick way to format HTML without installing additional software.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Use the HTML Formatter</h2>
+<ol>
+<li>Paste your HTML code into the <strong>HTML Input</strong> editor.</li>
+<li>Click <strong>Format HTML</strong>.</li>
+<li>Review the formatted code in the output editor.</li>
+<li>Click <strong>Copy</strong> to copy the formatted HTML.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>Why Format HTML Code?</h2>
+<p>Formatting HTML improves readability by organizing elements, indentation and nested structures. This is especially helpful when working with long HTML documents or code that has been compressed into a single line.</p>
+</section>
+
+<section class="info-card">
+<h2>HTML Formatting vs HTML Minification</h2>
+<p>Formatting and minification have opposite goals. An HTML formatter adds readable structure and indentation for people working with source code, while an HTML minifier removes unnecessary whitespace and formatting to reduce file size for delivery.</p>
+</section>
+
+<section class="info-card">
+<h2>Does Formatting Change the HTML?</h2>
+<p>The formatter is intended to change the presentation of the source code rather than its intended markup structure. However, this is a lightweight browser formatter rather than a full HTML parser, so complex or unusual markup should always be reviewed after formatting.</p>
+</section>
+
+<section class="info-card">
+<h2>Local Browser Processing</h2>
+<p>The formatting operation runs in JavaScript in your browser. Your HTML input does not need to be sent to the EasyTools365 server, which is useful when working with code you prefer to keep in your browser session.</p>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the HTML Formatter free?</h3>
+<p>Yes. The EasyTools365 HTML Formatter is free to use online.</p>
+
+<h3>What does an HTML Formatter do?</h3>
+<p>It reorganizes HTML code into a more readable structure using consistent formatting and indentation.</p>
+
+<h3>Does formatting change my HTML content?</h3>
+<p>Formatting is intended to improve the structure and readability of the code. Because this tool uses a lightweight formatting approach, review complex HTML after formatting.</p>
+
+<h3>Do I need to install anything?</h3>
+<p>No. The EasyTools365 HTML Formatter works directly in your web browser.</p>
+
+<h3>Is my HTML uploaded to a server?</h3>
+<p>The formatter runs in the browser, so your HTML does not need to be uploaded to the EasyTools365 server.</p>
+</section>
+
+<section class="info-card">
+<h2>Related Developer Tools</h2>
+<div class="related-grid">
+<a href="html-minifier.html" class="btn btn-outline-primary">HTML Minifier</a>
+<a href="css-minifier.html" class="btn btn-outline-primary">CSS Minifier</a>
+<a href="base64-encoder-decoder.html" class="btn btn-outline-primary">Base64 Encoder &amp; Decoder</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for AI, images, PDF, text, calculators and developer tasks.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+
+const htmlInput =
+    document.getElementById("htmlInput");
+
+const htmlOutput =
+    document.getElementById("htmlOutput");
+
+
+function loadSample() {
+
+    htmlInput.value = [
+        "<!DOCTYPE html>",
+        "<html><head><title>EasyTools365</title></head><body><div class=\"container\"><h1>Hello World</h1><p>This is sample HTML.</p></div></body></html>"
+    ].join("\n");
+
+}
+
+
+document.getElementById(
+    "sampleButton"
+).addEventListener(
+    "click",
+    loadSample
+);
+function formatHTML() {
+
+    const source =
+        htmlInput.value.trim();
+
+    if (source === "") {
+        htmlOutput.value =
+            "Please enter HTML code.";
+        return;
+    }
+
+    let formatted = "";
+    let indent = 0;
+
+    const voidTags = [
+        "area",
+        "base",
+        "br",
+        "col",
+        "embed",
+        "hr",
+        "img",
+        "input",
+        "link",
+        "meta",
+        "param",
+        "source",
+        "track",
+        "wbr"
+    ];
+
+    const tokens =
+        source.match(
+            /<[^>]+>|[^<]+/g
+        ) || [];
+
+    tokens.forEach(
+        function(token) {
+
+            token = token.trim();
+
+            if (token === "") {
+                return;
+            }
+
+            const closing =
+                /^<\//.test(token);
+
+            const opening =
+                /^<[A-Za-z]/.test(token);
+
+            const tagMatch =
+                token.match(
+                    /^<\/?([A-Za-z0-9-]+)/
+                );
+
+            const tagName =
+                tagMatch
+                    ? tagMatch[1].toLowerCase()
+                    : "";
+
+            const selfClosing =
+                /\/>$/.test(token) ||
+                voidTags.includes(tagName);
+
+            if (closing) {
+                indent =
+                    Math.max(
+                        0,
+                        indent - 1
+                    );
+            }
+
+            formatted +=
+                "    ".repeat(indent) +
+                token +
+                "\n";
+
+            if (
+                opening &&
+                !closing &&
+                !selfClosing &&
+                !/^<!/.test(token)
+            ) {
+                indent++;
+            }
+
+        }
+    );
+
+    htmlOutput.value =
+        formatted.trim();
+
+}
+
+document.getElementById(
+    "formatButton"
+).addEventListener(
+    "click",
+    formatHTML
+);
+document.getElementById(
+    "clearButton"
+).addEventListener(
+    "click",
+    function() {
+
+        htmlInput.value = "";
+        htmlOutput.value = "";
+
+        htmlInput.focus();
+
+    }
+);
+
+document.getElementById(
+    "copyButton"
+).addEventListener(
+    "click",
+    async function() {
+
+        const text =
+            htmlOutput.value;
+
+        if (text.trim() === "") {
+            return;
+        }
+
+        try {
+
+            await navigator.clipboard.writeText(
+                text
+            );
+
+            this.innerHTML =
+                '<i class="bi bi-check-lg"></i> Copied!';
+
+            const button = this;
+
+            setTimeout(
+                function() {
+
+                    button.innerHTML =
+                        '<i class="bi bi-copy"></i> Copy';
+
+                },
+                1500
+            );
+
+        }
+
+        catch (error) {
+
+            htmlOutput.select();
+
+            document.execCommand("copy");
+
+        }
+
+    }
+);
+</script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

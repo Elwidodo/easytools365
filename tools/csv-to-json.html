@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N002NWTJ23');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSV to JSON Converter - EasyTools365</title>
+
+    <meta name="description"
+          content="Convert CSV data to JSON instantly in your browser with EasyTools365.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/style.css">
+
+    <style>
+        .tool-page {
+            min-height: 100vh;
+            padding: 60px 15px 80px;
+        }
+
+        .tool-wrapper {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .top-nav {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 30px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .tool-header {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .tool-icon-large {
+            width: 75px;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            border-radius: 22px;
+            background: rgba(37, 99, 235, .10);
+            color: var(--primary);
+            font-size: 34px;
+        }
+
+        .tool-header h1 {
+            font-size: 38px;
+            font-weight: 800;
+        }
+
+        .tool-header p {
+            max-width: 650px;
+            margin: auto;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .tool-card {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .editor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .editor-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .editor-header label {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .small-btn {
+            padding: 7px 10px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--background);
+            color: var(--text);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .editor {
+            width: 100%;
+            min-height: 330px;
+            padding: 15px;
+            resize: vertical;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--background);
+            color: var(--text);
+            outline: none;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .editor:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, .10);
+        }
+
+        .settings {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .setting-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .select-input {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--background);
+            color: var(--text);
+        }
+
+        .button-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 13px;
+            border-radius: 11px;
+            font-weight: 700;
+        }
+
+        .primary-btn {
+            border: none;
+            background: var(--primary);
+            color: white;
+        }
+
+        .secondary-btn {
+            border: 1px solid var(--border);
+            background: var(--background);
+            color: var(--text);
+        }
+
+        .error-box,
+        .status-box {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .error-box {
+            background: rgba(220, 38, 38, .10);
+            color: #dc2626;
+        }
+
+        .status-box {
+            background: rgba(22, 163, 74, .08);
+            color: #16a34a;
+        }
+
+        .summary {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .summary-item {
+            padding: 14px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--background);
+            text-align: center;
+        }
+
+        .summary-item span {
+            display: block;
+            color: var(--text-light);
+            font-size: 11px;
+        }
+
+        .summary-item strong {
+            font-size: 17px;
+        }
+
+        .privacy-note {
+            margin-top: 22px;
+            padding: 14px;
+            border-radius: 12px;
+            background: rgba(22, 163, 74, .07);
+            color: var(--text-light);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media(max-width: 750px) {
+            .editor-grid,
+            .settings,
+            .button-row,
+            .summary {
+                grid-template-columns: 1fr;
+            }
+
+            .tool-card {
+                padding: 20px;
+            }
+
+            .tool-header h1 {
+                font-size: 31px;
+            }
+        }
+    </style>
+    <link rel="canonical" href="https://easytools365.com/tools/csv-to-json.html">
+</head>
+
+<body>
+
+<nav class="navbar top-nav">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold"
+           href="../index.html">
+            <i class="bi bi-tools"></i>
+            EasyTools365
+        </a>
+
+        <button id="darkModeButton"
+                class="btn btn-outline-primary"
+                type="button">
+            <i class="bi bi-moon-stars"></i>
+        </button>
+
+    </div>
+</nav>
+
+
+<main class="tool-page">
+
+<div class="tool-wrapper">
+
+    <a href="../categories/developer-tools.html"
+       class="back-link">
+        <i class="bi bi-arrow-left"></i>
+        Back to Developer Tools
+    </a>
+
+    <div class="tool-header">
+
+        <div class="tool-icon-large">
+            <i class="bi bi-braces"></i>
+        </div>
+
+        <h1>CSV to JSON Converter</h1>
+
+        <p>
+            Convert CSV data into formatted JSON instantly
+            and download the result.
+        </p>
+
+    </div>
+
+
+    <div class="tool-card">
+
+        <div class="editor-grid">
+
+            <div>
+
+                <div class="editor-header">
+                    <label for="csvInput">CSV Input</label>
+
+                    <button id="sampleButton"
+                            class="small-btn"
+                            type="button">
+                        Load Sample
+                    </button>
+                </div>
+
+                <textarea id="csvInput"
+                          class="editor"
+                          spellcheck="false"
+                          placeholder="name,age,city&#10;John,30,London"></textarea>
+
+            </div>
+
+
+            <div>
+
+                <div class="editor-header">
+                    <label for="jsonOutput">JSON Output</label>
+
+                    <button id="copyButton"
+                            class="small-btn"
+                            type="button">
+                        <i class="bi bi-copy"></i>
+                        Copy
+                    </button>
+                </div>
+
+                <textarea id="jsonOutput"
+                          class="editor"
+                          readonly
+                          placeholder="JSON output will appear here..."></textarea>
+
+            </div>
+
+        </div>
+
+
+        <div class="settings">
+
+            <div class="setting-group">
+
+                <label for="delimiter">
+                    Delimiter
+                </label>
+
+                <select id="delimiter"
+                        class="select-input">
+                    <option value=",">Comma (,)</option>
+                    <option value=";">Semicolon (;)</option>
+                    <option value="tab">Tab</option>
+                    <option value="|">Pipe (|)</option>
+                </select>
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <label for="indent">
+                    JSON Indentation
+                </label>
+
+                <select id="indent"
+                        class="select-input">
+                    <option value="2">2 Spaces</option>
+                    <option value="4">4 Spaces</option>
+                    <option value="0">Compact</option>
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="button-row">
+
+            <button id="convertButton"
+                    class="primary-btn"
+                    type="button">
+                <i class="bi bi-arrow-left-right"></i>
+                Convert to JSON
+            </button>
+
+            <button id="clearButton"
+                    class="secondary-btn"
+                    type="button">
+                <i class="bi bi-trash"></i>
+                Clear
+            </button>
+
+        </div>
+
+
+        <div id="errorBox"
+             class="error-box"></div>
+
+
+        <div id="summary"
+             class="summary">
+
+            <div class="summary-item">
+                <span>Rows</span>
+                <strong id="rowCount">0</strong>
+            </div>
+
+            <div class="summary-item">
+                <span>Columns</span>
+                <strong id="columnCount">0</strong>
+            </div>
+
+        </div>
+
+
+        <button id="downloadButton"
+                class="primary-btn"
+                type="button"
+                style="display:none; width:100%; margin-top:15px;">
+            <i class="bi bi-download"></i>
+            Download JSON
+        </button>
+
+
+        <div id="statusBox"
+             class="status-box"></div>
+
+
+        <div class="privacy-note">
+            <i class="bi bi-shield-check"></i>
+            Your CSV data is processed locally in your browser.
+        </div>
+
+    </div>
+
+</div>
+
+<section class="seo-content">
+<h2>CSV to JSON Converter</h2>
+<p>CSV to JSON Converter helps transform comma-separated data into JSON format. CSV is commonly used by spreadsheets and data exports, while JSON is widely used by websites, applications, APIs, and software development projects. Converting between these formats can make exported tabular data easier to use in programming workflows.</p>
+
+<h3>How to Convert CSV to JSON</h3>
+<p>Paste or enter CSV data into the input area and run the converter. The tool reads the tabular information and generates a JSON representation based on the supplied data. Review the output before copying it into your application, project, or development environment.</p>
+
+<h3>When Is CSV to JSON Conversion Useful?</h3>
+<p>The conversion is helpful when moving spreadsheet data into web applications, preparing sample API data, processing exported records, creating development fixtures, or transforming simple datasets into a structured format that is easier to work with in JavaScript and other programming languages.</p>
+
+<h3>Check Your Source Data</h3>
+<p>For the best result, make sure the CSV input uses a consistent structure and contains appropriate headers when required by the tool. Complex CSV files may contain quoted values, commas inside fields, or other special cases, so always verify the generated JSON before using it in an important workflow.</p>
+</section>
+</main>
+
+
+<script>
+
+const csvInput =
+    document.getElementById("csvInput");
+
+const jsonOutput =
+    document.getElementById("jsonOutput");
+
+const delimiter =
+    document.getElementById("delimiter");
+
+const indent =
+    document.getElementById("indent");
+
+const errorBox =
+    document.getElementById("errorBox");
+
+const summary =
+    document.getElementById("summary");
+
+const downloadButton =
+    document.getElementById("downloadButton");
+
+const statusBox =
+    document.getElementById("statusBox");
+
+
+function getDelimiter() {
+
+    return delimiter.value === "tab"
+        ? "\t"
+        : delimiter.value;
+
+}
+
+
+/*
+    CSV parser that supports:
+    - quoted fields
+    - commas inside quotes
+    - escaped double quotes
+    - line breaks inside quoted fields
+*/
+
+function parseCSV(text, separator) {
+
+    const rows = [];
+
+    let row = [];
+    let field = "";
+    let insideQuotes = false;
+
+
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
+
+        const char =
+            text[i];
+
+        const next =
+            text[i + 1];
+
+
+        if (char === '"') {
+
+            if (
+                insideQuotes &&
+                next === '"'
+            ) {
+
+                field += '"';
+                i++;
+
+            }
+
+            else {
+
+                insideQuotes =
+                    !insideQuotes;
+
+            }
+
+        }
+
+        else if (
+            char === separator &&
+            !insideQuotes
+        ) {
+
+            row.push(field);
+            field = "";
+
+        }
+
+        else if (
+            (char === "\n" ||
+             char === "\r") &&
+            !insideQuotes
+        ) {
+
+            if (
+                char === "\r" &&
+                next === "\n"
+            ) {
+                i++;
+            }
+
+
+            row.push(field);
+            field = "";
+
+
+            if (
+                row.some(
+                    value =>
+                        value.trim() !== ""
+                )
+            ) {
+
+                rows.push(row);
+
+            }
+
+
+            row = [];
+
+        }
+
+        else {
+
+            field += char;
+
+        }
+
+    }
+
+
+    if (insideQuotes) {
+
+        throw new Error(
+            "Unclosed quoted field."
+        );
+
+    }
+
+
+    row.push(field);
+
+
+    if (
+        row.some(
+            value =>
+                value.trim() !== ""
+        )
+    ) {
+
+        rows.push(row);
+
+    }
+
+
+    return rows;
+
+}
+
+
+function convertToJSON() {
+
+    hideError();
+
+
+    const raw =
+        csvInput.value.trim();
+
+
+    if (raw === "") {
+
+        showError(
+            "Please enter CSV data."
+        );
+
+        return;
+
+    }
+
+
+    let rows;
+
+
+    try {
+
+        rows =
+            parseCSV(
+                raw,
+                getDelimiter()
+            );
+
+    }
+
+    catch (error) {
+
+        showError(
+            "Invalid CSV: " +
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    if (rows.length < 2) {
+
+        showError(
+            "CSV must contain a header row and at least one data row."
+        );
+
+        return;
+
+    }
+
+
+    const headers =
+        rows[0].map(
+            function(header) {
+
+                return header.trim();
+
+            }
+        );
+
+
+    if (
+        headers.some(
+            header =>
+                header === ""
+        )
+    ) {
+
+        showError(
+            "CSV contains an empty column name."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        new Set(headers).size !==
+        headers.length
+    ) {
+
+        showError(
+            "CSV contains duplicate column names."
+        );
+
+        return;
+
+    }
+
+
+    const data = [];
+
+
+    for (
+        let i = 1;
+        i < rows.length;
+        i++
+    ) {
+
+        const currentRow =
+            rows[i];
+
+
+        if (
+            currentRow.length >
+            headers.length
+        ) {
+
+            showError(
+                "Row " +
+                (i + 1) +
+                " contains more values than the header."
+            );
+
+            return;
+
+        }
+
+
+        const object = {};
+
+
+        headers.forEach(
+            function(header, index) {
+
+                object[header] =
+                    currentRow[index] !== undefined
+                        ? currentRow[index]
+                        : "";
+
+            }
+        );
+
+
+        data.push(object);
+
+    }
+
+
+    const spaces =
+        Number(indent.value);
+
+
+    jsonOutput.value =
+        JSON.stringify(
+            data,
+            null,
+            spaces
+        );
+
+
+    document.getElementById(
+        "rowCount"
+    ).textContent =
+        data.length;
+
+
+    document.getElementById(
+        "columnCount"
+    ).textContent =
+        headers.length;
+
+
+    summary.style.display =
+        "grid";
+
+    downloadButton.style.display =
+        "block";
+
+}
+
+
+function showError(message) {
+
+    errorBox.textContent =
+        message;
+
+    errorBox.style.display =
+        "block";
+
+    jsonOutput.value =
+        "";
+
+    summary.style.display =
+        "none";
+
+    downloadButton.style.display =
+        "none";
+
+}
+
+
+function hideError() {
+
+    errorBox.style.display =
+        "none";
+
+}
+
+
+function loadSample() {
+
+    csvInput.value =
+`name,age,city
+John Doe,30,London
+Sarah Smith,27,New York
+Alex Johnson,35,Tokyo`;
+
+    delimiter.value = ",";
+
+}
+
+
+function clearTool() {
+
+    csvInput.value = "";
+    jsonOutput.value = "";
+
+    delimiter.value = ",";
+    indent.value = "2";
+
+    errorBox.style.display =
+        "none";
+
+    summary.style.display =
+        "none";
+
+    downloadButton.style.display =
+        "none";
+
+    statusBox.style.display =
+        "none";
+
+    csvInput.focus();
+
+}
+
+
+async function copyJSON() {
+
+    const value =
+        jsonOutput.value;
+
+
+    if (value === "") {
+
+        showStatus(
+            "Convert CSV first."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        await navigator.clipboard.writeText(
+            value
+        );
+
+    }
+
+    catch (error) {
+
+        jsonOutput.select();
+
+        document.execCommand(
+            "copy"
+        );
+
+    }
+
+
+    showStatus(
+        "JSON copied to clipboard!"
+    );
+
+}
+
+
+function downloadJSON() {
+
+    if (
+        jsonOutput.value === ""
+    ) {
+        return;
+    }
+
+
+    const blob =
+        new Blob(
+            [jsonOutput.value],
+            {
+                type:
+                    "application/json;charset=utf-8"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href =
+        url;
+
+    link.download =
+        "converted-data.json";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+    link.remove();
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+function showStatus(message) {
+
+    statusBox.textContent =
+        message;
+
+    statusBox.style.display =
+        "block";
+
+
+    clearTimeout(
+        showStatus.timer
+    );
+
+
+    showStatus.timer =
+        setTimeout(
+            function() {
+
+                statusBox.style.display =
+                    "none";
+
+            },
+            2000
+        );
+
+}
+
+
+document.getElementById(
+    "convertButton"
+).addEventListener(
+    "click",
+    convertToJSON
+);
+
+
+document.getElementById(
+    "clearButton"
+).addEventListener(
+    "click",
+    clearTool
+);
+
+
+document.getElementById(
+    "sampleButton"
+).addEventListener(
+    "click",
+    loadSample
+);
+
+
+document.getElementById(
+    "copyButton"
+).addEventListener(
+    "click",
+    copyJSON
+);
+
+
+downloadButton.addEventListener(
+    "click",
+    downloadJSON
+);
+
+
+csvInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter" &&
+            (event.ctrlKey ||
+             event.metaKey)
+        ) {
+
+            convertToJSON();
+
+        }
+
+    }
+);
+
+</script>
+
+
+<script src="../assets/js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Image Prompt Generator - Free Prompt Builder | EasyTools365</title>
+<meta name="description" content="Free AI Image Prompt Generator for creating detailed prompts for DALL-E, Midjourney, Stable Diffusion, Leonardo AI and other image generators.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/ai-image-prompt-generator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Image Prompt Generator | EasyTools365">
+<meta property="og:description" content="Turn a simple image idea into a detailed AI image prompt with style, composition, lighting, mood, aspect ratio and negative prompt options.">
+<meta property="og:url" content="https://easytools365.com/tools/ai-image-prompt-generator.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Image Prompt Generator | EasyTools365">
+<meta name="twitter:description" content="Create detailed AI image prompts directly in your browser for free.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:45px 15px 70px}
+.tool-wrapper{max-width:1000px;margin:auto}
+.breadcrumb{margin-bottom:28px}
+.back-home{display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-weight:600;text-decoration:none;margin-bottom:25px}
+.tool-header{margin-bottom:32px;text-align:center}
+.tool-icon-large{display:inline-flex;width:74px;height:74px;align-items:center;justify-content:center;margin-bottom:18px;border-radius:22px;background:rgba(124,58,237,.1);color:#7c3aed;font-size:34px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:760px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.generator-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.generator-card{padding:30px}
+.field-group{margin-bottom:20px}
+.field-group label{display:block;margin-bottom:8px;font-weight:600}
+.field-control{width:100%;padding:13px 15px;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none}
+.field-control:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+textarea.field-control{min-height:125px;resize:vertical}
+.form-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.form-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.generate-btn{width:100%;padding:15px;border:0;border-radius:12px;background:var(--primary);color:#fff;font-size:16px;font-weight:700}
+.generate-btn:hover{opacity:.92}
+.result-area{display:none;margin-top:30px}
+.result-header{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:15px}
+.result-header h2{margin:0;font-size:20px;font-weight:700}
+.copy-btn,.action-btn{padding:10px 14px;border:1px solid var(--border);border-radius:10px;background:var(--background);color:var(--text);font-weight:600}
+.prompt-output{width:100%;min-height:500px;padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--background);color:var(--text);line-height:1.75;resize:vertical;outline:none}
+.result-stats{display:flex;justify-content:space-between;gap:15px;margin-top:8px;color:var(--text-light);font-size:12px}
+.bottom-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.info-note{margin-top:24px;padding:15px;border-radius:12px;background:rgba(124,58,237,.08);color:var(--text-light);text-align:center;font-size:13px}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:22px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+body.dark-mode .field-control,body.dark-mode .prompt-output,body.dark-mode .copy-btn,body.dark-mode .action-btn{background:#0f172a}
+body.dark-mode .tool-icon-large{background:#4c1d95;color:#ddd6fe}
+@media(max-width:750px){
+.generator-card,.info-card{padding:20px}
+.form-grid-2,.form-grid-3,.bottom-actions,.related-grid{grid-template-columns:1fr}
+.tool-header h1{font-size:31px}
+.result-header{align-items:flex-start;flex-direction:column}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 AI Image Prompt Generator","url":"https://easytools365.com/tools/ai-image-prompt-generator.html","applicationCategory":"DesignApplication","operatingSystem":"Any","description":"Free browser-based tool for creating detailed prompts for AI image generators.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Create an AI Image Prompt","description":"Create a detailed AI image prompt using the EasyTools365 AI Image Prompt Generator.","step":[
+{"@type":"HowToStep","position":1,"name":"Describe your idea","text":"Enter the main image idea you want to create."},
+{"@type":"HowToStep","position":2,"name":"Choose options","text":"Select the AI platform, visual style, aspect ratio, composition, detail level, lighting and mood."},
+{"@type":"HowToStep","position":3,"name":"Add optional details","text":"Add extra details and things to avoid when needed."},
+{"@type":"HowToStep","position":4,"name":"Generate the prompt","text":"Click Generate Image Prompt and review the generated prompt."},
+{"@type":"HowToStep","position":5,"name":"Copy the prompt","text":"Copy the generated prompt and use it in your preferred image generation platform."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the AI Image Prompt Generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 AI Image Prompt Generator is free to use in your browser."}},
+{"@type":"Question","name":"Does this tool generate images?","acceptedAnswer":{"@type":"Answer","text":"No. This tool creates text prompts. It does not generate images and does not require an image generation API key."}},
+{"@type":"Question","name":"Which AI image platforms are supported?","acceptedAnswer":{"@type":"Answer","text":"The tool includes prompt options for Universal use, DALL-E, Midjourney, Stable Diffusion and Leonardo AI."}},
+{"@type":"Question","name":"Do I need an API key?","acceptedAnswer":{"@type":"Answer","text":"No. Prompt generation is performed locally in your browser and does not require an API key."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/image-tools.html">Image Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">AI Image Prompt Generator</li>
+</ol>
+</nav>
+
+<a href="../index.html" class="back-home"><i class="bi bi-arrow-left"></i> Back to Home</a>
+
+<header class="tool-header">
+<div class="tool-icon-large"><i class="bi bi-image"></i></div>
+<h1>AI Image Prompt Generator</h1>
+<p>Turn a simple image idea into a detailed prompt for popular AI image generators with controls for style, composition, lighting, mood, aspect ratio and negative prompts.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="generator-card">
+
+<div class="field-group">
+<label for="imageIdea">Describe Your Image Idea</label>
+<textarea id="imageIdea" class="field-control" maxlength="800" placeholder="Example: A futuristic Japanese ramen restaurant at night"></textarea>
+<div class="text-end mt-1" style="font-size:12px;color:var(--text-light);"><span id="ideaCount">0</span>/800</div>
+</div>
+
+<div class="form-grid-2">
+<div class="field-group">
+<label for="platform">AI Image Platform</label>
+<select id="platform" class="field-control">
+<option value="universal">Universal</option>
+<option value="dalle">DALL-E</option>
+<option value="midjourney">Midjourney</option>
+<option value="stable">Stable Diffusion</option>
+<option value="leonardo">Leonardo AI</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="style">Visual Style</label>
+<select id="style" class="field-control">
+<option value="cinematic">Cinematic Realistic</option>
+<option value="anime">Cinematic Anime</option>
+<option value="photorealistic">Photorealistic</option>
+<option value="3d">3D Render</option>
+<option value="fantasy">Fantasy Art</option>
+<option value="illustration">Digital Illustration</option>
+<option value="product">Product Photography</option>
+<option value="minimalist">Minimalist</option>
+</select>
+</div>
+</div>
+
+<div class="form-grid-3">
+<div class="field-group">
+<label for="aspectRatio">Aspect Ratio</label>
+<select id="aspectRatio" class="field-control">
+<option value="9:16">9:16 Vertical</option>
+<option value="16:9">16:9 Landscape</option>
+<option value="1:1">1:1 Square</option>
+<option value="4:5">4:5 Portrait</option>
+<option value="3:2">3:2 Landscape</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="shot">Shot / Composition</label>
+<select id="shot" class="field-control">
+<option value="wide">Wide Shot</option>
+<option value="medium">Medium Shot</option>
+<option value="close">Close-Up</option>
+<option value="macro">Macro</option>
+<option value="aerial">Aerial View</option>
+<option value="low">Low Angle</option>
+<option value="top">Top-Down</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="detailLevel">Detail Level</label>
+<select id="detailLevel" class="field-control">
+<option value="high">Highly Detailed</option>
+<option value="ultra">Ultra Detailed</option>
+<option value="balanced">Balanced</option>
+<option value="simple">Clean & Simple</option>
+</select>
+</div>
+</div>
+
+<div class="form-grid-2">
+<div class="field-group">
+<label for="lighting">Lighting</label>
+<select id="lighting" class="field-control">
+<option value="cinematic">Cinematic Lighting</option>
+<option value="natural">Natural Daylight</option>
+<option value="golden">Golden Hour</option>
+<option value="neon">Neon Night</option>
+<option value="studio">Soft Studio</option>
+<option value="dramatic">Dramatic</option>
+<option value="moody">Moody Low Light</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="mood">Mood</label>
+<select id="mood" class="field-control">
+<option value="cinematic">Cinematic</option>
+<option value="cozy">Cozy</option>
+<option value="epic">Epic</option>
+<option value="dreamy">Dreamy</option>
+<option value="mysterious">Mysterious</option>
+<option value="peaceful">Peaceful</option>
+<option value="energetic">Energetic</option>
+<option value="dark">Dark</option>
+</select>
+</div>
+</div>
+
+<div class="field-group">
+<label for="extraDetails">Extra Details <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
+<textarea id="extraDetails" class="field-control" maxlength="500" placeholder="Example: Rainy street, glowing Japanese signs, steam rising from ramen bowls"></textarea>
+</div>
+
+<div class="field-group">
+<label for="negativePrompt">Things to Avoid <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
+<input type="text" id="negativePrompt" class="field-control" maxlength="400" placeholder="Example: blurry, text, watermark, distorted hands">
+</div>
+
+<button id="generateButton" class="generate-btn" type="button"><i class="bi bi-stars"></i> Generate Image Prompt</button>
+
+<div id="resultArea" class="result-area">
+<div class="result-header">
+<h2><i class="bi bi-magic"></i> Generated Image Prompt</h2>
+<button id="copyButton" class="copy-btn" type="button"><i class="bi bi-copy"></i> Copy Prompt</button>
+</div>
+
+<textarea id="promptOutput" class="prompt-output" readonly></textarea>
+
+<div class="result-stats">
+<span><span id="wordCount">0</span> words</span>
+<span><span id="characterCount">0</span> characters</span>
+</div>
+
+<div class="bottom-actions">
+<button id="regenerateButton" class="action-btn" type="button"><i class="bi bi-arrow-repeat"></i> Generate Again</button>
+<button id="clearButton" class="action-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+</div>
+
+<div class="info-note">
+<i class="bi bi-lightning-charge"></i>
+This tool builds prompts locally in your browser. It does not generate images and does not require an API key.
+</div>
+
+</section>
+
+<section class="info-card">
+<h2>What Is an AI Image Prompt Generator?</h2>
+<p>An AI image prompt generator helps turn a simple visual idea into a more detailed text prompt. A well-structured prompt can describe the subject, visual style, composition, lighting, mood, quality and other details that may help an AI image generator interpret the intended scene.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Use the AI Image Prompt Generator</h2>
+<ol>
+<li>Describe the image you want to create.</li>
+<li>Select your preferred AI image platform.</li>
+<li>Choose a visual style, aspect ratio and composition.</li>
+<li>Select lighting, mood and detail level.</li>
+<li>Add optional extra details or things to avoid.</li>
+<li>Click <strong>Generate Image Prompt</strong>.</li>
+<li>Copy the generated prompt into your preferred AI image generator.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>Why Use Detailed Image Prompts?</h2>
+<p>Detailed prompts can make your creative intention clearer by describing multiple visual elements in one structured request. This can be especially useful when creating concepts for illustrations, social media graphics, product visuals, cinematic scenes, characters, environments or design references.</p>
+</section>
+
+<section class="info-card">
+<h2>Prompt Options Available</h2>
+<ul class="mb-0">
+<li><strong>AI Platform:</strong> Universal, DALL-E, Midjourney, Stable Diffusion and Leonardo AI.</li>
+<li><strong>Visual Style:</strong> cinematic, anime, photorealistic, 3D, fantasy, illustration, product photography and minimalist.</li>
+<li><strong>Composition:</strong> wide, medium, close-up, macro, aerial, low-angle and top-down.</li>
+<li><strong>Lighting:</strong> cinematic, daylight, golden hour, neon, studio, dramatic and moody.</li>
+<li><strong>Mood:</strong> cinematic, cozy, epic, dreamy, mysterious, peaceful, energetic and dark.</li>
+</ul>
+</section>
+
+<section class="info-card">
+<h2>Does This Tool Generate Images?</h2>
+<p>No. EasyTools365 AI Image Prompt Generator creates text prompts only. The prompt is generated locally in your browser and can then be copied into a compatible AI image generation service.</p>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the AI Image Prompt Generator free?</h3>
+<p>Yes. The tool is free to use in your browser.</p>
+
+<h3>Does this tool generate images?</h3>
+<p>No. It creates text prompts and does not generate images.</p>
+
+<h3>Do I need an API key?</h3>
+<p>No. The prompt builder works locally in your browser and does not require an API key.</p>
+
+<h3>Which AI image platforms are supported?</h3>
+<p>The tool includes options for Universal use, DALL-E, Midjourney, Stable Diffusion and Leonardo AI.</p>
+</section>
+
+<section class="info-card">
+<h2>Related Image Tools</h2>
+<div class="related-grid">
+<a href="image-compressor.html" class="btn btn-outline-primary">Image Compressor</a>
+<a href="image-resizer.html" class="btn btn-outline-primary">Image Resizer</a>
+<a href="../categories/image-tools.html" class="btn btn-outline-primary">All Image Tools</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for images, PDF, text, calculators and developer tasks.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+
+        const imageIdea =
+            document.getElementById("imageIdea");
+
+        const ideaCount =
+            document.getElementById("ideaCount");
+
+        const platform =
+            document.getElementById("platform");
+
+        const style =
+            document.getElementById("style");
+
+        const aspectRatio =
+            document.getElementById("aspectRatio");
+
+        const shot =
+            document.getElementById("shot");
+
+        const detailLevel =
+            document.getElementById("detailLevel");
+
+        const lighting =
+            document.getElementById("lighting");
+
+        const mood =
+            document.getElementById("mood");
+
+        const extraDetails =
+            document.getElementById("extraDetails");
+
+        const negativePrompt =
+            document.getElementById("negativePrompt");
+
+        const generateButton =
+            document.getElementById("generateButton");
+
+        const regenerateButton =
+            document.getElementById("regenerateButton");
+
+        const copyButton =
+            document.getElementById("copyButton");
+
+        const clearButton =
+            document.getElementById("clearButton");
+
+        const resultArea =
+            document.getElementById("resultArea");
+
+        const promptOutput =
+            document.getElementById("promptOutput");
+
+        const wordCount =
+            document.getElementById("wordCount");
+
+        const characterCount =
+            document.getElementById("characterCount");
+
+
+        imageIdea.addEventListener(
+            "input",
+            function () {
+
+                ideaCount.textContent =
+                    imageIdea.value.length;
+
+            }
+        );
+
+
+        const platformText = {
+
+            universal:
+                "Create a high-quality AI-generated image",
+
+            dalle:
+                "Create a polished AI-generated image with a clear natural-language composition",
+
+            midjourney:
+                "Create a visually striking, highly polished AI artwork",
+
+            stable:
+                "Create a detailed high-quality generative image with strong subject clarity",
+
+            leonardo:
+                "Create a polished high-detail AI artwork with professional visual quality"
+
+        };
+
+
+        const styleText = {
+
+            cinematic:
+                "cinematic realism, film-like composition, realistic textures, atmospheric depth, professional color balance",
+
+            anime:
+                "high-quality cinematic anime illustration, detailed anime background, clean linework, expressive visual storytelling, polished animation-inspired artwork",
+
+            photorealistic:
+                "photorealistic photography, lifelike materials, realistic textures, natural depth, physically believable surfaces",
+
+            "3d":
+                "premium 3D render, polished materials, detailed geometry, realistic depth, professional CGI quality",
+
+            fantasy:
+                "epic fantasy artwork, imaginative environment, atmospheric world-building, rich details, magical visual storytelling",
+
+            illustration:
+                "professional digital illustration, clean composition, detailed artwork, refined shapes and polished visual design",
+
+            product:
+                "premium commercial product photography, clean composition, professional advertising quality, sharp product details",
+
+            minimalist:
+                "minimalist visual design, clean composition, simple shapes, controlled details and elegant presentation"
+
+        };
+
+
+        const shotText = {
+
+            wide:
+                "wide composition showing the main subject and surrounding environment",
+
+            medium:
+                "medium composition with balanced subject framing",
+
+            close:
+                "close-up composition emphasizing the main subject and important details",
+
+            macro:
+                "macro composition showing extremely fine textures and surface details",
+
+            aerial:
+                "aerial perspective showing the subject and environment from above",
+
+            low:
+                "low-angle composition creating a strong sense of scale and presence",
+
+            top:
+                "top-down composition with a clear overhead view of the subject"
+
+        };
+
+
+        const lightingText = {
+
+            cinematic:
+                "cinematic lighting with controlled highlights, realistic shadows and strong visual depth",
+
+            natural:
+                "natural daylight with soft realistic shadows and balanced exposure",
+
+            golden:
+                "warm golden-hour sunlight with soft highlights and atmospheric glow",
+
+            neon:
+                "vibrant neon night lighting with colorful reflections, glowing signs and atmospheric illumination",
+
+            studio:
+                "soft professional studio lighting with clean highlights and gentle shadows",
+
+            dramatic:
+                "dramatic lighting with expressive shadows, controlled highlights and strong contrast",
+
+            moody:
+                "moody low-key lighting with deep shadows and atmospheric contrast"
+
+        };
+
+
+        const moodText = {
+
+            cinematic:
+                "cinematic and immersive",
+
+            cozy:
+                "warm, cozy and inviting",
+
+            epic:
+                "epic, powerful and grand",
+
+            dreamy:
+                "dreamy, soft and magical",
+
+            mysterious:
+                "mysterious and atmospheric",
+
+            peaceful:
+                "peaceful, calm and relaxing",
+
+            energetic:
+                "energetic, vibrant and exciting",
+
+            dark:
+                "dark, dramatic and intense"
+
+        };
+
+
+        const detailText = {
+
+            high:
+                "highly detailed textures, refined surfaces, clear environmental details and polished visual quality",
+
+            ultra:
+                "ultra-detailed textures, intricate environmental elements, extremely refined surfaces and premium visual fidelity",
+
+            balanced:
+                "balanced visual detail with clear subjects, clean textures and natural environmental complexity",
+
+            simple:
+                "clean and simple visual details with strong subject clarity and uncluttered composition"
+
+        };
+
+
+        function cleanText(text) {
+
+            return text
+                .trim()
+                .replace(/\s+/g, " ");
+
+        }
+
+
+        function getOrientation(ratio) {
+
+            if (
+                ratio === "9:16" ||
+                ratio === "4:5"
+            ) {
+
+                return "portrait";
+
+            }
+
+            if (
+                ratio === "16:9" ||
+                ratio === "3:2"
+            ) {
+
+                return "landscape";
+
+            }
+
+            return "square";
+
+        }
+
+
+        function generatePrompt() {
+
+            const idea =
+                cleanText(imageIdea.value);
+
+
+            if (!idea) {
+
+                alert(
+                    "Please describe your image idea."
+                );
+
+                imageIdea.focus();
+
+                return;
+
+            }
+
+
+            const ratio =
+                aspectRatio.value;
+
+            const orientation =
+                getOrientation(ratio);
+
+            const extra =
+                cleanText(extraDetails.value);
+
+            const customNegative =
+                cleanText(negativePrompt.value);
+
+
+            let avoid =
+                "blurry image, low resolution, distorted anatomy, malformed hands, extra fingers, duplicate subjects, duplicate objects, warped geometry, inconsistent perspective, unwanted text, captions, logos and watermarks";
+
+
+            if (customNegative) {
+
+                avoid +=
+                    ", " + customNegative;
+
+            }
+
+
+            let platformTip = "";
+
+
+            if (platform.value === "midjourney") {
+
+                platformTip =
+                    `\n\nPLATFORM NOTE:\nUse ${ratio} as the intended aspect ratio when configuring the generation.`;
+
+            }
+
+
+            if (platform.value === "stable") {
+
+                platformTip =
+                    `\n\nPLATFORM NOTE:\nThe AVOID section can be used as a negative prompt when supported by the selected interface.`;
+
+            }
+
+
+            const result =
+`${platformText[platform.value]}.
+
+SUBJECT:
+${idea}.
+
+VISUAL STYLE:
+${styleText[style.value]}.
+
+COMPOSITION:
+${shotText[shot.value]}. Create a ${orientation} composition designed for a ${ratio} aspect ratio. Maintain a clear focal point, balanced visual hierarchy and intentional subject placement.
+
+LIGHTING:
+${lightingText[lighting.value]}.
+
+MOOD & ATMOSPHERE:
+Create a ${moodText[mood.value]} atmosphere that supports the subject and visual storytelling.
+
+DETAIL & QUALITY:
+${detailText[detailLevel.value]}. Sharp subject definition, coherent perspective, stable geometry, natural depth and polished professional rendering.
+
+${extra ? `EXTRA DETAILS:\n${extra}.\n\n` : ""}VISUAL CONSISTENCY:
+Keep all subjects, objects, proportions, colors, materials and environmental details coherent. Preserve believable spatial relationships and consistent perspective.
+
+AVOID:
+${avoid}.${platformTip}`;
+
+
+            promptOutput.value =
+                result;
+
+
+            updateStats(result);
+
+
+            resultArea.style.display =
+                "block";
+
+
+            resultArea.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+        }
+
+
+        function updateStats(text) {
+
+            const words =
+                text
+                    .trim()
+                    .split(/\s+/)
+                    .filter(Boolean);
+
+
+            wordCount.textContent =
+                words.length;
+
+
+            characterCount.textContent =
+                text.length;
+
+        }
+
+
+        async function copyText(text) {
+
+            try {
+
+                await navigator.clipboard.writeText(
+                    text
+                );
+
+            } catch (error) {
+
+                const temp =
+                    document.createElement("textarea");
+
+                temp.value = text;
+
+                document.body.appendChild(temp);
+
+                temp.select();
+
+                document.execCommand("copy");
+
+                temp.remove();
+
+            }
+
+        }
+
+
+        generateButton.addEventListener(
+            "click",
+            generatePrompt
+        );
+
+
+        regenerateButton.addEventListener(
+            "click",
+            generatePrompt
+        );
+
+
+        copyButton.addEventListener(
+            "click",
+            async function () {
+
+                if (!promptOutput.value) {
+                    return;
+                }
+
+
+                await copyText(
+                    promptOutput.value
+                );
+
+
+                copyButton.innerHTML =
+                    '<i class="bi bi-check-lg"></i> Copied!';
+
+
+                setTimeout(
+                    function () {
+
+                        copyButton.innerHTML =
+                            '<i class="bi bi-copy"></i> Copy Prompt';
+
+                    },
+                    1500
+                );
+
+            }
+        );
+
+
+        clearButton.addEventListener(
+            "click",
+            function () {
+
+                imageIdea.value = "";
+
+                extraDetails.value = "";
+
+                negativePrompt.value = "";
+
+                ideaCount.textContent = "0";
+
+                promptOutput.value = "";
+
+                wordCount.textContent = "0";
+
+                characterCount.textContent = "0";
+
+                resultArea.style.display =
+                    "none";
+
+                imageIdea.focus();
+
+            }
+        );
+
+    </script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

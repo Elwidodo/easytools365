@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Case Converter - Uppercase, Lowercase & Title Case | EasyTools365</title>
+    <meta name="description" content="Free online Case Converter to change text to uppercase, lowercase, title case and sentence case instantly. Fast, simple and works in your browser.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://easytools365.com/tools/case-converter.html">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N002NWTJ23');
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .tool-page { padding:45px 15px 70px; }
+        .tool-wrapper { max-width:900px; margin:auto; }
+        .tool-header { text-align:center; margin-bottom:28px; }
+        .tool-icon-large {
+            display:inline-flex; width:64px; height:64px; align-items:center; justify-content:center;
+            margin-bottom:14px; border-radius:18px; background:#dbeafe; color:var(--primary); font-size:30px;
+        }
+        .tool-header h1 { font-size:38px; font-weight:800; margin-bottom:8px; }
+        .tool-header p { color:var(--text-light); max-width:700px; margin:auto; }
+        .updated { font-size:12px; color:var(--text-light); margin-top:10px; }
+        .converter-card,.content-card {
+            background:var(--surface); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow);
+        }
+        .converter-card { padding:28px; }
+        .text-label { display:block; margin-bottom:10px; font-weight:600; }
+        #textInput {
+            width:100%; min-height:280px; padding:18px; background:var(--background); color:var(--text);
+            border:1px solid var(--border); border-radius:14px; outline:none; resize:vertical;
+        }
+        #textInput:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(37,99,235,.12); }
+        .counter { margin-top:8px; text-align:right; color:var(--text-light); font-size:13px; }
+        .case-buttons { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:22px; }
+        .case-btn {
+            padding:12px; background:var(--background); color:var(--text); border:1px solid var(--border);
+            border-radius:10px; font-weight:600; transition:.2s;
+        }
+        .case-btn:hover { color:#fff; background:var(--primary); border-color:var(--primary); }
+        .action-buttons { display:flex; gap:12px; margin-top:18px; }
+        .action-btn { flex:1; padding:12px; border-radius:10px; font-weight:600; }
+        .copy-btn { border:none; background:var(--primary); color:#fff; }
+        .clear-btn { background:transparent; color:var(--text); border:1px solid var(--border); }
+        .privacy-note {
+            margin-top:18px; padding:12px; text-align:center; border-radius:10px;
+            background:rgba(37,99,235,.08); color:var(--text-light); font-size:12px;
+        }
+        .content-card { margin-top:24px; padding:28px; }
+        .content-card h2 { font-size:24px; font-weight:700; margin-bottom:14px; }
+        .content-card h3 { font-size:17px; font-weight:600; }
+        .feature-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+        .feature-item { padding:16px; border:1px solid var(--border); border-radius:12px; }
+        .feature-item i { color:var(--primary); }
+        .share-row { display:flex; justify-content:center; gap:10px; margin-top:18px; }
+        .related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+        .related-grid a { text-decoration:none; }
+        @media(max-width:600px) {
+            .tool-header h1 { font-size:30px; }
+            .converter-card,.content-card { padding:20px; }
+            .case-buttons,.feature-grid,.related-grid { grid-template-columns:1fr; }
+            .action-buttons { flex-direction:column; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebApplication",
+      "name":"EasyTools365 Case Converter",
+      "url":"https://easytools365.com/tools/case-converter.html",
+      "applicationCategory":"UtilitiesApplication",
+      "operatingSystem":"Any",
+      "description":"Free online tool for converting text to uppercase, lowercase, title case and sentence case.",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Is the Case Converter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 Case Converter is free to use online."}},
+        {"@type":"Question","name":"Can I convert text to uppercase or lowercase?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool provides uppercase and lowercase conversion options."}},
+        {"@type":"Question","name":"Does the tool support title case and sentence case?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can use the Title Case and Sentence Case buttons."}},
+        {"@type":"Question","name":"Do I need to install software?","acceptedAnswer":{"@type":"Answer","text":"No. The Case Converter works directly in a web browser."}}
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+<header class="border-bottom bg-white">
+    <nav class="navbar bg-white">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-decoration-none" href="../index.html">
+                <i class="bi bi-tools"></i> EasyTools365
+            </a>
+            <button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode">
+                <i class="bi bi-moon-stars"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main class="tool-page">
+    <div class="tool-wrapper">
+
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../index.html#tools">Tools</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Case Converter</li>
+            </ol>
+        </nav>
+
+        <section class="tool-header">
+            <div class="tool-icon-large"><i class="bi bi-fonts"></i></div>
+            <h1>Free Case Converter</h1>
+            <p>Convert text to uppercase, lowercase, title case or sentence case instantly.</p>
+            <div class="updated">Last Updated: August 2026</div>
+        </section>
+
+        <section class="converter-card">
+            <label for="textInput" class="text-label">Enter or paste your text</label>
+            <textarea id="textInput" placeholder="Type or paste your text here..." aria-label="Text to convert"></textarea>
+
+            <div class="counter"><span id="characterCount">0</span> characters</div>
+
+            <div class="case-buttons">
+                <button id="uppercaseButton" class="case-btn" type="button">UPPERCASE</button>
+                <button id="lowercaseButton" class="case-btn" type="button">lowercase</button>
+                <button id="titleCaseButton" class="case-btn" type="button">Title Case</button>
+                <button id="sentenceCaseButton" class="case-btn" type="button">Sentence case</button>
+            </div>
+
+            <div class="action-buttons">
+                <button id="copyButton" class="action-btn copy-btn" type="button">
+                    <i class="bi bi-copy"></i> Copy Text
+                </button>
+                <button id="clearButton" class="action-btn clear-btn" type="button">
+                    <i class="bi bi-trash"></i> Clear
+                </button>
+            </div>
+
+            <div class="privacy-note">
+                <i class="bi bi-shield-check"></i>
+                Your text is processed locally in your browser and is not uploaded to our server.
+            </div>
+        </section>
+
+        <div class="share-row">
+            <button id="shareButton" class="btn btn-primary btn-sm" type="button">
+                <i class="bi bi-share-fill"></i> Share
+            </button>
+            <button id="copyLinkButton" class="btn btn-success btn-sm" type="button">
+                <i class="bi bi-link-45deg"></i> Copy Link
+            </button>
+        </div>
+
+        <section class="content-card">
+            <h2>What Is a Case Converter?</h2>
+            <p>A Case Converter is an online text tool that changes capitalization without requiring you to retype the text manually. It can be useful for writing, editing, content preparation and everyday text formatting.</p>
+            <p class="mb-0">EasyTools365 lets you convert text directly in your browser using several common capitalization formats.</p>
+        </section>
+
+        <section class="content-card">
+            <h2>How to Use the Case Converter</h2>
+            <ol class="mb-0">
+                <li>Type or paste your text into the input area.</li>
+                <li>Choose UPPERCASE, lowercase, Title Case or Sentence case.</li>
+                <li>Review the converted text in the input area.</li>
+                <li>Click <strong>Copy Text</strong> to copy the result.</li>
+                <li>Click <strong>Clear</strong> to start again.</li>
+            </ol>
+        </section>
+
+        <section class="content-card">
+            <h2>Case Converter Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item"><h3><i class="bi bi-check-circle"></i> Uppercase</h3><p class="mb-0">Convert letters to uppercase quickly.</p></div>
+                <div class="feature-item"><h3><i class="bi bi-check-circle"></i> Lowercase</h3><p class="mb-0">Convert text to lowercase with one click.</p></div>
+                <div class="feature-item"><h3><i class="bi bi-check-circle"></i> Title Case</h3><p class="mb-0">Capitalize the beginning of words.</p></div>
+                <div class="feature-item"><h3><i class="bi bi-check-circle"></i> Sentence Case</h3><p class="mb-0">Capitalize the beginning of sentences.</p></div>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>When Is a Case Converter Useful?</h2>
+            <p class="mb-0">A case converter can save time when cleaning up copied text, formatting drafts, preparing headings, editing notes, or adjusting text for websites and documents.</p>
+        </section>
+
+        <section class="content-card">
+            <h2>Tips for Better Text Formatting</h2>
+            <ul class="mb-0">
+                <li>Paste your text first, then choose the capitalization format you need.</li>
+                <li>Review names, acronyms and brand names after conversion.</li>
+                <li>Use Sentence Case for normal sentences and Title Case for headings when appropriate.</li>
+                <li>Check the result before copying it to another application.</li>
+            </ul>
+        </section>
+
+        <section class="content-card">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Is the Case Converter free?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Yes. The EasyTools365 Case Converter is free to use online.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Can I convert text to uppercase or lowercase?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Yes. Use the UPPERCASE or lowercase button to convert the text.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Does the tool support title case and sentence case?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Yes. The tool includes both Title Case and Sentence Case options.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Do I need to install software?</button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">No. The Case Converter works directly in a web browser.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2>Related Tools</h2>
+            <p>Explore other EasyTools365 tools for text and developer tasks.</p>
+            <div class="related-grid">
+                <a href="word-counter.html" class="btn btn-outline-primary">Word Counter</a>
+                <a href="json-formatter.html" class="btn btn-outline-primary">JSON Formatter</a>
+                <a href="base64-encoder-decoder.html" class="btn btn-outline-primary">Base64 Encoder &amp; Decoder</a>
+            </div>
+        </section>
+
+        <section class="content-card text-center bg-primary text-white">
+            <h2>Need More Free Online Tools?</h2>
+            <p>Explore EasyTools365 tools for text, images, PDF, developer tasks and calculators.</p>
+            <a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+        </section>
+
+    </div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+    <div class="container text-center">
+        <p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+        const textInput =
+            document.getElementById("textInput");
+
+        const characterCount =
+            document.getElementById("characterCount");
+
+        const uppercaseButton =
+            document.getElementById("uppercaseButton");
+
+        const lowercaseButton =
+            document.getElementById("lowercaseButton");
+
+        const titleCaseButton =
+            document.getElementById("titleCaseButton");
+
+        const sentenceCaseButton =
+            document.getElementById("sentenceCaseButton");
+
+        const copyButton =
+            document.getElementById("copyButton");
+
+        const clearButton =
+            document.getElementById("clearButton");
+
+
+        function updateCount() {
+            characterCount.textContent =
+                textInput.value.length;
+        }
+
+
+        /* UPPERCASE */
+
+        uppercaseButton.addEventListener(
+            "click",
+            function () {
+
+                textInput.value =
+                    textInput.value.toUpperCase();
+
+                updateCount();
+
+            }
+        );
+
+
+        /* LOWERCASE */
+
+        lowercaseButton.addEventListener(
+            "click",
+            function () {
+
+                textInput.value =
+                    textInput.value.toLowerCase();
+
+                updateCount();
+
+            }
+        );
+
+
+        /* TITLE CASE */
+
+        titleCaseButton.addEventListener(
+            "click",
+            function () {
+
+                textInput.value =
+                    textInput.value
+                        .toLowerCase()
+                        .replace(
+                            /\b\w/g,
+                            function (letter) {
+                                return letter.toUpperCase();
+                            }
+                        );
+
+                updateCount();
+
+            }
+        );
+
+
+        /* SENTENCE CASE */
+
+        sentenceCaseButton.addEventListener(
+            "click",
+            function () {
+
+                const text =
+                    textInput.value.toLowerCase();
+
+                textInput.value =
+                    text.replace(
+                        /(^\s*\w|[.!?]\s*\w)/g,
+                        function (letter) {
+                            return letter.toUpperCase();
+                        }
+                    );
+
+                updateCount();
+
+            }
+        );
+
+
+        /* CHARACTER COUNTER */
+
+        textInput.addEventListener(
+            "input",
+            updateCount
+        );
+
+
+        /* CLEAR */
+
+        clearButton.addEventListener(
+            "click",
+            function () {
+
+                textInput.value = "";
+
+                updateCount();
+
+                textInput.focus();
+
+            }
+        );
+
+
+        /* COPY */
+
+        copyButton.addEventListener(
+            "click",
+            async function () {
+
+                if (!textInput.value) {
+                    return;
+                }
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        textInput.value
+                    );
+
+                    copyButton.innerHTML =
+                        '<i class="bi bi-check-lg"></i> Copied!';
+
+                    setTimeout(function () {
+
+                        copyButton.innerHTML =
+                            '<i class="bi bi-copy"></i> Copy Text';
+
+                    }, 1500);
+
+                } catch {
+
+                    textInput.select();
+
+                    document.execCommand("copy");
+
+                }
+
+            }
+        );
+
+
+        updateCount();
+
+    </script>
+
+<script>
+document.getElementById("shareButton").addEventListener("click", async function () {
+    try {
+        if (navigator.share) {
+            await navigator.share({
+                title: "EasyTools365 Case Converter",
+                text: "Free online Case Converter",
+                url: window.location.href
+            });
+        } else {
+            await navigator.clipboard.writeText(window.location.href);
+            this.innerHTML = '<i class="bi bi-check-lg"></i> Link Copied!';
+            setTimeout(() => this.innerHTML = '<i class="bi bi-share-fill"></i> Share', 1500);
+        }
+    } catch (error) {}
+});
+
+document.getElementById("copyLinkButton").addEventListener("click", async function () {
+    try {
+        await navigator.clipboard.writeText(window.location.href);
+        this.innerHTML = '<i class="bi bi-check-lg"></i> Link Copied!';
+        setTimeout(() => this.innerHTML = '<i class="bi bi-link-45deg"></i> Copy Link', 1500);
+    } catch (error) {
+        const temp = document.createElement("input");
+        temp.value = window.location.href;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        temp.remove();
+    }
+});
+</script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

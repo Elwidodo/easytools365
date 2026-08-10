@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Base64 Encoder & Decoder - Encode and Decode Base64 Online | EasyTools365</title>
+<meta name="description" content="Free online Base64 Encoder and Decoder. Encode UTF-8 text to Base64 or decode Base64 instantly in your browser. Fast, private and processed locally.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/base64-encoder-decoder.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Base64 Encoder & Decoder | EasyTools365">
+<meta property="og:description" content="Encode text to Base64 or decode Base64 instantly in your browser. Your data stays in the browser.">
+<meta property="og:url" content="https://easytools365.com/tools/base64-encoder-decoder.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Base64 Encoder & Decoder | EasyTools365">
+<meta name="twitter:description" content="Free browser-based Base64 encoding and decoding tool with UTF-8 support.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:45px 15px 70px}
+.tool-wrapper{max-width:950px;margin:auto}
+.breadcrumb{margin-bottom:25px}
+.back-home{display:inline-flex;align-items:center;gap:8px;margin-bottom:25px;color:var(--primary);font-weight:600;text-decoration:none}
+.tool-header{text-align:center;margin-bottom:32px}
+.tool-icon-large{display:inline-flex;width:74px;height:74px;align-items:center;justify-content:center;margin-bottom:18px;border-radius:22px;background:rgba(37,99,235,.1);color:var(--primary);font-size:34px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:760px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.base64-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.base64-card{padding:30px}
+.input-label{display:block;margin-bottom:10px;font-weight:600}
+#textInput{width:100%;min-height:250px;padding:20px;background:var(--background);color:var(--text);border:1px solid var(--border);border-radius:16px;outline:none;resize:vertical;font-family:Consolas,Monaco,monospace;line-height:1.6}
+#textInput:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+.counter{margin-top:8px;text-align:right;color:var(--text-light);font-size:13px}
+.main-buttons,.secondary-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.main-buttons{margin-top:22px}
+.secondary-buttons{margin-top:12px}
+.tool-btn,.secondary-btn{padding:13px 14px;border-radius:12px;font-weight:600;transition:.2s}
+.encode-btn{border:none;background:var(--primary);color:#fff}
+.decode-btn,.secondary-btn{background:var(--background);color:var(--text);border:1px solid var(--border)}
+.decode-btn:hover,.secondary-btn:hover{color:var(--primary);border-color:var(--primary)}
+.message{display:none;margin-top:20px;padding:14px;border-radius:12px;font-size:14px}
+.message.success{display:block;color:#16a34a;background:rgba(22,163,74,.10);border:1px solid rgba(22,163,74,.25)}
+.message.error{display:block;color:#dc2626;background:rgba(220,38,38,.10);border:1px solid rgba(220,38,38,.25)}
+.privacy-note{margin-top:25px;padding:15px;text-align:center;border-radius:12px;background:rgba(37,99,235,.08);color:var(--text-light);font-size:13px;line-height:1.6}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:22px}
+.related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+body.dark-mode #textInput,body.dark-mode .decode-btn,body.dark-mode .secondary-btn{background:#0f172a}
+body.dark-mode .tool-icon-large{background:#1e3a8a}
+@media(max-width:600px){
+.base64-card,.info-card{padding:20px}
+.main-buttons,.secondary-buttons,.related-grid{grid-template-columns:1fr}
+.tool-header h1{font-size:31px}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 Base64 Encoder & Decoder","url":"https://easytools365.com/tools/base64-encoder-decoder.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","description":"Free browser-based Base64 encoder and decoder with UTF-8 support.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Encode and Decode Base64","description":"Use the EasyTools365 Base64 Encoder & Decoder to convert text and Base64 locally in your browser.","step":[
+{"@type":"HowToStep","position":1,"name":"Enter data","text":"Enter normal text to encode or a Base64 string to decode."},
+{"@type":"HowToStep","position":2,"name":"Choose the operation","text":"Select Encode to Base64 or Decode Base64."},
+{"@type":"HowToStep","position":3,"name":"Copy the result","text":"Use the Copy Result button to copy the converted value."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the Base64 Encoder & Decoder free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 Base64 Encoder & Decoder is free to use online."}},
+{"@type":"Question","name":"What is Base64 used for?","acceptedAnswer":{"@type":"Answer","text":"Base64 is commonly used to represent data as text for transmission, storage, web development, APIs and other applications."}},
+{"@type":"Question","name":"Is Base64 encryption?","acceptedAnswer":{"@type":"Answer","text":"No. Base64 is an encoding format and does not provide encryption or security for sensitive information."}},
+{"@type":"Question","name":"Can Base64 be decoded?","acceptedAnswer":{"@type":"Answer","text":"Yes. Valid Base64-encoded data can normally be decoded back into its original representation."}},
+{"@type":"Question","name":"Is my data uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"The tool is designed to process the conversion locally in your browser."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/developer-tools.html">Developer Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">Base64 Encoder & Decoder</li>
+</ol>
+</nav>
+
+<a href="../index.html" class="back-home"><i class="bi bi-arrow-left"></i> Back to Home</a>
+
+<header class="tool-header">
+<div class="tool-icon-large"><i class="bi bi-code-slash"></i></div>
+<h1>Base64 Encoder & Decoder</h1>
+<p>Encode UTF-8 text to Base64 or decode Base64 instantly in your browser. Fast, simple and processed locally.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="base64-card">
+<label for="textInput" class="input-label">Enter Text or Base64</label>
+<textarea id="textInput" spellcheck="false" placeholder="Enter your text or Base64 code here..."></textarea>
+
+<div class="counter"><span id="characterCount">0</span> characters</div>
+
+<div class="main-buttons">
+<button id="encodeButton" class="tool-btn encode-btn" type="button"><i class="bi bi-lock"></i> Encode to Base64</button>
+<button id="decodeButton" class="tool-btn decode-btn" type="button"><i class="bi bi-unlock"></i> Decode Base64</button>
+</div>
+
+<div class="secondary-buttons">
+<button id="copyButton" class="secondary-btn" type="button"><i class="bi bi-copy"></i> Copy Result</button>
+<button id="clearButton" class="secondary-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+
+<div id="messageBox" class="message"></div>
+
+<div class="privacy-note">
+<i class="bi bi-shield-check"></i>
+Everything is processed locally in your browser. Your data is not uploaded to our server.
+</div>
+</section>
+
+<section class="info-card">
+<h2>What Is Base64 Encoding?</h2>
+<p>Base64 is an encoding method that represents data as text using a defined set of characters. It is commonly used when binary or special-character data needs to be represented in a text-friendly form.</p>
+<p>EasyTools365 Base64 Encoder &amp; Decoder lets you encode text to Base64 or decode valid Base64 back into text directly in your browser.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Encode Text to Base64</h2>
+<ol>
+<li>Enter or paste the text you want to encode.</li>
+<li>Click <strong>Encode to Base64</strong>.</li>
+<li>Review the converted Base64 value.</li>
+<li>Click <strong>Copy Result</strong> if you need to copy it.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>How to Decode Base64</h2>
+<ol>
+<li>Paste a valid Base64 string into the input field.</li>
+<li>Click <strong>Decode Base64</strong>.</li>
+<li>Review the decoded text.</li>
+<li>Copy the result if needed.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>Base64 Is Encoding, Not Encryption</h2>
+<p>Base64 should not be used to protect passwords, private keys or confidential information. It is an encoding format rather than an encryption method, and encoded data can be decoded.</p>
+</section>
+
+<section class="info-card">
+<h2>UTF-8 Support</h2>
+<p>The tool uses browser UTF-8 encoding and decoding functions, so text containing many Unicode characters can be handled more reliably than simple ASCII-only Base64 examples.</p>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the Base64 Encoder &amp; Decoder free?</h3>
+<p>Yes. The EasyTools365 Base64 Encoder &amp; Decoder is free to use online.</p>
+
+<h3>What is Base64 used for?</h3>
+<p>Base64 is commonly used to represent data as text for transmission, storage, web development, APIs and other applications.</p>
+
+<h3>Is Base64 encryption?</h3>
+<p>No. Base64 is an encoding format and does not provide encryption or security for sensitive information.</p>
+
+<h3>Can Base64 be decoded?</h3>
+<p>Yes. Valid Base64-encoded data can normally be decoded back into its original representation.</p>
+
+<h3>Is my data uploaded to a server?</h3>
+<p>The conversion functions run in the browser, and the page states that the entered data is not uploaded to the EasyTools365 server.</p>
+</section>
+
+<section class="info-card">
+<h2>Related Developer Tools</h2>
+<div class="related-grid">
+<a href="hash-generator.html" class="btn btn-outline-primary">Hash Generator</a>
+<a href="password-generator.html" class="btn btn-outline-primary">Password Generator</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for AI, images, PDF, text, calculators and developer tasks.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+
+        const textInput =
+            document.getElementById("textInput");
+
+        const encodeButton =
+            document.getElementById("encodeButton");
+
+        const decodeButton =
+            document.getElementById("decodeButton");
+
+        const copyButton =
+            document.getElementById("copyButton");
+
+        const clearButton =
+            document.getElementById("clearButton");
+
+        const characterCount =
+            document.getElementById("characterCount");
+
+        const messageBox =
+            document.getElementById("messageBox");
+
+
+        function updateCount() {
+            characterCount.textContent =
+                textInput.value.length;
+        }
+
+
+        function showMessage(text, type) {
+
+            messageBox.textContent = text;
+
+            messageBox.className =
+                "message " + type;
+        }
+
+
+        function hideMessage() {
+
+            messageBox.className = "message";
+
+            messageBox.textContent = "";
+        }
+
+
+        /*
+        ========================
+        UTF-8 BASE64 ENCODE
+        ========================
+        */
+
+        function encodeBase64(text) {
+
+            const bytes =
+                new TextEncoder().encode(text);
+
+            let binary = "";
+
+            bytes.forEach(function (byte) {
+                binary +=
+                    String.fromCharCode(byte);
+            });
+
+            return btoa(binary);
+        }
+
+
+        /*
+        ========================
+        UTF-8 BASE64 DECODE
+        ========================
+        */
+
+        function decodeBase64(base64) {
+
+            const cleanBase64 =
+                base64.replace(/\s+/g, "");
+
+            const binary =
+                atob(cleanBase64);
+
+            const bytes =
+                Uint8Array.from(
+                    binary,
+                    function (character) {
+                        return character.charCodeAt(0);
+                    }
+                );
+
+            return new TextDecoder(
+                "utf-8",
+                { fatal: true }
+            ).decode(bytes);
+        }
+
+
+        /*
+        ========================
+        ENCODE
+        ========================
+        */
+
+        encodeButton.addEventListener(
+            "click",
+            function () {
+
+                if (!textInput.value) {
+
+                    showMessage(
+                        "Please enter text to encode.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+                try {
+
+                    textInput.value =
+                        encodeBase64(
+                            textInput.value
+                        );
+
+                    updateCount();
+
+                    showMessage(
+                        "Text encoded to Base64 successfully.",
+                        "success"
+                    );
+
+                } catch (error) {
+
+                    showMessage(
+                        "Unable to encode the text.",
+                        "error"
+                    );
+                }
+
+            }
+        );
+
+
+        /*
+        ========================
+        DECODE
+        ========================
+        */
+
+        decodeButton.addEventListener(
+            "click",
+            function () {
+
+                const value =
+                    textInput.value.trim();
+
+                if (!value) {
+
+                    showMessage(
+                        "Please enter Base64 to decode.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+                try {
+
+                    textInput.value =
+                        decodeBase64(value);
+
+                    updateCount();
+
+                    showMessage(
+                        "Base64 decoded successfully.",
+                        "success"
+                    );
+
+                } catch (error) {
+
+                    showMessage(
+                        "Invalid Base64 data.",
+                        "error"
+                    );
+                }
+
+            }
+        );
+
+
+        /*
+        ========================
+        COPY
+        ========================
+        */
+
+        copyButton.addEventListener(
+            "click",
+            async function () {
+
+                if (!textInput.value) {
+                    return;
+                }
+
+                try {
+
+                    await navigator.clipboard
+                        .writeText(
+                            textInput.value
+                        );
+
+                    copyButton.innerHTML =
+                        '<i class="bi bi-check-lg"></i> Copied!';
+
+                    setTimeout(
+                        function () {
+
+                            copyButton.innerHTML =
+                                '<i class="bi bi-copy"></i> Copy Result';
+
+                        },
+                        1500
+                    );
+
+                } catch (error) {
+
+                    textInput.select();
+
+                    document.execCommand("copy");
+                }
+
+            }
+        );
+
+
+        /*
+        ========================
+        CLEAR
+        ========================
+        */
+
+        clearButton.addEventListener(
+            "click",
+            function () {
+
+                textInput.value = "";
+
+                updateCount();
+
+                hideMessage();
+
+                textInput.focus();
+            }
+        );
+
+
+        textInput.addEventListener(
+            "input",
+            function () {
+
+                updateCount();
+
+                hideMessage();
+            }
+        );
+
+
+        updateCount();
+
+    </script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

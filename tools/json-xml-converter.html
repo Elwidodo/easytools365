@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free JSON XML Converter | EasyTools365</title>
+<meta name="description" content="Free online JSON XML Converter. Convert JSON to XML or XML to JSON instantly in your browser with EasyTools365.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/json-xml-converter.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free JSON XML Converter | EasyTools365">
+<meta property="og:description" content="Convert JSON to XML or XML to JSON instantly in your browser.">
+<meta property="og:url" content="https://easytools365.com/tools/json-xml-converter.html">
+<meta property="og:site_name" content="EasyTools365">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{padding:42px 15px 70px;}
+.tool-wrapper{max-width:1000px;margin:auto;}
+.tool-header{text-align:center;margin-bottom:30px;}
+.tool-icon{width:64px;height:64px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border-radius:18px;background:#dbeafe;color:var(--primary);font-size:29px;}
+.tool-header h1{font-size:38px;font-weight:800;margin-bottom:8px;}
+.tool-header p{max-width:720px;margin:auto;color:var(--text-light);line-height:1.7;}
+.updated{font-size:12px;color:var(--text-light);margin-top:10px;}
+.tool-card,.content-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);}
+.tool-card{padding:28px;}
+.mode-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.mode-btn{padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--background);color:var(--text);font-weight:700;}
+.mode-btn.active{border-color:var(--primary);background:var(--primary);color:#fff;}
+.editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.editor-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;}
+.editor-header label{font-size:14px;font-weight:700;}
+.small-btn{padding:7px 10px;border:1px solid var(--border);border-radius:8px;background:var(--background);color:var(--text);font-size:12px;font-weight:600;}
+.editor{width:100%;min-height:330px;padding:15px;resize:vertical;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.6;}
+.editor:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.10);}
+.button-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-top:18px;}
+.primary-btn,.secondary-btn{padding:13px;border-radius:11px;font-weight:700;}
+.primary-btn{border:none;background:var(--primary);color:#fff;}
+.secondary-btn{border:1px solid var(--border);background:var(--background);color:var(--text);}
+.error-box,.status-box{display:none;margin-top:15px;padding:12px;border-radius:10px;text-align:center;font-size:13px;font-weight:600;}
+.error-box{background:rgba(220,38,38,.10);color:#dc2626;}
+.status-box{background:rgba(22,163,74,.08);color:#16a34a;}
+.privacy-note{margin-top:20px;padding:14px;border-radius:12px;background:rgba(22,163,74,.07);color:var(--text-light);text-align:center;font-size:13px;}
+.share-row{display:flex;justify-content:center;gap:10px;margin-top:18px;}
+.content-card{margin-top:24px;padding:28px;}
+.content-card h2{font-size:24px;font-weight:700;margin-bottom:14px;}
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.feature-item{padding:16px;border:1px solid var(--border);border-radius:12px;}
+.feature-item i{color:var(--primary);}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.related-grid a{text-decoration:none;}
+@media(max-width:750px){
+.mode-row,.editor-grid,.button-row,.feature-grid,.related-grid{grid-template-columns:1fr;}
+.tool-card,.content-card{padding:20px;}
+.tool-header h1{font-size:31px;}
+}
+</style>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebApplication",
+"name":"EasyTools365 JSON XML Converter",
+"url":"https://easytools365.com/tools/json-xml-converter.html",
+"applicationCategory":"DeveloperApplication",
+"operatingSystem":"Any",
+"description":"Free online converter for converting supported JSON data to XML and XML data to JSON.",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{"@type":"Question","name":"Is the JSON XML Converter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 JSON XML Converter is free to use online."}},
+{"@type":"Question","name":"Can I convert JSON to XML?","acceptedAnswer":{"@type":"Answer","text":"Yes. Valid and supported JSON data can be converted into XML format."}},
+{"@type":"Question","name":"Can I convert XML to JSON?","acceptedAnswer":{"@type":"Answer","text":"Yes. Valid and supported XML data can be converted into JSON format."}},
+{"@type":"Question","name":"Is my data uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"The conversion is performed locally in your browser, so the tool does not need to upload your input to a conversion server."}}
+]
+}
+</script>
+</head>
+
+<body>
+<nav class="navbar bg-white border-bottom shadow-sm">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb" class="mb-4">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../index.html#tools">Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">JSON XML Converter</li>
+</ol>
+</nav>
+
+<section class="tool-header">
+<div class="tool-icon"><i class="bi bi-arrow-left-right"></i></div>
+<h1>Free JSON XML Converter</h1>
+<p>Convert JSON to XML or XML to JSON instantly in your browser. No registration required.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</section>
+
+<section class="tool-card">
+<div class="mode-row">
+<button id="jsonModeButton" class="mode-btn active" type="button">JSON → XML</button>
+<button id="xmlModeButton" class="mode-btn" type="button">XML → JSON</button>
+</div>
+
+<div class="editor-grid">
+<div>
+<div class="editor-header">
+<label id="inputLabel" for="dataInput">JSON Input</label>
+<button id="sampleButton" class="small-btn" type="button">Load Sample</button>
+</div>
+<textarea id="dataInput" class="editor" spellcheck="false" placeholder="Paste JSON here..."></textarea>
+</div>
+
+<div>
+<div class="editor-header">
+<label id="outputLabel" for="dataOutput">XML Result</label>
+<button id="copyButton" class="small-btn" type="button"><i class="bi bi-copy"></i> Copy</button>
+</div>
+<textarea id="dataOutput" class="editor" readonly spellcheck="false" placeholder="XML result will appear here..."></textarea>
+</div>
+</div>
+
+<div class="button-row">
+<button id="convertButton" class="primary-btn" type="button"><i class="bi bi-arrow-repeat"></i> Convert to XML</button>
+<button id="swapButton" class="secondary-btn" type="button"><i class="bi bi-arrow-left-right"></i> Swap</button>
+<button id="clearButton" class="secondary-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+
+<div id="errorBox" class="error-box"></div>
+<div id="statusBox" class="status-box"></div>
+
+<div class="privacy-note"><i class="bi bi-shield-check"></i> Your data is processed locally in your browser.</div>
+</section>
+
+<div class="share-row">
+<button id="shareButton" class="btn btn-primary btn-sm" type="button"><i class="bi bi-share-fill"></i> Share</button>
+<button id="copyLinkButton" class="btn btn-success btn-sm" type="button"><i class="bi bi-link-45deg"></i> Copy Link</button>
+</div>
+
+<section class="content-card">
+<h2>What Is a JSON XML Converter?</h2>
+<p>A JSON XML Converter helps convert structured data between JSON and XML formats. Both formats are widely used for storing, exchanging and processing data.</p>
+<p class="mb-0">EasyTools365 lets you convert supported JSON data to XML and XML data to JSON directly in your browser.</p>
+</section>
+
+<section class="content-card">
+<h2>How to Convert JSON to XML</h2>
+<ol class="mb-0">
+<li>Paste valid JSON into the input box.</li>
+<li>Select <strong>JSON → XML</strong>.</li>
+<li>Click <strong>Convert to XML</strong>.</li>
+<li>Review the XML result and use <strong>Copy</strong> if needed.</li>
+</ol>
+</section>
+
+<section class="content-card">
+<h2>How to Convert XML to JSON</h2>
+<ol class="mb-0">
+<li>Select <strong>XML → JSON</strong>.</li>
+<li>Paste valid XML into the input box.</li>
+<li>Click <strong>Convert to JSON</strong>.</li>
+<li>Review and copy the generated JSON.</li>
+</ol>
+</section>
+
+<section class="content-card">
+<h2>JSON vs XML</h2>
+<p>JSON represents structured data using objects, arrays, keys and values. XML represents structured information using elements and tags.</p>
+<p class="mb-0">Converting between the two formats can be useful when different applications or systems require different data formats.</p>
+</section>
+
+<section class="content-card">
+<h2>JSON XML Converter Features</h2>
+<div class="feature-grid">
+<div class="feature-item"><h3><i class="bi bi-check-circle"></i> Two-Way Conversion</h3><p class="mb-0">Convert supported JSON to XML or XML to JSON.</p></div>
+<div class="feature-item"><h3><i class="bi bi-check-circle"></i> Sample Data</h3><p class="mb-0">Load sample JSON or XML to test the converter quickly.</p></div>
+<div class="feature-item"><h3><i class="bi bi-check-circle"></i> Copy Result</h3><p class="mb-0">Copy the generated result directly to your clipboard.</p></div>
+<div class="feature-item"><h3><i class="bi bi-check-circle"></i> Local Processing</h3><p class="mb-0">Conversion runs directly in your browser.</p></div>
+</div>
+</section>
+
+<section class="content-card">
+<h2>Frequently Asked Questions</h2>
+<div class="accordion" id="faqAccordion">
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Is the JSON XML Converter free?</button></h3>
+<div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. The EasyTools365 JSON XML Converter is free to use online.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Can I convert JSON to XML?</button></h3>
+<div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Valid and supported JSON data can be converted into XML format.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Can I convert XML to JSON?</button></h3>
+<div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Valid and supported XML data can be converted into JSON format.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Is my data uploaded to a server?</button></h3>
+<div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">The conversion is performed locally in your browser, so the tool does not need to upload your input to a conversion server.</div></div>
+</div>
+</div>
+</section>
+
+<section class="content-card">
+<h2>Related Developer Tools</h2>
+<p>Explore other EasyTools365 tools for JSON and developer tasks.</p>
+<div class="related-grid">
+<a href="json-formatter.html" class="btn btn-outline-primary">JSON Formatter</a>
+<a href="json-to-csv.html" class="btn btn-outline-primary">JSON to CSV</a>
+<a href="jwt-decoder.html" class="btn btn-outline-primary">JWT Decoder</a>
+</div>
+</section>
+
+<section class="content-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for text, images, PDF, developer tasks and calculators.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center">
+<p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+const dataInput =
+    document.getElementById("dataInput");
+
+const dataOutput =
+    document.getElementById("dataOutput");
+
+const jsonModeButton =
+    document.getElementById("jsonModeButton");
+
+const xmlModeButton =
+    document.getElementById("xmlModeButton");
+
+const inputLabel =
+    document.getElementById("inputLabel");
+
+const outputLabel =
+    document.getElementById("outputLabel");
+
+const convertButton =
+    document.getElementById("convertButton");
+
+const errorBox =
+    document.getElementById("errorBox");
+
+const statusBox =
+    document.getElementById("statusBox");
+
+let currentMode = "json";
+
+
+function escapeXML(value) {
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&apos;");
+
+}
+
+
+function validTagName(name) {
+
+    let tag =
+        String(name)
+            .replace(/[^A-Za-z0-9_.-]/g, "_");
+
+
+    if (!/^[A-Za-z_]/.test(tag)) {
+        tag = "_" + tag;
+    }
+
+
+    return tag || "item";
+
+}
+
+
+function jsonValueToXML(
+    key,
+    value,
+    indent
+) {
+
+    const tag =
+        validTagName(key);
+
+    const space =
+        "    ".repeat(indent);
+
+
+    if (value === null) {
+
+        return space +
+            "<" + tag + "></" + tag + ">";
+
+    }
+
+
+    if (Array.isArray(value)) {
+
+        return value
+            .map(function(item) {
+
+                return jsonValueToXML(
+                    tag,
+                    item,
+                    indent
+                );
+
+            })
+            .join("\n");
+
+    }
+
+
+    if (
+        typeof value === "object"
+    ) {
+
+        const children =
+            Object.keys(value)
+                .map(function(childKey) {
+
+                    return jsonValueToXML(
+                        childKey,
+                        value[childKey],
+                        indent + 1
+                    );
+
+                })
+                .join("\n");
+
+
+        return (
+            space +
+            "<" + tag + ">\n" +
+            children +
+            "\n" +
+            space +
+            "</" + tag + ">"
+        );
+
+    }
+
+
+    return (
+        space +
+        "<" + tag + ">" +
+        escapeXML(value) +
+        "</" + tag + ">"
+    );
+
+}
+
+
+function jsonToXML(json) {
+
+    let body;
+
+
+    if (
+        json !== null &&
+        typeof json === "object" &&
+        !Array.isArray(json)
+    ) {
+
+        body =
+            Object.keys(json)
+                .map(function(key) {
+
+                    return jsonValueToXML(
+                        key,
+                        json[key],
+                        1
+                    );
+
+                })
+                .join("\n");
+
+    }
+
+    else {
+
+        body =
+            jsonValueToXML(
+                "item",
+                json,
+                1
+            );
+
+    }
+
+
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+        "<root>\n" +
+        body +
+        "\n</root>"
+    );
+
+}
+
+
+function elementToObject(element) {
+
+    const childElements =
+        Array.from(element.children);
+
+
+    if (
+        childElements.length === 0
+    ) {
+
+        return element.textContent.trim();
+
+    }
+
+
+    const result = {};
+
+
+    childElements.forEach(
+        function(child) {
+
+            const key =
+                child.tagName;
+
+            const value =
+                elementToObject(child);
+
+
+            if (
+                Object.prototype.hasOwnProperty.call(
+                    result,
+                    key
+                )
+            ) {
+
+                if (
+                    !Array.isArray(
+                        result[key]
+                    )
+                ) {
+
+                    result[key] = [
+                        result[key]
+                    ];
+
+                }
+
+
+                result[key].push(
+                    value
+                );
+
+            }
+
+            else {
+
+                result[key] =
+                    value;
+
+            }
+
+        }
+    );
+
+
+    return result;
+
+}
+
+
+function xmlToJSON(xmlText) {
+
+    const parser =
+        new DOMParser();
+
+
+    const xml =
+        parser.parseFromString(
+            xmlText,
+            "application/xml"
+        );
+
+
+    const parserError =
+        xml.querySelector(
+            "parsererror"
+        );
+
+
+    if (parserError) {
+
+        throw new Error(
+            "Invalid XML format."
+        );
+
+    }
+
+
+    const root =
+        xml.documentElement;
+
+
+    const result = {};
+
+    result[root.tagName] =
+        elementToObject(root);
+
+
+    return result;
+
+}
+
+
+function convertData() {
+
+    hideMessages();
+
+
+    const value =
+        dataInput.value.trim();
+
+
+    if (value === "") {
+
+        showError(
+            "Please enter data first."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        if (
+            currentMode === "json"
+        ) {
+
+            const parsed =
+                JSON.parse(value);
+
+
+            dataOutput.value =
+                jsonToXML(parsed);
+
+        }
+
+        else {
+
+            const result =
+                xmlToJSON(value);
+
+
+            dataOutput.value =
+                JSON.stringify(
+                    result,
+                    null,
+                    4
+                );
+
+        }
+
+    }
+
+    catch (error) {
+
+        showError(
+            error.message ||
+            "Unable to convert data."
+        );
+
+    }
+
+}
+
+
+function setMode(mode) {
+
+    currentMode =
+        mode;
+
+
+    hideMessages();
+
+    
+
+
+    if (mode === "json") {
+
+        jsonModeButton.classList.add(
+            "active"
+        );
+
+        xmlModeButton.classList.remove(
+            "active"
+        );
+
+        inputLabel.textContent =
+            "JSON Input";
+
+        outputLabel.textContent =
+            "XML Result";
+
+        dataInput.placeholder =
+            "Paste JSON here...";
+
+        dataOutput.placeholder =
+            "XML result will appear here...";
+
+        convertButton.innerHTML =
+            '<i class="bi bi-arrow-repeat"></i> Convert to XML';
+
+    }
+
+    else {
+
+        xmlModeButton.classList.add(
+            "active"
+        );
+
+        jsonModeButton.classList.remove(
+            "active"
+        );
+
+        inputLabel.textContent =
+            "XML Input";
+
+        outputLabel.textContent =
+            "JSON Result";
+
+        dataInput.placeholder =
+            "Paste XML here...";
+
+        dataOutput.placeholder =
+            "JSON result will appear here...";
+
+        convertButton.innerHTML =
+            '<i class="bi bi-arrow-repeat"></i> Convert to JSON';
+
+    }
+
+
+    dataInput.focus();
+
+}
+
+
+function loadSample() {
+
+    hideMessages();
+
+
+    if (
+        currentMode === "json"
+    ) {
+
+        dataInput.value =
+`{
+    "name": "EasyTools365",
+    "category": "Developer Tools",
+    "active": true,
+    "tools": [
+        "JSON Formatter",
+        "SQL Formatter",
+        "XML Converter"
+    ]
+}`;
+
+    }
+
+    else {
+
+        dataInput.value =
+`<user>
+    <name>Agus</name>
+    <city>Jakarta</city>
+    <active>true</active>
+</user>`;
+
+    }
+
+}
+
+
+function swapData() {
+
+    if (
+        dataOutput.value.trim() === ""
+    ) {
+
+        showError(
+            "Convert data first before swapping."
+        );
+
+        return;
+
+    }
+
+
+    const output =
+        dataOutput.value;
+
+
+    if (
+        currentMode === "json"
+    ) {
+
+        setMode("xml");
+
+    }
+
+    else {
+
+        setMode("json");
+
+    }
+
+
+    dataInput.value =
+        output;
+
+
+    convertData();
+
+}
+
+
+function clearTool() {
+
+    dataInput.value = "";
+    dataOutput.value = "";
+
+    hideMessages();
+
+    dataInput.focus();
+
+}
+
+
+async function copyResult() {
+
+    if (
+        dataOutput.value === ""
+    ) {
+
+        showStatus(
+            "Convert data first."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        await navigator.clipboard.writeText(
+            dataOutput.value
+        );
+
+    }
+
+    catch (error) {
+
+        dataOutput.select();
+
+        document.execCommand(
+            "copy"
+        );
+
+    }
+
+
+    showStatus(
+        "Result copied!"
+    );
+
+}
+
+
+function showError(message) {
+
+    errorBox.textContent =
+        message;
+
+    errorBox.style.display =
+        "block";
+
+}
+
+
+function showStatus(message) {
+
+    statusBox.textContent =
+        message;
+
+    statusBox.style.display =
+        "block";
+
+
+    clearTimeout(
+        showStatus.timer
+    );
+
+
+    showStatus.timer =
+        setTimeout(
+            function() {
+
+                statusBox.style.display =
+                    "none";
+
+            },
+            2000
+        );
+
+}
+
+
+function hideMessages() {
+
+    errorBox.style.display =
+        "none";
+
+    statusBox.style.display =
+        "none";
+
+}
+
+
+jsonModeButton.addEventListener(
+    "click",
+    function() {
+
+        setMode("json");
+
+    }
+);
+
+
+xmlModeButton.addEventListener(
+    "click",
+    function() {
+
+        setMode("xml");
+
+    }
+);
+
+
+convertButton.addEventListener(
+    "click",
+    convertData
+);
+
+
+document.getElementById(
+    "sampleButton"
+).addEventListener(
+    "click",
+    loadSample
+);
+
+
+document.getElementById(
+    "swapButton"
+).addEventListener(
+    "click",
+    swapData
+);
+
+
+document.getElementById(
+    "clearButton"
+).addEventListener(
+    "click",
+    clearTool
+);
+
+
+document.getElementById(
+    "copyButton"
+).addEventListener(
+    "click",
+    copyResult
+);
+
+</script>
+
+<script>
+document.getElementById("shareButton").addEventListener("click", async function(){
+try{
+if(navigator.share){
+await navigator.share({title:"EasyTools365 JSON XML Converter",text:"Free JSON XML Converter",url:window.location.href});
+}else{
+await navigator.clipboard.writeText(window.location.href);
+this.innerHTML='<i class="bi bi-check-lg"></i> Link Copied!';
+setTimeout(()=>this.innerHTML='<i class="bi bi-share-fill"></i> Share',1500);
+}
+}catch(e){}
+});
+
+document.getElementById("copyLinkButton").addEventListener("click", async function(){
+try{
+await navigator.clipboard.writeText(window.location.href);
+this.innerHTML='<i class="bi bi-check-lg"></i> Link Copied!';
+setTimeout(()=>this.innerHTML='<i class="bi bi-link-45deg"></i> Copy Link',1500);
+}catch(e){
+const input=document.createElement("input");
+input.value=window.location.href;
+document.body.appendChild(input);
+input.select();
+document.execCommand("copy");
+input.remove();
+}
+});
+</script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

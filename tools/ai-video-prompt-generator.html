@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Video Prompt Generator - Create Prompts for Veo, Kling, Sora & Runway | EasyTools365</title>
+<meta name="description" content="Free AI Video Prompt Generator for creating detailed cinematic prompts for Veo, Kling, Sora, Runway and other AI video tools. Customize style, camera, lighting, mood, duration and aspect ratio.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/ai-video-prompt-generator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Video Prompt Generator | EasyTools365">
+<meta property="og:description" content="Turn a simple video idea into a detailed AI video prompt with camera movement, lighting, style, mood, aspect ratio and negative prompts.">
+<meta property="og:url" content="https://easytools365.com/tools/ai-video-prompt-generator.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Video Prompt Generator | EasyTools365">
+<meta name="twitter:description" content="Build detailed cinematic AI video prompts for Veo, Kling, Sora, Runway and other video generators.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:45px 15px 70px}
+.tool-wrapper{max-width:1000px;margin:auto}
+.breadcrumb{margin-bottom:25px}
+.back-home{display:inline-flex;align-items:center;gap:8px;margin-bottom:25px;color:var(--primary);font-weight:600;text-decoration:none}
+.tool-header{text-align:center;margin-bottom:32px}
+.tool-icon-large{display:inline-flex;width:74px;height:74px;align-items:center;justify-content:center;margin-bottom:18px;border-radius:22px;background:rgba(124,58,237,.1);color:#7c3aed;font-size:34px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:780px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.generator-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.generator-card{padding:30px}
+.field-group{margin-bottom:20px}
+.field-group label{display:block;margin-bottom:8px;font-weight:600}
+.field-control{width:100%;padding:13px 15px;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none}
+.field-control:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+textarea.field-control{min-height:125px;resize:vertical}
+.form-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.form-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.generate-btn{width:100%;padding:15px;border:0;border-radius:12px;background:var(--primary);color:#fff;font-size:16px;font-weight:700}
+.generate-btn:hover{opacity:.92}
+.result-area{display:none;margin-top:30px}
+.result-header{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:15px}
+.result-header h2{margin:0;font-size:20px;font-weight:700}
+.copy-btn,.action-btn{padding:10px 14px;border:1px solid var(--border);border-radius:10px;background:var(--background);color:var(--text);font-weight:600}
+.prompt-output{width:100%;min-height:500px;padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--background);color:var(--text);line-height:1.75;resize:vertical;outline:none;overflow-wrap:anywhere}
+.result-stats{display:flex;justify-content:space-between;margin-top:8px;color:var(--text-light);font-size:12px}
+.bottom-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.info-note{margin-top:24px;padding:15px;border-radius:12px;background:rgba(124,58,237,.08);color:var(--text-light);text-align:center;font-size:13px;line-height:1.6}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:22px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+body.dark-mode .field-control,body.dark-mode .prompt-output,body.dark-mode .copy-btn,body.dark-mode .action-btn{background:#0f172a}
+body.dark-mode .tool-icon-large{background:#4c1d95;color:#ddd6fe}
+@media(max-width:750px){
+.generator-card,.info-card{padding:20px}
+.form-grid-2,.form-grid-3,.bottom-actions,.related-grid{grid-template-columns:1fr}
+.tool-header h1{font-size:31px}
+.result-header{flex-direction:column;align-items:flex-start}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 AI Video Prompt Generator","url":"https://easytools365.com/tools/ai-video-prompt-generator.html","applicationCategory":"MultimediaApplication","operatingSystem":"Any","description":"Free browser-based AI video prompt builder for detailed video prompts, camera directions, lighting, mood and negative prompts.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Create an AI Video Prompt","description":"Create a detailed AI video prompt with the EasyTools365 AI Video Prompt Generator.","step":[
+{"@type":"HowToStep","position":1,"name":"Describe your video idea","text":"Enter the main scene, subject or action you want to generate."},
+{"@type":"HowToStep","position":2,"name":"Choose the video platform","text":"Select a generic prompt or a prompt style suitable for Veo, Kling, Sora or Runway."},
+{"@type":"HowToStep","position":3,"name":"Customize visual settings","text":"Choose visual style, aspect ratio, duration, shot type, camera movement, lighting and mood."},
+{"@type":"HowToStep","position":4,"name":"Add extra details","text":"Optionally add specific objects, textures, environments, actions or other visual requirements."},
+{"@type":"HowToStep","position":5,"name":"Add things to avoid","text":"Enter unwanted elements such as text, logos, distorted hands or duplicate objects."},
+{"@type":"HowToStep","position":6,"name":"Generate and copy","text":"Generate the prompt, review it and copy the result for use in your preferred AI video workflow."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the AI Video Prompt Generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 AI Video Prompt Generator is free to use in your browser."}},
+{"@type":"Question","name":"Does it generate the video itself?","acceptedAnswer":{"@type":"Answer","text":"No. It creates detailed text prompts that can be used with AI video generators."}},
+{"@type":"Question","name":"Does it require an API key?","acceptedAnswer":{"@type":"Answer","text":"No. The current browser-based prompt builder does not require an AI API key."}},
+{"@type":"Question","name":"Which AI video platforms can I use it with?","acceptedAnswer":{"@type":"Answer","text":"The tool includes Generic, Google Veo, Kling AI, Sora and Runway options. Generated prompts can also be adapted to other AI video tools."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/ai-tools.html">AI Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">AI Video Prompt Generator</li>
+</ol>
+</nav>
+
+<a href="../index.html" class="back-home"><i class="bi bi-arrow-left"></i> Back to Home</a>
+
+<header class="tool-header">
+<div class="tool-icon-large"><i class="bi bi-camera-reels"></i></div>
+<h1>AI Video Prompt Generator</h1>
+<p>Turn a simple video idea into a detailed prompt for AI video generators such as Veo, Kling, Sora and Runway.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="generator-card">
+
+<div class="field-group">
+<label for="scene">Describe Your Video Idea</label>
+<textarea id="scene" class="field-control" maxlength="800" placeholder="Example: A giant strawberry cake being prepared inside a beautiful anime kitchen"></textarea>
+<div class="text-end mt-1" style="font-size:12px;color:var(--text-light);"><span id="sceneCount">0</span>/800</div>
+</div>
+
+<div class="form-grid-2">
+<div class="field-group">
+<label for="platform">AI Video Platform</label>
+<select id="platform" class="field-control">
+<option value="generic">Generic / Universal</option>
+<option value="veo">Google Veo</option>
+<option value="kling">Kling AI</option>
+<option value="sora">Sora</option>
+<option value="runway">Runway</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="style">Visual Style</label>
+<select id="style" class="field-control">
+<option value="cinematic">Cinematic Realistic</option>
+<option value="anime">Anime Cinematic</option>
+<option value="photorealistic">Photorealistic</option>
+<option value="3d">3D Animation</option>
+<option value="documentary">Documentary</option>
+<option value="commercial">Commercial / Product</option>
+<option value="fantasy">Fantasy Cinematic</option>
+<option value="asmr">ASMR / Satisfying</option>
+</select>
+</div>
+</div>
+
+<div class="form-grid-3">
+<div class="field-group">
+<label for="aspectRatio">Aspect Ratio</label>
+<select id="aspectRatio" class="field-control">
+<option value="9:16">9:16 Vertical</option>
+<option value="16:9">16:9 Landscape</option>
+<option value="1:1">1:1 Square</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="duration">Duration</label>
+<select id="duration" class="field-control">
+<option value="5">5 seconds</option>
+<option value="8" selected>8 seconds</option>
+<option value="10">10 seconds</option>
+<option value="15">15 seconds</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="shot">Shot Type</label>
+<select id="shot" class="field-control">
+<option value="medium">Medium Shot</option>
+<option value="wide">Wide Shot</option>
+<option value="close">Close-Up</option>
+<option value="macro">Macro Shot</option>
+<option value="aerial">Aerial Shot</option>
+<option value="low">Low-Angle Shot</option>
+</select>
+</div>
+</div>
+
+<div class="form-grid-2">
+<div class="field-group">
+<label for="camera">Camera Movement</label>
+<select id="camera" class="field-control">
+<option value="slowPush">Slow Push-In</option>
+<option value="static">Static Camera</option>
+<option value="pan">Smooth Pan</option>
+<option value="tracking">Tracking Shot</option>
+<option value="orbit">Cinematic Orbit</option>
+<option value="dolly">Dolly Forward</option>
+<option value="handheld">Natural Handheld</option>
+<option value="crane">Crane Movement</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="lighting">Lighting</label>
+<select id="lighting" class="field-control">
+<option value="cinematicWarm">Warm Cinematic</option>
+<option value="natural">Natural Daylight</option>
+<option value="golden">Golden Hour</option>
+<option value="dramatic">Dramatic Lighting</option>
+<option value="neon">Neon Night</option>
+<option value="soft">Soft Studio</option>
+<option value="moody">Moody Low Light</option>
+</select>
+</div>
+</div>
+
+<div class="field-group">
+<label for="mood">Mood / Atmosphere</label>
+<select id="mood" class="field-control">
+<option value="immersive">Immersive</option>
+<option value="relaxing">Relaxing</option>
+<option value="dramatic">Dramatic</option>
+<option value="epic">Epic</option>
+<option value="dreamy">Dreamy</option>
+<option value="mysterious">Mysterious</option>
+<option value="energetic">Energetic</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="details">Extra Details <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
+<textarea id="details" class="field-control" maxlength="500" placeholder="Example: Steam rising from the food, detailed textures, gentle movement of curtains"></textarea>
+</div>
+
+<div class="field-group">
+<label for="negative">Things to Avoid <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
+<input type="text" id="negative" class="field-control" placeholder="Example: text, logo, distorted hands, duplicate objects">
+</div>
+
+<button id="generateButton" class="generate-btn" type="button"><i class="bi bi-stars"></i> Generate Video Prompt</button>
+
+<div id="resultArea" class="result-area">
+<div class="result-header">
+<h2><i class="bi bi-magic"></i> Generated Video Prompt</h2>
+<button id="copyButton" class="copy-btn" type="button"><i class="bi bi-copy"></i> Copy Prompt</button>
+</div>
+
+<textarea id="promptOutput" class="prompt-output" readonly aria-label="Generated video prompt"></textarea>
+
+<div class="result-stats">
+<span><span id="wordCount">0</span> words</span>
+<span><span id="characterCount">0</span> characters</span>
+</div>
+
+<div class="bottom-actions">
+<button id="regenerateButton" class="action-btn" type="button"><i class="bi bi-arrow-repeat"></i> Generate Again</button>
+<button id="clearButton" class="action-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+</div>
+
+<div class="info-note">
+<i class="bi bi-lightning-charge"></i>
+This is a browser-based prompt builder. It does not generate the video itself and does not require an AI API key.
+</div>
+
+</section>
+
+<section class="info-card">
+<h2>What Is an AI Video Prompt Generator?</h2>
+<p>An AI video prompt generator turns a simple idea into a structured text prompt for generative video tools. A detailed prompt can describe the subject, visual style, camera shot, camera movement, lighting, mood, duration and unwanted elements so you have a clearer starting point for video creation.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Create an AI Video Prompt</h2>
+<ol>
+<li>Describe the main video idea or scene.</li>
+<li>Select the AI video platform you plan to use.</li>
+<li>Choose a visual style such as cinematic, anime, photorealistic or 3D.</li>
+<li>Select the aspect ratio and duration.</li>
+<li>Choose a shot type and camera movement.</li>
+<li>Set the lighting and mood.</li>
+<li>Add extra visual details if needed.</li>
+<li>Add things to avoid, such as unwanted text, logos or visual distortions.</li>
+<li>Click <strong>Generate Video Prompt</strong> and copy the result.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>What Makes a Good AI Video Prompt?</h2>
+<p>A useful video prompt gives the generator enough visual information to understand the intended scene without becoming unnecessarily confusing. Include the main subject, action, environment, visual style, camera direction, lighting and atmosphere. For multi-scene projects, keep important character and environment details consistent.</p>
+</section>
+
+<section class="info-card">
+<h2>Camera Shots and Movement</h2>
+<p>Camera instructions help define how the viewer experiences the scene. Wide shots can establish an environment, close-ups can emphasize details, macro shots can highlight textures, and aerial views can show scale. Camera movement such as push-ins, pans, tracking, orbiting and dolly movements can add visual direction.</p>
+</section>
+
+<section class="info-card">
+<h2>Aspect Ratios for Video Content</h2>
+<p><strong>9:16 Vertical</strong> is useful for short-form vertical videos. <strong>16:9 Landscape</strong> is commonly used for widescreen video. <strong>1:1 Square</strong> can be useful for square social content. Choose the ratio based on the destination and composition of your final video.</p>
+</section>
+
+<section class="info-card">
+<h2>Why Use a Negative Prompt?</h2>
+<p>The Things to Avoid field helps identify unwanted visual elements. Examples include text, logos, watermarks, duplicate objects, distorted anatomy, flickering and inconsistent objects. The generator combines your custom exclusions with a general set of quality and consistency safeguards.</p>
+</section>
+
+<section class="info-card">
+<h2>Does This Tool Generate the Video?</h2>
+<p>No. EasyTools365 AI Video Prompt Generator creates the text prompt only. You can copy the generated prompt and adapt it for your preferred AI video generator or production workflow.</p>
+</section>
+
+<section class="info-card">
+<h2>Does This Tool Require an API Key?</h2>
+<p>No. The current version is a browser-based prompt builder and does not require an AI API key. This keeps the tool simple and useful for preparing prompts before using a separate video generation service.</p>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the AI Video Prompt Generator free?</h3>
+<p>Yes. The EasyTools365 AI Video Prompt Generator is free to use in your browser.</p>
+
+<h3>Does it generate the video itself?</h3>
+<p>No. It creates detailed text prompts that can be used with AI video generators.</p>
+
+<h3>Does it require an API key?</h3>
+<p>No. The current browser-based prompt builder does not require an AI API key.</p>
+
+<h3>Which AI video platforms can I use it with?</h3>
+<p>The tool includes Generic, Google Veo, Kling AI, Sora and Runway options. Generated prompts can also be adapted to other AI video tools.</p>
+</section>
+
+<section class="info-card">
+<h2>Related AI Tools</h2>
+<div class="related-grid">
+<a href="ai-storyboard-generator.html" class="btn btn-outline-primary">AI Storyboard Generator</a>
+<a href="ai-story-generator.html" class="btn btn-outline-primary">AI Story Generator</a>
+<a href="ai-prompt-improver.html" class="btn btn-outline-primary">AI Prompt Improver</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for AI, images, PDF, text, calculators and developer tasks.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+
+        const scene = document.getElementById("scene");
+        const sceneCount = document.getElementById("sceneCount");
+
+        const platform = document.getElementById("platform");
+        const style = document.getElementById("style");
+        const aspectRatio = document.getElementById("aspectRatio");
+        const duration = document.getElementById("duration");
+        const shot = document.getElementById("shot");
+        const camera = document.getElementById("camera");
+        const lighting = document.getElementById("lighting");
+        const mood = document.getElementById("mood");
+
+        const details = document.getElementById("details");
+        const negative = document.getElementById("negative");
+
+        const generateButton = document.getElementById("generateButton");
+        const regenerateButton = document.getElementById("regenerateButton");
+        const copyButton = document.getElementById("copyButton");
+        const clearButton = document.getElementById("clearButton");
+
+        const resultArea = document.getElementById("resultArea");
+        const promptOutput = document.getElementById("promptOutput");
+
+        const wordCount = document.getElementById("wordCount");
+        const characterCount = document.getElementById("characterCount");
+
+
+        scene.addEventListener("input", function () {
+
+            sceneCount.textContent =
+                scene.value.length;
+
+        });
+
+
+        const styleText = {
+
+            cinematic:
+                "cinematic realistic visual style, highly detailed environments, realistic materials, natural depth and polished film-like composition",
+
+            anime:
+                "high-quality cinematic anime style, expressive visual storytelling, detailed anime backgrounds, clean linework, rich environmental detail and fluid animation",
+
+            photorealistic:
+                "photorealistic visual style with realistic textures, physically believable materials, natural depth, fine surface details and lifelike rendering",
+
+            "3d":
+                "high-quality 3D animated style, detailed models, polished materials, cinematic rendering and smooth character and object animation",
+
+            documentary:
+                "authentic documentary visual style, realistic environments, observational cinematography and natural visual detail",
+
+            commercial:
+                "premium commercial visual style, polished composition, clean product-quality imagery, refined lighting and professional presentation",
+
+            fantasy:
+                "epic fantasy cinematic style, imaginative environments, atmospheric depth, rich visual detail and dramatic world-building",
+
+            asmr:
+                "satisfying ASMR visual style, extreme attention to texture, clean composition, precise physical movement and visually pleasing details"
+
+        };
+
+
+        const shotText = {
+
+            medium:
+                "medium shot with balanced subject framing",
+
+            wide:
+                "wide establishing shot showing the subject and surrounding environment",
+
+            close:
+                "close-up shot emphasizing important visual details",
+
+            macro:
+                "macro close-up capturing extremely fine textures and surface details",
+
+            aerial:
+                "cinematic aerial perspective with clear environmental composition",
+
+            low:
+                "low-angle cinematic shot creating a strong sense of scale and presence"
+
+        };
+
+
+        const cameraText = {
+
+            slowPush:
+                "a slow and smooth cinematic push-in toward the main subject",
+
+            static:
+                "a stable locked-off camera with carefully composed framing",
+
+            pan:
+                "a smooth controlled camera pan following the visual action",
+
+            tracking:
+                "a smooth tracking shot that naturally follows the subject",
+
+            orbit:
+                "a slow cinematic orbit around the main subject",
+
+            dolly:
+                "a controlled dolly movement gradually moving forward through the scene",
+
+            handheld:
+                "subtle natural handheld camera movement with realistic stabilization",
+
+            crane:
+                "a smooth crane movement revealing the scene with cinematic depth"
+
+        };
+
+
+        const lightingText = {
+
+            cinematicWarm:
+                "warm cinematic lighting with soft highlights, realistic shadows and gentle contrast",
+
+            natural:
+                "natural daylight with realistic soft shadows and balanced exposure",
+
+            golden:
+                "beautiful golden-hour lighting with warm sunlight and atmospheric highlights",
+
+            dramatic:
+                "dramatic cinematic lighting with strong depth, controlled highlights and expressive shadows",
+
+            neon:
+                "vibrant neon night lighting with colorful reflections and atmospheric glow",
+
+            soft:
+                "soft studio lighting with clean highlights, gentle shadows and even illumination",
+
+            moody:
+                "moody low-key lighting with deep shadows and atmospheric contrast"
+
+        };
+
+
+        const moodText = {
+
+            immersive:
+                "immersive and visually engaging atmosphere",
+
+            relaxing:
+                "calm, peaceful and relaxing atmosphere",
+
+            dramatic:
+                "dramatic and emotionally intense atmosphere",
+
+            epic:
+                "epic, powerful and grand cinematic atmosphere",
+
+            dreamy:
+                "dreamy, soft and slightly magical atmosphere",
+
+            mysterious:
+                "mysterious and atmospheric visual tone",
+
+            energetic:
+                "energetic, dynamic and exciting atmosphere"
+
+        };
+
+
+        const platformText = {
+
+            generic:
+                "Create a high-quality AI-generated video",
+
+            veo:
+                "Create a polished cinematic video suitable for a modern text-to-video model such as Veo",
+
+            kling:
+                "Create a visually consistent cinematic video suitable for an AI video model such as Kling",
+
+            sora:
+                "Create a coherent cinematic video suitable for a modern generative video model such as Sora",
+
+            runway:
+                "Create a polished cinematic video suitable for an AI video workflow such as Runway"
+
+        };
+
+
+        function getOrientation(ratio) {
+
+            if (ratio === "9:16") {
+                return "vertical";
+            }
+
+            if (ratio === "16:9") {
+                return "landscape";
+            }
+
+            return "square";
+
+        }
+
+
+        function cleanText(text) {
+
+            return text
+                .trim()
+                .replace(/\s+/g, " ");
+
+        }
+
+
+        function generatePrompt() {
+
+            const sceneValue =
+                cleanText(scene.value);
+
+
+            if (!sceneValue) {
+
+                alert(
+                    "Please describe your video idea."
+                );
+
+                scene.focus();
+
+                return;
+
+            }
+
+
+            const ratio =
+                aspectRatio.value;
+
+            const orientation =
+                getOrientation(ratio);
+
+            const detailValue =
+                cleanText(details.value);
+
+            const userNegative =
+                cleanText(negative.value);
+
+
+            let avoidItems =
+                "flickering, frame-to-frame inconsistency, warped anatomy, distorted hands, duplicate subjects, unintended object changes, unnatural motion, sudden camera jumps, low-detail textures, unwanted text, logos and watermarks";
+
+
+            if (userNegative) {
+
+                avoidItems +=
+                    ", " + userNegative;
+
+            }
+
+
+            const result =
+`${platformText[platform.value]}.
+
+FORMAT:
+${duration.value}-second ${orientation} video, ${ratio} aspect ratio.
+
+MAIN SCENE:
+${sceneValue}.
+
+VISUAL STYLE:
+${styleText[style.value]}.
+
+SHOT:
+${shotText[shot.value]}.
+
+CAMERA MOVEMENT:
+Use ${cameraText[camera.value]}. Camera motion should remain smooth, intentional and visually consistent throughout the shot.
+
+LIGHTING:
+${lightingText[lighting.value]}.
+
+MOOD & ATMOSPHERE:
+Create an ${moodText[mood.value]}.
+
+SUBJECT & MOTION:
+Maintain natural, continuous and physically believable movement. The subject, environment and important objects should remain visually consistent from the first frame to the final frame.
+
+${detailValue ? `EXTRA DETAILS:\n${detailValue}.\n\n` : ""}VISUAL CONSISTENCY:
+Preserve the appearance, proportions, colors, clothing, objects and environment throughout the video. Avoid unexplained transformations or objects appearing and disappearing between frames.
+
+QUALITY:
+Highly detailed, smooth animation, coherent motion, clean composition, stable geometry, realistic depth, polished cinematic quality and consistent temporal detail.
+
+AVOID:
+${avoidItems}.`;
+
+
+            promptOutput.value =
+                result;
+
+
+            updateStats(result);
+
+
+            resultArea.style.display =
+                "block";
+
+
+            resultArea.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+        }
+
+
+        function updateStats(text) {
+
+            const words =
+                text
+                    .trim()
+                    .split(/\s+/)
+                    .filter(Boolean);
+
+
+            wordCount.textContent =
+                words.length;
+
+
+            characterCount.textContent =
+                text.length;
+
+        }
+
+
+        async function copyText(text) {
+
+            try {
+
+                await navigator.clipboard.writeText(
+                    text
+                );
+
+            } catch (error) {
+
+                const temp =
+                    document.createElement("textarea");
+
+                temp.value = text;
+
+                document.body.appendChild(temp);
+
+                temp.select();
+
+                document.execCommand("copy");
+
+                temp.remove();
+
+            }
+
+        }
+
+
+        generateButton.addEventListener(
+            "click",
+            generatePrompt
+        );
+
+
+        regenerateButton.addEventListener(
+            "click",
+            generatePrompt
+        );
+
+
+        copyButton.addEventListener(
+            "click",
+            async function () {
+
+                if (!promptOutput.value) {
+                    return;
+                }
+
+
+                await copyText(
+                    promptOutput.value
+                );
+
+
+                copyButton.innerHTML =
+                    '<i class="bi bi-check-lg"></i> Copied!';
+
+
+                setTimeout(
+                    function () {
+
+                        copyButton.innerHTML =
+                            '<i class="bi bi-copy"></i> Copy Prompt';
+
+                    },
+                    1500
+                );
+
+            }
+        );
+
+
+        clearButton.addEventListener(
+            "click",
+            function () {
+
+                scene.value = "";
+                details.value = "";
+                negative.value = "";
+
+                sceneCount.textContent = "0";
+
+                promptOutput.value = "";
+
+                wordCount.textContent = "0";
+                characterCount.textContent = "0";
+
+                resultArea.style.display =
+                    "none";
+
+                scene.focus();
+
+            }
+        );
+
+    </script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

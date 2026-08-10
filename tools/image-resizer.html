@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Image Resizer - Resize JPG, PNG & WebP Online | EasyTools365</title>
+<meta name="description" content="Free online Image Resizer for JPG, PNG and WebP. Resize image dimensions in your browser, lock aspect ratio, use presets and download the resized image.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/image-resizer.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Image Resizer - JPG, PNG & WebP | EasyTools365">
+<meta property="og:description" content="Resize images directly in your browser. Set custom dimensions, lock the aspect ratio and download the resized result.">
+<meta property="og:url" content="https://easytools365.com/tools/image-resizer.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Image Resizer | EasyTools365">
+<meta name="twitter:description" content="Free browser-based image resizing for JPG, PNG and WebP files.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:55px 15px 75px}
+.tool-wrapper{max-width:950px;margin:auto}
+.breadcrumb{margin-bottom:22px}
+.back-home{display:inline-flex;align-items:center;gap:8px;margin-bottom:25px;color:var(--primary);font-weight:600;text-decoration:none}
+.tool-header{text-align:center;margin-bottom:32px}
+.tool-icon-large{display:inline-flex;width:76px;height:76px;align-items:center;justify-content:center;margin-bottom:18px;border-radius:22px;background:rgba(37,99,235,.10);color:var(--primary);font-size:35px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:720px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.resizer-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.resizer-card{padding:30px}
+.upload-area{padding:48px 20px;text-align:center;border:2px dashed var(--border);border-radius:18px;cursor:pointer;transition:.2s}
+.upload-area:hover,.upload-area.dragover{border-color:var(--primary);background:rgba(37,99,235,.05)}
+.upload-area i{display:block;margin-bottom:12px;color:var(--primary);font-size:46px}
+.upload-area h2{font-size:20px;font-weight:700}
+.upload-area p{margin:0;color:var(--text-light)}
+#imageInput{display:none}
+.editor-area{display:none;margin-top:28px}
+.preview-image{width:100%;max-height:420px;object-fit:contain;border:1px solid var(--border);border-radius:16px;background:var(--background)}
+.original-info{margin-top:12px;text-align:center;color:var(--text-light);font-size:14px}
+.dimension-title{margin-top:28px;margin-bottom:14px;font-size:18px;font-weight:700}
+.dimension-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.dimension-box label{display:block;margin-bottom:7px;font-weight:700;font-size:13px}
+.dimension-box input{width:100%;padding:13px 15px;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none}
+.dimension-box input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.lock-row{display:flex;align-items:center;gap:10px;margin-top:15px}
+.lock-row input{width:18px;height:18px}
+.presets{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.preset-btn{padding:9px 14px;border:1px solid var(--border);border-radius:10px;background:var(--background);color:var(--text);font-size:13px;font-weight:600}
+.preset-btn:hover{border-color:var(--primary);color:var(--primary)}
+.resize-btn,.download-btn,.reset-btn{width:100%;margin-top:22px;padding:14px;border-radius:12px;font-weight:700}
+.resize-btn{border:none;background:var(--primary);color:#fff}
+.download-btn{display:block;margin-top:12px;text-align:center;text-decoration:none;background:#16a34a;color:#fff}
+.reset-btn{border:1px solid var(--border);background:var(--background);color:var(--text)}
+.result-area{display:none;margin-top:28px}
+.result-title{margin-bottom:14px;font-size:20px;font-weight:700}
+.result-info{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
+.info-box{padding:15px;text-align:center;background:var(--background);border:1px solid var(--border);border-radius:12px}
+.info-box span{display:block;color:var(--text-light);font-size:12px}
+.info-box strong{display:block;margin-top:5px;font-size:16px}
+.privacy-note{margin-top:22px;padding:14px;border-radius:12px;background:rgba(37,99,235,.08);color:var(--text-light);text-align:center;font-size:13px;line-height:1.6}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:22px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+body.dark-mode .tool-icon-large{background:#1e3a8a}
+body.dark-mode .preview-image,body.dark-mode .dimension-box input,body.dark-mode .preset-btn,body.dark-mode .info-box,body.dark-mode .reset-btn{background:#0f172a}
+@media(max-width:650px){
+.dimension-grid,.result-info,.related-grid{grid-template-columns:1fr}
+.resizer-card,.info-card{padding:20px}
+.tool-header h1{font-size:31px}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 Image Resizer","url":"https://easytools365.com/tools/image-resizer.html","applicationCategory":"MultimediaApplication","operatingSystem":"Any","description":"Free browser-based image resizer for JPG, PNG and WebP files.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Resize an Image","description":"Resize an image with the EasyTools365 Image Resizer.","step":[
+{"@type":"HowToStep","position":1,"name":"Choose an image","text":"Select or drag a JPG, PNG or WebP image into the upload area."},
+{"@type":"HowToStep","position":2,"name":"Set dimensions","text":"Enter the desired width and height in pixels."},
+{"@type":"HowToStep","position":3,"name":"Resize the image","text":"Click Resize Image to create the new dimensions."},
+{"@type":"HowToStep","position":4,"name":"Download the result","text":"Review the resized image and click Download Resized Image."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the Image Resizer free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 Image Resizer is free to use online."}},
+{"@type":"Question","name":"Which image formats are supported?","acceptedAnswer":{"@type":"Answer","text":"The tool accepts JPG, PNG and WebP images."}},
+{"@type":"Question","name":"Can I keep the original aspect ratio?","acceptedAnswer":{"@type":"Answer","text":"Yes. Lock Aspect Ratio is enabled by default so changing one dimension can automatically calculate the other dimension."}},
+{"@type":"Question","name":"Is the image uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"The image resizing is performed locally in your browser and does not need to upload the image to the EasyTools365 server."}},
+{"@type":"Question","name":"Can I use preset dimensions?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool includes 1920×1080, 1280×720, 1080×1080 and 1080×1920 presets."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/image-tools.html">Image Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">Image Resizer</li>
+</ol>
+</nav>
+
+<a href="../categories/image-tools.html" class="back-home"><i class="bi bi-arrow-left"></i> Back to Image Tools</a>
+
+<header class="tool-header">
+<div class="tool-icon-large"><i class="bi bi-arrows-angle-expand"></i></div>
+<h1>Image Resizer</h1>
+<p>Resize JPG, PNG and WebP images quickly in your browser. Set custom dimensions, lock the aspect ratio and download the result.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="resizer-card">
+
+<div id="uploadArea" class="upload-area">
+<i class="bi bi-cloud-arrow-up"></i>
+<h2>Choose an Image</h2>
+<p>Click or drag &amp; drop JPG, PNG or WebP</p>
+</div>
+
+<input type="file" id="imageInput" accept="image/jpeg,image/png,image/webp">
+
+<div id="editorArea" class="editor-area">
+<img id="previewImage" class="preview-image" alt="Original image preview">
+
+<div class="original-info">
+Original: <strong id="originalDimensions">-</strong>
+&nbsp; | &nbsp;
+Size: <strong id="originalSize">-</strong>
+</div>
+
+<div class="dimension-title">New Image Size</div>
+
+<div class="dimension-grid">
+<div class="dimension-box">
+<label for="widthInput">Width (px)</label>
+<input type="number" id="widthInput" min="1">
+</div>
+<div class="dimension-box">
+<label for="heightInput">Height (px)</label>
+<input type="number" id="heightInput" min="1">
+</div>
+</div>
+
+<div class="lock-row">
+<input type="checkbox" id="lockRatio" checked>
+<label for="lockRatio"><i class="bi bi-link"></i> Lock Aspect Ratio</label>
+</div>
+
+<div class="presets">
+<button class="preset-btn" data-width="1920" data-height="1080" type="button">1920 × 1080</button>
+<button class="preset-btn" data-width="1280" data-height="720" type="button">1280 × 720</button>
+<button class="preset-btn" data-width="1080" data-height="1080" type="button">1080 × 1080</button>
+<button class="preset-btn" data-width="1080" data-height="1920" type="button">1080 × 1920</button>
+</div>
+
+<button id="resizeButton" class="resize-btn" type="button">
+<i class="bi bi-arrows-angle-expand"></i> Resize Image
+</button>
+
+<div id="resultArea" class="result-area">
+<div class="result-title">Resized Image</div>
+<img id="resultImage" class="preview-image" alt="Resized image preview">
+
+<div class="result-info">
+<div class="info-box"><span>New Dimensions</span><strong id="newDimensions">-</strong></div>
+<div class="info-box"><span>File Size</span><strong id="newSize">-</strong></div>
+</div>
+
+<a id="downloadButton" class="download-btn">
+<i class="bi bi-download"></i> Download Resized Image
+</a>
+</div>
+
+<button id="resetButton" class="reset-btn" type="button">
+<i class="bi bi-arrow-counterclockwise"></i> Choose Another Image
+</button>
+</div>
+
+<div class="privacy-note">
+<i class="bi bi-shield-check"></i>
+Your images are processed locally in your browser and do not need to be uploaded to our server.
+</div>
+
+</section>
+
+<section class="info-card">
+<h2>What Is an Image Resizer?</h2>
+<p>An image resizer changes the pixel dimensions of an image while keeping the image in a convenient format for your project. It is useful when preparing images for websites, social media, documents, presentations, profile pictures and thumbnails.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Resize an Image</h2>
+<ol>
+<li>Select or drag a JPG, PNG or WebP image into the upload area.</li>
+<li>Enter the desired <strong>Width</strong> and <strong>Height</strong>.</li>
+<li>Keep <strong>Lock Aspect Ratio</strong> enabled if you want proportional resizing.</li>
+<li>Optionally choose one of the preset dimensions.</li>
+<li>Click <strong>Resize Image</strong>.</li>
+<li>Review the result and download the resized image.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>Why Resize Images?</h2>
+<p>Different websites and applications often use different image dimensions. Resizing lets you prepare images for a specific display area and can help create consistent dimensions across a project.</p>
+</section>
+
+<section class="info-card">
+<h2>Lock Aspect Ratio</h2>
+<p>When Lock Aspect Ratio is enabled, changing the width automatically calculates the height and changing the height calculates the width. This helps reduce unwanted stretching or distortion.</p>
+</section>
+
+<section class="info-card">
+<h2>Image Resizer Presets</h2>
+<p>The tool includes common presets for landscape, square and portrait layouts: <strong>1920×1080</strong>, <strong>1280×720</strong>, <strong>1080×1080</strong> and <strong>1080×1920</strong>.</p>
+</section>
+
+<section class="info-card">
+<h2>Local Browser Processing</h2>
+<p>The resizing operation uses browser image and canvas APIs. Your image does not need to be sent to the EasyTools365 server, which can be useful when working with files you prefer to keep in your browser session.</p>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the Image Resizer free?</h3>
+<p>Yes. The EasyTools365 Image Resizer is free to use online.</p>
+
+<h3>Which image formats are supported?</h3>
+<p>The tool accepts JPG, PNG and WebP images.</p>
+
+<h3>Can I keep the original aspect ratio?</h3>
+<p>Yes. Lock Aspect Ratio is enabled by default so changing one dimension can automatically calculate the other dimension.</p>
+
+<h3>Is the image uploaded to a server?</h3>
+<p>The image resizing is performed locally in your browser and does not need to upload the image to the EasyTools365 server.</p>
+
+<h3>Can I use preset dimensions?</h3>
+<p>Yes. The tool includes 1920×1080, 1280×720, 1080×1080 and 1080×1920 presets.</p>
+</section>
+
+<section class="info-card">
+<h2>Related Image Tools</h2>
+<div class="related-grid">
+<a href="image-compressor.html" class="btn btn-outline-primary">Image Compressor</a>
+<a href="image-to-jpg.html" class="btn btn-outline-primary">Image to JPG</a>
+<a href="image-to-pdf.html" class="btn btn-outline-primary">Image to PDF</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for images, PDF, text, calculators, developer tasks and more.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<canvas id="canvas" style="display:none;"></canvas>
+
+<script>
+const uploadArea =
+            document.getElementById("uploadArea");
+
+        const imageInput =
+            document.getElementById("imageInput");
+
+        const editorArea =
+            document.getElementById("editorArea");
+
+        const previewImage =
+            document.getElementById("previewImage");
+
+        const widthInput =
+            document.getElementById("widthInput");
+
+        const heightInput =
+            document.getElementById("heightInput");
+
+        const lockRatio =
+            document.getElementById("lockRatio");
+
+        const originalDimensions =
+            document.getElementById("originalDimensions");
+
+        const originalSize =
+            document.getElementById("originalSize");
+
+        const resizeButton =
+            document.getElementById("resizeButton");
+
+        const resultArea =
+            document.getElementById("resultArea");
+
+        const resultImage =
+            document.getElementById("resultImage");
+
+        const newDimensions =
+            document.getElementById("newDimensions");
+
+        const newSize =
+            document.getElementById("newSize");
+
+        const downloadButton =
+            document.getElementById("downloadButton");
+
+        const resetButton =
+            document.getElementById("resetButton");
+
+        const canvas =
+            document.getElementById("canvas");
+
+
+        let sourceImage = null;
+
+        let sourceFile = null;
+
+        let aspectRatio = 1;
+
+        let previewURL = null;
+
+        let resultURL = null;
+
+
+        function formatBytes(bytes) {
+
+            if (bytes < 1024 * 1024) {
+
+                return (bytes / 1024).toFixed(2) + " KB";
+
+            }
+
+            return (
+                bytes / (1024 * 1024)
+            ).toFixed(2) + " MB";
+
+        }
+
+
+        /* UPLOAD */
+
+        uploadArea.addEventListener(
+            "click",
+            function () {
+
+                imageInput.click();
+
+            }
+        );
+
+
+        imageInput.addEventListener(
+            "change",
+            function () {
+
+                if (imageInput.files[0]) {
+
+                    loadImage(imageInput.files[0]);
+
+                }
+
+            }
+        );
+
+
+        /* DRAG DROP */
+
+        uploadArea.addEventListener(
+            "dragover",
+            function (event) {
+
+                event.preventDefault();
+
+                uploadArea.classList.add("dragover");
+
+            }
+        );
+
+
+        uploadArea.addEventListener(
+            "dragleave",
+            function () {
+
+                uploadArea.classList.remove("dragover");
+
+            }
+        );
+
+
+        uploadArea.addEventListener(
+            "drop",
+            function (event) {
+
+                event.preventDefault();
+
+                uploadArea.classList.remove("dragover");
+
+                const file =
+                    event.dataTransfer.files[0];
+
+                if (file) {
+
+                    loadImage(file);
+
+                }
+
+            }
+        );
+
+
+        /* LOAD IMAGE */
+
+        function loadImage(file) {
+
+            const allowed = [
+                "image/jpeg",
+                "image/png",
+                "image/webp"
+            ];
+
+
+            if (!allowed.includes(file.type)) {
+
+                alert(
+                    "Please select a JPG, PNG or WebP image."
+                );
+
+                return;
+
+            }
+
+
+            sourceFile = file;
+
+
+            if (previewURL) {
+
+                URL.revokeObjectURL(previewURL);
+
+            }
+
+
+            previewURL =
+                URL.createObjectURL(file);
+
+
+            const img = new Image();
+
+
+            img.onload = function () {
+
+                sourceImage = img;
+
+                aspectRatio =
+                    img.naturalWidth /
+                    img.naturalHeight;
+
+
+                previewImage.src =
+                    previewURL;
+
+
+                widthInput.value =
+                    img.naturalWidth;
+
+
+                heightInput.value =
+                    img.naturalHeight;
+
+
+                originalDimensions.textContent =
+                    img.naturalWidth +
+                    " × " +
+                    img.naturalHeight +
+                    " px";
+
+
+                originalSize.textContent =
+                    formatBytes(file.size);
+
+
+                editorArea.style.display =
+                    "block";
+
+
+                resultArea.style.display =
+                    "none";
+
+            };
+
+
+            img.src = previewURL;
+
+        }
+
+
+        /* WIDTH */
+
+        widthInput.addEventListener(
+            "input",
+            function () {
+
+                if (
+                    lockRatio.checked &&
+                    widthInput.value
+                ) {
+
+                    heightInput.value =
+                        Math.round(
+                            Number(widthInput.value) /
+                            aspectRatio
+                        );
+
+                }
+
+            }
+        );
+
+
+        /* HEIGHT */
+
+        heightInput.addEventListener(
+            "input",
+            function () {
+
+                if (
+                    lockRatio.checked &&
+                    heightInput.value
+                ) {
+
+                    widthInput.value =
+                        Math.round(
+                            Number(heightInput.value) *
+                            aspectRatio
+                        );
+
+                }
+
+            }
+        );
+
+
+        /* PRESETS */
+
+        document
+            .querySelectorAll(".preset-btn")
+            .forEach(function (button) {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        widthInput.value =
+                            button.dataset.width;
+
+                        heightInput.value =
+                            button.dataset.height;
+
+                    }
+                );
+
+            });
+
+
+        /* RESIZE */
+
+        resizeButton.addEventListener(
+            "click",
+            function () {
+
+                if (!sourceImage) {
+
+                    return;
+
+                }
+
+
+                const width =
+                    parseInt(widthInput.value);
+
+                const height =
+                    parseInt(heightInput.value);
+
+
+                if (
+                    !width ||
+                    !height ||
+                    width < 1 ||
+                    height < 1
+                ) {
+
+                    alert(
+                        "Please enter a valid width and height."
+                    );
+
+                    return;
+
+                }
+
+
+                /*
+                Prevent extremely large canvas sizes
+                that may freeze the browser.
+                */
+
+                if (
+                    width > 10000 ||
+                    height > 10000
+                ) {
+
+                    alert(
+                        "Maximum supported size is 10000 pixels."
+                    );
+
+                    return;
+
+                }
+
+
+                canvas.width = width;
+
+                canvas.height = height;
+
+
+                const ctx =
+                    canvas.getContext("2d");
+
+
+                ctx.clearRect(
+                    0,
+                    0,
+                    width,
+                    height
+                );
+
+
+                ctx.imageSmoothingEnabled = true;
+
+                ctx.imageSmoothingQuality = "high";
+
+
+                ctx.drawImage(
+                    sourceImage,
+                    0,
+                    0,
+                    width,
+                    height
+                );
+
+
+                /*
+                Keep the original image format.
+                */
+
+                let outputType =
+                    sourceFile.type;
+
+
+                if (
+                    outputType !== "image/jpeg" &&
+                    outputType !== "image/png" &&
+                    outputType !== "image/webp"
+                ) {
+
+                    outputType = "image/png";
+
+                }
+
+
+                canvas.toBlob(
+                    function (blob) {
+
+                        if (!blob) {
+
+                            alert(
+                                "Unable to resize this image."
+                            );
+
+                            return;
+
+                        }
+
+
+                        if (resultURL) {
+
+                            URL.revokeObjectURL(
+                                resultURL
+                            );
+
+                        }
+
+
+                        resultURL =
+                            URL.createObjectURL(blob);
+
+
+                        resultImage.src =
+                            resultURL;
+
+
+                        newDimensions.textContent =
+                            width +
+                            " × " +
+                            height +
+                            " px";
+
+
+                        newSize.textContent =
+                            formatBytes(blob.size);
+
+
+                        let extension = "png";
+
+
+                        if (
+                            outputType === "image/jpeg"
+                        ) {
+
+                            extension = "jpg";
+
+                        }
+
+
+                        if (
+                            outputType === "image/webp"
+                        ) {
+
+                            extension = "webp";
+
+                        }
+
+
+                        const baseName =
+                            sourceFile.name.replace(
+                                /\.[^/.]+$/,
+                                ""
+                            );
+
+
+                        downloadButton.href =
+                            resultURL;
+
+
+                        downloadButton.download =
+                            "resized-" +
+                            baseName +
+                            "." +
+                            extension;
+
+
+                        resultArea.style.display =
+                            "block";
+
+
+                        resultArea.scrollIntoView({
+                            behavior: "smooth",
+                            block: "nearest"
+                        });
+
+                    },
+
+                    outputType,
+
+                    0.92
+
+                );
+
+            }
+        );
+
+
+        /* RESET */
+
+        resetButton.addEventListener(
+            "click",
+            function () {
+
+                sourceImage = null;
+
+                sourceFile = null;
+
+                imageInput.value = "";
+
+
+                editorArea.style.display =
+                    "none";
+
+
+                resultArea.style.display =
+                    "none";
+
+
+                previewImage.removeAttribute(
+                    "src"
+                );
+
+
+                resultImage.removeAttribute(
+                    "src"
+                );
+
+
+                if (previewURL) {
+
+                    URL.revokeObjectURL(
+                        previewURL
+                    );
+
+                    previewURL = null;
+
+                }
+
+
+                if (resultURL) {
+
+                    URL.revokeObjectURL(
+                        resultURL
+                    );
+
+                    resultURL = null;
+
+                }
+
+            }
+        );
+</script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N002NWTJ23');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YouTube Tag Generator - EasyTools365</title>
+
+    <meta name="description"
+          content="Free YouTube tag generator for videos and Shorts. Generate relevant keyword tags and long-tail tags instantly.">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- EasyTools365 CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+
+        .tool-page {
+            min-height: calc(100vh - 80px);
+            padding: 70px 15px;
+        }
+
+        .tool-wrapper {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 30px;
+            color: var(--primary);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .tool-icon-large {
+            display: inline-flex;
+            width: 70px;
+            height: 70px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            background: #fee2e2;
+            color: #dc2626;
+            font-size: 32px;
+        }
+
+        .tool-header h1 {
+            font-size: 38px;
+            font-weight: 700;
+        }
+
+        .tool-header p {
+            color: var(--text-light);
+        }
+
+        .generator-card {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .field-group {
+            margin-bottom: 20px;
+        }
+
+        .field-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .field-control {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--background);
+            color: var(--text);
+            outline: none;
+        }
+
+        .field-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, .10);
+        }
+
+        textarea.field-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            background: var(--primary);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .result-area {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .result-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .result-header h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .copy-all-btn {
+            padding: 9px 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--background);
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .tags-box {
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--background);
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 13px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            background: var(--surface);
+            color: var(--text);
+            font-size: 14px;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .tag-item:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .comma-output {
+            width: 100%;
+            min-height: 130px;
+            margin-top: 18px;
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--surface);
+            color: var(--text);
+            resize: vertical;
+            outline: none;
+        }
+
+        .result-stats {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 10px;
+            color: var(--text-light);
+            font-size: 12px;
+        }
+
+        .bottom-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .action-btn {
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--background);
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .info-note {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(37, 99, 235, .08);
+            color: var(--text-light);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        body.dark-mode .field-control,
+        body.dark-mode .tags-box,
+        body.dark-mode .copy-all-btn,
+        body.dark-mode .action-btn {
+            background: #0f172a;
+        }
+
+        body.dark-mode .comma-output,
+        body.dark-mode .tag-item {
+            background: #111827;
+        }
+
+        body.dark-mode .tool-icon-large {
+            background: #7f1d1d;
+        }
+
+        @media(max-width: 700px) {
+
+            .generator-card {
+                padding: 20px;
+            }
+
+            .form-grid,
+            .bottom-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .tool-header h1 {
+                font-size: 30px;
+            }
+
+            .result-header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+    <link rel="canonical" href="https://easytools365.com/tools/youtube-tag-generator.html">
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar bg-white shadow-sm">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold"
+               href="../index.html">
+
+                <i class="bi bi-tools"></i>
+                EasyTools365
+
+            </a>
+
+
+            <button id="darkModeButton"
+                    class="btn btn-outline-primary"
+                    type="button"
+                    aria-label="Toggle dark mode">
+
+                <i class="bi bi-moon-stars"></i>
+
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <main class="tool-page">
+
+        <div class="tool-wrapper">
+
+            <a href="../index.html"
+               class="back-home">
+
+                <i class="bi bi-arrow-left"></i>
+                Back to Home
+
+            </a>
+
+
+            <!-- HEADER -->
+
+            <div class="tool-header">
+
+                <div class="tool-icon-large">
+
+                    <i class="bi bi-tags"></i>
+
+                </div>
+
+                <h1>YouTube Tag Generator</h1>
+
+                <p>
+                    Generate relevant keyword tags and
+                    long-tail tags for YouTube videos and Shorts.
+                </p>
+
+            </div>
+
+
+            <!-- GENERATOR -->
+
+            <div class="generator-card">
+
+
+                <!-- TOPIC -->
+
+                <div class="field-group">
+
+                    <label for="topic">
+                        Video Topic or Main Keyword
+                    </label>
+
+                    <textarea
+                        id="topic"
+                        class="field-control"
+                        maxlength="300"
+                        placeholder="Example: Anime cooking spicy ramen"></textarea>
+
+                    <div class="text-end mt-1"
+                         style="font-size:12px;color:var(--text-light);">
+
+                        <span id="topicCount">0</span>/300
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPTIONS -->
+
+                <div class="form-grid">
+
+
+                    <div class="field-group">
+
+                        <label for="videoType">
+                            Video Type
+                        </label>
+
+                        <select id="videoType"
+                                class="field-control">
+
+                            <option value="video">
+                                YouTube Video
+                            </option>
+
+                            <option value="shorts">
+                                YouTube Shorts
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field-group">
+
+                        <label for="niche">
+                            Niche
+                        </label>
+
+                        <select id="niche"
+                                class="field-control">
+
+                            <option value="general">General</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="gaming">Gaming</option>
+                            <option value="technology">Technology</option>
+                            <option value="education">Education</option>
+                            <option value="food">Food</option>
+                            <option value="asmr">ASMR</option>
+                            <option value="finance">Finance</option>
+                            <option value="travel">Travel</option>
+                            <option value="diy">DIY / Restoration</option>
+                            <option value="anime">Anime</option>
+                            <option value="music">Music</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field-group">
+
+                        <label for="tagCount">
+                            Number of Tags
+                        </label>
+
+                        <select id="tagCount"
+                                class="field-control">
+
+                            <option value="10">
+                                10 Tags
+                            </option>
+
+                            <option value="20"
+                                    selected>
+                                20 Tags
+                            </option>
+
+                            <option value="30">
+                                30 Tags
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GENERATE -->
+
+                <button id="generateButton"
+                        class="generate-btn"
+                        type="button">
+
+                    <i class="bi bi-stars"></i>
+                    Generate YouTube Tags
+
+                </button>
+
+
+                <!-- RESULT -->
+
+                <div id="resultArea"
+                     class="result-area">
+
+                    <div class="result-header">
+
+                        <h3>
+                            <i class="bi bi-tags"></i>
+                            Generated Tags
+                        </h3>
+
+
+                        <button id="copyAllButton"
+                                class="copy-all-btn"
+                                type="button">
+
+                            <i class="bi bi-copy"></i>
+                            Copy All
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="tags-box">
+
+                        <div id="tagsContainer"
+                             class="tags-container">
+                        </div>
+
+
+                        <textarea
+                            id="commaOutput"
+                            class="comma-output"
+                            readonly
+                            aria-label="Comma separated YouTube tags"></textarea>
+
+                    </div>
+
+
+                    <div class="result-stats">
+
+                        <span>
+                            <span id="generatedCount">0</span>
+                            tags
+                        </span>
+
+                        <span>
+                            <span id="characterCount">0</span>
+                            characters
+                        </span>
+
+                    </div>
+
+
+                    <div class="bottom-actions">
+
+                        <button id="regenerateButton"
+                                class="action-btn"
+                                type="button">
+
+                            <i class="bi bi-arrow-repeat"></i>
+                            Generate Again
+
+                        </button>
+
+
+                        <button id="clearButton"
+                                class="action-btn"
+                                type="button">
+
+                            <i class="bi bi-trash"></i>
+                            Clear
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-note">
+
+                    <i class="bi bi-info-circle"></i>
+
+                    Click an individual tag to copy it.
+                    Tags are generated locally without an API key.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    <section class="seo-content">
+<h2>Free YouTube Tag Generator</h2>
+<p>YouTube Tag Generator helps creators brainstorm relevant tags based on a video topic or keyword. Tags can provide additional information about the subject and terminology associated with your content. Instead of manually thinking of every possible variation, this tool gives you ideas that you can review and select for your video.</p>
+
+<h2>How to Generate YouTube Tags</h2>
+<p>Enter a keyword, title, niche, or topic related to your video and generate tag suggestions. Review each result and keep only terms that accurately describe your content. You can combine broader topic terms with more specific phrases related to the individual video.</p>
+
+<h2>Choose Relevant Video Tags</h2>
+<p>Relevance is more useful than simply creating a long list of unrelated keywords. Select tags connected to the actual subject, terminology, category, or audience of the video. Avoid misleading terms that have nothing to do with what viewers will see.</p>
+
+<h2>Useful Tool for Creators</h2>
+<p>EasyTools365 makes tag brainstorming quick and straightforward. Whether you publish tutorials, gaming videos, educational content, entertainment, reviews, or Shorts, you can generate ideas and customize them for your particular upload. Combine relevant tags with an accurate title, useful description, and quality content.</p>
+</section>
+</main>
+
+
+    <script>
+
+        const topic =
+            document.getElementById("topic");
+
+        const topicCount =
+            document.getElementById("topicCount");
+
+        const videoType =
+            document.getElementById("videoType");
+
+        const niche =
+            document.getElementById("niche");
+
+        const tagCount =
+            document.getElementById("tagCount");
+
+        const generateButton =
+            document.getElementById("generateButton");
+
+        const regenerateButton =
+            document.getElementById("regenerateButton");
+
+        const clearButton =
+            document.getElementById("clearButton");
+
+        const copyAllButton =
+            document.getElementById("copyAllButton");
+
+        const resultArea =
+            document.getElementById("resultArea");
+
+        const tagsContainer =
+            document.getElementById("tagsContainer");
+
+        const commaOutput =
+            document.getElementById("commaOutput");
+
+        const generatedCount =
+            document.getElementById("generatedCount");
+
+        const characterCount =
+            document.getElementById("characterCount");
+
+
+        let generatedTags = [];
+
+
+        const nicheTags = {
+
+            general: [
+                "youtube video",
+                "new video",
+                "content creator",
+                "trending video",
+                "viral video",
+                "youtube content"
+            ],
+
+            entertainment: [
+                "entertainment",
+                "entertainment video",
+                "viral entertainment",
+                "fun video",
+                "trending entertainment"
+            ],
+
+            gaming: [
+                "gaming",
+                "gameplay",
+                "gaming video",
+                "video games",
+                "gaming channel",
+                "gamer"
+            ],
+
+            technology: [
+                "technology",
+                "tech",
+                "tech video",
+                "tech tips",
+                "technology news",
+                "gadgets"
+            ],
+
+            education: [
+                "education",
+                "educational video",
+                "tutorial",
+                "how to",
+                "learning",
+                "tips and tricks"
+            ],
+
+            food: [
+                "food",
+                "cooking",
+                "food video",
+                "cooking video",
+                "recipe",
+                "foodie"
+            ],
+
+            asmr: [
+                "asmr",
+                "satisfying",
+                "asmr video",
+                "relaxing sounds",
+                "oddly satisfying",
+                "satisfying video"
+            ],
+
+            finance: [
+                "finance",
+                "money",
+                "personal finance",
+                "finance tips",
+                "financial education",
+                "money tips"
+            ],
+
+            travel: [
+                "travel",
+                "travel video",
+                "travel vlog",
+                "adventure",
+                "travel tips",
+                "explore"
+            ],
+
+            diy: [
+                "diy",
+                "restoration",
+                "repair",
+                "restoration video",
+                "before and after",
+                "transformation"
+            ],
+
+            anime: [
+                "anime",
+                "anime video",
+                "anime content",
+                "anime fans",
+                "anime shorts",
+                "manga"
+            ],
+
+            music: [
+                "music",
+                "music video",
+                "new music",
+                "song",
+                "music channel",
+                "playlist"
+            ]
+
+        };
+
+
+        topic.addEventListener(
+            "input",
+            function () {
+
+                topicCount.textContent =
+                    topic.value.length;
+
+            }
+        );
+
+
+        function normalize(text) {
+
+            return text
+                .toLowerCase()
+                .replace(/[^a-z0-9\s,]/g, " ")
+                .replace(/\s+/g, " ")
+                .trim();
+
+        }
+
+
+        function titleCase(text) {
+
+            return text
+                .split(" ")
+                .map(
+                    word =>
+                        word.charAt(0).toUpperCase() +
+                        word.slice(1)
+                )
+                .join(" ");
+
+        }
+
+
+        function createTopicTags(input) {
+
+            const clean =
+                normalize(input);
+
+
+            const words =
+                clean
+                    .split(/[\s,]+/)
+                    .map(word => word.trim())
+                    .filter(word => word.length > 2);
+
+
+            let tags = [];
+
+
+            /*
+            Full topic
+            */
+
+            if (clean) {
+
+                tags.push(clean);
+
+            }
+
+
+            /*
+            Individual keywords
+            */
+
+            words.forEach(
+                function (word) {
+
+                    tags.push(word);
+
+                }
+            );
+
+
+            /*
+            Two-word combinations
+            */
+
+            for (
+                let i = 0;
+                i < words.length - 1;
+                i++
+            ) {
+
+                tags.push(
+                    words[i] + " " + words[i + 1]
+                );
+
+            }
+
+
+            /*
+            Three-word combinations
+            */
+
+            for (
+                let i = 0;
+                i < words.length - 2;
+                i++
+            ) {
+
+                tags.push(
+                    words[i] +
+                    " " +
+                    words[i + 1] +
+                    " " +
+                    words[i + 2]
+                );
+
+            }
+
+
+            /*
+            Useful long-tail variations
+            */
+
+            if (clean) {
+
+                tags.push(
+                    clean + " video",
+                    clean + " tutorial",
+                    clean + " youtube",
+                    "best " + clean,
+                    clean + " tips",
+                    clean + " guide"
+                );
+
+            }
+
+
+            return tags;
+
+        }
+
+
+        function generateTags() {
+
+            const input =
+                topic.value.trim();
+
+
+            if (!input) {
+
+                alert(
+                    "Please enter your video topic or main keyword."
+                );
+
+                topic.focus();
+
+                return;
+
+            }
+
+
+            const target =
+                Number(tagCount.value);
+
+
+            let tags =
+                createTopicTags(input);
+
+
+            /*
+            Add niche keywords
+            */
+
+            const selectedNiche =
+                nicheTags[niche.value] || [];
+
+
+            tags.push(
+                ...selectedNiche
+            );
+
+
+            /*
+            Add video type
+            */
+
+            if (
+                videoType.value === "shorts"
+            ) {
+
+                tags.push(
+                    "youtube shorts",
+                    "shorts",
+                    "short video",
+                    "viral shorts",
+                    "shorts video"
+                );
+
+            } else {
+
+                tags.push(
+                    "youtube video",
+                    "youtube creator",
+                    "video content",
+                    "youtube channel"
+                );
+
+            }
+
+
+            /*
+            Remove duplicates
+            */
+
+            tags =
+                [...new Set(
+                    tags
+                        .map(tag => normalize(tag))
+                        .filter(Boolean)
+                )];
+
+
+            /*
+            Keep strongest topic tags first.
+            Shuffle only the remaining tags.
+            */
+
+            const primary =
+                tags.slice(0, 6);
+
+            const secondary =
+                tags.slice(6);
+
+
+            secondary.sort(
+                () => Math.random() - 0.5
+            );
+
+
+            tags =
+                primary.concat(secondary);
+
+
+            /*
+            Create additional natural variations
+            if the user requests more tags.
+            */
+
+            const base =
+                normalize(input);
+
+
+            const extras = [
+                `${base} explained`,
+                `${base} ideas`,
+                `${base} for beginners`,
+                `${base} step by step`,
+                `${base} content`,
+                `${base} tips and tricks`,
+                `${base} inspiration`,
+                `${base} compilation`,
+                `${base} process`,
+                `${base} results`
+            ];
+
+
+            for (
+                const extra of extras
+            ) {
+
+                if (
+                    tags.length >= target
+                ) {
+                    break;
+                }
+
+
+                if (
+                    !tags.includes(extra)
+                ) {
+
+                    tags.push(extra);
+
+                }
+
+            }
+
+
+            generatedTags =
+                tags.slice(
+                    0,
+                    target
+                );
+
+
+            renderTags();
+
+        }
+
+
+        function renderTags() {
+
+            tagsContainer.innerHTML = "";
+
+
+            generatedTags.forEach(
+                function (tag) {
+
+                    const button =
+                        document.createElement("button");
+
+
+                    button.type =
+                        "button";
+
+
+                    button.className =
+                        "tag-item";
+
+
+                    button.innerHTML =
+                        `<i class="bi bi-tag"></i>${titleCase(tag)}`;
+
+
+                    button.addEventListener(
+                        "click",
+                        async function () {
+
+                            await copyText(tag);
+
+
+                            const oldHTML =
+                                button.innerHTML;
+
+
+                            button.innerHTML =
+                                '<i class="bi bi-check-lg"></i> Copied';
+
+
+                            setTimeout(
+                                function () {
+
+                                    button.innerHTML =
+                                        oldHTML;
+
+                                },
+                                1000
+                            );
+
+                        }
+                    );
+
+
+                    tagsContainer.appendChild(
+                        button
+                    );
+
+                }
+            );
+
+
+            const commaText =
+                generatedTags.join(", ");
+
+
+            commaOutput.value =
+                commaText;
+
+
+            generatedCount.textContent =
+                generatedTags.length;
+
+
+            characterCount.textContent =
+                commaText.length;
+
+
+            resultArea.style.display =
+                "block";
+
+
+            resultArea.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+        }
+
+
+        async function copyText(text) {
+
+            try {
+
+                await navigator.clipboard.writeText(
+                    text
+                );
+
+            } catch (error) {
+
+                const temp =
+                    document.createElement("textarea");
+
+                temp.value = text;
+
+                document.body.appendChild(temp);
+
+                temp.select();
+
+                document.execCommand("copy");
+
+                temp.remove();
+
+            }
+
+        }
+
+
+        generateButton.addEventListener(
+            "click",
+            generateTags
+        );
+
+
+        regenerateButton.addEventListener(
+            "click",
+            generateTags
+        );
+
+
+        copyAllButton.addEventListener(
+            "click",
+            async function () {
+
+                if (!generatedTags.length) {
+                    return;
+                }
+
+
+                await copyText(
+                    generatedTags.join(", ")
+                );
+
+
+                copyAllButton.innerHTML =
+                    '<i class="bi bi-check-lg"></i> Copied!';
+
+
+                setTimeout(
+                    function () {
+
+                        copyAllButton.innerHTML =
+                            '<i class="bi bi-copy"></i> Copy All';
+
+                    },
+                    1500
+                );
+
+            }
+        );
+
+
+        clearButton.addEventListener(
+            "click",
+            function () {
+
+                topic.value = "";
+
+                topicCount.textContent = "0";
+
+                generatedTags = [];
+
+                tagsContainer.innerHTML = "";
+
+                commaOutput.value = "";
+
+                generatedCount.textContent = "0";
+
+                characterCount.textContent = "0";
+
+                resultArea.style.display =
+                    "none";
+
+                topic.focus();
+
+            }
+        );
+
+    </script>
+
+
+    <!-- GLOBAL JS -->
+
+    <script src="../assets/js/app.js"></script>
+
+</body>
+
+</html>

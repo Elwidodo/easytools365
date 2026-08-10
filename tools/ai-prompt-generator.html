@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Prompt Generator - Free Prompt Builder for Text, Image & Video AI | EasyTools365</title>
+<meta name="description" content="Free AI Prompt Generator for ChatGPT, image AI, video AI and other AI tools. Create structured prompts for content, marketing, social media, YouTube, design, coding, business and education.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/ai-prompt-generator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Prompt Generator | EasyTools365">
+<meta property="og:description" content="Create detailed AI prompts for text, image and video tasks with platform, category, style and detail controls.">
+<meta property="og:url" content="https://easytools365.com/tools/ai-prompt-generator.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Prompt Generator | EasyTools365">
+<meta name="twitter:description" content="Create structured AI prompts for text, image and video tasks for free.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:45px 15px 70px}
+.tool-wrapper{max-width:950px;margin:auto}
+.breadcrumb{margin-bottom:25px}
+.back-home{display:inline-flex;align-items:center;gap:8px;margin-bottom:25px;color:var(--primary);font-weight:600;text-decoration:none}
+.tool-header{text-align:center;margin-bottom:32px}
+.tool-icon-large{display:inline-flex;width:74px;height:74px;align-items:center;justify-content:center;margin-bottom:18px;border-radius:22px;background:rgba(124,58,237,.1);color:#7c3aed;font-size:34px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:760px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.generator-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.generator-card{padding:30px}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.field-group{margin-bottom:20px}
+.field-group label{display:block;margin-bottom:8px;font-weight:600}
+.field-control{width:100%;padding:13px 15px;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none}
+.field-control:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+textarea.field-control{min-height:130px;resize:vertical}
+.generate-btn{width:100%;padding:15px;border:0;border-radius:12px;background:var(--primary);color:#fff;font-size:16px;font-weight:700}
+.generate-btn:hover{opacity:.92}
+.result-area{display:none;margin-top:30px}
+.result-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.result-header h2{margin:0;font-size:20px;font-weight:700}
+#promptOutput{width:100%;min-height:360px;padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--background);color:var(--text);outline:none;resize:vertical;line-height:1.7}
+.action-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:15px}
+.action-btn{padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);font-weight:600}
+.action-btn:hover{border-color:var(--primary);color:var(--primary)}
+.info-note{margin-top:24px;padding:15px;border-radius:12px;background:rgba(37,99,235,.08);color:var(--text-light);text-align:center;font-size:13px}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:22px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+body.dark-mode .tool-icon-large{background:#312e81;color:#ddd6fe}
+body.dark-mode .field-control,body.dark-mode #promptOutput,body.dark-mode .action-btn{background:#0f172a}
+@media(max-width:700px){
+.generator-card,.info-card{padding:20px}
+.form-grid,.action-buttons,.related-grid{grid-template-columns:1fr}
+.tool-header h1{font-size:31px}
+.result-header{align-items:flex-start;flex-direction:column}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 AI Prompt Generator","url":"https://easytools365.com/tools/ai-prompt-generator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free browser-based generator for creating structured prompts for text, image and video AI tasks.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Generate an AI Prompt","description":"Create a structured AI prompt using the EasyTools365 AI Prompt Generator.","step":[
+{"@type":"HowToStep","position":1,"name":"Choose an AI platform","text":"Select Chat / Text AI, Image Generator, Video Generator or General AI."},
+{"@type":"HowToStep","position":2,"name":"Choose style and category","text":"Select a style or tone and the category that best matches the task."},
+{"@type":"HowToStep","position":3,"name":"Set detail level","text":"Choose Simple, Detailed or Advanced prompt detail."},
+{"@type":"HowToStep","position":4,"name":"Describe your task","text":"Enter what you want to create and add optional instructions."},
+{"@type":"HowToStep","position":5,"name":"Generate and copy","text":"Generate the prompt, review it and copy it for use with your preferred AI tool."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the AI Prompt Generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 AI Prompt Generator is free to use in a web browser."}},
+{"@type":"Question","name":"Does this tool use an AI API?","acceptedAnswer":{"@type":"Answer","text":"No. Prompt generation runs directly in the browser and does not require an AI API key."}},
+{"@type":"Question","name":"What can I create prompts for?","acceptedAnswer":{"@type":"Answer","text":"You can create prompts for text, image, video and general AI tasks, including content, marketing, social media, YouTube, design, coding, business and education."}},
+{"@type":"Question","name":"Can I edit the generated prompt?","acceptedAnswer":{"@type":"Answer","text":"Yes. The generated prompt is displayed in an editable text area so you can review and customize it before using it."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/ai-tools.html">AI Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">AI Prompt Generator</li>
+</ol>
+</nav>
+
+<a href="../index.html" class="back-home"><i class="bi bi-arrow-left"></i> Back to Home</a>
+
+<header class="tool-header">
+<div class="tool-icon-large"><i class="bi bi-stars"></i></div>
+<h1>AI Prompt Generator</h1>
+<p>Create detailed prompts for text, image and video AI tools using structured platform, category, style and detail options.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="generator-card">
+
+<div class="form-grid">
+<div class="field-group">
+<label for="platform">AI Platform</label>
+<select id="platform" class="field-control">
+<option value="chat">Chat / Text AI</option>
+<option value="image">Image Generator</option>
+<option value="video">Video Generator</option>
+<option value="general">General AI</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="style">Style / Tone</label>
+<select id="style" class="field-control">
+<option value="professional">Professional</option>
+<option value="creative">Creative</option>
+<option value="cinematic">Cinematic</option>
+<option value="realistic">Realistic</option>
+<option value="friendly">Friendly</option>
+<option value="educational">Educational</option>
+<option value="viral">Viral / Engaging</option>
+</select>
+</div>
+</div>
+
+<div class="form-grid">
+<div class="field-group">
+<label for="category">Category</label>
+<select id="category" class="field-control">
+<option value="content">Content Creation</option>
+<option value="marketing">Marketing</option>
+<option value="social">Social Media</option>
+<option value="youtube">YouTube</option>
+<option value="design">Design</option>
+<option value="coding">Coding</option>
+<option value="business">Business</option>
+<option value="education">Education</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="detail">Prompt Detail</label>
+<select id="detail" class="field-control">
+<option value="simple">Simple</option>
+<option value="detailed" selected>Detailed</option>
+<option value="advanced">Advanced</option>
+</select>
+</div>
+</div>
+
+<div class="field-group">
+<label for="topic">What do you want to create?</label>
+<textarea id="topic" class="field-control" maxlength="2000" placeholder="Example: A cinematic video of a futuristic city at night with flying cars..."></textarea>
+<div class="text-end mt-1" style="font-size:12px;color:var(--text-light);"><span id="topicCount">0</span>/2000</div>
+</div>
+
+<div class="field-group">
+<label for="extra">Extra Instructions <span style="font-weight:400;color:var(--text-light);">(Optional)</span></label>
+<textarea id="extra" class="field-control" maxlength="1000" placeholder="Example: 9:16 vertical, dramatic lighting, no text, highly detailed..."></textarea>
+</div>
+
+<button id="generateButton" class="generate-btn" type="button"><i class="bi bi-stars"></i> Generate AI Prompt</button>
+
+<div id="resultArea" class="result-area">
+<div class="result-header">
+<h2><i class="bi bi-magic"></i> Generated Prompt</h2>
+</div>
+
+<textarea id="promptOutput" aria-label="Generated AI prompt"></textarea>
+
+<div class="action-buttons">
+<button id="copyButton" class="action-btn" type="button"><i class="bi bi-copy"></i> Copy Prompt</button>
+<button id="regenerateButton" class="action-btn" type="button"><i class="bi bi-arrow-repeat"></i> Regenerate</button>
+<button id="clearButton" class="action-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+</div>
+
+<div class="info-note">
+<i class="bi bi-lightning-charge"></i>
+Prompt generation runs directly in your browser. No AI API key is required.
+</div>
+
+</section>
+
+<section class="info-card">
+<h2>What Is an AI Prompt Generator?</h2>
+<p>An AI prompt generator helps transform a basic idea into a more structured set of instructions for an artificial intelligence tool. Instead of starting with a blank page, you can provide the main task and use generated structure as a starting point for your final prompt.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Generate an AI Prompt</h2>
+<ol>
+<li>Choose the AI platform or task type.</li>
+<li>Select a style or tone.</li>
+<li>Choose a category such as content, marketing, YouTube, coding or education.</li>
+<li>Select the desired prompt detail level.</li>
+<li>Describe what you want to create.</li>
+<li>Add optional instructions when needed.</li>
+<li>Click <strong>Generate AI Prompt</strong>.</li>
+<li>Review, edit and copy the generated prompt.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>What Can AI Prompts Be Used For?</h2>
+<p>Structured prompts can support many different workflows, including content creation, marketing, social media, YouTube planning, design, coding, business tasks, education, image concepts and video concepts.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Write Better AI Prompts</h2>
+<ul class="mb-0">
+<li>Clearly describe the main objective.</li>
+<li>Include important context and requirements.</li>
+<li>Specify the desired style, tone or format.</li>
+<li>Add constraints when something should be avoided.</li>
+<li>State the expected result clearly.</li>
+<li>Review and customize the generated prompt before using it.</li>
+</ul>
+</section>
+
+<section class="info-card">
+<h2>Does This Tool Require an AI API Key?</h2>
+<p>No. The EasyTools365 generator builds the prompt locally in your browser. It does not send your request to an AI generation API and does not require an API key.</p>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the AI Prompt Generator free?</h3>
+<p>Yes. The tool is free to use in a web browser.</p>
+
+<h3>Does this tool use an AI API?</h3>
+<p>No. Prompt generation runs directly in your browser and does not require an AI API key.</p>
+
+<h3>What can I create prompts for?</h3>
+<p>You can create prompts for text, image, video and general AI tasks, including content, marketing, social media, YouTube, design, coding, business and education.</p>
+
+<h3>Can I edit the generated prompt?</h3>
+<p>Yes. You can review and edit the generated prompt before copying it.</p>
+</section>
+
+<section class="info-card">
+<h2>Related AI Tools</h2>
+<div class="related-grid">
+<a href="ai-image-prompt-generator.html" class="btn btn-outline-primary">AI Image Prompt Generator</a>
+<a href="../categories/ai-tools.html" class="btn btn-outline-primary">AI Tools</a>
+<a href="../index.html#tools" class="btn btn-outline-primary">Browse All Tools</a>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+
+        const platform =
+            document.getElementById("platform");
+
+        const style =
+            document.getElementById("style");
+
+        const category =
+            document.getElementById("category");
+
+        const detail =
+            document.getElementById("detail");
+
+        const topic =
+            document.getElementById("topic");
+
+        const extra =
+            document.getElementById("extra");
+
+        const generateButton =
+            document.getElementById("generateButton");
+
+        const regenerateButton =
+            document.getElementById("regenerateButton");
+
+        const copyButton =
+            document.getElementById("copyButton");
+
+        const clearButton =
+            document.getElementById("clearButton");
+
+        const resultArea =
+            document.getElementById("resultArea");
+
+        const promptOutput =
+            document.getElementById("promptOutput");
+
+
+        function getPlatformInstruction(value) {
+
+            const instructions = {
+
+                chat:
+                    "Act as an expert AI assistant. Provide a clear, useful and well-structured response.",
+
+                image:
+                    "Create a highly detailed image-generation prompt describing the subject, environment, composition, lighting, camera perspective, colors and visual quality.",
+
+                video:
+                    "Create a detailed AI video prompt describing the scene, subject movement, camera movement, lighting, environment, visual style and overall atmosphere.",
+
+                general:
+                    "Complete the requested task accurately, creatively and with useful detail."
+
+            };
+
+            return instructions[value];
+        }
+
+
+        function getDetailInstruction(value) {
+
+            const instructions = {
+
+                simple:
+                    "Keep the result concise and easy to understand.",
+
+                detailed:
+                    "Include important details, context and clear instructions for a high-quality result.",
+
+                advanced:
+                    "Use advanced prompting techniques. Include context, constraints, desired output, quality requirements and relevant technical details."
+
+            };
+
+            return instructions[value];
+        }
+
+
+        function generatePrompt() {
+
+            const topicText =
+                topic.value.trim();
+
+
+            if (!topicText) {
+
+                alert(
+                    "Please describe what you want to create."
+                );
+
+                topic.focus();
+
+                return;
+
+            }
+
+
+            const platformText =
+                platform.options[
+                    platform.selectedIndex
+                ].text;
+
+
+            const styleText =
+                style.options[
+                    style.selectedIndex
+                ].text;
+
+
+            const categoryText =
+                category.options[
+                    category.selectedIndex
+                ].text;
+
+
+            let generatedPrompt =
+
+`ROLE / OBJECTIVE:
+${getPlatformInstruction(platform.value)}
+
+TASK:
+${topicText}
+
+AI TYPE:
+${platformText}
+
+CATEGORY:
+${categoryText}
+
+STYLE / TONE:
+${styleText}
+
+DETAIL LEVEL:
+${getDetailInstruction(detail.value)}
+
+REQUIREMENTS:
+- Focus closely on the requested subject.
+- Produce a polished and high-quality result.
+- Avoid unnecessary repetition.
+- Keep all details consistent with the main concept.`;
+
+
+            if (platform.value === "image") {
+
+                generatedPrompt += `
+
+IMAGE GUIDANCE:
+- Describe the main subject clearly.
+- Specify composition and perspective.
+- Include lighting and atmosphere.
+- Include relevant colors and textures.
+- Mention visual quality and level of detail.`;
+
+            }
+
+
+            if (platform.value === "video") {
+
+                generatedPrompt += `
+
+VIDEO GUIDANCE:
+- Describe the opening scene.
+- Describe subject actions and movement.
+- Specify camera movement and framing.
+- Include lighting and atmosphere.
+- Maintain visual consistency throughout the scene.`;
+
+            }
+
+
+            if (platform.value === "chat") {
+
+                generatedPrompt += `
+
+OUTPUT GUIDANCE:
+- Organize the answer clearly.
+- Use practical examples when useful.
+- Make the response easy to understand and actionable.`;
+
+            }
+
+
+            if (extra.value.trim()) {
+
+                generatedPrompt += `
+
+ADDITIONAL INSTRUCTIONS:
+${extra.value.trim()}`;
+
+            }
+
+
+            generatedPrompt += `
+
+FINAL INSTRUCTION:
+Follow all requirements above and create the best possible result.`;
+
+            promptOutput.value =
+                generatedPrompt;
+
+            resultArea.style.display =
+                "block";
+
+            resultArea.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+        }
+
+
+        generateButton.addEventListener(
+            "click",
+            generatePrompt
+        );
+
+
+        regenerateButton.addEventListener(
+            "click",
+            generatePrompt
+        );
+
+
+        copyButton.addEventListener(
+            "click",
+            async function () {
+
+                if (!promptOutput.value) {
+                    return;
+                }
+
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        promptOutput.value
+                    );
+
+
+                    copyButton.innerHTML =
+                        '<i class="bi bi-check-lg"></i> Copied!';
+
+
+                    setTimeout(
+                        function () {
+
+                            copyButton.innerHTML =
+                                '<i class="bi bi-copy"></i> Copy Prompt';
+
+                        },
+                        1500
+                    );
+
+                } catch (error) {
+
+                    promptOutput.select();
+
+                    document.execCommand(
+                        "copy"
+                    );
+
+                }
+
+            }
+        );
+
+
+        clearButton.addEventListener(
+            "click",
+            function () {
+
+                topic.value = "";
+
+                extra.value = "";
+
+                promptOutput.value = "";
+
+                resultArea.style.display =
+                    "none";
+
+                topic.focus();
+
+            }
+        );
+
+    </script>
+
+<script>
+const topicInput=document.getElementById("topic");
+const topicCount=document.getElementById("topicCount");
+topicInput.addEventListener("input",function(){
+topicCount.textContent=topicInput.value.length;
+});
+</script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

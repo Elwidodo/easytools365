@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hash Generator - SHA-256, SHA-384 & SHA-512 Online | EasyTools365</title>
+<meta name="description" content="Free online Hash Generator for SHA-256, SHA-384 and SHA-512. Generate cryptographic hashes instantly in your browser with local processing and no server upload.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/hash-generator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hash Generator - SHA-256, SHA-384 & SHA-512 | EasyTools365">
+<meta property="og:description" content="Generate SHA-256, SHA-384 and SHA-512 hashes instantly in your browser. Fast, free and locally processed.">
+<meta property="og:url" content="https://easytools365.com/tools/hash-generator.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hash Generator | EasyTools365">
+<meta name="twitter:description" content="Generate SHA-256, SHA-384 and SHA-512 hashes locally in your browser.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:45px 15px 70px}
+.tool-wrapper{max-width:950px;margin:auto}
+.breadcrumb{margin-bottom:25px}
+.back-link{display:inline-flex;align-items:center;gap:8px;margin-bottom:25px;color:var(--primary);text-decoration:none;font-weight:600}
+.tool-header{text-align:center;margin-bottom:32px}
+.tool-icon-large{width:76px;height:76px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;border-radius:22px;background:rgba(37,99,235,.10);color:var(--primary);font-size:35px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:720px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.tool-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.tool-card{padding:30px}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;margin-bottom:7px;font-size:13px;font-weight:700}
+.text-input{width:100%;min-height:210px;padding:16px;resize:vertical;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.7}
+.select-input{width:100%;padding:13px 14px;border:1px solid var(--border);border-radius:11px;background:var(--background);color:var(--text);outline:none}
+.text-input:focus,.select-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.button-row{display:grid;grid-template-columns:2fr 1fr;gap:10px}
+.primary-btn,.secondary-btn{padding:13px;border-radius:11px;font-weight:700}
+.primary-btn{border:none;background:var(--primary);color:#fff}
+.primary-btn:hover{opacity:.92}
+.secondary-btn{border:1px solid var(--border);background:var(--background);color:var(--text)}
+.secondary-btn:hover{color:var(--primary);border-color:var(--primary)}
+.result-box{display:none;margin-top:25px;border:1px solid var(--border);border-radius:15px;overflow:hidden;background:var(--background)}
+.result-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 15px;border-bottom:1px solid var(--border)}
+.result-header h2{margin:0;font-size:16px;font-weight:800}
+.copy-btn{padding:7px 11px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--primary);font-size:12px;font-weight:600}
+.hash-output{padding:18px;overflow-wrap:anywhere;font-family:Consolas,Monaco,monospace;font-size:14px;line-height:1.7;word-break:break-all}
+.hash-info{display:none;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:15px}
+.info-item{padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--background);text-align:center}
+.info-item span{display:block;margin-bottom:4px;color:var(--text-light);font-size:11px}
+.info-item strong{font-size:14px}
+.error-box{display:none;margin-top:16px;padding:13px;border-radius:11px;background:rgba(220,38,38,.10);color:#dc2626;text-align:center;font-size:13px;font-weight:600}
+.status-box{display:none;margin-top:15px;padding:12px;border-radius:10px;background:rgba(22,163,74,.08);color:#16a34a;text-align:center;font-size:13px;font-weight:600}
+.info-box{margin-top:22px;padding:18px;border:1px solid var(--border);border-radius:15px}
+.info-box h3{margin-bottom:9px;font-size:17px;font-weight:800}
+.info-box p{margin:0;color:var(--text-light);font-size:13px;line-height:1.7}
+.privacy-note{margin-top:18px;padding:14px;border-radius:12px;background:rgba(22,163,74,.07);color:var(--text-light);text-align:center;font-size:13px}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:22px}
+.related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+body.dark-mode .text-input,body.dark-mode .select-input,body.dark-mode .info-item{background:#0f172a}
+body.dark-mode .tool-icon-large{background:#1e3a8a}
+@media(max-width:650px){
+.button-row,.hash-info,.related-grid{grid-template-columns:1fr}
+.tool-card,.info-card{padding:20px}
+.tool-header h1{font-size:31px}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 Hash Generator","url":"https://easytools365.com/tools/hash-generator.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","description":"Free browser-based SHA-256, SHA-384 and SHA-512 hash generator.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Generate a SHA Hash","description":"Generate a cryptographic hash with the EasyTools365 Hash Generator.","step":[
+{"@type":"HowToStep","position":1,"name":"Enter text","text":"Enter or paste the text you want to hash."},
+{"@type":"HowToStep","position":2,"name":"Choose an algorithm","text":"Select SHA-256, SHA-384 or SHA-512."},
+{"@type":"HowToStep","position":3,"name":"Generate the hash","text":"Click Generate Hash to calculate the hexadecimal digest."},
+{"@type":"HowToStep","position":4,"name":"Copy the result","text":"Use Copy to copy the generated hash to the clipboard."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the Hash Generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 Hash Generator is free to use online."}},
+{"@type":"Question","name":"Is my text uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"The hash calculation is performed locally in your browser and the tool does not need to upload your input to the EasyTools365 server."}},
+{"@type":"Question","name":"Can a hash be converted back to the original text?","acceptedAnswer":{"@type":"Answer","text":"Cryptographic hash functions are designed as one-way transformations and are not intended to be reversed to recover the original input."}},
+{"@type":"Question","name":"Will the same text produce the same hash?","acceptedAnswer":{"@type":"Answer","text":"Yes. The same input processed with the same hashing algorithm produces the same hash."}},
+{"@type":"Question","name":"Which hash algorithms are supported?","acceptedAnswer":{"@type":"Answer","text":"The tool supports SHA-256, SHA-384 and SHA-512."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/developer-tools.html">Developer Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">Hash Generator</li>
+</ol>
+</nav>
+
+<a href="../categories/developer-tools.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to Developer Tools</a>
+
+<header class="tool-header">
+<div class="tool-icon-large"><i class="bi bi-shield-lock"></i></div>
+<h1>Hash Generator</h1>
+<p>Generate SHA-256, SHA-384 and SHA-512 hashes directly in your browser. Fast, free and locally processed.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="tool-card">
+
+<div class="form-group">
+<label for="textInput">Text to Hash</label>
+<textarea id="textInput" class="text-input" spellcheck="false" placeholder="Enter text here..."></textarea>
+</div>
+
+<div class="form-group">
+<label for="algorithm">Hash Algorithm</label>
+<select id="algorithm" class="select-input">
+<option value="SHA-256">SHA-256</option>
+<option value="SHA-384">SHA-384</option>
+<option value="SHA-512">SHA-512</option>
+</select>
+</div>
+
+<div class="button-row">
+<button id="generateButton" class="primary-btn" type="button"><i class="bi bi-shield-lock"></i> Generate Hash</button>
+<button id="clearButton" class="secondary-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+
+<div id="errorBox" class="error-box"></div>
+
+<div id="resultBox" class="result-box">
+<div class="result-header">
+<h2>Generated Hash</h2>
+<button id="copyButton" class="copy-btn" type="button"><i class="bi bi-copy"></i> Copy</button>
+</div>
+<div id="hashOutput" class="hash-output"></div>
+</div>
+
+<div id="hashInfo" class="hash-info">
+<div class="info-item"><span>Algorithm</span><strong id="algorithmResult">-</strong></div>
+<div class="info-item"><span>Hash Length</span><strong id="hashLength">-</strong></div>
+</div>
+
+<div id="statusBox" class="status-box"></div>
+
+<div class="info-box">
+<h3>About Hashing</h3>
+<p>Cryptographic hash functions convert input data into a fixed-length digest. The same input produces the same hash, while even a small change in the input produces a different result.</p>
+</div>
+
+<div class="privacy-note">
+<i class="bi bi-shield-check"></i>
+Your text is processed locally in your browser and is not uploaded to the EasyTools365 server.
+</div>
+
+</section>
+
+<section class="info-card">
+<h2>What Is a Hash Generator?</h2>
+<p>A hash generator converts input data into a fixed-format hash value using a supported hashing algorithm. Hashes are commonly used for data verification, checksums, integrity checks and software development tasks.</p>
+<p>The EasyTools365 Hash Generator supports SHA-256, SHA-384 and SHA-512 and processes your text locally in the browser.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Use the Hash Generator</h2>
+<ol>
+<li>Enter or paste your text into the input field.</li>
+<li>Select SHA-256, SHA-384 or SHA-512.</li>
+<li>Click <strong>Generate Hash</strong>.</li>
+<li>Review the generated hexadecimal hash.</li>
+<li>Click <strong>Copy</strong> when you need the result.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>What Is a Hash Value?</h2>
+<p>A hash value is the output produced by a hashing algorithm. When the same input is processed with the same algorithm, the resulting hash should be the same. This makes hashes useful when comparing whether data has changed.</p>
+</section>
+
+<section class="info-card">
+<h2>SHA-256 vs SHA-384 vs SHA-512</h2>
+<p>These are members of the SHA-2 family. They produce different digest lengths and can be selected according to the requirements of your development or verification task.</p>
+<ul>
+<li><strong>SHA-256:</strong> produces a 256-bit digest, represented here as 64 hexadecimal characters.</li>
+<li><strong>SHA-384:</strong> produces a 384-bit digest, represented here as 96 hexadecimal characters.</li>
+<li><strong>SHA-512:</strong> produces a 512-bit digest, represented here as 128 hexadecimal characters.</li>
+</ul>
+</section>
+
+<section class="info-card">
+<h2>Is Hashing Encryption?</h2>
+<p>No. Hashing and encryption are different concepts. Cryptographic hashes are designed as one-way transformations, while encryption is designed so authorized parties can decrypt protected data with the appropriate key.</p>
+</section>
+
+<section class="info-card">
+<h2>Can a Hash Be Reversed?</h2>
+<p>A cryptographic hash is not intended to be reversed to recover its original input. However, weak or guessable inputs may sometimes be discovered by trying candidate inputs and comparing their hashes. Do not use this tool as a substitute for secure password storage.</p>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the Hash Generator free?</h3>
+<p>Yes. The EasyTools365 Hash Generator is free to use online.</p>
+
+<h3>Is my text uploaded to a server?</h3>
+<p>The hash calculation is performed locally in your browser and does not need to upload your input to the EasyTools365 server.</p>
+
+<h3>Can a hash be converted back to the original text?</h3>
+<p>Cryptographic hash functions are designed as one-way transformations and are not intended to be reversed to recover the original input.</p>
+
+<h3>Will the same text produce the same hash?</h3>
+<p>Yes. When the same input and hashing algorithm are used, the resulting hash should be the same.</p>
+
+<h3>Which hash algorithms are supported?</h3>
+<p>The tool supports SHA-256, SHA-384 and SHA-512.</p>
+</section>
+
+<section class="info-card">
+<h2>Related Developer Tools</h2>
+<div class="related-grid">
+<a href="password-generator.html" class="btn btn-outline-primary">Password Generator</a>
+<a href="base64-encoder-decoder.html" class="btn btn-outline-primary">Base64 Encoder &amp; Decoder</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for AI, images, PDF, text, calculators and developer tasks.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+
+const textInput =
+    document.getElementById("textInput");
+
+const algorithm =
+    document.getElementById("algorithm");
+
+const generateButton =
+    document.getElementById("generateButton");
+
+const clearButton =
+    document.getElementById("clearButton");
+
+const copyButton =
+    document.getElementById("copyButton");
+
+const resultBox =
+    document.getElementById("resultBox");
+
+const hashInfo =
+    document.getElementById("hashInfo");
+
+const hashOutput =
+    document.getElementById("hashOutput");
+
+const errorBox =
+    document.getElementById("errorBox");
+
+const statusBox =
+    document.getElementById("statusBox");
+
+
+async function generateHash() {
+
+    errorBox.style.display =
+        "none";
+
+
+    const text =
+        textInput.value;
+
+
+    if (text === "") {
+
+        showError(
+            "Please enter some text to hash."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        !window.crypto ||
+        !window.crypto.subtle
+    ) {
+
+        showError(
+            "Web Crypto API is not available in this browser."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        const encoder =
+            new TextEncoder();
+
+
+        const data =
+            encoder.encode(text);
+
+
+        const hashBuffer =
+            await crypto.subtle.digest(
+                algorithm.value,
+                data
+            );
+
+
+        const hashArray =
+            Array.from(
+                new Uint8Array(
+                    hashBuffer
+                )
+            );
+
+
+        const hashHex =
+            hashArray
+                .map(
+                    function(byte) {
+
+                        return byte
+                            .toString(16)
+                            .padStart(2, "0");
+
+                    }
+                )
+                .join("");
+
+
+        hashOutput.textContent =
+            hashHex;
+
+
+        document.getElementById(
+            "algorithmResult"
+        ).textContent =
+            algorithm.value;
+
+
+        document.getElementById(
+            "hashLength"
+        ).textContent =
+            hashHex.length +
+            " hexadecimal characters";
+
+
+        resultBox.style.display =
+            "block";
+
+        hashInfo.style.display =
+            "grid";
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+
+        showError(
+            "Unable to generate the hash."
+        );
+
+    }
+
+}
+
+
+function showError(message) {
+
+    errorBox.textContent =
+        message;
+
+    errorBox.style.display =
+        "block";
+
+    resultBox.style.display =
+        "none";
+
+    hashInfo.style.display =
+        "none";
+
+}
+
+
+function clearTool() {
+
+    textInput.value = "";
+
+    algorithm.value =
+        "SHA-256";
+
+    hashOutput.textContent =
+        "";
+
+    resultBox.style.display =
+        "none";
+
+    hashInfo.style.display =
+        "none";
+
+    errorBox.style.display =
+        "none";
+
+    statusBox.style.display =
+        "none";
+
+    textInput.focus();
+
+}
+
+
+async function copyHash() {
+
+    const hash =
+        hashOutput.textContent.trim();
+
+
+    if (hash === "") {
+        return;
+    }
+
+
+    try {
+
+        await navigator.clipboard.writeText(
+            hash
+        );
+
+    }
+
+    catch (error) {
+
+        const textarea =
+            document.createElement(
+                "textarea"
+            );
+
+        textarea.value =
+            hash;
+
+        textarea.style.position =
+            "fixed";
+
+        textarea.style.opacity =
+            "0";
+
+        document.body.appendChild(
+            textarea
+        );
+
+        textarea.select();
+
+        document.execCommand(
+            "copy"
+        );
+
+        textarea.remove();
+
+    }
+
+
+    showStatus(
+        "Hash copied to clipboard!"
+    );
+
+}
+
+
+function showStatus(message) {
+
+    statusBox.textContent =
+        message;
+
+    statusBox.style.display =
+        "block";
+
+
+    clearTimeout(
+        showStatus.timer
+    );
+
+
+    showStatus.timer =
+        setTimeout(
+            function() {
+
+                statusBox.style.display =
+                    "none";
+
+            },
+            2000
+        );
+
+}
+
+
+generateButton.addEventListener(
+    "click",
+    generateHash
+);
+
+
+clearButton.addEventListener(
+    "click",
+    clearTool
+);
+
+
+copyButton.addEventListener(
+    "click",
+    copyHash
+);
+
+
+/*
+    Ctrl + Enter / Cmd + Enter
+*/
+
+textInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter" &&
+            (event.ctrlKey || event.metaKey)
+        ) {
+
+            generateHash();
+
+        }
+
+    }
+);
+
+</script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

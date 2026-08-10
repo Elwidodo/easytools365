@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free SQL Formatter & Minifier Online | EasyTools365</title>
+<meta name="description" content="Free online SQL Formatter and Minifier. Format messy SQL queries for readability or minify SQL into compact code directly in your browser.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/sql-formatter.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free SQL Formatter & Minifier Online | EasyTools365">
+<meta property="og:description" content="Format and minify SQL queries online for free. Process SQL locally in your browser and copy the result instantly.">
+<meta property="og:url" content="https://easytools365.com/tools/sql-formatter.html">
+<meta property="og:site_name" content="EasyTools365">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{padding:45px 15px 70px}.tool-wrapper{max-width:1000px;margin:auto}
+.tool-header{text-align:center;margin-bottom:30px}.tool-icon{width:68px;height:68px;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;border-radius:18px;background:rgba(37,99,235,.1);color:var(--primary);font-size:30px}
+.tool-header h1{font-size:38px;font-weight:800;margin-bottom:8px}.tool-header p{max-width:760px;margin:auto;color:var(--text-light);line-height:1.7}.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.tool-card,.content-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow)}.tool-card{padding:28px}
+.editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.editor-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.editor{width:100%;min-height:360px;padding:15px;resize:vertical;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none;font-family:monospace;font-size:13px;line-height:1.65}
+.editor:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.small-btn{padding:7px 10px;border:1px solid var(--border);border-radius:8px;background:var(--background);color:var(--text);font-size:12px;font-weight:600}
+.action-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:18px}.primary-btn,.secondary-btn{padding:13px;border-radius:11px;font-weight:700}.primary-btn{border:none;background:var(--primary);color:#fff}.secondary-btn{border:1px solid var(--border);background:var(--background);color:var(--text)}
+.stats-grid{display:none;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.stat-item{padding:15px;border:1px solid var(--border);border-radius:12px;background:var(--background);text-align:center}.stat-item span{display:block;margin-bottom:4px;color:var(--text-light);font-size:11px}.stat-item strong{font-size:17px}
+.error-box,.status-box{display:none;margin-top:15px;padding:12px;border-radius:10px;text-align:center;font-size:13px;font-weight:600}.error-box{background:rgba(220,38,38,.1);color:#dc2626}.status-box{background:rgba(22,163,74,.08);color:#16a34a}
+.privacy-note{margin-top:22px;padding:14px;border-radius:12px;background:rgba(22,163,74,.07);color:var(--text-light);text-align:center;font-size:13px}
+.content-card{margin-top:24px;padding:28px}.content-card h2{font-size:24px;font-weight:700;margin-bottom:14px}.content-card h3{font-size:17px;font-weight:700;margin-top:20px}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.related-grid a{text-decoration:none}
+.tip-box{padding:15px;border-radius:12px;background:rgba(37,99,235,.07);border:1px solid rgba(37,99,235,.15)}
+@media(max-width:750px){.editor-grid,.action-row,.stats-grid,.related-grid{grid-template-columns:1fr}.tool-card,.content-card{padding:20px}.tool-header h1{font-size:31px}}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 SQL Formatter","url":"https://easytools365.com/tools/sql-formatter.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","description":"Free online SQL Formatter and Minifier for formatting SQL queries and creating compact SQL.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is an SQL Formatter?","acceptedAnswer":{"@type":"Answer","text":"An SQL Formatter organizes SQL queries into a more readable structure, making clauses and conditions easier to review."}},
+{"@type":"Question","name":"Can I minify SQL with this tool?","acceptedAnswer":{"@type":"Answer","text":"Yes. The SQL Formatter also includes a Minify SQL function that removes unnecessary whitespace and comments for a more compact result."}},
+{"@type":"Question","name":"Is my SQL uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The SQL formatting and minification functions run locally in your browser."}},
+{"@type":"Question","name":"What SQL databases are supported?","acceptedAnswer":{"@type":"Answer","text":"This browser tool performs general SQL text formatting and is not a database-specific SQL parser. Always review the result for the SQL dialect used by your project."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb" class="mb-4">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../index.html#tools">Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">SQL Formatter</li>
+</ol>
+</nav>
+
+<section class="tool-header">
+<div class="tool-icon"><i class="bi bi-database"></i></div>
+<h1>Free SQL Formatter &amp; Minifier</h1>
+<p>Format messy SQL queries for easier reading or minify them into compact code directly in your browser.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</section>
+
+<section class="tool-card">
+<div class="editor-grid">
+
+<div>
+<div class="editor-header">
+<label for="sqlInput" class="fw-bold">SQL Input</label>
+<button id="sampleButton" class="small-btn" type="button"><i class="bi bi-file-earmark-code"></i> Load Sample</button>
+</div>
+<textarea id="sqlInput" class="editor" spellcheck="false" placeholder="Paste your SQL query here..."></textarea>
+</div>
+
+<div>
+<div class="editor-header">
+<label for="sqlOutput" class="fw-bold">Result</label>
+<button id="copyButton" class="small-btn" type="button"><i class="bi bi-copy"></i> Copy</button>
+</div>
+<textarea id="sqlOutput" class="editor" readonly spellcheck="false" placeholder="Formatted SQL will appear here..."></textarea>
+</div>
+
+</div>
+
+<div class="action-row">
+<button id="formatButton" class="primary-btn" type="button"><i class="bi bi-text-indent-left"></i> Format SQL</button>
+<button id="minifyButton" class="primary-btn" type="button"><i class="bi bi-arrows-collapse"></i> Minify SQL</button>
+<button id="clearButton" class="secondary-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+
+<div id="errorBox" class="error-box"></div>
+
+<div id="statsGrid" class="stats-grid">
+<div class="stat-item"><span>Input Characters</span><strong id="inputCharacters">0</strong></div>
+<div class="stat-item"><span>Output Characters</span><strong id="outputCharacters">0</strong></div>
+<div class="stat-item"><span>Mode</span><strong id="modeResult">-</strong></div>
+</div>
+
+<div id="statusBox" class="status-box"></div>
+
+<div class="privacy-note"><i class="bi bi-shield-check"></i> Your SQL queries are processed locally in your browser.</div>
+</section>
+
+<section class="content-card">
+<h2>What Is an SQL Formatter?</h2>
+<p>An SQL Formatter helps organize SQL queries into a clearer and more readable structure. Long or compressed queries can be difficult to review when they contain multiple clauses, joins, conditions, nested statements, and lists.</p>
+<p class="mb-0">Formatting makes important SQL clauses easier to identify and can make queries simpler to review, debug, maintain, and share.</p>
+</section>
+
+<section class="content-card">
+<h2>How to Format SQL Online</h2>
+<ol class="mb-0">
+<li>Paste your SQL query into the <strong>SQL Input</strong> area.</li>
+<li>Click <strong>Format SQL</strong> to organize the query.</li>
+<li>Review the formatted result in the Result area.</li>
+<li>Click <strong>Copy</strong> to copy the result.</li>
+<li>Use <strong>Clear</strong> when you want to start over.</li>
+</ol>
+</section>
+
+<section class="content-card">
+<h2>How to Minify SQL</h2>
+<p>Use <strong>Minify SQL</strong> when you need a compact representation of a query. The tool removes common SQL comments and unnecessary whitespace while preserving quoted string values.</p>
+<div class="tip-box"><i class="bi bi-info-circle"></i> Minification changes formatting, not the intended SQL logic. Always review the result before using it in production, especially with complex or dialect-specific queries.</div>
+</section>
+
+<section class="content-card">
+<h2>Why SQL Formatting Is Useful</h2>
+<ul class="mb-0">
+<li>Makes long queries easier to read.</li>
+<li>Helps developers review joins and filtering conditions.</li>
+<li>Makes debugging and maintenance more convenient.</li>
+<li>Provides cleaner SQL for documentation and code reviews.</li>
+<li>Helps students and beginners understand SQL query structure.</li>
+</ul>
+</section>
+
+<section class="content-card">
+<h2>SQL Clauses Commonly Used in Queries</h2>
+<div class="table-responsive">
+<table class="table align-middle mb-0">
+<thead><tr><th>Clause</th><th>Typical purpose</th></tr></thead>
+<tbody>
+<tr><td><strong>SELECT</strong></td><td>Chooses the columns or expressions returned by a query.</td></tr>
+<tr><td><strong>FROM</strong></td><td>Specifies the source table or query.</td></tr>
+<tr><td><strong>WHERE</strong></td><td>Filters rows according to conditions.</td></tr>
+<tr><td><strong>JOIN</strong></td><td>Combines related data from multiple sources.</td></tr>
+<tr><td><strong>GROUP BY</strong></td><td>Groups rows for aggregate calculations.</td></tr>
+<tr><td><strong>ORDER BY</strong></td><td>Sorts query results.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="content-card">
+<h2>Frequently Asked Questions</h2>
+<div class="accordion" id="sqlFaq">
+
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">What is an SQL Formatter?</button></h3>
+<div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#sqlFaq"><div class="accordion-body">An SQL Formatter organizes SQL queries into a more readable structure, making clauses and conditions easier to review.</div></div>
+</div>
+
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Can I minify SQL with this tool?</button></h3>
+<div id="faq2" class="accordion-collapse collapse" data-bs-parent="#sqlFaq"><div class="accordion-body">Yes. The SQL Formatter includes a Minify SQL function that removes unnecessary whitespace and comments for a more compact result.</div></div>
+</div>
+
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Is my SQL uploaded to a server?</button></h3>
+<div id="faq3" class="accordion-collapse collapse" data-bs-parent="#sqlFaq"><div class="accordion-body">No. The SQL formatting and minification functions run locally in your browser.</div></div>
+</div>
+
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">What SQL databases are supported?</button></h3>
+<div id="faq4" class="accordion-collapse collapse" data-bs-parent="#sqlFaq"><div class="accordion-body">This is a general SQL text formatter rather than a database-specific SQL parser. Review the result for the SQL dialect used by your project.</div></div>
+</div>
+
+</div>
+</section>
+
+<section class="content-card">
+<h2>Related Developer Tools</h2>
+<p>Explore other EasyTools365 utilities for developers and text processing.</p>
+<div class="related-grid">
+<a href="json-formatter.html" class="btn btn-outline-primary">JSON Formatter</a>
+<a href="regex-tester.html" class="btn btn-outline-primary">Regex Tester</a>
+<a href="robots-txt-generator.html" class="btn btn-outline-primary">Robots.txt Generator</a>
+</div>
+</section>
+
+<section class="content-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for developer, SEO, PDF, image, text and calculator tasks.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+const sqlInput =
+    document.getElementById("sqlInput");
+
+const sqlOutput =
+    document.getElementById("sqlOutput");
+
+const errorBox =
+    document.getElementById("errorBox");
+
+const statusBox =
+    document.getElementById("statusBox");
+
+const statsGrid =
+    document.getElementById("statsGrid");
+
+
+function protectStrings(sql) {
+
+    const strings = [];
+
+    let result = "";
+    let i = 0;
+
+
+    while (i < sql.length) {
+
+        const char = sql[i];
+
+
+        if (
+            char === "'" ||
+            char === '"' ||
+            char === "`"
+        ) {
+
+            const quote = char;
+
+            let value = char;
+
+            i++;
+
+
+            while (i < sql.length) {
+
+                value += sql[i];
+
+
+                if (sql[i] === quote) {
+
+                    if (
+                        sql[i + 1] === quote
+                    ) {
+
+                        value += sql[i + 1];
+                        i += 2;
+                        continue;
+
+                    }
+
+                    i++;
+                    break;
+
+                }
+
+
+                if (
+                    sql[i] === "\\" &&
+                    i + 1 < sql.length
+                ) {
+
+                    value += sql[i + 1];
+                    i += 2;
+                    continue;
+
+                }
+
+
+                i++;
+
+            }
+
+
+            const placeholder =
+                "__SQL_STRING_" +
+                strings.length +
+                "__";
+
+
+            strings.push(value);
+
+            result += placeholder;
+
+        }
+
+        else {
+
+            result += char;
+            i++;
+
+        }
+
+    }
+
+
+    return {
+        sql: result,
+        strings: strings
+    };
+
+}
+
+
+function restoreStrings(
+    sql,
+    strings
+) {
+
+    strings.forEach(
+        function(value, index) {
+
+            sql =
+                sql.replaceAll(
+                    "__SQL_STRING_" +
+                    index +
+                    "__",
+                    value
+                );
+
+        }
+    );
+
+
+    return sql;
+
+}
+
+
+function normalizeSQL(sql) {
+
+    return sql
+        .replace(/\r\n/g, "\n")
+        .replace(/\r/g, "\n")
+        .replace(/[ \t\n]+/g, " ")
+        .trim();
+
+}
+
+
+function formatSQL() {
+
+    hideError();
+
+
+    const original =
+        sqlInput.value;
+
+
+    if (
+        original.trim() === ""
+    ) {
+
+        showError(
+            "Please enter an SQL query."
+        );
+
+        return;
+
+    }
+
+
+    const protectedData =
+        protectStrings(original);
+
+
+    let sql =
+        normalizeSQL(
+            protectedData.sql
+        );
+
+
+    /*
+        Major SQL clauses.
+        Longer keywords go first.
+    */
+
+    const clauses = [
+        "LEFT OUTER JOIN",
+        "RIGHT OUTER JOIN",
+        "FULL OUTER JOIN",
+        "LEFT JOIN",
+        "RIGHT JOIN",
+        "FULL JOIN",
+        "INNER JOIN",
+        "CROSS JOIN",
+        "GROUP BY",
+        "ORDER BY",
+        "UNION ALL",
+        "INSERT INTO",
+        "DELETE FROM",
+        "HAVING",
+        "VALUES",
+        "LIMIT",
+        "OFFSET",
+        "RETURNING",
+        "SELECT",
+        "UPDATE",
+        "SET",
+        "FROM",
+        "WHERE",
+        "JOIN",
+        "UNION"
+    ];
+
+
+    clauses.forEach(
+        function(clause) {
+
+            const pattern =
+                new RegExp(
+                    "\\s+" +
+                    clause.replace(
+                        / /g,
+                        "\\s+"
+                    ) +
+                    "\\s+",
+                    "gi"
+                );
+
+
+            sql =
+                sql.replace(
+                    pattern,
+                    "\n" +
+                    clause +
+                    " "
+                );
+
+        }
+    );
+
+
+    /*
+        Handle a clause occurring
+        at the beginning of the query.
+    */
+
+    clauses.forEach(
+        function(clause) {
+
+            const pattern =
+                new RegExp(
+                    "^" +
+                    clause.replace(
+                        / /g,
+                        "\\s+"
+                    ) +
+                    "\\s+",
+                    "i"
+                );
+
+
+            sql =
+                sql.replace(
+                    pattern,
+                    clause + " "
+                );
+
+        }
+    );
+
+
+    /*
+        AND / OR conditions.
+    */
+
+    sql =
+        sql.replace(
+            /\s+(AND|OR)\s+/gi,
+            "\n    $1 "
+        );
+
+
+    /*
+        Put commas in SELECT-style lists
+        on a new indented line.
+    */
+
+    sql =
+        sql.replace(
+            /,\s*/g,
+            ",\n    "
+        );
+
+
+    /*
+        Semicolon starts a new statement.
+    */
+
+    sql =
+        sql.replace(
+            /;\s*/g,
+            ";\n\n"
+        );
+
+
+    /*
+        Remove unnecessary spaces around
+        parentheses without changing content.
+    */
+
+    sql =
+        sql.replace(
+            /\(\s+/g,
+            "("
+        );
+
+    sql =
+        sql.replace(
+            /\s+\)/g,
+            ")"
+        );
+
+
+    /*
+        Clean excessive blank lines.
+    */
+
+    sql =
+        sql.replace(
+            /\n{3,}/g,
+            "\n\n"
+        );
+
+
+    sql =
+        restoreStrings(
+            sql.trim(),
+            protectedData.strings
+        );
+
+
+    sqlOutput.value =
+        sql;
+
+
+    updateStats(
+        original,
+        sql,
+        "Formatted"
+    );
+
+}
+
+
+function minifySQL() {
+
+    hideError();
+
+
+    const original =
+        sqlInput.value;
+
+
+    if (
+        original.trim() === ""
+    ) {
+
+        showError(
+            "Please enter an SQL query."
+        );
+
+        return;
+
+    }
+
+
+    const protectedData =
+        protectStrings(original);
+
+
+    let sql =
+        protectedData.sql;
+
+
+    /*
+        Remove common SQL comments.
+    */
+
+    sql =
+        sql.replace(
+            /--[^\n\r]*/g,
+            " "
+        );
+
+
+    sql =
+        sql.replace(
+            /\/\*[\s\S]*?\*\//g,
+            " "
+        );
+
+
+    sql =
+        normalizeSQL(sql);
+
+
+    sql =
+        sql
+            .replace(/\s*,\s*/g, ",")
+            .replace(/\(\s*/g, "(")
+            .replace(/\s*\)/g, ")")
+            .replace(/\s*;\s*/g, ";")
+            .trim();
+
+
+    sql =
+        restoreStrings(
+            sql,
+            protectedData.strings
+        );
+
+
+    sqlOutput.value =
+        sql;
+
+
+    updateStats(
+        original,
+        sql,
+        "Minified"
+    );
+
+}
+
+
+function updateStats(
+    input,
+    output,
+    mode
+) {
+
+    document.getElementById(
+        "inputCharacters"
+    ).textContent =
+        input.length;
+
+
+    document.getElementById(
+        "outputCharacters"
+    ).textContent =
+        output.length;
+
+
+    document.getElementById(
+        "modeResult"
+    ).textContent =
+        mode;
+
+
+    statsGrid.style.display =
+        "grid";
+
+}
+
+
+function showError(message) {
+
+    errorBox.textContent =
+        message;
+
+    errorBox.style.display =
+        "block";
+
+    sqlOutput.value =
+        "";
+
+    statsGrid.style.display =
+        "none";
+
+}
+
+
+function hideError() {
+
+    errorBox.style.display =
+        "none";
+
+}
+
+
+function loadSample() {
+
+    sqlInput.value =
+        "SELECT users.id,users.name,users.email,orders.total FROM users LEFT JOIN orders ON users.id=orders.user_id WHERE users.active=1 AND orders.total>100 ORDER BY orders.total DESC;";
+
+}
+
+
+function clearTool() {
+
+    sqlInput.value = "";
+    sqlOutput.value = "";
+
+    errorBox.style.display =
+        "none";
+
+    statusBox.style.display =
+        "none";
+
+    statsGrid.style.display =
+        "none";
+
+    sqlInput.focus();
+
+}
+
+
+async function copyResult() {
+
+    const value =
+        sqlOutput.value;
+
+
+    if (value === "") {
+
+        showStatus(
+            "Format or minify SQL first."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        await navigator.clipboard.writeText(
+            value
+        );
+
+    }
+
+    catch (error) {
+
+        sqlOutput.select();
+
+        document.execCommand(
+            "copy"
+        );
+
+    }
+
+
+    showStatus(
+        "SQL copied to clipboard!"
+    );
+
+}
+
+
+function showStatus(message) {
+
+    statusBox.textContent =
+        message;
+
+    statusBox.style.display =
+        "block";
+
+
+    clearTimeout(
+        showStatus.timer
+    );
+
+
+    showStatus.timer =
+        setTimeout(
+            function() {
+
+                statusBox.style.display =
+                    "none";
+
+            },
+            2000
+        );
+
+}
+
+
+document.getElementById(
+    "formatButton"
+).addEventListener(
+    "click",
+    formatSQL
+);
+
+
+document.getElementById(
+    "minifyButton"
+).addEventListener(
+    "click",
+    minifySQL
+);
+
+
+document.getElementById(
+    "clearButton"
+).addEventListener(
+    "click",
+    clearTool
+);
+
+
+document.getElementById(
+    "sampleButton"
+).addEventListener(
+    "click",
+    loadSample
+);
+
+
+document.getElementById(
+    "copyButton"
+).addEventListener(
+    "click",
+    copyResult
+);
+
+
+sqlInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter" &&
+            (event.ctrlKey ||
+             event.metaKey)
+        ) {
+
+            formatSQL();
+
+        }
+
+    }
+);
+
+</script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

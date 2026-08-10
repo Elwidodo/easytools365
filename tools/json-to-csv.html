@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free JSON to CSV Converter | EasyTools365</title>
+    <meta name="description" content="Free online JSON to CSV Converter. Convert arrays of JSON objects into CSV format instantly, preview the result, copy it or download a CSV file.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="EasyTools365">
+    <link rel="canonical" href="https://easytools365.com/tools/json-to-csv.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free JSON to CSV Converter | EasyTools365">
+    <meta property="og:description" content="Convert compatible JSON data into CSV directly in your browser.">
+    <meta property="og:url" content="https://easytools365.com/tools/json-to-csv.html">
+    <meta property="og:site_name" content="EasyTools365">
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N002NWTJ23');
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .tool-page { padding:45px 15px 70px; }
+        .tool-wrapper { max-width:1000px; margin:auto; }
+        .tool-header { text-align:center; margin-bottom:28px; }
+        .tool-icon-large {
+            display:inline-flex; width:64px; height:64px; align-items:center; justify-content:center;
+            margin-bottom:14px; border-radius:18px; background:#dbeafe; color:var(--primary); font-size:30px;
+        }
+        .tool-header h1 { font-size:38px; font-weight:800; margin-bottom:8px; }
+        .tool-header p { color:var(--text-light); max-width:720px; margin:auto; line-height:1.7; }
+        .updated { font-size:12px; color:var(--text-light); margin-top:10px; }
+
+        .tool-card,.content-card {
+            background:var(--surface); border:1px solid var(--border);
+            border-radius:20px; box-shadow:var(--shadow);
+        }
+        .tool-card { padding:28px; }
+
+        .editor-grid {
+            display:grid; grid-template-columns:1fr 1fr; gap:18px;
+        }
+        .editor-header {
+            display:flex; align-items:center; justify-content:space-between;
+            gap:10px; margin-bottom:8px;
+        }
+        .editor-header label { font-size:14px; font-weight:700; }
+        .small-btn {
+            padding:7px 10px; border:1px solid var(--border); border-radius:8px;
+            background:var(--background); color:var(--text); font-size:12px; font-weight:600;
+        }
+        .editor {
+            width:100%; min-height:330px; padding:15px; resize:vertical;
+            border:1px solid var(--border); border-radius:12px;
+            background:var(--background); color:var(--text); outline:none;
+            font-family:Consolas,Monaco,monospace; font-size:13px; line-height:1.6;
+        }
+        .editor:focus {
+            border-color:var(--primary);
+            box-shadow:0 0 0 3px rgba(37,99,235,.10);
+        }
+        .button-row {
+            display:grid; grid-template-columns:2fr 1fr; gap:10px; margin-top:18px;
+        }
+        .primary-btn,.secondary-btn {
+            padding:13px; border-radius:11px; font-weight:700;
+        }
+        .primary-btn { border:none; background:var(--primary); color:white; }
+        .secondary-btn {
+            border:1px solid var(--border); background:var(--background); color:var(--text);
+        }
+        .error-box,.status-box {
+            display:none; margin-top:15px; padding:13px; border-radius:11px;
+            text-align:center; font-size:13px; font-weight:600;
+        }
+        .error-box { background:rgba(220,38,38,.10); color:#dc2626; }
+        .status-box { background:rgba(22,163,74,.08); color:#16a34a; }
+        .summary {
+            display:none; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:18px;
+        }
+        .summary-item {
+            padding:14px; border:1px solid var(--border); border-radius:12px;
+            background:var(--background); text-align:center;
+        }
+        .summary-item span { display:block; color:var(--text-light); font-size:11px; }
+        .summary-item strong { font-size:17px; }
+        .privacy-note {
+            margin-top:22px; padding:14px; border-radius:12px;
+            background:rgba(22,163,74,.07); color:var(--text-light);
+            text-align:center; font-size:13px;
+        }
+        .content-card { margin-top:24px; padding:28px; }
+        .content-card h2 { font-size:24px; font-weight:700; margin-bottom:14px; }
+        .feature-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+        .feature-item { padding:16px; border:1px solid var(--border); border-radius:12px; }
+        .feature-item i { color:var(--primary); }
+        .share-row { display:flex; justify-content:center; gap:10px; margin-top:18px; }
+        .related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+        .related-grid a { text-decoration:none; }
+
+        @media(max-width:750px) {
+            .editor-grid,.button-row,.summary,.feature-grid,.related-grid {
+                grid-template-columns:1fr;
+            }
+            .tool-card,.content-card { padding:20px; }
+            .tool-header h1 { font-size:31px; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebApplication",
+      "name":"EasyTools365 JSON to CSV Converter",
+      "url":"https://easytools365.com/tools/json-to-csv.html",
+      "applicationCategory":"DeveloperApplication",
+      "operatingSystem":"Any",
+      "description":"Free online tool for converting arrays of JSON objects into CSV format.",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Is the JSON to CSV Converter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 JSON to CSV Converter is free to use online."}},
+        {"@type":"Question","name":"What JSON works best for CSV conversion?","acceptedAnswer":{"@type":"Answer","text":"JSON containing an array of similarly structured objects is generally well suited for conversion into rows and columns."}},
+        {"@type":"Question","name":"Can I open CSV files in spreadsheet software?","acceptedAnswer":{"@type":"Answer","text":"Yes. CSV is commonly supported by spreadsheet applications and many data-processing tools."}},
+        {"@type":"Question","name":"What happens if my JSON is invalid?","acceptedAnswer":{"@type":"Answer","text":"Invalid JSON may prevent conversion. Check quotation marks, commas, brackets and braces before trying again."}}
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-decoration-none" href="../index.html">
+            <i class="bi bi-tools"></i> EasyTools365
+        </a>
+        <button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode">
+            <i class="bi bi-moon-stars"></i>
+        </button>
+    </div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="../index.html#tools">Tools</a></li>
+            <li class="breadcrumb-item active" aria-current="page">JSON to CSV Converter</li>
+        </ol>
+    </nav>
+
+    <section class="tool-header">
+        <div class="tool-icon-large">
+            <i class="bi bi-filetype-csv"></i>
+        </div>
+        <h1>Free JSON to CSV Converter</h1>
+        <p>Convert arrays of JSON objects into CSV format instantly, preview the result, copy it or download the CSV file.</p>
+        <div class="updated">
+            <i class="bi bi-clock-history"></i> Last Updated: August 2026
+        </div>
+    </section>
+
+    <section class="tool-card">
+
+        <div class="editor-grid">
+
+            <div>
+                <div class="editor-header">
+                    <label for="jsonInput">JSON Input</label>
+                    <button id="sampleButton" class="small-btn" type="button">
+                        Load Sample
+                    </button>
+                </div>
+
+                <textarea id="jsonInput"
+                          class="editor"
+                          spellcheck="false"
+                          placeholder='[
+  {
+    "name": "John",
+    "age": 30,
+    "city": "London"
+  }
+]'></textarea>
+            </div>
+
+            <div>
+                <div class="editor-header">
+                    <label for="csvOutput">CSV Output</label>
+                    <button id="copyButton" class="small-btn" type="button">
+                        <i class="bi bi-copy"></i> Copy
+                    </button>
+                </div>
+
+                <textarea id="csvOutput"
+                          class="editor"
+                          readonly
+                          placeholder="CSV output will appear here..."></textarea>
+            </div>
+
+        </div>
+
+        <div class="button-row">
+            <button id="convertButton" class="primary-btn" type="button">
+                <i class="bi bi-arrow-left-right"></i>
+                Convert to CSV
+            </button>
+
+            <button id="clearButton" class="secondary-btn" type="button">
+                <i class="bi bi-trash"></i>
+                Clear
+            </button>
+        </div>
+
+        <div id="errorBox" class="error-box"></div>
+
+        <div id="summary" class="summary">
+            <div class="summary-item">
+                <span>Rows</span>
+                <strong id="rowCount">0</strong>
+            </div>
+            <div class="summary-item">
+                <span>Columns</span>
+                <strong id="columnCount">0</strong>
+            </div>
+        </div>
+
+        <button id="downloadButton"
+                class="primary-btn"
+                type="button"
+                style="display:none; width:100%; margin-top:15px;">
+            <i class="bi bi-download"></i>
+            Download CSV
+        </button>
+
+        <div id="statusBox" class="status-box"></div>
+
+        <div class="privacy-note">
+            <i class="bi bi-shield-check"></i>
+            Your JSON data is processed locally in your browser.
+        </div>
+
+    </section>
+
+    <div class="share-row">
+        <button id="shareButton" class="btn btn-primary btn-sm" type="button">
+            <i class="bi bi-share-fill"></i> Share
+        </button>
+        <button id="copyLinkButton" class="btn btn-success btn-sm" type="button">
+            <i class="bi bi-link-45deg"></i> Copy Link
+        </button>
+    </div>
+
+    <section class="content-card">
+        <h2>What Is a JSON to CSV Converter?</h2>
+        <p>
+            A JSON to CSV Converter transforms compatible JSON data into CSV format.
+            CSV stores information in rows and columns and is commonly used with
+            spreadsheets, reporting tools, databases and data-processing applications.
+        </p>
+        <p class="mb-0">
+            EasyTools365 lets you convert an array of JSON objects directly in your browser,
+            then copy or download the resulting CSV data.
+        </p>
+    </section>
+
+    <section class="content-card">
+        <h2>How to Convert JSON to CSV</h2>
+        <ol class="mb-0">
+            <li>Paste a valid JSON array into the JSON Input box.</li>
+            <li>Make sure each item in the array is an object.</li>
+            <li>Click <strong>Convert to CSV</strong>.</li>
+            <li>Review the generated CSV and the row and column summary.</li>
+            <li>Copy the CSV or click <strong>Download CSV</strong> to save it.</li>
+        </ol>
+    </section>
+
+    <section class="content-card">
+        <h2>JSON to CSV Features</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3><i class="bi bi-check-circle"></i> JSON Validation</h3>
+                <p class="mb-0">Checks whether the entered JSON can be parsed before conversion.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="bi bi-check-circle"></i> CSV Preview</h3>
+                <p class="mb-0">View the generated CSV directly in the output box.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="bi bi-check-circle"></i> Copy Result</h3>
+                <p class="mb-0">Copy the converted CSV to your clipboard when needed.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="bi bi-check-circle"></i> CSV Download</h3>
+                <p class="mb-0">Download the converted data as a CSV file.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-card">
+        <h2>What JSON Works Best?</h2>
+        <p>
+            This converter is designed for a JSON array containing objects with
+            key-value pairs. For example, a list of people where each object contains
+            fields such as name, age and city can naturally become rows and columns.
+        </p>
+        <p class="mb-0">
+            If different objects contain different fields, the converter collects
+            the available property names across the objects and uses them as CSV columns.
+        </p>
+    </section>
+
+    <section class="content-card">
+        <h2>Common JSON Conversion Problems</h2>
+        <ul class="mb-0">
+            <li>Invalid JSON syntax, such as missing commas or quotation marks.</li>
+            <li>Using a JSON object instead of an array of objects.</li>
+            <li>Providing an empty JSON array.</li>
+            <li>Including primitive values or nested arrays as top-level array items.</li>
+            <li>Forgetting that complex nested values may be represented as JSON text inside a CSV cell.</li>
+        </ul>
+    </section>
+
+    <section class="content-card">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="accordion" id="faqAccordion">
+
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq1">
+                        Is the JSON to CSV Converter free?
+                    </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes. The EasyTools365 JSON to CSV Converter is free to use online.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq2">
+                        What JSON works best for CSV conversion?
+                    </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        An array containing similarly structured JSON objects is generally
+                        well suited for conversion into CSV rows and columns.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq3">
+                        Can I open CSV files in spreadsheet software?
+                    </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes. CSV is commonly supported by spreadsheet applications and
+                        many other data-processing tools.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faq4">
+                        What happens if my JSON is invalid?
+                    </button>
+                </h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        The converter displays an error instead of creating a CSV.
+                        Check quotation marks, commas, brackets and braces before trying again.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="content-card">
+        <h2>Related Tools</h2>
+        <p>Explore other EasyTools365 tools for JSON and developer tasks.</p>
+
+        <div class="related-grid">
+            <a href="json-formatter.html" class="btn btn-outline-primary">JSON Formatter</a>
+            <a href="jwt-decoder.html" class="btn btn-outline-primary">JWT Decoder</a>
+            <a href="json-xml-converter.html" class="btn btn-outline-primary">JSON XML Converter</a>
+        </div>
+    </section>
+
+    <section class="content-card text-center bg-primary text-white">
+        <h2>Need More Free Online Tools?</h2>
+        <p>Explore EasyTools365 tools for text, images, PDF, developer tasks and calculators.</p>
+        <a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+    </section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+    <div class="container text-center">
+        <p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+const jsonInput =
+    document.getElementById("jsonInput");
+
+const csvOutput =
+    document.getElementById("csvOutput");
+
+const errorBox =
+    document.getElementById("errorBox");
+
+const summary =
+    document.getElementById("summary");
+
+const downloadButton =
+    document.getElementById("downloadButton");
+
+const statusBox =
+    document.getElementById("statusBox");
+
+
+function csvEscape(value) {
+
+    if (
+        value === null ||
+        value === undefined
+    ) {
+        return "";
+    }
+
+
+    if (
+        typeof value === "object"
+    ) {
+
+        value =
+            JSON.stringify(value);
+
+    }
+
+
+    let text =
+        String(value);
+
+
+    /*
+        CSV fields containing commas,
+        quotes or line breaks must be quoted.
+    */
+
+    if (
+        text.includes(",") ||
+        text.includes('"') ||
+        text.includes("\n") ||
+        text.includes("\r")
+    ) {
+
+        text =
+            '"' +
+            text.replace(
+                /"/g,
+                '""'
+            ) +
+            '"';
+
+    }
+
+
+    return text;
+
+}
+
+
+function convertToCSV() {
+
+    errorBox.style.display =
+        "none";
+
+
+    const raw =
+        jsonInput.value.trim();
+
+
+    if (raw === "") {
+
+        showError(
+            "Please enter JSON data."
+        );
+
+        return;
+
+    }
+
+
+    let data;
+
+
+    try {
+
+        data =
+            JSON.parse(raw);
+
+    }
+
+    catch (error) {
+
+        showError(
+            "Invalid JSON: " +
+            error.message
+        );
+
+        return;
+
+    }
+
+
+    if (
+        !Array.isArray(data)
+    ) {
+
+        showError(
+            "JSON must be an array of objects."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        data.length === 0
+    ) {
+
+        showError(
+            "The JSON array is empty."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        data.some(
+            item =>
+                typeof item !== "object" ||
+                item === null ||
+                Array.isArray(item)
+        )
+    ) {
+
+        showError(
+            "Every item in the array must be a JSON object."
+        );
+
+        return;
+
+    }
+
+
+    /*
+        Collect every column name from
+        all objects, not only the first one.
+    */
+
+    const columns = [];
+
+
+    data.forEach(
+        function(item) {
+
+            Object.keys(item)
+                .forEach(
+                    function(key) {
+
+                        if (
+                            !columns.includes(key)
+                        ) {
+
+                            columns.push(key);
+
+                        }
+
+                    }
+                );
+
+        }
+    );
+
+
+    if (
+        columns.length === 0
+    ) {
+
+        showError(
+            "No columns were found."
+        );
+
+        return;
+
+    }
+
+
+    const rows = [];
+
+
+    rows.push(
+        columns
+            .map(csvEscape)
+            .join(",")
+    );
+
+
+    data.forEach(
+        function(item) {
+
+            const row =
+                columns.map(
+                    function(column) {
+
+                        return csvEscape(
+                            item[column]
+                        );
+
+                    }
+                );
+
+
+            rows.push(
+                row.join(",")
+            );
+
+        }
+    );
+
+
+    const csv =
+        rows.join("\r\n");
+
+
+    csvOutput.value =
+        csv;
+
+
+    document.getElementById(
+        "rowCount"
+    ).textContent =
+        data.length;
+
+
+    document.getElementById(
+        "columnCount"
+    ).textContent =
+        columns.length;
+
+
+    summary.style.display =
+        "grid";
+
+    downloadButton.style.display =
+        "block";
+
+}
+
+
+function showError(message) {
+
+    errorBox.textContent =
+        message;
+
+    errorBox.style.display =
+        "block";
+
+    csvOutput.value =
+        "";
+
+    summary.style.display =
+        "none";
+
+    downloadButton.style.display =
+        "none";
+
+}
+
+
+function clearTool() {
+
+    jsonInput.value =
+        "";
+
+    csvOutput.value =
+        "";
+
+    errorBox.style.display =
+        "none";
+
+    summary.style.display =
+        "none";
+
+    downloadButton.style.display =
+        "none";
+
+    statusBox.style.display =
+        "none";
+
+    jsonInput.focus();
+
+}
+
+
+function loadSample() {
+
+    const sample = [
+        {
+            name: "John Doe",
+            age: 30,
+            city: "London"
+        },
+        {
+            name: "Sarah Smith",
+            age: 27,
+            city: "New York"
+        },
+        {
+            name: "Alex Johnson",
+            age: 35,
+            city: "Tokyo"
+        }
+    ];
+
+
+    jsonInput.value =
+        JSON.stringify(
+            sample,
+            null,
+            2
+        );
+
+}
+
+
+async function copyCSV() {
+
+    const csv =
+        csvOutput.value;
+
+
+    if (csv === "") {
+
+        showStatus(
+            "Convert JSON first."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        await navigator.clipboard.writeText(
+            csv
+        );
+
+    }
+
+    catch (error) {
+
+        csvOutput.select();
+
+        document.execCommand(
+            "copy"
+        );
+
+    }
+
+
+    showStatus(
+        "CSV copied to clipboard!"
+    );
+
+}
+
+
+function downloadCSV() {
+
+    const csv =
+        csvOutput.value;
+
+
+    if (csv === "") {
+        return;
+    }
+
+
+    /*
+        UTF-8 BOM helps spreadsheet apps
+        display international characters.
+    */
+
+    const blob =
+        new Blob(
+            [
+                "\uFEFF",
+                csv
+            ],
+            {
+                type:
+                    "text/csv;charset=utf-8"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href =
+        url;
+
+    link.download =
+        "converted-data.csv";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    link.remove();
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+}
+
+
+function showStatus(message) {
+
+    statusBox.textContent =
+        message;
+
+    statusBox.style.display =
+        "block";
+
+
+    clearTimeout(
+        showStatus.timer
+    );
+
+
+    showStatus.timer =
+        setTimeout(
+            function() {
+
+                statusBox.style.display =
+                    "none";
+
+            },
+            2000
+        );
+
+}
+
+
+document.getElementById(
+    "convertButton"
+).addEventListener(
+    "click",
+    convertToCSV
+);
+
+
+document.getElementById(
+    "clearButton"
+).addEventListener(
+    "click",
+    clearTool
+);
+
+
+document.getElementById(
+    "sampleButton"
+).addEventListener(
+    "click",
+    loadSample
+);
+
+
+document.getElementById(
+    "copyButton"
+).addEventListener(
+    "click",
+    copyCSV
+);
+
+
+downloadButton.addEventListener(
+    "click",
+    downloadCSV
+);
+
+
+/*
+    Ctrl + Enter / Cmd + Enter
+*/
+
+jsonInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter" &&
+            (event.ctrlKey || event.metaKey)
+        ) {
+
+            convertToCSV();
+
+        }
+
+    }
+);
+
+</script>
+
+<script>
+document.getElementById("shareButton").addEventListener("click", async function () {
+    try {
+        if (navigator.share) {
+            await navigator.share({
+                title: "EasyTools365 JSON to CSV Converter",
+                text: "Free online JSON to CSV Converter",
+                url: window.location.href
+            });
+        } else {
+            await navigator.clipboard.writeText(window.location.href);
+            this.innerHTML = '<i class="bi bi-check-lg"></i> Link Copied!';
+            setTimeout(() => this.innerHTML = '<i class="bi bi-share-fill"></i> Share', 1500);
+        }
+    } catch (error) {}
+});
+
+document.getElementById("copyLinkButton").addEventListener("click", async function () {
+    try {
+        await navigator.clipboard.writeText(window.location.href);
+        this.innerHTML = '<i class="bi bi-check-lg"></i> Link Copied!';
+        setTimeout(() => this.innerHTML = '<i class="bi bi-link-45deg"></i> Copy Link', 1500);
+    } catch (error) {
+        const temp = document.createElement("input");
+        temp.value = window.location.href;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        temp.remove();
+    }
+});
+</script>
+
+<script src="../assets/js/app.js"></script>
+
+</body>
+</html>

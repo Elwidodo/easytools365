@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Storyboard Generator - Create Video Scenes, Camera Shots & AI Prompts | EasyTools365</title>
+<meta name="description" content="Free AI Storyboard Generator for planning videos with scenes, visual prompts, camera shots, actions, movement, duration and transitions. Create storyboards in your browser without an API key.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/ai-storyboard-generator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Storyboard Generator | EasyTools365">
+<meta property="og:description" content="Turn one video idea into a structured multi-scene storyboard with visual prompts, camera directions, actions and transitions.">
+<meta property="og:url" content="https://easytools365.com/tools/ai-storyboard-generator.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Storyboard Generator | EasyTools365">
+<meta name="twitter:description" content="Create structured video storyboards with scenes, camera shots, movement, timing and AI video prompts.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:45px 15px 70px}
+.tool-wrapper{max-width:1050px;margin:auto}
+.breadcrumb{margin-bottom:25px}
+.back-home{display:inline-flex;align-items:center;gap:8px;margin-bottom:25px;color:var(--primary);text-decoration:none;font-weight:600}
+.tool-header{text-align:center;margin-bottom:32px}
+.tool-icon-large{display:inline-flex;width:74px;height:74px;align-items:center;justify-content:center;margin-bottom:18px;border-radius:22px;background:rgba(220,38,38,.1);color:#dc2626;font-size:34px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:780px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.generator-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.generator-card{padding:30px}
+.field-group{margin-bottom:20px}
+.field-group label{display:block;margin-bottom:8px;font-weight:600}
+.field-control{width:100%;padding:13px 15px;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none}
+textarea.field-control{min-height:110px;resize:vertical}
+.field-control:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.generate-btn{width:100%;padding:15px;border:0;border-radius:12px;background:var(--primary);color:#fff;font-weight:700}
+.generate-btn:hover{opacity:.92}
+.result-area{display:none;margin-top:30px}
+.result-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:18px}
+.result-heading h2{margin:0;font-size:21px;font-weight:700}
+.copy-all-btn,.copy-scene,.action-btn{padding:9px 13px;border:1px solid var(--border);border-radius:10px;background:var(--background);color:var(--text);font-weight:600}
+.scenes-container{display:grid;gap:16px}
+.scene-card{padding:22px;border:1px solid var(--border);border-radius:18px;background:var(--background)}
+.scene-top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:15px}
+.scene-number{font-size:14px;font-weight:800;color:var(--primary)}
+.scene-title{margin-bottom:14px;font-size:21px;font-weight:800}
+.scene-row{margin-bottom:10px;line-height:1.65}
+.scene-row strong{color:var(--text)}
+.prompt-box{margin-top:15px;padding:15px;border-radius:12px;background:rgba(37,99,235,.07);line-height:1.7;overflow-wrap:anywhere}
+.bottom-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.info-note{margin-top:24px;padding:15px;border-radius:12px;background:rgba(220,38,38,.07);color:var(--text-light);text-align:center;font-size:13px;line-height:1.6}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:22px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+body.dark-mode .field-control,body.dark-mode .scene-card,body.dark-mode .copy-all-btn,body.dark-mode .copy-scene,body.dark-mode .action-btn{background:#0f172a}
+body.dark-mode .tool-icon-large{background:#7f1d1d;color:#fecaca}
+@media(max-width:750px){
+.form-grid,.related-grid{grid-template-columns:1fr}
+.generator-card,.info-card{padding:20px}
+.tool-header h1{font-size:31px}
+.result-heading{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:500px){
+.bottom-actions{grid-template-columns:1fr}
+.scene-card{padding:17px}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 AI Storyboard Generator","url":"https://easytools365.com/tools/ai-storyboard-generator.html","applicationCategory":"MultimediaApplication","operatingSystem":"Any","description":"Free browser-based storyboard generator for video scenes, camera shots, actions, movement, timing and AI video prompts.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Create a Video Storyboard","description":"Create a multi-scene video storyboard using the EasyTools365 AI Storyboard Generator.","step":[
+{"@type":"HowToStep","position":1,"name":"Enter a video idea","text":"Describe the main concept, subject or sequence you want to turn into a storyboard."},
+{"@type":"HowToStep","position":2,"name":"Choose scene settings","text":"Select the number of scenes, duration per scene, visual style, aspect ratio and language."},
+{"@type":"HowToStep","position":3,"name":"Choose camera movement","text":"Select automatic, smooth, dynamic, static or cinematic camera movement."},
+{"@type":"HowToStep","position":4,"name":"Add extra details","text":"Optionally add setting, lighting, character, food, environment or other visual requirements."},
+{"@type":"HowToStep","position":5,"name":"Generate the storyboard","text":"Click Generate Storyboard and review each scene's action, camera, movement, duration, transition and AI video prompt."},
+{"@type":"HowToStep","position":6,"name":"Copy scenes","text":"Copy an individual scene or use Copy All Scenes for the complete storyboard."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the AI Storyboard Generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 AI Storyboard Generator is free to use in your browser."}},
+{"@type":"Question","name":"Does the storyboard generator require an API key?","acceptedAnswer":{"@type":"Answer","text":"No. The current version generates storyboard prompts locally in the browser without an API key."}},
+{"@type":"Question","name":"How many scenes can I generate?","acceptedAnswer":{"@type":"Answer","text":"You can generate 3, 5, 6, 8 or 10 scenes."}},
+{"@type":"Question","name":"Can I choose the aspect ratio?","acceptedAnswer":{"@type":"Answer","text":"Yes. Available aspect ratios are 9:16 vertical, 16:9 landscape, 1:1 square and 4:5 portrait."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/ai-tools.html">AI Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">AI Storyboard Generator</li>
+</ol>
+</nav>
+
+<a href="../index.html" class="back-home"><i class="bi bi-arrow-left"></i> Back to Home</a>
+
+<header class="tool-header">
+<div class="tool-icon-large"><i class="bi bi-film"></i></div>
+<h1>AI Storyboard Generator</h1>
+<p>Turn one video idea into a structured multi-scene storyboard with visual prompts, camera directions, actions and transitions.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="generator-card">
+
+<div class="field-group">
+<label for="idea">Video Idea</label>
+<textarea id="idea" class="field-control" maxlength="700" placeholder="Example: Anime chef cooking extremely spicy ramen with egg and sausage"></textarea>
+</div>
+
+<div class="form-grid">
+
+<div class="field-group">
+<label for="sceneCount">Number of Scenes</label>
+<select id="sceneCount" class="field-control">
+<option value="3">3 Scenes</option>
+<option value="5" selected>5 Scenes</option>
+<option value="6">6 Scenes</option>
+<option value="8">8 Scenes</option>
+<option value="10">10 Scenes</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="duration">Duration / Scene</label>
+<select id="duration" class="field-control">
+<option value="3">3 Seconds</option>
+<option value="5" selected>5 Seconds</option>
+<option value="8">8 Seconds</option>
+<option value="10">10 Seconds</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="style">Visual Style</label>
+<select id="style" class="field-control">
+<option value="cinematic">Cinematic</option>
+<option value="anime">Anime</option>
+<option value="realistic">Photorealistic</option>
+<option value="3d">3D Animation</option>
+<option value="cartoon">Cartoon</option>
+<option value="asmr">ASMR</option>
+<option value="fantasy">Fantasy</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="ratio">Aspect Ratio</label>
+<select id="ratio" class="field-control">
+<option value="9:16">9:16 Vertical</option>
+<option value="16:9">16:9 Landscape</option>
+<option value="1:1">1:1 Square</option>
+<option value="4:5">4:5 Portrait</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="language">Language</label>
+<select id="language" class="field-control">
+<option value="english">English</option>
+<option value="indonesian">Indonesian</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="movement">Camera Movement</label>
+<select id="movement" class="field-control">
+<option value="auto">Auto</option>
+<option value="smooth">Smooth</option>
+<option value="dynamic">Dynamic</option>
+<option value="static">Static</option>
+<option value="cinematic">Cinematic</option>
+</select>
+</div>
+
+</div>
+
+<div class="field-group">
+<label for="details">Extra Details <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
+<textarea id="details" class="field-control" maxlength="500" placeholder="Example: Japanese kitchen, dramatic steam, red chili, no dialogue, highly detailed food"></textarea>
+</div>
+
+<button id="generateButton" class="generate-btn" type="button"><i class="bi bi-stars"></i> Generate Storyboard</button>
+
+<div id="resultArea" class="result-area">
+<div class="result-heading">
+<h2><i class="bi bi-film"></i> Generated Storyboard</h2>
+<button id="copyAllButton" class="copy-all-btn" type="button"><i class="bi bi-copy"></i> Copy All Scenes</button>
+</div>
+
+<div id="scenesContainer" class="scenes-container"></div>
+
+<div class="bottom-actions">
+<button id="regenerateButton" class="action-btn" type="button"><i class="bi bi-arrow-repeat"></i> Generate Again</button>
+<button id="clearButton" class="action-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+</div>
+
+<div class="info-note">
+<i class="bi bi-info-circle"></i>
+This version generates storyboard prompts locally without an API. The prompts can be adapted for AI video generators.
+</div>
+
+</section>
+
+<section class="info-card">
+<h2>What Is an AI Storyboard Generator?</h2>
+<p>An AI storyboard generator helps turn a video concept into a sequence of planned scenes. Each scene can include an action, camera shot, camera movement, duration, transition and a visual prompt. This gives creators a structured roadmap before producing a video.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Create a Video Storyboard</h2>
+<ol>
+<li>Enter your main video idea.</li>
+<li>Choose the number of scenes.</li>
+<li>Select the duration for each scene.</li>
+<li>Choose a visual style and aspect ratio.</li>
+<li>Select the language and camera movement.</li>
+<li>Add optional details such as setting, lighting, characters or visual requirements.</li>
+<li>Click <strong>Generate Storyboard</strong>.</li>
+<li>Review each scene and copy individual scenes or the entire storyboard.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>What Is Included in Each Scene?</h2>
+<ul>
+<li><strong>Scene title:</strong> Identifies the role of the scene.</li>
+<li><strong>Action:</strong> Describes what should happen.</li>
+<li><strong>Camera:</strong> Suggests a shot or camera perspective.</li>
+<li><strong>Movement:</strong> Provides camera movement guidance.</li>
+<li><strong>Duration:</strong> Specifies the selected scene duration.</li>
+<li><strong>Transition:</strong> Suggests how the scene can connect to the next one.</li>
+<li><strong>AI Video Prompt:</strong> Combines visual style, subject, action, camera and production details.</li>
+</ul>
+</section>
+
+<section class="info-card">
+<h2>Aspect Ratios for Different Video Platforms</h2>
+<p><strong>9:16 Vertical</strong> is useful for vertical short-form content. <strong>16:9 Landscape</strong> is commonly used for traditional widescreen video. <strong>1:1 Square</strong> can be useful for square social posts, while <strong>4:5 Portrait</strong> provides a taller social-media format.</p>
+</section>
+
+<section class="info-card">
+<h2>Why Plan a Storyboard Before Making a Video?</h2>
+<p>A storyboard makes it easier to visualize a sequence before production. It can help organize actions, camera perspectives, timing and transitions so the final video has a clearer structure. You can also revise individual scenes before spending time creating the final visuals.</p>
+</section>
+
+<section class="info-card">
+<h2>Using Storyboards for AI Video Creation</h2>
+<p>The generated prompts are designed as creative starting points for AI video workflows. Review and customize each prompt for the specific video generator you use, especially when you need consistent characters, locations, objects, lighting or camera behavior across multiple scenes.</p>
+</section>
+
+<section class="info-card">
+<h2>Does This Tool Require an API Key?</h2>
+<p>No. The current version generates storyboard prompts locally in the browser without an API key. The generated prompts can then be adapted to your preferred AI video workflow.</p>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the AI Storyboard Generator free?</h3>
+<p>Yes. The EasyTools365 AI Storyboard Generator is free to use in your browser.</p>
+
+<h3>Does the storyboard generator require an API key?</h3>
+<p>No. The current version generates storyboard prompts locally without an API key.</p>
+
+<h3>How many scenes can I generate?</h3>
+<p>You can generate 3, 5, 6, 8 or 10 scenes.</p>
+
+<h3>Can I choose the aspect ratio?</h3>
+<p>Yes. You can choose 9:16 vertical, 16:9 landscape, 1:1 square or 4:5 portrait.</p>
+</section>
+
+<section class="info-card">
+<h2>Related AI Tools</h2>
+<div class="related-grid">
+<a href="ai-story-generator.html" class="btn btn-outline-primary">AI Story Generator</a>
+<a href="ai-prompt-generator.html" class="btn btn-outline-primary">AI Prompt Generator</a>
+<a href="ai-prompt-improver.html" class="btn btn-outline-primary">AI Prompt Improver</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for AI, images, PDF, text, calculators and developer tasks.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+
+const idea = document.getElementById("idea");
+const sceneCount = document.getElementById("sceneCount");
+const duration = document.getElementById("duration");
+const style = document.getElementById("style");
+const ratio = document.getElementById("ratio");
+const language = document.getElementById("language");
+const movement = document.getElementById("movement");
+const details = document.getElementById("details");
+
+const generateButton = document.getElementById("generateButton");
+const regenerateButton = document.getElementById("regenerateButton");
+const clearButton = document.getElementById("clearButton");
+const copyAllButton = document.getElementById("copyAllButton");
+
+const resultArea = document.getElementById("resultArea");
+const scenesContainer = document.getElementById("scenesContainer");
+
+let generatedScenes = [];
+
+
+const englishStages = [
+    {
+        title: "Opening Shot",
+        action: "Introduce the main subject and environment clearly.",
+        shot: "Wide establishing shot",
+        transition: "Clean cinematic cut"
+    },
+    {
+        title: "Preparation",
+        action: "Show the subject beginning the main activity with detailed preparation.",
+        shot: "Medium shot",
+        transition: "Smooth cut"
+    },
+    {
+        title: "Detail Shot",
+        action: "Focus closely on an important object, texture or action.",
+        shot: "Extreme close-up",
+        transition: "Match cut"
+    },
+    {
+        title: "Main Action",
+        action: "Show the central action becoming more intense and visually interesting.",
+        shot: "Close-up tracking shot",
+        transition: "Dynamic cut"
+    },
+    {
+        title: "Progress",
+        action: "Show visible progress while keeping the main subject consistent.",
+        shot: "Overhead shot",
+        transition: "Smooth transition"
+    },
+    {
+        title: "Hero Moment",
+        action: "Reveal the strongest and most satisfying visual moment.",
+        shot: "Cinematic hero shot",
+        transition: "Slow cinematic cut"
+    },
+    {
+        title: "Final Detail",
+        action: "Highlight the finished result with rich visual detail.",
+        shot: "Macro close-up",
+        transition: "Soft cut"
+    },
+    {
+        title: "Final Reveal",
+        action: "Present the completed result clearly to the viewer.",
+        shot: "Slow push-in shot",
+        transition: "Cinematic reveal"
+    },
+    {
+        title: "Beauty Shot",
+        action: "Show an attractive final beauty shot from another angle.",
+        shot: "Low-angle close-up",
+        transition: "Slow dissolve"
+    },
+    {
+        title: "Ending Shot",
+        action: "Finish with a memorable final composition centered on the result.",
+        shot: "Wide final shot",
+        transition: "Fade out"
+    }
+];
+
+
+const indonesianStages = [
+    {
+        title: "Adegan Pembuka",
+        action: "Perkenalkan subjek utama dan lingkungan dengan jelas.",
+        shot: "Wide establishing shot",
+        transition: "Cut sinematik"
+    },
+    {
+        title: "Persiapan",
+        action: "Tampilkan subjek mulai melakukan aktivitas utama dan proses persiapannya.",
+        shot: "Medium shot",
+        transition: "Smooth cut"
+    },
+    {
+        title: "Detail",
+        action: "Fokuskan kamera pada objek, tekstur, atau aksi penting secara dekat.",
+        shot: "Extreme close-up",
+        transition: "Match cut"
+    },
+    {
+        title: "Aksi Utama",
+        action: "Tampilkan aksi utama menjadi semakin kuat dan menarik secara visual.",
+        shot: "Close-up tracking shot",
+        transition: "Dynamic cut"
+    },
+    {
+        title: "Perkembangan",
+        action: "Tampilkan perkembangan proses sambil menjaga konsistensi subjek.",
+        shot: "Overhead shot",
+        transition: "Transisi halus"
+    },
+    {
+        title: "Momen Utama",
+        action: "Tampilkan momen visual paling kuat dan memuaskan.",
+        shot: "Cinematic hero shot",
+        transition: "Slow cinematic cut"
+    },
+    {
+        title: "Detail Akhir",
+        action: "Sorot hasil yang hampir selesai dengan detail visual yang kaya.",
+        shot: "Macro close-up",
+        transition: "Soft cut"
+    },
+    {
+        title: "Pengungkapan Hasil",
+        action: "Perlihatkan hasil akhir secara jelas kepada penonton.",
+        shot: "Slow push-in shot",
+        transition: "Cinematic reveal"
+    },
+    {
+        title: "Beauty Shot",
+        action: "Tampilkan hasil akhir dari sudut menarik lainnya.",
+        shot: "Low-angle close-up",
+        transition: "Slow dissolve"
+    },
+    {
+        title: "Adegan Penutup",
+        action: "Akhiri dengan komposisi visual yang kuat dan berfokus pada hasil.",
+        shot: "Wide final shot",
+        transition: "Fade out"
+    }
+];
+
+
+function cleanText(text) {
+    return text.trim().replace(/\s+/g, " ");
+}
+
+
+function getStyleText() {
+
+    const english = {
+        cinematic: "cinematic, professional film look",
+        anime: "high-quality anime style, detailed anime illustration",
+        realistic: "photorealistic, realistic textures and natural details",
+        "3d": "high-quality 3D animated film style",
+        cartoon: "colorful professional cartoon animation",
+        asmr: "satisfying ASMR visual style, extreme texture detail",
+        fantasy: "epic fantasy visual style, atmospheric and highly detailed"
+    };
+
+    const indonesian = {
+        cinematic: "gaya sinematik dengan tampilan film profesional",
+        anime: "gaya anime berkualitas tinggi dan sangat detail",
+        realistic: "fotorealistis dengan tekstur dan detail alami",
+        "3d": "gaya animasi 3D berkualitas tinggi",
+        cartoon: "gaya animasi kartun profesional dan penuh warna",
+        asmr: "gaya visual ASMR yang satisfying dengan detail tekstur tinggi",
+        fantasy: "gaya fantasi epik, atmosferik, dan sangat detail"
+    };
+
+    return language.value === "indonesian"
+        ? indonesian[style.value]
+        : english[style.value];
+}
+
+
+function getMovement(index) {
+
+    if (movement.value === "static") {
+        return language.value === "indonesian"
+            ? "kamera statis dan stabil"
+            : "locked static camera";
+    }
+
+    if (movement.value === "smooth") {
+        return language.value === "indonesian"
+            ? "gerakan kamera halus dan stabil"
+            : "smooth controlled camera movement";
+    }
+
+    if (movement.value === "dynamic") {
+        return language.value === "indonesian"
+            ? "gerakan kamera dinamis mengikuti aksi"
+            : "dynamic camera movement following the action";
+    }
+
+    if (movement.value === "cinematic") {
+        return language.value === "indonesian"
+            ? "gerakan kamera sinematik perlahan"
+            : "slow cinematic camera movement";
+    }
+
+
+    const englishAuto = [
+        "slow push-in",
+        "smooth pan",
+        "subtle tracking movement",
+        "slow orbit movement",
+        "controlled overhead movement"
+    ];
+
+    const indonesianAuto = [
+        "kamera perlahan mendekat",
+        "gerakan pan halus",
+        "gerakan tracking lembut",
+        "gerakan orbit perlahan",
+        "gerakan kamera dari atas secara halus"
+    ];
+
+    const list = language.value === "indonesian"
+        ? indonesianAuto
+        : englishAuto;
+
+    return list[index % list.length];
+}
+
+
+function createPrompt(stage, index, mainIdea, extra) {
+
+    const styleText = getStyleText();
+    const cameraMovement = getMovement(index);
+
+    if (language.value === "indonesian") {
+
+        let prompt =
+            `${styleText}. ${stage.shot} menampilkan ${mainIdea}. ` +
+            `${stage.action} Gerakan kamera: ${cameraMovement}. ` +
+            `Pencahayaan profesional, komposisi kuat, detail tajam, ` +
+            `subjek dan lingkungan konsisten dengan adegan sebelumnya`;
+
+        if (extra) {
+            prompt += `, ${extra}`;
+        }
+
+        prompt +=
+            `. Tanpa teks di layar. Rasio aspek ${ratio.value}.`;
+
+        return prompt;
+
+    }
+
+
+    let prompt =
+        `${styleText}. ${stage.shot} showing ${mainIdea}. ` +
+        `${stage.action} Camera movement: ${cameraMovement}. ` +
+        `Professional lighting, strong composition, sharp details, ` +
+        `consistent subject and environment across scenes`;
+
+    if (extra) {
+        prompt += `, ${extra}`;
+    }
+
+    prompt +=
+        `. No on-screen text. Aspect ratio ${ratio.value}.`;
+
+    return prompt;
+}
+
+
+function generateStoryboard() {
+
+    const mainIdea = cleanText(idea.value);
+
+    if (!mainIdea) {
+        alert("Please enter a video idea.");
+        idea.focus();
+        return;
+    }
+
+    const total = Number(sceneCount.value);
+    const extra = cleanText(details.value);
+
+    const stages = language.value === "indonesian"
+        ? indonesianStages
+        : englishStages;
+
+    generatedScenes = [];
+
+
+    for (let i = 0; i < total; i++) {
+
+        const stage = stages[i];
+
+        generatedScenes.push({
+            number: i + 1,
+            title: stage.title,
+            action: stage.action,
+            shot: stage.shot,
+            movement: getMovement(i),
+            duration: `${duration.value} seconds`,
+            transition: stage.transition,
+            prompt: createPrompt(stage, i, mainIdea, extra)
+        });
+
+    }
+
+    renderStoryboard();
+}
+
+
+function sceneToText(scene) {
+
+    if (language.value === "indonesian") {
+
+        return (
+            `SCENE ${scene.number} Ã¢â‚¬â€ ${scene.title}\n` +
+            `Aksi: ${scene.action}\n` +
+            `Kamera: ${scene.shot}\n` +
+            `Gerakan: ${scene.movement}\n` +
+            `Durasi: ${scene.duration}\n` +
+            `Transisi: ${scene.transition}\n\n` +
+            `PROMPT:\n${scene.prompt}`
+        );
+
+    }
+
+
+    return (
+        `SCENE ${scene.number} Ã¢â‚¬â€ ${scene.title}\n` +
+        `Action: ${scene.action}\n` +
+        `Camera: ${scene.shot}\n` +
+        `Movement: ${scene.movement}\n` +
+        `Duration: ${scene.duration}\n` +
+        `Transition: ${scene.transition}\n\n` +
+        `PROMPT:\n${scene.prompt}`
+    );
+}
+
+
+function renderStoryboard() {
+
+    scenesContainer.innerHTML = "";
+
+    generatedScenes.forEach(function(scene) {
+
+        const card = document.createElement("div");
+        card.className = "scene-card";
+
+        const top = document.createElement("div");
+        top.className = "scene-top";
+
+        const number = document.createElement("div");
+        number.className = "scene-number";
+        number.textContent = `SCENE ${scene.number}`;
+
+        const copyButton = document.createElement("button");
+        copyButton.className = "copy-scene";
+        copyButton.type = "button";
+        copyButton.innerHTML =
+            '<i class="bi bi-copy"></i> Copy Scene';
+
+        copyButton.addEventListener("click", async function() {
+
+            await copyText(sceneToText(scene));
+
+            copyButton.innerHTML =
+                '<i class="bi bi-check-lg"></i> Copied';
+
+            setTimeout(function() {
+                copyButton.innerHTML =
+                    '<i class="bi bi-copy"></i> Copy Scene';
+            }, 1200);
+
+        });
+
+
+        top.appendChild(number);
+        top.appendChild(copyButton);
+
+
+        const title = document.createElement("div");
+        title.className = "scene-title";
+        title.textContent = scene.title;
+
+
+        const info = document.createElement("div");
+
+        if (language.value === "indonesian") {
+
+            info.innerHTML = `
+                <div class="scene-row"><strong>Aksi:</strong> ${scene.action}</div>
+                <div class="scene-row"><strong>Kamera:</strong> ${scene.shot}</div>
+                <div class="scene-row"><strong>Gerakan:</strong> ${scene.movement}</div>
+                <div class="scene-row"><strong>Durasi:</strong> ${scene.duration}</div>
+                <div class="scene-row"><strong>Transisi:</strong> ${scene.transition}</div>
+            `;
+
+        } else {
+
+            info.innerHTML = `
+                <div class="scene-row"><strong>Action:</strong> ${scene.action}</div>
+                <div class="scene-row"><strong>Camera:</strong> ${scene.shot}</div>
+                <div class="scene-row"><strong>Movement:</strong> ${scene.movement}</div>
+                <div class="scene-row"><strong>Duration:</strong> ${scene.duration}</div>
+                <div class="scene-row"><strong>Transition:</strong> ${scene.transition}</div>
+            `;
+
+        }
+
+
+        const prompt = document.createElement("div");
+        prompt.className = "prompt-box";
+
+        const promptLabel =
+            language.value === "indonesian"
+                ? "<strong>Prompt AI Video:</strong><br>"
+                : "<strong>AI Video Prompt:</strong><br>";
+
+        prompt.innerHTML =
+            promptLabel + scene.prompt;
+
+
+        card.appendChild(top);
+        card.appendChild(title);
+        card.appendChild(info);
+        card.appendChild(prompt);
+
+        scenesContainer.appendChild(card);
+
+    });
+
+
+    resultArea.style.display = "block";
+
+    resultArea.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+    });
+}
+
+
+async function copyText(text) {
+
+    try {
+        await navigator.clipboard.writeText(text);
+    } catch (error) {
+
+        const temp = document.createElement("textarea");
+        temp.value = text;
+
+        document.body.appendChild(temp);
+
+        temp.select();
+        document.execCommand("copy");
+
+        temp.remove();
+    }
+}
+
+
+generateButton.addEventListener(
+    "click",
+    generateStoryboard
+);
+
+
+regenerateButton.addEventListener(
+    "click",
+    generateStoryboard
+);
+
+
+copyAllButton.addEventListener(
+    "click",
+    async function() {
+
+        if (!generatedScenes.length) {
+            return;
+        }
+
+        const allText =
+            generatedScenes
+                .map(scene => sceneToText(scene))
+                .join("\n\n============================\n\n");
+
+        await copyText(allText);
+
+        copyAllButton.innerHTML =
+            '<i class="bi bi-check-lg"></i> Copied!';
+
+        setTimeout(function() {
+            copyAllButton.innerHTML =
+                '<i class="bi bi-copy"></i> Copy All Scenes';
+        }, 1500);
+
+    }
+);
+
+
+clearButton.addEventListener(
+    "click",
+    function() {
+
+        idea.value = "";
+        details.value = "";
+
+        generatedScenes = [];
+        scenesContainer.innerHTML = "";
+
+        resultArea.style.display = "none";
+
+        idea.focus();
+    }
+);
+
+</script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

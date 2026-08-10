@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Word Counter - Count Words, Characters & Sentences | EasyTools365</title>
+
+    <meta name="description"
+          content="Free online word counter to count words, characters, sentences, paragraphs and reading time instantly. EasyTools365 Word Counter works directly in your browser.">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="EasyTools365">
+
+    <link rel="canonical"
+          href="https://easytools365.com/tools/word-counter.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title"
+          content="Free Word Counter - Count Words & Characters | EasyTools365">
+    <meta property="og:description"
+          content="Count words, characters, sentences, paragraphs and estimated reading time online with the EasyTools365 Word Counter.">
+    <meta property="og:url"
+          content="https://easytools365.com/tools/word-counter.html">
+    <meta property="og:site_name" content="EasyTools365">
+
+    <!-- Google AdSense -->
+    <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8549153951726575"
+            crossorigin="anonymous"></script>
+
+    <!-- Google Analytics -->
+    <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N002NWTJ23');
+    </script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .tool-page {
+            min-height: calc(100vh - 80px);
+            padding: 55px 15px;
+        }
+
+        .tool-wrapper {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .tool-header .icon {
+            display: inline-flex;
+            width: 70px;
+            height: 70px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            background: #dbeafe;
+            color: var(--primary);
+            font-size: 32px;
+        }
+
+        .tool-header h1 {
+            font-size: 38px;
+            font-weight: 700;
+        }
+
+        .tool-header p {
+            color: var(--text-light);
+        }
+
+        .counter-card {
+            padding: 30px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .stat-box {
+            padding: 18px 10px;
+            text-align: center;
+            background: rgba(37, 99, 235, .07);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+        }
+
+        .stat-number {
+            display: block;
+            color: var(--primary);
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        .text-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        #textInput {
+            width: 100%;
+            min-height: 300px;
+            padding: 20px;
+            background: var(--background);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            outline: none;
+            resize: vertical;
+        }
+
+        #textInput:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, .12);
+        }
+
+        .button-area {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 13px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .copy-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        .clear-btn {
+            background: var(--background);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .privacy-note {
+            margin-top: 25px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 12px;
+            background: rgba(37, 99, 235, .08);
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        .info-card {
+            border: 0;
+            box-shadow: var(--shadow);
+        }
+
+        .info-card h2 {
+            font-weight: 700;
+        }
+
+        body.dark-mode .tool-header .icon {
+            background: #1e3a8a;
+        }
+
+        body.dark-mode #textInput,
+        body.dark-mode .clear-btn {
+            background: #0f172a;
+        }
+
+        @media(max-width:700px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .counter-card {
+                padding: 20px;
+            }
+
+            .tool-header h1 {
+                font-size: 30px;
+            }
+
+            .button-area {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <!-- WebApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "EasyTools365 Word Counter",
+      "url": "https://easytools365.com/tools/word-counter.html",
+      "description": "Free online word counter for counting words, characters, sentences, paragraphs and estimated reading time.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires a modern web browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the Word Counter free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The EasyTools365 Word Counter is free to use online."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I paste text into the Word Counter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can paste text into the input area and view the available text statistics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is considered a word?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool counts groups of characters separated by whitespace as words."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who can use a Word Counter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can be useful for students, writers, bloggers, editors, marketers, and anyone who needs to check the length of text."
+          }
+        }
+      ]
+    }
+    </script>
+
+</head>
+
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold"
+           href="../index.html">
+
+            <i class="bi bi-tools"></i>
+            EasyTools365
+
+        </a>
+
+        <button id="darkModeButton"
+                class="btn btn-outline-primary"
+                type="button"
+                aria-label="Toggle dark mode">
+
+            <i class="bi bi-moon-stars"></i>
+
+        </button>
+
+    </div>
+
+</nav>
+
+
+<main class="tool-page">
+
+    <div class="tool-wrapper">
+
+
+        <!-- ================= BREADCRUMB ================= -->
+
+        <nav aria-label="breadcrumb" class="mb-4">
+
+            <ol class="breadcrumb">
+
+                <li class="breadcrumb-item">
+                    <a href="../index.html">Home</a>
+                </li>
+
+                <li class="breadcrumb-item">
+                    <a href="../index.html#tools">Tools</a>
+                </li>
+
+                <li class="breadcrumb-item active"
+                    aria-current="page">
+
+                    Word Counter
+
+                </li>
+
+            </ol>
+
+        </nav>
+
+
+        <!-- ================= HEADER ================= -->
+
+        <div class="tool-header">
+
+            <div class="icon">
+
+                <i class="bi bi-text-paragraph"></i>
+
+            </div>
+
+            <h1>
+                Free Word Counter
+            </h1>
+
+            <p class="lead">
+                Count words, characters, sentences, paragraphs and estimated
+                reading time instantly while you type.
+            </p>
+
+            <p class="text-muted small">
+                <i class="bi bi-clock-history"></i>
+                Last Updated: August 2026
+            </p>
+
+        </div>
+
+
+        <!-- ================= TOOL ================= -->
+
+        <section class="counter-card">
+
+            <div class="stats-grid">
+
+                <div class="stat-box">
+                    <span class="stat-number" id="wordCount">0</span>
+                    <span class="stat-label">Words</span>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-number" id="characterCount">0</span>
+                    <span class="stat-label">Characters</span>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-number" id="characterNoSpace">0</span>
+                    <span class="stat-label">Without Spaces</span>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-number" id="sentenceCount">0</span>
+                    <span class="stat-label">Sentences</span>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-number" id="paragraphCount">0</span>
+                    <span class="stat-label">Paragraphs</span>
+                </div>
+
+                <div class="stat-box">
+                    <span class="stat-number" id="readingTime">0 min</span>
+                    <span class="stat-label">Reading Time</span>
+                </div>
+
+            </div>
+
+
+            <label for="textInput" class="text-label">
+                Enter or paste your text
+            </label>
+
+            <textarea
+                id="textInput"
+                placeholder="Start typing or paste your text here..."
+                aria-label="Text to analyze"></textarea>
+
+
+            <div class="button-area">
+
+                <button id="copyText"
+                        class="action-btn copy-btn"
+                        type="button">
+
+                    <i class="bi bi-copy"></i>
+                    Copy Text
+
+                </button>
+
+                <button id="clearText"
+                        class="action-btn clear-btn"
+                        type="button">
+
+                    <i class="bi bi-trash"></i>
+                    Clear
+
+                </button>
+
+            </div>
+
+
+            <div class="privacy-note">
+
+                <i class="bi bi-shield-check"></i>
+
+                Your text is processed locally in your browser
+                and is not uploaded to our server.
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SHARE ================= -->
+
+        <div class="text-center mt-4 mb-5">
+
+            <button type="button"
+                    class="btn btn-primary me-2"
+                    onclick="shareTool()">
+
+                <i class="bi bi-share-fill"></i>
+                Share
+
+            </button>
+
+            <button type="button"
+                    class="btn btn-success"
+                    onclick="copyToolLink()">
+
+                <i class="bi bi-link-45deg"></i>
+                Copy Link
+
+            </button>
+
+        </div>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="card info-card mb-4">
+
+            <div class="card-body p-4 p-md-5">
+
+                <h2 class="h3 mb-3">
+                    What Is a Word Counter?
+                </h2>
+
+                <p>
+                    A word counter is an online utility that analyzes written
+                    text and reports useful statistics such as word count,
+                    character count, sentence count and paragraph count.
+                    It is useful when a document, article, assignment or
+                    other piece of writing needs to stay within a particular
+                    length.
+                </p>
+
+                <p>
+                    The EasyTools365 Word Counter provides these statistics
+                    directly in your browser as you type or paste text.
+                    The tool also provides an estimated reading time based
+                    on the number of words entered.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HOW TO USE ================= -->
+
+        <section class="card info-card mb-4">
+
+            <div class="card-body p-4 p-md-5">
+
+                <h2 class="h3 mb-3">
+                    How to Use the Word Counter
+                </h2>
+
+                <ol>
+
+                    <li class="mb-2">
+                        Type or paste your text into the input area.
+                    </li>
+
+                    <li class="mb-2">
+                        Review the word, character, sentence and paragraph
+                        statistics shown above the text box.
+                    </li>
+
+                    <li class="mb-2">
+                        Check the estimated reading time when you need to
+                        understand the approximate length of the text.
+                    </li>
+
+                    <li class="mb-2">
+                        Edit your text and the counters will update
+                        automatically.
+                    </li>
+
+                    <li class="mb-2">
+                        Use Copy Text to copy the current text or Clear to
+                        start with an empty input.
+                    </li>
+
+                </ol>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURES ================= -->
+
+        <section class="card info-card mb-4">
+
+            <div class="card-body p-4 p-md-5">
+
+                <h2 class="h3 mb-4">
+                    Word Counter Features
+                </h2>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+
+                        <h3 class="h5">
+                            <i class="bi bi-check-circle text-primary"></i>
+                            Word Count
+                        </h3>
+
+                        <p class="text-muted">
+                            See the number of words in your text while you
+                            type or paste content into the editor.
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <h3 class="h5">
+                            <i class="bi bi-check-circle text-primary"></i>
+                            Character Count
+                        </h3>
+
+                        <p class="text-muted">
+                            Check total characters and characters without
+                            spaces for text-length requirements.
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <h3 class="h5">
+                            <i class="bi bi-check-circle text-primary"></i>
+                            Sentence and Paragraph Count
+                        </h3>
+
+                        <p class="text-muted">
+                            Review the number of detected sentences and
+                            paragraphs in your text.
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <h3 class="h5">
+                            <i class="bi bi-check-circle text-primary"></i>
+                            Reading Time Estimate
+                        </h3>
+
+                        <p class="text-muted">
+                            Get an approximate reading time based on the
+                            number of words in the text.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= USE CASES ================= -->
+
+        <section class="card info-card mb-4">
+
+            <div class="card-body p-4 p-md-5">
+
+                <h2 class="h3 mb-3">
+                    When Is a Word Counter Useful?
+                </h2>
+
+                <p>
+                    Word counting can be useful for many types of writing.
+                    Students may need to meet assignment limits, while
+                    writers and bloggers may want to check the length of
+                    articles before publishing them.
+                </p>
+
+                <p>
+                    Content creators, marketers and editors can also use
+                    word and character counts when preparing descriptions,
+                    posts, scripts and other material with specific length
+                    requirements.
+                </p>
+
+                <ul>
+
+                    <li>School and university assignments</li>
+                    <li>Blog posts and articles</li>
+                    <li>Product descriptions</li>
+                    <li>Reports and business documents</li>
+                    <li>Social media content</li>
+                    <li>Drafts and other written material</li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TIPS ================= -->
+
+        <section class="card info-card mb-4">
+
+            <div class="card-body p-4 p-md-5">
+
+                <h2 class="h3 mb-3">
+                    Tips for Checking Your Text
+                </h2>
+
+                <ul>
+
+                    <li class="mb-2">
+                        Check the word count after finishing a draft so you
+                        can see whether it meets the required length.
+                    </li>
+
+                    <li class="mb-2">
+                        Use the character count when working with platforms
+                        that impose character limits.
+                    </li>
+
+                    <li class="mb-2">
+                        Review sentences and paragraphs to make sure the
+                        structure of your text matches your intended format.
+                    </li>
+
+                    <li class="mb-2">
+                        Treat the displayed reading time as an estimate rather
+                        than an exact measurement because reading speed varies
+                        between people.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FAQ ================= -->
+
+        <section class="card info-card mb-4">
+
+            <div class="card-body p-4 p-md-5">
+
+                <h2 class="h3 mb-4">
+                    Frequently Asked Questions
+                </h2>
+
+                <div class="accordion" id="faqAccordion">
+
+
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+
+                            <button class="accordion-button"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faqOne">
+
+                                Is the Word Counter free?
+
+                            </button>
+
+                        </h3>
+
+                        <div id="faqOne"
+                             class="accordion-collapse collapse show"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+                                Yes. The EasyTools365 Word Counter is free
+                                to use online.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faqTwo">
+
+                                Can I paste text into the Word Counter?
+
+                            </button>
+
+                        </h3>
+
+                        <div id="faqTwo"
+                             class="accordion-collapse collapse"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+                                Yes. You can paste text into the input area
+                                and view the available text statistics.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faqThree">
+
+                                What is considered a word?
+
+                            </button>
+
+                        </h3>
+
+                        <div id="faqThree"
+                             class="accordion-collapse collapse"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+                                The tool identifies words as groups of
+                                characters separated by whitespace. The
+                                result can vary for unusual formatting,
+                                symbols or special text.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="accordion-item">
+
+                        <h3 class="accordion-header">
+
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#faqFour">
+
+                                Who can use a Word Counter?
+
+                            </button>
+
+                        </h3>
+
+                        <div id="faqFour"
+                             class="accordion-collapse collapse"
+                             data-bs-parent="#faqAccordion">
+
+                            <div class="accordion-body">
+                                It can be useful for students, writers,
+                                bloggers, editors, marketers and anyone
+                                who needs to check the length of text.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RELATED TOOLS ================= -->
+
+        <section class="card info-card mb-4">
+
+            <div class="card-body p-4 p-md-5">
+
+                <h2 class="h3 mb-3">
+                    Related Tools
+                </h2>
+
+                <p>
+                    Explore other EasyTools365 tools that can help with
+                    common text and data tasks.
+                </p>
+
+                <div class="row g-3">
+
+                    <div class="col-md-4">
+
+                        <a href="case-converter.html"
+                           class="btn btn-outline-primary w-100">
+
+                            Case Converter
+
+                        </a>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <a href="json-formatter.html"
+                           class="btn btn-outline-primary w-100">
+
+                            JSON Formatter
+
+                        </a>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <a href="lorem-ipsum-generator.html"
+                           class="btn btn-outline-primary w-100">
+
+                            Lorem Ipsum Generator
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BROWSE TOOLS ================= -->
+
+        <section class="card bg-primary text-white border-0 mb-5">
+
+            <div class="card-body text-center p-4 p-md-5">
+
+                <h2 class="h3">
+                    Need More Free Online Tools?
+                </h2>
+
+                <p>
+                    Explore EasyTools365 for PDF, image, text, developer,
+                    calculator and other useful online tools.
+                </p>
+
+                <a href="../index.html#tools"
+                   class="btn btn-light">
+
+                    Browse All Tools
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="border-top mt-5 py-5">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-5">
+
+                <h3 class="h5 fw-bold">
+
+                    <i class="bi bi-tools"></i>
+                    EasyTools365
+
+                </h3>
+
+                <p class="text-muted mb-0">
+                    Simple and useful online tools for everyday digital tasks.
+                </p>
+
+            </div>
+
+
+            <div class="col-6 col-md-3">
+
+                <h3 class="h6 fw-bold">
+                    Tools
+                </h3>
+
+                <a href="../categories/text-tools.html"
+                   class="d-block text-decoration-none mb-2">
+                    Text
+                </a>
+
+                <a href="../categories/image-tools.html"
+                   class="d-block text-decoration-none mb-2">
+                    Image
+                </a>
+
+                <a href="../categories/pdf-tools.html"
+                   class="d-block text-decoration-none mb-2">
+                    PDF
+                </a>
+
+                <a href="../categories/developer-tools.html"
+                   class="d-block text-decoration-none mb-2">
+                    Developer
+                </a>
+
+            </div>
+
+
+            <div class="col-6 col-md-4">
+
+                <h3 class="h6 fw-bold">
+                    Company
+                </h3>
+
+                <a href="../pages/about.html"
+                   class="d-block text-decoration-none mb-2">
+                    About
+                </a>
+
+                <a href="../pages/contact.html"
+                   class="d-block text-decoration-none mb-2">
+                    Contact
+                </a>
+
+                <a href="../pages/privacy-policy.html"
+                   class="d-block text-decoration-none mb-2">
+                    Privacy Policy
+                </a>
+
+                <a href="../pages/terms.html"
+                   class="d-block text-decoration-none mb-2">
+                    Terms
+                </a>
+
+                <a href="../pages/disclaimer.html"
+                   class="d-block text-decoration-none mb-2">
+                    Disclaimer
+                </a>
+
+            </div>
+
+        </div>
+
+        <hr class="my-4">
+
+        <div class="text-center text-muted small">
+            © 2026 EasyTools365. All rights reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= SHARE / COPY ================= -->
+
+<script>
+
+function shareTool() {
+
+    if (navigator.share) {
+
+        navigator.share({
+            title: document.title,
+            text: "Check out this free Word Counter from EasyTools365.",
+            url: window.location.href
+        }).catch(function () {});
+
+    } else {
+
+        copyToolLink();
+
+    }
+
+}
+
+
+function copyToolLink() {
+
+    if (!navigator.clipboard) {
+
+        alert("Copying the link is not supported by this browser.");
+
+        return;
+
+    }
+
+    navigator.clipboard.writeText(
+        window.location.href
+    ).then(function () {
+
+        alert("Tool link copied to clipboard.");
+
+    }).catch(function () {
+
+        alert("Unable to copy the link.");
+
+    });
+
+}
+
+</script>
+
+
+<!-- ================= WORD COUNTER SCRIPT ================= -->
+
+<script>
+
+const textInput =
+    document.getElementById("textInput");
+
+const wordCount =
+    document.getElementById("wordCount");
+
+const characterCount =
+    document.getElementById("characterCount");
+
+const characterNoSpace =
+    document.getElementById("characterNoSpace");
+
+const sentenceCount =
+    document.getElementById("sentenceCount");
+
+const paragraphCount =
+    document.getElementById("paragraphCount");
+
+const readingTime =
+    document.getElementById("readingTime");
+
+const copyText =
+    document.getElementById("copyText");
+
+const clearText =
+    document.getElementById("clearText");
+
+
+function updateCounter() {
+
+    const text = textInput.value;
+
+    const trimmedText = text.trim();
+
+
+    /* WORDS */
+
+    const words = trimmedText
+        ? trimmedText.split(/\s+/)
+        : [];
+
+    wordCount.textContent =
+        words.length;
+
+
+    /* CHARACTERS */
+
+    characterCount.textContent =
+        text.length;
+
+
+    /* CHARACTERS WITHOUT SPACES */
+
+    characterNoSpace.textContent =
+        text.replace(/\s/g, "").length;
+
+
+    /* SENTENCES */
+
+    const sentences = trimmedText
+        ? trimmedText
+            .split(/[.!?]+/)
+            .filter(item => item.trim().length > 0)
+        : [];
+
+    sentenceCount.textContent =
+        sentences.length;
+
+
+    /* PARAGRAPHS */
+
+    const paragraphs = trimmedText
+        ? text
+            .split(/\n\s*\n/)
+            .filter(item => item.trim().length > 0)
+        : [];
+
+    paragraphCount.textContent =
+        paragraphs.length;
+
+
+    /* READING TIME */
+
+    if (words.length === 0) {
+
+        readingTime.textContent =
+            "0 min";
+
+    } else {
+
+        const minutes =
+            Math.ceil(words.length / 200);
+
+        readingTime.textContent =
+            minutes + " min";
+
+    }
+
+}
+
+
+/* LIVE COUNTER */
+
+textInput.addEventListener(
+    "input",
+    updateCounter
+);
+
+
+/* CLEAR */
+
+clearText.addEventListener(
+    "click",
+    function() {
+
+        textInput.value = "";
+
+        updateCounter();
+
+        textInput.focus();
+
+    }
+);
+
+
+/* COPY */
+
+copyText.addEventListener(
+    "click",
+    async function() {
+
+        if (!textInput.value) {
+            return;
+        }
+
+        try {
+
+            await navigator.clipboard.writeText(
+                textInput.value
+            );
+
+            copyText.innerHTML =
+                '<i class="bi bi-check-lg"></i> Copied!';
+
+            setTimeout(function() {
+
+                copyText.innerHTML =
+                    '<i class="bi bi-copy"></i> Copy Text';
+
+            }, 1500);
+
+        } catch {
+
+            textInput.select();
+
+            document.execCommand("copy");
+
+        }
+
+    }
+);
+
+
+updateCounter();
+
+</script>
+
+
+<!-- GLOBAL JS -->
+<script src="../assets/js/app.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

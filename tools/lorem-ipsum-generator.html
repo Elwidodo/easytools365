@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Lorem Ipsum Generator | Placeholder Text Generator | EasyTools365</title>
+    <meta name="description" content="Free online Lorem Ipsum Generator. Generate placeholder text instantly for websites, apps, designs, documents and development projects.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="EasyTools365">
+    <link rel="canonical" href="https://easytools365.com/tools/lorem-ipsum-generator.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Lorem Ipsum Generator | EasyTools365">
+    <meta property="og:description" content="Generate Lorem Ipsum placeholder text instantly for websites, designs and development projects.">
+    <meta property="og:url" content="https://easytools365.com/tools/lorem-ipsum-generator.html">
+    <meta property="og:site_name" content="EasyTools365">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N002NWTJ23');
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .tool-page { padding:45px 15px 70px; }
+        .tool-wrapper { max-width:950px; margin:auto; }
+        .tool-header { text-align:center; margin-bottom:30px; }
+        .tool-icon-large {
+            display:inline-flex;width:68px;height:68px;align-items:center;justify-content:center;
+            margin-bottom:15px;border-radius:18px;background:rgba(37,99,235,.10);
+            color:var(--primary);font-size:30px;
+        }
+        .tool-header h1 { font-size:38px;font-weight:800;margin-bottom:8px; }
+        .tool-header p { max-width:720px;margin:auto;color:var(--text-light);line-height:1.7; }
+        .updated { margin-top:10px;color:var(--text-light);font-size:12px; }
+        .generator-card,.content-card {
+            background:var(--surface);border:1px solid var(--border);
+            border-radius:20px;box-shadow:var(--shadow);
+        }
+        .generator-card { padding:28px; }
+        .settings-box { margin-bottom:20px; }
+        .settings-box label { display:block;margin-bottom:8px;font-size:13px;font-weight:700; }
+        #paragraphCount {
+            width:100%;padding:13px 15px;border:1px solid var(--border);
+            border-radius:11px;background:var(--background);color:var(--text);outline:none;
+        }
+        #paragraphCount:focus,#output:focus {
+            border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.10);
+        }
+        #output {
+            width:100%;min-height:330px;padding:18px;border:1px solid var(--border);
+            border-radius:15px;background:var(--background);color:var(--text);
+            outline:none;resize:vertical;line-height:1.7;
+        }
+        .stats {
+            display:flex;justify-content:flex-end;gap:20px;margin-top:8px;
+            color:var(--text-light);font-size:13px;
+        }
+        .generate-btn {
+            width:100%;margin-top:18px;padding:14px;border:0;border-radius:11px;
+            background:var(--primary);color:white;font-weight:700;
+        }
+        .action-buttons { display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px; }
+        .action-btn {
+            padding:13px;border:1px solid var(--border);border-radius:11px;
+            background:var(--background);color:var(--text);font-weight:600;
+        }
+        .action-btn:hover { border-color:var(--primary);color:var(--primary); }
+        .privacy-note {
+            margin-top:20px;padding:13px;border-radius:11px;text-align:center;
+            background:rgba(22,163,74,.07);color:var(--text-light);font-size:12px;
+        }
+        .content-card { margin-top:24px;padding:28px; }
+        .content-card h2 { font-size:24px;font-weight:700;margin-bottom:14px; }
+        .content-card h3 { font-size:17px;font-weight:700;margin-top:18px; }
+        .feature-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:16px; }
+        .feature-item { padding:16px;border:1px solid var(--border);border-radius:12px; }
+        .feature-item i { color:var(--primary); }
+        .related-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:10px; }
+        .related-grid a { text-decoration:none; }
+        .share-row { display:flex;justify-content:center;gap:10px;margin-top:18px; }
+        @media(max-width:600px) {
+            .generator-card,.content-card { padding:20px; }
+            .action-buttons,.feature-grid,.related-grid { grid-template-columns:1fr; }
+            .tool-header h1 { font-size:31px; }
+            .stats { justify-content:space-between; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"WebApplication",
+      "name":"EasyTools365 Lorem Ipsum Generator",
+      "url":"https://easytools365.com/tools/lorem-ipsum-generator.html",
+      "applicationCategory":"DeveloperApplication",
+      "operatingSystem":"Any",
+      "description":"Free online Lorem Ipsum Generator for creating placeholder text for websites, applications, documents and design projects.",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"What is Lorem Ipsum?","acceptedAnswer":{"@type":"Answer","text":"Lorem Ipsum is placeholder text commonly used in publishing, web design and graphic design to demonstrate how written content will appear in a layout before final copy is available."}},
+        {"@type":"Question","name":"Can I use generated Lorem Ipsum in website mockups?","acceptedAnswer":{"@type":"Answer","text":"Yes. Placeholder text can be used in prototypes and mockups to evaluate spacing, typography and page structure before replacing it with final content."}},
+        {"@type":"Question","name":"Does the Lorem Ipsum Generator require installation?","acceptedAnswer":{"@type":"Answer","text":"No. The generator runs directly in your web browser and does not require additional software."}},
+        {"@type":"Question","name":"Can I copy the generated text?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the Copy Text button to copy the generated Lorem Ipsum to your clipboard."}}
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-decoration-none" href="../index.html">
+            <i class="bi bi-tools"></i> EasyTools365
+        </a>
+        <button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode">
+            <i class="bi bi-moon-stars"></i>
+        </button>
+    </div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="../index.html#tools">Tools</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Lorem Ipsum Generator</li>
+        </ol>
+    </nav>
+
+    <section class="tool-header">
+        <div class="tool-icon-large"><i class="bi bi-text-paragraph"></i></div>
+        <h1>Free Lorem Ipsum Generator</h1>
+        <p>Generate placeholder text instantly for websites, applications, documents, designs and development projects.</p>
+        <div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+    </section>
+
+    <section class="generator-card">
+        <div class="settings-box">
+            <label for="paragraphCount">Number of Paragraphs</label>
+            <input type="number" id="paragraphCount" min="1" max="20" value="3">
+        </div>
+
+        <label for="output" class="fw-semibold mb-2">Generated Text</label>
+        <textarea id="output" readonly placeholder="Your Lorem Ipsum text will appear here..."></textarea>
+
+        <div class="stats">
+            <span><strong id="wordCount">0</strong> words</span>
+            <span><strong id="characterCount">0</strong> characters</span>
+        </div>
+
+        <button id="generateButton" class="generate-btn" type="button">
+            <i class="bi bi-stars"></i> Generate Lorem Ipsum
+        </button>
+
+        <div class="action-buttons">
+            <button id="copyButton" class="action-btn" type="button">
+                <i class="bi bi-copy"></i> Copy Text
+            </button>
+            <button id="clearButton" class="action-btn" type="button">
+                <i class="bi bi-trash"></i> Clear
+            </button>
+        </div>
+
+        <div class="privacy-note">
+            <i class="bi bi-shield-check"></i>
+            Lorem Ipsum is generated directly in your browser.
+        </div>
+    </section>
+
+    <div class="share-row">
+        <button id="shareButton" class="btn btn-primary btn-sm" type="button">
+            <i class="bi bi-share-fill"></i> Share
+        </button>
+        <button id="copyLinkButton" class="btn btn-success btn-sm" type="button">
+            <i class="bi bi-link-45deg"></i> Copy Link
+        </button>
+    </div>
+
+    <section class="content-card">
+        <h2>What Is a Lorem Ipsum Generator?</h2>
+        <p>A Lorem Ipsum Generator is an online tool that creates placeholder text for websites, applications, documents, presentations and design projects. It is useful when the final written content is not ready but you need realistic-looking text to test a layout.</p>
+        <p class="mb-0">Placeholder text lets designers and developers focus on typography, spacing, colors, page structure and responsive layouts before final content is available.</p>
+    </section>
+
+    <section class="content-card">
+        <h2>How to Use the Lorem Ipsum Generator</h2>
+        <ol class="mb-0">
+            <li>Enter the number of paragraphs you need.</li>
+            <li>Click <strong>Generate Lorem Ipsum</strong>.</li>
+            <li>Review the generated text in the output area.</li>
+            <li>Click <strong>Copy Text</strong> to copy it to your clipboard.</li>
+            <li>Paste the placeholder text into your website, mockup, document or design project.</li>
+        </ol>
+    </section>
+
+    <section class="content-card">
+        <h2>When Is Lorem Ipsum Useful?</h2>
+        <p>Lorem Ipsum is commonly used for website prototypes, landing pages, application interfaces, graphic design mockups, print layouts and typography testing.</p>
+        <p class="mb-0">Developers can also use placeholder text when checking responsive layouts to see how text behaves across desktop, tablet and mobile screens.</p>
+    </section>
+
+    <section class="content-card">
+        <h2>Lorem Ipsum Generator Features</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3><i class="bi bi-check-circle"></i> 1–20 Paragraphs</h3>
+                <p class="mb-0">Generate from one to twenty paragraphs at a time.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="bi bi-check-circle"></i> Word &amp; Character Count</h3>
+                <p class="mb-0">See the number of generated words and characters instantly.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="bi bi-check-circle"></i> One-Click Copy</h3>
+                <p class="mb-0">Copy the generated placeholder text quickly to your clipboard.</p>
+            </div>
+            <div class="feature-item">
+                <h3><i class="bi bi-check-circle"></i> Browser Based</h3>
+                <p class="mb-0">Generate and process the text directly in your browser.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-card">
+        <h2>Why Use Placeholder Text?</h2>
+        <p>Placeholder text helps teams review a design before final copy is available. It can reveal problems with spacing, line length, typography, component sizing and page balance.</p>
+        <p class="mb-0">Once the final content is ready, replace the placeholder text with the real copy appropriate for the project.</p>
+    </section>
+
+    <section class="content-card">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        What is Lorem Ipsum?
+                    </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Lorem Ipsum is placeholder text commonly used in publishing, web design and graphic design to demonstrate how written content will appear in a layout before final copy is available.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        Can I use generated Lorem Ipsum in website mockups?
+                    </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Yes. Placeholder text can be used in prototypes and mockups to evaluate spacing, typography and page structure before replacing it with final content.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        Does the Lorem Ipsum Generator require installation?
+                    </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">No. The generator runs directly in your web browser and does not require additional software.</div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                        Can I copy the generated text?
+                    </button>
+                </h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Yes. Use the Copy Text button to copy the generated Lorem Ipsum to your clipboard.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-card">
+        <h2>Related Text Tools</h2>
+        <p>Explore other free EasyTools365 tools for working with text and content.</p>
+        <div class="related-grid">
+            <a href="word-counter.html" class="btn btn-outline-primary">Word Counter</a>
+            <a href="case-converter.html" class="btn btn-outline-primary">Case Converter</a>
+            <a href="text-reverser.html" class="btn btn-outline-primary">Text Reverser</a>
+        </div>
+    </section>
+
+    <section class="content-card text-center bg-primary text-white">
+        <h2>Need More Free Online Tools?</h2>
+        <p>Explore EasyTools365 tools for text, images, PDF, calculators and developer tasks.</p>
+        <a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+    </section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+    <div class="container text-center">
+        <p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+        const paragraphCount =
+            document.getElementById("paragraphCount");
+
+        const output =
+            document.getElementById("output");
+
+        const generateButton =
+            document.getElementById("generateButton");
+
+        const copyButton =
+            document.getElementById("copyButton");
+
+        const clearButton =
+            document.getElementById("clearButton");
+
+        const wordCount =
+            document.getElementById("wordCount");
+
+        const characterCount =
+            document.getElementById("characterCount");
+
+
+        const paragraphs = [
+
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+
+            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+
+            "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+
+            "Integer facilisis, neque vitae tincidunt tincidunt, justo sapien tincidunt mauris, vitae consequat sapien lorem sed erat.",
+
+            "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui.",
+
+            "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.",
+
+            "Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue."
+
+        ];
+
+
+        function updateStats() {
+
+            const text = output.value.trim();
+
+            if (!text) {
+
+                wordCount.textContent = "0";
+                characterCount.textContent = "0";
+
+                return;
+            }
+
+            wordCount.textContent =
+                text.split(/\s+/).length;
+
+            characterCount.textContent =
+                output.value.length;
+        }
+
+
+        generateButton.addEventListener(
+            "click",
+            function () {
+
+                let amount =
+                    parseInt(paragraphCount.value);
+
+                if (isNaN(amount) || amount < 1) {
+                    amount = 1;
+                }
+
+                if (amount > 20) {
+                    amount = 20;
+                }
+
+                paragraphCount.value = amount;
+
+                const result = [];
+
+                for (let i = 0; i < amount; i++) {
+
+                    result.push(
+                        paragraphs[
+                            i % paragraphs.length
+                        ]
+                    );
+                }
+
+                output.value =
+                    result.join("\n\n");
+
+                updateStats();
+            }
+        );
+
+
+        copyButton.addEventListener(
+            "click",
+            async function () {
+
+                if (!output.value) {
+                    return;
+                }
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        output.value
+                    );
+
+                    copyButton.innerHTML =
+                        '<i class="bi bi-check-lg"></i> Copied!';
+
+                    setTimeout(
+                        function () {
+
+                            copyButton.innerHTML =
+                                '<i class="bi bi-copy"></i> Copy Text';
+
+                        },
+                        1500
+                    );
+
+                } catch (error) {
+
+                    output.select();
+
+                    document.execCommand("copy");
+                }
+            }
+        );
+
+
+        clearButton.addEventListener(
+            "click",
+            function () {
+
+                output.value = "";
+
+                updateStats();
+            }
+        );
+
+
+        updateStats();
+
+    </script>
+
+<script>
+document.getElementById("shareButton").addEventListener("click", async function () {
+    try {
+        if (navigator.share) {
+            await navigator.share({
+                title: "EasyTools365 Lorem Ipsum Generator",
+                text: "Free online Lorem Ipsum Generator",
+                url: window.location.href
+            });
+        } else {
+            await navigator.clipboard.writeText(window.location.href);
+            this.innerHTML = '<i class="bi bi-check-lg"></i> Link Copied!';
+            setTimeout(() => this.innerHTML = '<i class="bi bi-share-fill"></i> Share', 1500);
+        }
+    } catch (error) {}
+});
+
+document.getElementById("copyLinkButton").addEventListener("click", async function () {
+    try {
+        await navigator.clipboard.writeText(window.location.href);
+        this.innerHTML = '<i class="bi bi-check-lg"></i> Link Copied!';
+        setTimeout(() => this.innerHTML = '<i class="bi bi-link-45deg"></i> Copy Link', 1500);
+    } catch (error) {
+        const temp = document.createElement("input");
+        temp.value = window.location.href;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        temp.remove();
+    }
+});
+</script>
+
+<script src="../assets/js/app.js"></script>
+
+</body>
+</html>

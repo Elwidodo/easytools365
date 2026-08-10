@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JavaScript Minifier - Minify JS Online Free | EasyTools365</title>
+<meta name="description" content="Free online JavaScript Minifier. Reduce JavaScript file size by removing comments and unnecessary whitespace, then copy or download the minified code directly in your browser.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/javascript-minifier.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="JavaScript Minifier - Minify JS Online Free | EasyTools365">
+<meta property="og:description" content="Minify JavaScript directly in your browser. Compare original and minified sizes, copy the result or download minified.js.">
+<meta property="og:url" content="https://easytools365.com/tools/javascript-minifier.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript Minifier | EasyTools365">
+<meta name="twitter:description" content="Free browser-based JavaScript minifier with size statistics, copy and download.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" crossorigin>
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:55px 15px 75px}
+.tool-wrapper{max-width:1050px;margin:auto}
+.breadcrumb{margin-bottom:22px}
+.back-link{display:inline-flex;align-items:center;gap:8px;margin-bottom:25px;color:var(--primary);font-weight:600;text-decoration:none}
+.tool-header{text-align:center;margin-bottom:32px}
+.tool-icon-large{display:flex;width:76px;height:76px;align-items:center;justify-content:center;margin:0 auto 18px;border-radius:22px;background:rgba(37,99,235,.10);color:var(--primary);font-size:35px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:720px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.tool-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.tool-card{padding:30px}
+.editor-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.editor-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.editor-header label{font-size:14px;font-weight:700}
+.small-btn{padding:7px 10px;border:1px solid var(--border);border-radius:8px;background:var(--background);color:var(--text);font-size:12px;font-weight:600}
+.editor{width:100%;min-height:350px;padding:15px;resize:vertical;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none;font-family:monospace;font-size:13px;line-height:1.6}
+.editor:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.10)}
+.button-row{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin-top:18px}
+.primary-btn,.secondary-btn{padding:13px;border-radius:11px;font-weight:700}
+.primary-btn{border:none;background:var(--primary);color:#fff}
+.secondary-btn{border:1px solid var(--border);background:var(--background);color:var(--text)}
+.stats-grid{display:none;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.stat-item{padding:15px;border:1px solid var(--border);border-radius:12px;background:var(--background);text-align:center}
+.stat-item span{display:block;margin-bottom:4px;color:var(--text-light);font-size:11px}
+.stat-item strong{font-size:17px}
+.error-box,.status-box{display:none;margin-top:15px;padding:12px;border-radius:10px;text-align:center;font-size:13px;font-weight:600}
+.error-box{background:rgba(220,38,38,.10);color:#dc2626}
+.status-box{background:rgba(22,163,74,.08);color:#16a34a}
+.download-btn{display:none;width:100%;margin-top:15px}
+.note-box{margin-top:20px;padding:14px;border:1px solid var(--border);border-radius:12px;color:var(--text-light);font-size:12px;line-height:1.7}
+.privacy-note{margin-top:15px;padding:14px;border-radius:12px;background:rgba(22,163,74,.07);color:var(--text-light);text-align:center;font-size:13px}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:22px}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+body.dark-mode .tool-icon-large{background:#1e3a8a}
+body.dark-mode .editor,body.dark-mode .small-btn,body.dark-mode .secondary-btn,body.dark-mode .stat-item{background:#0f172a}
+@media(max-width:750px){
+.editor-grid,.button-row,.stats-grid,.related-grid{grid-template-columns:1fr}
+.tool-card,.info-card{padding:20px}
+.tool-header h1{font-size:31px}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 JavaScript Minifier","url":"https://easytools365.com/tools/javascript-minifier.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","description":"Free browser-based JavaScript minifier.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Minify JavaScript","description":"Minify JavaScript code using EasyTools365.","step":[
+{"@type":"HowToStep","position":1,"name":"Paste JavaScript","text":"Paste JavaScript code into the input editor."},
+{"@type":"HowToStep","position":2,"name":"Minify the code","text":"Click Minify JavaScript to create a compact version."},
+{"@type":"HowToStep","position":3,"name":"Review the result","text":"Compare the original and minified file sizes and review the output."},
+{"@type":"HowToStep","position":4,"name":"Copy or download","text":"Copy the minified code or download it as minified.js."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the JavaScript Minifier free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 JavaScript Minifier is free to use online."}},
+{"@type":"Question","name":"What does JavaScript minification remove?","acceptedAnswer":{"@type":"Answer","text":"The lightweight minifier removes common comments and unnecessary whitespace while preserving strings and template literals."}},
+{"@type":"Question","name":"Does minifying JavaScript change its functionality?","acceptedAnswer":{"@type":"Answer","text":"The tool is designed to reduce unnecessary formatting without changing the intended behavior of valid JavaScript, but production code should always be tested."}},
+{"@type":"Question","name":"Should I keep the original JavaScript code?","acceptedAnswer":{"@type":"Answer","text":"Yes. Keep a readable original copy for editing, debugging and future maintenance."}},
+{"@type":"Question","name":"Is my JavaScript uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"The minification is performed locally in your browser."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/developer-tools.html">Developer Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">JavaScript Minifier</li>
+</ol>
+</nav>
+
+<a href="../categories/developer-tools.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to Developer Tools</a>
+
+<header class="tool-header">
+<div class="tool-icon-large"><i class="bi bi-filetype-js"></i></div>
+<h1>JavaScript Minifier</h1>
+<p>Reduce JavaScript file size by removing common comments and unnecessary whitespace directly in your browser.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="tool-card">
+<div class="editor-grid">
+<div>
+<div class="editor-header">
+<label for="jsInput">JavaScript Input</label>
+<button id="sampleButton" class="small-btn" type="button"><i class="bi bi-code-square"></i> Load Sample</button>
+</div>
+<textarea id="jsInput" class="editor" spellcheck="false" placeholder="Paste JavaScript code here..."></textarea>
+</div>
+
+<div>
+<div class="editor-header">
+<label for="jsOutput">Minified JavaScript</label>
+<button id="copyButton" class="small-btn" type="button"><i class="bi bi-copy"></i> Copy</button>
+</div>
+<textarea id="jsOutput" class="editor" readonly spellcheck="false" placeholder="Minified JavaScript will appear here..."></textarea>
+</div>
+</div>
+
+<div class="button-row">
+<button id="minifyButton" class="primary-btn" type="button"><i class="bi bi-arrows-collapse"></i> Minify JavaScript</button>
+<button id="clearButton" class="secondary-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+
+<div id="errorBox" class="error-box"></div>
+
+<div id="statsGrid" class="stats-grid">
+<div class="stat-item"><span>Original Size</span><strong id="originalSize">0 B</strong></div>
+<div class="stat-item"><span>Minified Size</span><strong id="minifiedSize">0 B</strong></div>
+<div class="stat-item"><span>Saved</span><strong id="savedPercent">0%</strong></div>
+</div>
+
+<button id="downloadButton" class="primary-btn download-btn" type="button"><i class="bi bi-download"></i> Download Minified JavaScript</button>
+
+<div id="statusBox" class="status-box"></div>
+
+<div class="note-box">
+<strong>Note:</strong> This lightweight minifier preserves strings and template literals while removing common comments and unnecessary whitespace. Always test minified production code before deployment.
+</div>
+
+<div class="privacy-note"><i class="bi bi-shield-check"></i> Your JavaScript code is processed locally in your browser.</div>
+</section>
+
+<section class="info-card">
+<h2>What Is a JavaScript Minifier?</h2>
+<p>A JavaScript Minifier reduces the size of JavaScript source code by removing unnecessary whitespace, line breaks, comments and other redundant formatting where supported. Smaller JavaScript files can reduce the amount of data transferred when a webpage loads.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Minify JavaScript</h2>
+<ol>
+<li>Paste your JavaScript code into the input area.</li>
+<li>Click <strong>Minify JavaScript</strong>.</li>
+<li>Review the minified output and size statistics.</li>
+<li>Copy the result or download it as <strong>minified.js</strong>.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>Why Minify JavaScript?</h2>
+<p>JavaScript minification can make source files more compact by removing characters that are not required for execution. This can help reduce file size and the amount of data transferred to visitors.</p>
+</section>
+
+<section class="info-card">
+<h2>Keep an Original Copy</h2>
+<p>Minified JavaScript is harder to read and edit. Keep your original, readable source code for debugging, maintenance and future development, and use the minified version for deployment when appropriate.</p>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the JavaScript Minifier free?</h3>
+<p>Yes. The EasyTools365 JavaScript Minifier is free to use online.</p>
+
+<h3>What does JavaScript minification remove?</h3>
+<p>The lightweight minifier removes common comments and unnecessary whitespace while preserving strings and template literals.</p>
+
+<h3>Does minifying JavaScript change its functionality?</h3>
+<p>The tool is designed to reduce unnecessary formatting without changing the intended behavior of valid JavaScript, but production code should always be tested.</p>
+
+<h3>Should I keep the original JavaScript code?</h3>
+<p>Yes. Keep a readable original copy for editing, debugging and future maintenance.</p>
+
+<h3>Is my JavaScript uploaded to a server?</h3>
+<p>The minification is performed locally in your browser.</p>
+</section>
+
+<section class="info-card">
+<h2>Related Developer Tools</h2>
+<div class="related-grid">
+<a href="html-minifier.html" class="btn btn-outline-primary">HTML Minifier</a>
+<a href="css-minifier.html" class="btn btn-outline-primary">CSS Minifier</a>
+<a href="html-formatter.html" class="btn btn-outline-primary">HTML Formatter</a>
+<a href="json-formatter.html" class="btn btn-outline-primary">JSON Formatter</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for images, PDF, text, calculators, developer tasks and more.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<script>
+const jsInput =
+    document.getElementById("jsInput");
+
+const jsOutput =
+    document.getElementById("jsOutput");
+
+const statsGrid =
+    document.getElementById("statsGrid");
+
+const downloadButton =
+    document.getElementById("downloadButton");
+
+const errorBox =
+    document.getElementById("errorBox");
+
+const statusBox =
+    document.getElementById("statusBox");
+
+
+function byteSize(text) {
+
+    return new Blob([text]).size;
+
+}
+
+
+function formatBytes(bytes) {
+
+    if (bytes < 1024) {
+        return bytes + " B";
+    }
+
+    if (bytes < 1048576) {
+        return (bytes / 1024).toFixed(2) + " KB";
+    }
+
+    return (bytes / 1048576).toFixed(2) + " MB";
+
+}
+
+
+/*
+    Lightweight tokenizer-based minifier.
+
+    We avoid blindly deleting // or slash-star comments
+    inside quoted strings.
+*/
+
+function minifyJavaScript(source) {
+
+    let result = "";
+    let i = 0;
+
+    let quote = null;
+    let escaped = false;
+
+
+    while (i < source.length) {
+
+        const char = source[i];
+        const next = source[i + 1];
+
+
+        /*
+            Inside string or template literal.
+        */
+
+        if (quote !== null) {
+
+            result += char;
+
+
+            if (escaped) {
+
+                escaped = false;
+
+            }
+
+            else if (char === "\\") {
+
+                escaped = true;
+
+            }
+
+            else if (char === quote) {
+
+                quote = null;
+
+            }
+
+
+            i++;
+            continue;
+
+        }
+
+
+        /*
+            Start string.
+        */
+
+        if (
+            char === '"' ||
+            char === "'" ||
+            char === "`"
+        ) {
+
+            quote = char;
+            result += char;
+
+            i++;
+            continue;
+
+        }
+
+
+        /*
+            Single-line comment.
+        */
+
+        if (
+            char === "/" &&
+            next === "/"
+        ) {
+
+            i += 2;
+
+
+            while (
+                i < source.length &&
+                source[i] !== "\n"
+            ) {
+
+                i++;
+
+            }
+
+
+            result += " ";
+            continue;
+
+        }
+
+
+        /*
+            Block comment.
+        */
+
+        if (
+            char === "/" &&
+            next === "*"
+        ) {
+
+            i += 2;
+
+
+            while (
+                i < source.length - 1 &&
+                !(
+                    source[i] === "*" &&
+                    source[i + 1] === "/"
+                )
+            ) {
+
+                i++;
+
+            }
+
+
+            i += 2;
+
+            result += " ";
+            continue;
+
+        }
+
+
+        /*
+            Collapse whitespace.
+        */
+
+        if (/\s/.test(char)) {
+
+            const previous =
+                result[result.length - 1] || "";
+
+
+            let j = i + 1;
+
+
+            while (
+                j < source.length &&
+                /\s/.test(source[j])
+            ) {
+
+                j++;
+
+            }
+
+
+            const following =
+                source[j] || "";
+
+
+            /*
+                Keep one space only when removing it
+                could merge identifiers or numbers.
+            */
+
+            if (
+                /[A-Za-z0-9_$]/.test(previous) &&
+                /[A-Za-z0-9_$]/.test(following)
+            ) {
+
+                result += " ";
+
+            }
+
+
+            i = j;
+            continue;
+
+        }
+
+
+        result += char;
+        i++;
+
+    }
+
+
+    /*
+        Remove spaces around common punctuation.
+    */
+
+    result =
+        result
+            .replace(
+                /\s*([{}()[\];,:])\s*/g,
+                "$1"
+            )
+            .trim();
+
+
+    return result;
+
+}
+
+
+function runMinifier() {
+
+    errorBox.style.display =
+        "none";
+
+
+    const original =
+        jsInput.value;
+
+
+    if (
+        original.trim() === ""
+    ) {
+
+        showError(
+            "Please enter JavaScript code."
+        );
+
+        return;
+
+    }
+
+
+    let result;
+
+
+    try {
+
+        result =
+            minifyJavaScript(original);
+
+    }
+
+    catch (error) {
+
+        showError(
+            "Unable to minify JavaScript."
+        );
+
+        return;
+
+    }
+
+
+    jsOutput.value =
+        result;
+
+
+    const before =
+        byteSize(original);
+
+    const after =
+        byteSize(result);
+
+
+    let saved = 0;
+
+
+    if (before > 0) {
+
+        saved =
+            ((before - after) / before) * 100;
+
+    }
+
+
+    document.getElementById(
+        "originalSize"
+    ).textContent =
+        formatBytes(before);
+
+
+    document.getElementById(
+        "minifiedSize"
+    ).textContent =
+        formatBytes(after);
+
+
+    document.getElementById(
+        "savedPercent"
+    ).textContent =
+        Math.max(
+            0,
+            saved
+        ).toFixed(1) + "%";
+
+
+    statsGrid.style.display =
+        "grid";
+
+    downloadButton.style.display =
+        "block";
+
+}
+
+
+function showError(message) {
+
+    errorBox.textContent =
+        message;
+
+    errorBox.style.display =
+        "block";
+
+    jsOutput.value =
+        "";
+
+    statsGrid.style.display =
+        "none";
+
+    downloadButton.style.display =
+        "none";
+
+}
+
+
+function loadSample() {
+
+    jsInput.value =
+`// EasyTools365 JavaScript Sample
+
+const name = "EasyTools365";
+
+/* Display a welcome message */
+function welcome(user) {
+
+    const message = "Hello, " + user + "!";
+
+    console.log(message);
+
+}
+
+welcome(name);`;
+
+}
+
+
+function clearTool() {
+
+    jsInput.value = "";
+    jsOutput.value = "";
+
+    errorBox.style.display =
+        "none";
+
+    statsGrid.style.display =
+        "none";
+
+    downloadButton.style.display =
+        "none";
+
+    statusBox.style.display =
+        "none";
+
+    jsInput.focus();
+
+}
+
+
+async function copyOutput() {
+
+    if (
+        jsOutput.value === ""
+    ) {
+
+        showStatus(
+            "Minify JavaScript first."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        await navigator.clipboard.writeText(
+            jsOutput.value
+        );
+
+    }
+
+    catch (error) {
+
+        jsOutput.select();
+
+        document.execCommand(
+            "copy"
+        );
+
+    }
+
+
+    showStatus(
+        "Minified JavaScript copied!"
+    );
+
+}
+
+
+function downloadJavaScript() {
+
+    if (
+        jsOutput.value === ""
+    ) {
+        return;
+    }
+
+
+    const blob =
+        new Blob(
+            [jsOutput.value],
+            {
+                type:
+                    "text/javascript;charset=utf-8"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href =
+        url;
+
+    link.download =
+        "minified.js";
+
+
+    document.body.appendChild(link);
+
+    link.click();
+    link.remove();
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+function showStatus(message) {
+
+    statusBox.textContent =
+        message;
+
+    statusBox.style.display =
+        "block";
+
+
+    clearTimeout(
+        showStatus.timer
+    );
+
+
+    showStatus.timer =
+        setTimeout(
+            function() {
+
+                statusBox.style.display =
+                    "none";
+
+            },
+            2000
+        );
+
+}
+
+
+document.getElementById(
+    "minifyButton"
+).addEventListener(
+    "click",
+    runMinifier
+);
+
+
+document.getElementById(
+    "clearButton"
+).addEventListener(
+    "click",
+    clearTool
+);
+
+
+document.getElementById(
+    "sampleButton"
+).addEventListener(
+    "click",
+    loadSample
+);
+
+
+document.getElementById(
+    "copyButton"
+).addEventListener(
+    "click",
+    copyOutput
+);
+
+
+downloadButton.addEventListener(
+    "click",
+    downloadJavaScript
+);
+</script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

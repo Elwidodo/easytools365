@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free PDF Merger | Merge Multiple PDF Files Online | EasyTools365</title>
+<meta name="description" content="Free online PDF Merger. Combine multiple PDF files into one document, arrange their order, and download the merged PDF directly from your browser.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/pdf-merger.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free PDF Merger | EasyTools365">
+<meta property="og:description" content="Merge multiple PDF files into one document directly in your browser.">
+<meta property="og:url" content="https://easytools365.com/tools/pdf-merger.html">
+<meta property="og:site_name" content="EasyTools365">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+<style>
+.tool-page{padding:45px 15px 70px}
+.tool-wrapper{max-width:900px;margin:auto}
+.tool-header{text-align:center;margin-bottom:30px}
+.tool-icon{width:68px;height:68px;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;border-radius:18px;background:rgba(220,38,38,.10);color:#dc2626;font-size:30px}
+.tool-header h1{font-size:38px;font-weight:800;margin-bottom:8px}
+.tool-header p{max-width:720px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.tool-card,.content-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow)}
+.tool-card{padding:28px}
+.drop-zone{padding:45px 20px;border:2px dashed var(--border);border-radius:18px;text-align:center;cursor:pointer;transition:.2s}
+.drop-zone:hover,.drop-zone.drag-over{border-color:var(--primary);background:rgba(37,99,235,.05)}
+.drop-zone i{display:block;margin-bottom:15px;color:#dc2626;font-size:42px}
+.drop-zone h2{font-size:19px;font-weight:700}
+.drop-zone p{margin:7px 0 0;color:var(--text-light);font-size:14px}
+#fileInput{display:none}
+.file-section{display:none;margin-top:25px}
+.file-section-header{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:14px}
+.file-section-header h2{margin:0;font-size:18px;font-weight:700}
+.file-count{color:var(--text-light);font-size:13px}
+.file-list{display:grid;gap:10px}
+.file-item{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--border);border-radius:13px;background:var(--background)}
+.file-number{flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:9px;background:rgba(220,38,38,.10);color:#dc2626;font-weight:800}
+.file-info{min-width:0;flex:1}
+.file-name{overflow:hidden;font-weight:600;text-overflow:ellipsis;white-space:nowrap}
+.file-size{margin-top:2px;color:var(--text-light);font-size:12px}
+.file-actions{display:flex;gap:5px}
+.small-btn{width:34px;height:34px;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text)}
+.remove-btn{color:#dc2626}
+.main-actions{display:none;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.merge-btn,.secondary-btn{padding:14px;border-radius:12px;font-weight:700}
+.merge-btn{border:none;background:var(--primary);color:white}
+.secondary-btn{border:1px solid var(--border);background:var(--background);color:var(--text)}
+.merge-btn:disabled{opacity:.6;cursor:not-allowed}
+.status-box{display:none;margin-top:20px;padding:15px;border-radius:12px;text-align:center;line-height:1.6}
+.status-processing{display:block;background:rgba(37,99,235,.08);color:var(--primary)}
+.status-success{display:block;background:rgba(22,163,74,.10);color:#16a34a}
+.status-error{display:block;background:rgba(220,38,38,.10);color:#dc2626}
+.privacy-note{margin-top:22px;padding:14px;border-radius:12px;background:rgba(22,163,74,.07);color:var(--text-light);text-align:center;font-size:13px;line-height:1.6}
+.share-row{display:flex;justify-content:center;gap:10px;margin-top:18px}
+.content-card{margin-top:24px;padding:28px}
+.content-card h2{font-size:24px;font-weight:700;margin-bottom:14px}
+.content-card h3{font-size:17px;font-weight:700;margin-top:18px}
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.feature-item{padding:16px;border:1px solid var(--border);border-radius:12px}
+.feature-item i{color:var(--primary)}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.related-grid a{text-decoration:none}
+@media(max-width:600px){.main-actions,.feature-grid,.related-grid{grid-template-columns:1fr}.tool-card,.content-card{padding:20px}.tool-header h1{font-size:31px}.file-item{align-items:flex-start}}
+</style>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebApplication",
+"name":"EasyTools365 PDF Merger",
+"url":"https://easytools365.com/tools/pdf-merger.html",
+"applicationCategory":"UtilitiesApplication",
+"operatingSystem":"Any",
+"description":"Free browser-based tool for merging multiple PDF files into one document.",
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{"@type":"Question","name":"Is the PDF Merger free?","acceptedAnswer":{"@type":"Answer","text":"Yes. EasyTools365 PDF Merger is free to use online."}},
+{"@type":"Question","name":"Are my PDF files uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"The selected PDF files are processed locally in your browser and are not uploaded to the EasyTools365 server."}},
+{"@type":"Question","name":"Can I change the order of PDF files?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the move up and move down controls to arrange the selected PDF files before merging."}},
+{"@type":"Question","name":"How many PDF files can I merge?","acceptedAnswer":{"@type":"Answer","text":"The tool allows you to select multiple PDF files. The practical limit depends on your browser memory and the size of the documents."}}
+]
+}
+</script>
+</head>
+
+<body>
+<nav class="navbar bg-white border-bottom shadow-sm">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb" class="mb-4">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../index.html#tools">Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">PDF Merger</li>
+</ol>
+</nav>
+
+<section class="tool-header">
+<div class="tool-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+<h1>Free PDF Merger</h1>
+<p>Combine multiple PDF files into one document, arrange their order, and download the merged PDF directly from your browser.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</section>
+
+<section class="tool-card">
+<div id="dropZone" class="drop-zone">
+<i class="bi bi-cloud-arrow-up"></i>
+<h2>Select PDF Files</h2>
+<p>Click here or drag &amp; drop multiple PDF files</p>
+<input id="fileInput" type="file" accept="application/pdf,.pdf" multiple>
+</div>
+
+<div id="fileSection" class="file-section">
+<div class="file-section-header">
+<h2>Selected PDFs</h2>
+<span id="fileCount" class="file-count">0 files</span>
+</div>
+<div id="fileList" class="file-list"></div>
+</div>
+
+<div id="mainActions" class="main-actions">
+<button id="addMoreButton" class="secondary-btn" type="button"><i class="bi bi-plus-lg"></i> Add More PDFs</button>
+<button id="mergeButton" class="merge-btn" type="button"><i class="bi bi-files"></i> Merge PDFs</button>
+</div>
+
+<div id="statusBox" class="status-box"></div>
+
+<div class="privacy-note"><i class="bi bi-shield-check"></i> Your PDF files are processed locally in your browser. EasyTools365 does not upload the selected files to a server.</div>
+</section>
+
+<div class="share-row">
+<button id="shareButton" class="btn btn-primary btn-sm" type="button"><i class="bi bi-share-fill"></i> Share</button>
+<button id="copyLinkButton" class="btn btn-success btn-sm" type="button"><i class="bi bi-link-45deg"></i> Copy Link</button>
+</div>
+
+<section class="content-card">
+<h2>What Is a PDF Merger?</h2>
+<p>A PDF merger combines two or more PDF documents into one file. This can make related documents easier to organize, share, submit, and archive.</p>
+<p class="mb-0">EasyTools365 processes the selected files directly in your browser, so you can merge PDFs without creating an account or uploading your documents to a server.</p>
+</section>
+
+<section class="content-card">
+<h2>How to Merge PDF Files</h2>
+<ol class="mb-0">
+<li>Select two or more PDF files.</li>
+<li>Review the selected file list.</li>
+<li>Use the up and down buttons to arrange the files in the desired order.</li>
+<li>Remove any file you do not want to include.</li>
+<li>Click <strong>Merge PDFs</strong>.</li>
+<li>Your merged PDF download will start automatically.</li>
+</ol>
+</section>
+
+<section class="content-card">
+<h2>Why Merge PDF Documents?</h2>
+<p>Merging can simplify document management when several related files need to become one organized document. For example, you can combine report sections, scanned documents, invoices, assignments, forms, or reference materials into a single PDF.</p>
+<div class="feature-grid">
+<div class="feature-item"><h3><i class="bi bi-check-circle"></i> Multiple Files</h3><p class="mb-0">Select multiple PDF documents in one session.</p></div>
+<div class="feature-item"><h3><i class="bi bi-check-circle"></i> Reorder Pages</h3><p class="mb-0">Arrange complete PDF files before merging.</p></div>
+<div class="feature-item"><h3><i class="bi bi-check-circle"></i> Remove Files</h3><p class="mb-0">Remove individual files from the merge list before processing.</p></div>
+<div class="feature-item"><h3><i class="bi bi-check-circle"></i> Local Processing</h3><p class="mb-0">Files are processed in your browser rather than uploaded to EasyTools365.</p></div>
+</div>
+</section>
+
+<section class="content-card">
+<h2>Tips Before Merging PDFs</h2>
+<ul class="mb-0">
+<li>Check that every selected file is the correct document.</li>
+<li>Arrange the files in the order you want them to appear.</li>
+<li>Review the final merged PDF before submitting or sharing it.</li>
+<li>Make sure important documents are not password protected or corrupted.</li>
+<li>For very large files, allow your browser enough memory and processing time.</li>
+</ul>
+</section>
+
+<section class="content-card">
+<h2>Frequently Asked Questions</h2>
+<div class="accordion" id="faqAccordion">
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Is the PDF Merger free?</button></h3>
+<div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. EasyTools365 PDF Merger is free to use online.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Are my PDF files uploaded to a server?</button></h3>
+<div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">The selected PDF files are processed locally in your browser and are not uploaded to the EasyTools365 server.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Can I change the order of PDF files?</button></h3>
+<div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Use the move up and move down controls to arrange the selected PDF files before merging.</div></div>
+</div>
+<div class="accordion-item">
+<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">How many PDF files can I merge?</button></h3>
+<div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">The tool allows you to select multiple PDF files. The practical limit depends on your browser memory and the size of the documents.</div></div>
+</div>
+</div>
+</section>
+
+<section class="content-card">
+<h2>Related PDF Tools</h2>
+<p>Explore more EasyTools365 tools for everyday PDF tasks.</p>
+<div class="related-grid">
+<a href="pdf-compressor.html" class="btn btn-outline-primary">PDF Compressor</a>
+<a href="image-to-pdf.html" class="btn btn-outline-primary">Image to PDF</a>
+<a href="pdf-to-jpg.html" class="btn btn-outline-primary">PDF to JPG</a>
+</div>
+</section>
+
+<section class="content-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for PDF, images, text, calculators and more.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+const fileInput =
+    document.getElementById("fileInput");
+
+const dropZone =
+    document.getElementById("dropZone");
+
+const fileSection =
+    document.getElementById("fileSection");
+
+const fileList =
+    document.getElementById("fileList");
+
+const fileCount =
+    document.getElementById("fileCount");
+
+const mainActions =
+    document.getElementById("mainActions");
+
+const addMoreButton =
+    document.getElementById("addMoreButton");
+
+const mergeButton =
+    document.getElementById("mergeButton");
+
+const statusBox =
+    document.getElementById("statusBox");
+
+
+let selectedFiles = [];
+
+
+dropZone.addEventListener("click", function() {
+    fileInput.click();
+});
+
+
+addMoreButton.addEventListener("click", function() {
+    fileInput.click();
+});
+
+
+fileInput.addEventListener("change", function(event) {
+
+    addFiles(
+        Array.from(event.target.files)
+    );
+
+    fileInput.value = "";
+
+});
+
+
+dropZone.addEventListener("dragover", function(event) {
+
+    event.preventDefault();
+
+    dropZone.classList.add("drag-over");
+
+});
+
+
+dropZone.addEventListener("dragleave", function() {
+
+    dropZone.classList.remove("drag-over");
+
+});
+
+
+dropZone.addEventListener("drop", function(event) {
+
+    event.preventDefault();
+
+    dropZone.classList.remove("drag-over");
+
+    addFiles(
+        Array.from(event.dataTransfer.files)
+    );
+
+});
+
+
+function addFiles(files) {
+
+    const pdfFiles =
+        files.filter(function(file) {
+
+            return (
+                file.type === "application/pdf" ||
+                file.name.toLowerCase().endsWith(".pdf")
+            );
+
+        });
+
+
+    if (!pdfFiles.length) {
+
+        showStatus(
+            "Please select PDF files only.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    selectedFiles.push(...pdfFiles);
+
+    renderFiles();
+
+    hideStatus();
+
+}
+
+
+function renderFiles() {
+
+    fileList.innerHTML = "";
+
+
+    selectedFiles.forEach(function(file, index) {
+
+        const item =
+            document.createElement("div");
+
+        item.className = "file-item";
+
+
+        const number =
+            document.createElement("div");
+
+        number.className = "file-number";
+        number.textContent = index + 1;
+
+
+        const info =
+            document.createElement("div");
+
+        info.className = "file-info";
+
+
+        const name =
+            document.createElement("div");
+
+        name.className = "file-name";
+        name.textContent = file.name;
+
+
+        const size =
+            document.createElement("div");
+
+        size.className = "file-size";
+        size.textContent = formatBytes(file.size);
+
+
+        info.appendChild(name);
+        info.appendChild(size);
+
+
+        const actions =
+            document.createElement("div");
+
+        actions.className = "file-actions";
+
+
+        const upButton =
+            createButton(
+                "bi-arrow-up",
+                "Move up",
+                function() {
+
+                    moveFile(index, -1);
+
+                }
+            );
+
+
+        const downButton =
+            createButton(
+                "bi-arrow-down",
+                "Move down",
+                function() {
+
+                    moveFile(index, 1);
+
+                }
+            );
+
+
+        const removeButton =
+            createButton(
+                "bi-trash",
+                "Remove",
+                function() {
+
+                    selectedFiles.splice(index, 1);
+
+                    renderFiles();
+
+                },
+                true
+            );
+
+
+        upButton.disabled =
+            index === 0;
+
+        downButton.disabled =
+            index === selectedFiles.length - 1;
+
+
+        actions.appendChild(upButton);
+        actions.appendChild(downButton);
+        actions.appendChild(removeButton);
+
+
+        item.appendChild(number);
+        item.appendChild(info);
+        item.appendChild(actions);
+
+        fileList.appendChild(item);
+
+    });
+
+
+    fileCount.textContent =
+        selectedFiles.length +
+        (selectedFiles.length === 1
+            ? " file"
+            : " files");
+
+
+    const hasFiles =
+        selectedFiles.length > 0;
+
+
+    fileSection.style.display =
+        hasFiles ? "block" : "none";
+
+    mainActions.style.display =
+        hasFiles ? "grid" : "none";
+
+}
+
+
+function createButton(icon, title, callback, remove = false) {
+
+    const button =
+        document.createElement("button");
+
+    button.type = "button";
+
+    button.className =
+        "small-btn" +
+        (remove ? " remove-btn" : "");
+
+    button.title = title;
+
+    button.innerHTML =
+        `<i class="bi ${icon}"></i>`;
+
+    button.addEventListener(
+        "click",
+        callback
+    );
+
+    return button;
+
+}
+
+
+function moveFile(index, direction) {
+
+    const newIndex =
+        index + direction;
+
+
+    if (
+        newIndex < 0 ||
+        newIndex >= selectedFiles.length
+    ) {
+        return;
+    }
+
+
+    const temp =
+        selectedFiles[index];
+
+    selectedFiles[index] =
+        selectedFiles[newIndex];
+
+    selectedFiles[newIndex] =
+        temp;
+
+    renderFiles();
+
+}
+
+
+function formatBytes(bytes) {
+
+    if (bytes === 0) {
+        return "0 Bytes";
+    }
+
+    const units =
+        ["Bytes", "KB", "MB", "GB"];
+
+    const index =
+        Math.floor(
+            Math.log(bytes) /
+            Math.log(1024)
+        );
+
+    const value =
+        bytes /
+        Math.pow(1024, index);
+
+    return (
+        value.toFixed(
+            index === 0 ? 0 : 2
+        ) +
+        " " +
+        units[index]
+    );
+
+}
+
+
+function showStatus(message, type) {
+
+    statusBox.className =
+        "status-box status-" + type;
+
+    statusBox.innerHTML = message;
+
+}
+
+
+function hideStatus() {
+
+    statusBox.style.display = "none";
+
+    statusBox.className = "status-box";
+
+}
+
+
+mergeButton.addEventListener(
+    "click",
+    async function() {
+
+        if (selectedFiles.length < 2) {
+
+            showStatus(
+                '<i class="bi bi-exclamation-circle"></i> Please select at least two PDF files.',
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if (
+            typeof PDFLib === "undefined"
+        ) {
+
+            showStatus(
+                "PDF library could not be loaded. Check your internet connection and refresh the page.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        mergeButton.disabled = true;
+
+
+        showStatus(
+            '<i class="bi bi-hourglass-split"></i> Merging PDF files...',
+            "processing"
+        );
+
+
+        try {
+
+            const {
+                PDFDocument
+            } = PDFLib;
+
+
+            const mergedPdf =
+                await PDFDocument.create();
+
+
+            for (
+                const file of selectedFiles
+            ) {
+
+                const bytes =
+                    await file.arrayBuffer();
+
+
+                const sourcePdf =
+                    await PDFDocument.load(
+                        bytes
+                    );
+
+
+                const pageIndices =
+                    sourcePdf.getPageIndices();
+
+
+                const copiedPages =
+                    await mergedPdf.copyPages(
+                        sourcePdf,
+                        pageIndices
+                    );
+
+
+                copiedPages.forEach(
+                    function(page) {
+
+                        mergedPdf.addPage(page);
+
+                    }
+                );
+
+            }
+
+
+            const mergedBytes =
+                await mergedPdf.save();
+
+
+            const blob =
+                new Blob(
+                    [mergedBytes],
+                    {
+                        type: "application/pdf"
+                    }
+                );
+
+
+            const url =
+                URL.createObjectURL(blob);
+
+
+            const link =
+                document.createElement("a");
+
+            link.href = url;
+
+            link.download =
+                "merged-easytools365.pdf";
+
+
+            document.body.appendChild(link);
+
+            link.click();
+
+            link.remove();
+
+
+            setTimeout(
+                function() {
+
+                    URL.revokeObjectURL(url);
+
+                },
+                1000
+            );
+
+
+            showStatus(
+                '<i class="bi bi-check-circle"></i> PDFs merged successfully. Your download has started.',
+                "success"
+            );
+
+        }
+
+        catch (error) {
+
+            console.error(error);
+
+
+            showStatus(
+                '<i class="bi bi-x-circle"></i> Unable to merge these PDF files. A file may be corrupted, encrypted or password protected.',
+                "error"
+            );
+
+        }
+
+        finally {
+
+            mergeButton.disabled = false;
+
+        }
+
+    }
+);
+
+</script>
+
+<script>
+document.getElementById("shareButton").addEventListener("click", async function(){
+try{
+if(navigator.share){
+await navigator.share({title:"EasyTools365 PDF Merger",text:"Free online PDF Merger",url:window.location.href});
+}else{
+await navigator.clipboard.writeText(window.location.href);
+this.innerHTML='<i class="bi bi-check-lg"></i> Link Copied!';
+setTimeout(()=>this.innerHTML='<i class="bi bi-share-fill"></i> Share',1500);
+}
+}catch(error){}
+});
+
+document.getElementById("copyLinkButton").addEventListener("click", async function(){
+try{
+await navigator.clipboard.writeText(window.location.href);
+this.innerHTML='<i class="bi bi-check-lg"></i> Link Copied!';
+setTimeout(()=>this.innerHTML='<i class="bi bi-link-45deg"></i> Copy Link',1500);
+}catch(error){}
+});
+</script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

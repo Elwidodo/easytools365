@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Video Scene Prompt Generator - Create Detailed Video Prompts | EasyTools365</title>
+<meta name="description" content="Free AI Video Scene Prompt Generator for creating detailed single-scene video prompts with subject, action, environment, camera, lighting, mood, quality and negative prompts.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/ai-video-scene-prompt-generator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Video Scene Prompt Generator | EasyTools365">
+<meta property="og:description" content="Build detailed AI video scene prompts with camera direction, movement, lighting, environment, visual style and negative prompts.">
+<meta property="og:url" content="https://easytools365.com/tools/ai-video-scene-prompt-generator.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Video Scene Prompt Generator | EasyTools365">
+<meta name="twitter:description" content="Create structured AI video prompts for individual scenes with detailed camera and visual controls.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:45px 15px 70px}
+.tool-wrapper{max-width:1050px;margin:auto}
+.breadcrumb{margin-bottom:25px}
+.back-home{display:inline-flex;align-items:center;gap:8px;margin-bottom:25px;color:var(--primary);text-decoration:none;font-weight:600}
+.tool-header{text-align:center;margin-bottom:32px}
+.tool-icon-large{display:inline-flex;width:74px;height:74px;align-items:center;justify-content:center;margin-bottom:18px;border-radius:22px;background:rgba(37,99,235,.1);color:#2563eb;font-size:34px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:800px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.generator-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.generator-card{padding:30px}
+.field-group{margin-bottom:20px}
+.field-group label{display:block;margin-bottom:8px;font-weight:600}
+.field-control{width:100%;padding:13px 15px;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none}
+.field-control:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+textarea.field-control{min-height:100px;resize:vertical;line-height:1.7}
+.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.generate-btn{width:100%;padding:15px;border:0;border-radius:12px;background:var(--primary);color:#fff;font-size:16px;font-weight:700}
+.generate-btn:hover{opacity:.92}
+.result-area{display:none;margin-top:30px}
+.result-card{margin-bottom:16px;padding:22px;border:1px solid var(--border);border-radius:18px;background:var(--background)}
+.result-header{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:15px}
+.result-header h2{margin:0;font-size:20px;font-weight:700}
+.copy-btn,.action-btn{padding:9px 13px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font-weight:600}
+.prompt-output{white-space:pre-wrap;line-height:1.8;word-break:break-word}
+.negative-card{border-left:4px solid #dc2626}
+.bottom-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.info-note{margin-top:24px;padding:15px;border-radius:12px;background:rgba(37,99,235,.07);color:var(--text-light);text-align:center;font-size:13px;line-height:1.6}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:22px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+body.dark-mode .field-control,body.dark-mode .result-card,body.dark-mode .action-btn,body.dark-mode .copy-btn{background:#0f172a}
+body.dark-mode .tool-icon-large{background:#1e3a8a;color:#bfdbfe}
+@media(max-width:800px){
+.form-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+.form-grid,.bottom-actions,.related-grid{grid-template-columns:1fr}
+.generator-card,.info-card{padding:20px}
+.tool-header h1{font-size:31px}
+.result-header{flex-direction:column;align-items:flex-start}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 AI Video Scene Prompt Generator","url":"https://easytools365.com/tools/ai-video-scene-prompt-generator.html","applicationCategory":"MultimediaApplication","operatingSystem":"Any","description":"Free browser-based generator for detailed AI video scene prompts with subject, action, camera, lighting, mood, quality and negative prompts.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Create an AI Video Scene Prompt","description":"Create a detailed AI video scene prompt using EasyTools365.","step":[
+{"@type":"HowToStep","position":1,"name":"Enter the main subject","text":"Describe the main subject or object that should appear in the scene."},
+{"@type":"HowToStep","position":2,"name":"Describe the action","text":"Explain what the subject is doing or what should happen during the scene."},
+{"@type":"HowToStep","position":3,"name":"Describe the environment","text":"Add the location, background or setting where the scene takes place."},
+{"@type":"HowToStep","position":4,"name":"Choose visual settings","text":"Select visual style, camera shot, camera movement, lighting, mood, aspect ratio, duration and quality."},
+{"@type":"HowToStep","position":5,"name":"Add extra details","text":"Optionally add textures, objects, sound-related visual cues or other creative requirements."},
+{"@type":"HowToStep","position":6,"name":"Generate and copy","text":"Generate the AI video prompt and copy it for use in your preferred AI video workflow."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the AI Video Scene Prompt Generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 AI Video Scene Prompt Generator is free to use in your browser."}},
+{"@type":"Question","name":"Does this tool generate videos?","acceptedAnswer":{"@type":"Answer","text":"No. It generates detailed text prompts for individual AI video scenes."}},
+{"@type":"Question","name":"Can I create prompts in Indonesian?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can choose English or Indonesian as the prompt language."}},
+{"@type":"Question","name":"Can I choose the video aspect ratio?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool supports 9:16, 16:9, 1:1, 4:5 and 21:9 aspect ratios."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/ai-tools.html">AI Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">AI Video Scene Prompt Generator</li>
+</ol>
+</nav>
+
+<a href="../index.html" class="back-home"><i class="bi bi-arrow-left"></i> Back to Home</a>
+
+<header class="tool-header">
+<div class="tool-icon-large"><i class="bi bi-camera-reels"></i></div>
+<h1>AI Video Scene Prompt Generator</h1>
+<p>Build detailed prompts for a single AI video scene with subject, action, environment, camera direction, movement, lighting, mood and visual style.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="generator-card">
+
+<div class="field-group">
+<label for="subject">Main Subject</label>
+<textarea id="subject" class="field-control" maxlength="500" placeholder="Example: A giant transparent crystal watermelon"></textarea>
+</div>
+
+<div class="field-group">
+<label for="action">Subject Action</label>
+<textarea id="action" class="field-control" maxlength="500" placeholder="Example: Slowly being sliced with a sharp silver knife"></textarea>
+</div>
+
+<div class="field-group">
+<label for="environment">Environment</label>
+<textarea id="environment" class="field-control" maxlength="500" placeholder="Example: On a dark wooden table inside a cinematic studio"></textarea>
+</div>
+
+<div class="form-grid">
+
+<div class="field-group">
+<label for="style">Visual Style</label>
+<select id="style" class="field-control">
+<option value="cinematic">Cinematic</option>
+<option value="realistic">Photorealistic</option>
+<option value="anime">Anime</option>
+<option value="3d">3D Animation</option>
+<option value="asmr">ASMR</option>
+<option value="fantasy">Fantasy</option>
+<option value="commercial">Commercial</option>
+<option value="documentary">Documentary</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="camera">Camera Shot</label>
+<select id="camera" class="field-control">
+<option value="closeup">Close-up</option>
+<option value="extreme">Extreme Close-up</option>
+<option value="macro">Macro Shot</option>
+<option value="medium">Medium Shot</option>
+<option value="wide">Wide Shot</option>
+<option value="overhead">Overhead Shot</option>
+<option value="low">Low Angle</option>
+<option value="high">High Angle</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="movement">Camera Movement</label>
+<select id="movement" class="field-control">
+<option value="push">Slow Push In</option>
+<option value="pull">Slow Pull Out</option>
+<option value="pan">Smooth Pan</option>
+<option value="orbit">Orbit</option>
+<option value="tracking">Tracking Shot</option>
+<option value="zoom">Slow Zoom</option>
+<option value="handheld">Handheld</option>
+<option value="static">Static Camera</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="lighting">Lighting</label>
+<select id="lighting" class="field-control">
+<option value="cinematic">Cinematic Lighting</option>
+<option value="soft">Soft Lighting</option>
+<option value="dramatic">Dramatic Lighting</option>
+<option value="studio">Studio Lighting</option>
+<option value="natural">Natural Light</option>
+<option value="neon">Neon Lighting</option>
+<option value="golden">Golden Hour</option>
+<option value="moody">Dark Moody Lighting</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="mood">Mood</label>
+<select id="mood" class="field-control">
+<option value="satisfying">Satisfying</option>
+<option value="dramatic">Dramatic</option>
+<option value="peaceful">Peaceful</option>
+<option value="mysterious">Mysterious</option>
+<option value="energetic">Energetic</option>
+<option value="luxury">Luxury</option>
+<option value="epic">Epic</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="ratio">Aspect Ratio</label>
+<select id="ratio" class="field-control">
+<option value="9:16">9:16 Vertical</option>
+<option value="16:9">16:9 Landscape</option>
+<option value="1:1">1:1 Square</option>
+<option value="4:5">4:5 Portrait</option>
+<option value="21:9">21:9 Cinematic</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="duration">Duration</label>
+<select id="duration" class="field-control">
+<option value="5">5 Seconds</option>
+<option value="8" selected>8 Seconds</option>
+<option value="10">10 Seconds</option>
+<option value="15">15 Seconds</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="quality">Quality</label>
+<select id="quality" class="field-control">
+<option value="high">High Detail</option>
+<option value="ultra">Ultra Detailed</option>
+<option value="professional">Professional</option>
+<option value="film">Film Quality</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="language">Prompt Language</label>
+<select id="language" class="field-control">
+<option value="english">English</option>
+<option value="indonesian">Indonesian</option>
+</select>
+</div>
+
+</div>
+
+<div class="field-group">
+<label for="details">Extra Details <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
+<textarea id="details" class="field-control" maxlength="600" placeholder="Example: crystal reflections, realistic refraction, tiny fragments, satisfying cutting sound, no dialogue"></textarea>
+</div>
+
+<button id="generateButton" class="generate-btn" type="button"><i class="bi bi-stars"></i> Generate Video Prompt</button>
+
+<div id="resultArea" class="result-area">
+
+<div class="result-card">
+<div class="result-header">
+<h2><i class="bi bi-camera-video"></i> AI Video Prompt</h2>
+<button id="copyPromptButton" class="copy-btn" type="button"><i class="bi bi-copy"></i> Copy Prompt</button>
+</div>
+<div id="promptOutput" class="prompt-output"></div>
+</div>
+
+<div class="result-card negative-card">
+<div class="result-header">
+<h2><i class="bi bi-shield-exclamation"></i> Negative Prompt</h2>
+<button id="copyNegativeButton" class="copy-btn" type="button"><i class="bi bi-copy"></i> Copy</button>
+</div>
+<div id="negativeOutput" class="prompt-output"></div>
+</div>
+
+<div class="bottom-actions">
+<button id="regenerateButton" class="action-btn" type="button"><i class="bi bi-arrow-repeat"></i> Generate Again</button>
+<button id="clearButton" class="action-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+</div>
+
+<div class="info-note">
+<i class="bi bi-info-circle"></i>
+Tip: describe the subject, action and environment separately for a more structured AI video prompt.
+</div>
+
+</section>
+
+<section class="info-card">
+<h2>What Is an AI Video Scene Prompt Generator?</h2>
+<p>An AI video scene prompt generator helps turn a specific scene idea into a structured text prompt. Instead of describing everything in one sentence, you can separate the subject, action and environment, then control the camera, lighting, mood, duration, aspect ratio and visual quality.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Create an AI Video Scene Prompt</h2>
+<ol>
+<li>Enter the <strong>Main Subject</strong>.</li>
+<li>Describe the <strong>Subject Action</strong>.</li>
+<li>Describe the <strong>Environment</strong> or location.</li>
+<li>Choose the visual style.</li>
+<li>Select the camera shot and movement.</li>
+<li>Choose lighting and mood.</li>
+<li>Select aspect ratio, duration and quality.</li>
+<li>Add optional extra details.</li>
+<li>Click <strong>Generate Video Prompt</strong>.</li>
+<li>Copy the prompt and adapt it for your preferred AI video generator.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>Why Separate Subject, Action and Environment?</h2>
+<p>Separating these elements makes it easier to describe a scene clearly. The subject identifies what matters most, the action explains what happens, and the environment establishes where the scene takes place. Together, these details provide a stronger foundation for a consistent video prompt.</p>
+</section>
+
+<section class="info-card">
+<h2>Camera Shot and Camera Movement</h2>
+<p>Camera controls influence how the scene is presented. Close-ups and macro shots emphasize details, wide shots show the environment, and overhead or low-angle shots can change the sense of scale. Push-ins, pull-outs, pans, tracking, orbiting and zooms provide additional motion direction.</p>
+</section>
+
+<section class="info-card">
+<h2>Lighting and Mood</h2>
+<p>Lighting and atmosphere help establish the visual character of a scene. Cinematic, soft, dramatic, studio, natural, neon, golden-hour and moody lighting can create very different results. Mood choices such as satisfying, peaceful, mysterious, energetic, luxury and epic further define the intended feeling.</p>
+</section>
+
+<section class="info-card">
+<h2>Aspect Ratio and Duration</h2>
+<p>The tool supports 9:16 vertical, 16:9 landscape, 1:1 square, 4:5 portrait and 21:9 cinematic formats. You can also choose 5, 8, 10 or 15 seconds. Select the combination that fits the platform and content format you are creating.</p>
+</section>
+
+<section class="info-card">
+<h2>What Is a Negative Prompt?</h2>
+<p>The generated negative prompt lists common unwanted visual problems such as flickering, jitter, warped anatomy, duplicate objects, random text, logos, watermarks and compression artifacts. It can be copied separately so you can use it in an AI video workflow that supports negative prompts.</p>
+</section>
+
+<section class="info-card">
+<h2>Does This Tool Generate the Video?</h2>
+<p>No. EasyTools365 AI Video Scene Prompt Generator creates the text prompt only. You can copy the generated prompt and use it with an AI video generator or another creative workflow.</p>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the AI Video Scene Prompt Generator free?</h3>
+<p>Yes. The EasyTools365 AI Video Scene Prompt Generator is free to use in your browser.</p>
+
+<h3>Does this tool generate videos?</h3>
+<p>No. It generates detailed text prompts for individual AI video scenes.</p>
+
+<h3>Can I create prompts in Indonesian?</h3>
+<p>Yes. You can choose English or Indonesian as the prompt language.</p>
+
+<h3>Can I choose the video aspect ratio?</h3>
+<p>Yes. The tool supports 9:16, 16:9, 1:1, 4:5 and 21:9 aspect ratios.</p>
+</section>
+
+<section class="info-card">
+<h2>Related AI Tools</h2>
+<div class="related-grid">
+<a href="ai-video-prompt-generator.html" class="btn btn-outline-primary">AI Video Prompt Generator</a>
+<a href="ai-storyboard-generator.html" class="btn btn-outline-primary">AI Storyboard Generator</a>
+<a href="ai-prompt-generator.html" class="btn btn-outline-primary">AI Prompt Generator</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for AI, images, PDF, text, calculators and developer tasks.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+
+const subject = document.getElementById("subject");
+const action = document.getElementById("action");
+const environmentInput = document.getElementById("environment");
+
+const style = document.getElementById("style");
+const camera = document.getElementById("camera");
+const movement = document.getElementById("movement");
+const lighting = document.getElementById("lighting");
+const mood = document.getElementById("mood");
+const ratio = document.getElementById("ratio");
+const duration = document.getElementById("duration");
+const quality = document.getElementById("quality");
+const language = document.getElementById("language");
+const details = document.getElementById("details");
+
+const generateButton = document.getElementById("generateButton");
+const regenerateButton = document.getElementById("regenerateButton");
+const clearButton = document.getElementById("clearButton");
+
+const copyPromptButton = document.getElementById("copyPromptButton");
+const copyNegativeButton = document.getElementById("copyNegativeButton");
+
+const resultArea = document.getElementById("resultArea");
+const promptOutput = document.getElementById("promptOutput");
+const negativeOutput = document.getElementById("negativeOutput");
+
+
+function cleanText(text) {
+
+    return text
+        .trim()
+        .replace(/\s+/g, " ");
+
+}
+
+
+function englishValues() {
+
+    const styles = {
+
+        cinematic:
+            "cinematic film style",
+
+        realistic:
+            "photorealistic visual style",
+
+        anime:
+            "high-quality detailed anime style",
+
+        "3d":
+            "high-end 3D animation",
+
+        asmr:
+            "satisfying ASMR visual style with highly detailed textures",
+
+        fantasy:
+            "epic fantasy cinematic style",
+
+        commercial:
+            "premium commercial advertising style",
+
+        documentary:
+            "realistic documentary film style"
+
+    };
+
+
+    const cameras = {
+
+        closeup:
+            "close-up shot",
+
+        extreme:
+            "extreme close-up shot",
+
+        macro:
+            "macro detail shot",
+
+        medium:
+            "medium camera shot",
+
+        wide:
+            "wide cinematic shot",
+
+        overhead:
+            "overhead camera shot",
+
+        low:
+            "low-angle camera shot",
+
+        high:
+            "high-angle camera shot"
+
+    };
+
+
+    const movements = {
+
+        push:
+            "slow cinematic push-in",
+
+        pull:
+            "slow controlled pull-out",
+
+        pan:
+            "smooth cinematic pan",
+
+        orbit:
+            "smooth orbit around the subject",
+
+        tracking:
+            "professional tracking movement following the action",
+
+        zoom:
+            "slow controlled zoom",
+
+        handheld:
+            "subtle realistic handheld movement",
+
+        static:
+            "locked static camera"
+
+    };
+
+
+    const lights = {
+
+        cinematic:
+            "cinematic professional lighting",
+
+        soft:
+            "soft diffused lighting",
+
+        dramatic:
+            "dramatic high-contrast lighting",
+
+        studio:
+            "professional studio lighting",
+
+        natural:
+            "natural realistic lighting",
+
+        neon:
+            "vibrant neon lighting",
+
+        golden:
+            "warm golden-hour lighting",
+
+        moody:
+            "dark moody atmospheric lighting"
+
+    };
+
+
+    const moods = {
+
+        satisfying:
+            "satisfying and visually pleasing atmosphere",
+
+        dramatic:
+            "dramatic intense atmosphere",
+
+        peaceful:
+            "peaceful relaxing atmosphere",
+
+        mysterious:
+            "mysterious atmospheric mood",
+
+        energetic:
+            "energetic dynamic atmosphere",
+
+        luxury:
+            "premium luxury atmosphere",
+
+        epic:
+            "epic cinematic atmosphere"
+
+    };
+
+
+    const qualities = {
+
+        high:
+            "highly detailed",
+
+        ultra:
+            "ultra detailed with intricate textures",
+
+        professional:
+            "professional production quality",
+
+        film:
+            "high-end cinematic film quality"
+
+    };
+
+
+    return {
+
+        style: styles[style.value],
+        camera: cameras[camera.value],
+        movement: movements[movement.value],
+        lighting: lights[lighting.value],
+        mood: moods[mood.value],
+        quality: qualities[quality.value]
+
+    };
+
+}
+
+
+function indonesianValues() {
+
+    const styles = {
+
+        cinematic:
+            "gaya film sinematik",
+
+        realistic:
+            "gaya visual fotorealistis",
+
+        anime:
+            "gaya anime berkualitas tinggi dan detail",
+
+        "3d":
+            "animasi 3D berkualitas tinggi",
+
+        asmr:
+            "gaya visual ASMR satisfying dengan detail tekstur tinggi",
+
+        fantasy:
+            "gaya sinematik fantasi epik",
+
+        commercial:
+            "gaya iklan komersial premium",
+
+        documentary:
+            "gaya film dokumenter realistis"
+
+    };
+
+
+    const cameras = {
+
+        closeup:
+            "pengambilan gambar close-up",
+
+        extreme:
+            "pengambilan gambar extreme close-up",
+
+        macro:
+            "pengambilan gambar makro",
+
+        medium:
+            "medium shot",
+
+        wide:
+            "wide cinematic shot",
+
+        overhead:
+            "kamera dari atas",
+
+        low:
+            "kamera low-angle",
+
+        high:
+            "kamera high-angle"
+
+    };
+
+
+    const movements = {
+
+        push:
+            "kamera perlahan mendekati subjek",
+
+        pull:
+            "kamera perlahan menjauh dari subjek",
+
+        pan:
+            "gerakan pan kamera yang halus",
+
+        orbit:
+            "kamera bergerak mengorbit subjek secara halus",
+
+        tracking:
+            "gerakan tracking mengikuti aksi",
+
+        zoom:
+            "zoom kamera perlahan dan terkontrol",
+
+        handheld:
+            "gerakan handheld realistis dan lembut",
+
+        static:
+            "kamera statis dan stabil"
+
+    };
+
+
+    const lights = {
+
+        cinematic:
+            "pencahayaan sinematik profesional",
+
+        soft:
+            "pencahayaan lembut",
+
+        dramatic:
+            "pencahayaan dramatis dengan kontras tinggi",
+
+        studio:
+            "pencahayaan studio profesional",
+
+        natural:
+            "pencahayaan alami realistis",
+
+        neon:
+            "pencahayaan neon yang hidup",
+
+        golden:
+            "pencahayaan golden hour yang hangat",
+
+        moody:
+            "pencahayaan gelap dan atmosferik"
+
+    };
+
+
+    const moods = {
+
+        satisfying:
+            "suasana satisfying dan menyenangkan secara visual",
+
+        dramatic:
+            "suasana dramatis dan intens",
+
+        peaceful:
+            "suasana tenang dan santai",
+
+        mysterious:
+            "suasana misterius dan atmosferik",
+
+        energetic:
+            "suasana energik dan dinamis",
+
+        luxury:
+            "suasana premium dan mewah",
+
+        epic:
+            "suasana sinematik yang epik"
+
+    };
+
+
+    const qualities = {
+
+        high:
+            "detail tinggi",
+
+        ultra:
+            "sangat detail dengan tekstur yang rumit",
+
+        professional:
+            "kualitas produksi profesional",
+
+        film:
+            "kualitas film sinematik premium"
+
+    };
+
+
+    return {
+
+        style: styles[style.value],
+        camera: cameras[camera.value],
+        movement: movements[movement.value],
+        lighting: lights[lighting.value],
+        mood: moods[mood.value],
+        quality: qualities[quality.value]
+
+    };
+
+}
+
+
+function generatePrompt() {
+
+    const mainSubject =
+        cleanText(subject.value);
+
+    const mainAction =
+        cleanText(action.value);
+
+    const environment =
+        cleanText(environmentInput.value);
+
+    const extra =
+        cleanText(details.value);
+
+
+    if (!mainSubject) {
+
+        alert(
+            "Please enter the main subject."
+        );
+
+        subject.focus();
+
+        return;
+
+    }
+
+
+    const values =
+        language.value === "indonesian"
+            ? indonesianValues()
+            : englishValues();
+
+
+    let prompt;
+
+
+    if (language.value === "indonesian") {
+
+        prompt =
+            `${values.style}. ` +
+            `${values.camera} menampilkan ${mainSubject}`;
+
+
+        if (mainAction) {
+
+            prompt +=
+                `, ${mainAction}`;
+
+        }
+
+
+        if (environment) {
+
+            prompt +=
+                `, berada di ${environment}`;
+
+        }
+
+
+        prompt +=
+            `. Gerakan kamera: ${values.movement}. ` +
+            `${values.lighting}, ${values.mood}, ${values.quality}. ` +
+            `Gerakan subjek alami dan realistis, fisika konsisten, ` +
+            `detail objek tetap stabil dari awal sampai akhir, ` +
+            `komposisi visual profesional`;
+
+
+        if (extra) {
+
+            prompt +=
+                `, ${extra}`;
+
+        }
+
+
+        prompt +=
+            `. Durasi sekitar ${duration.value} detik. ` +
+            `Rasio aspek ${ratio.value}. ` +
+            `Gerakan halus, temporal consistency, tanpa flicker, ` +
+            `hasil video berkualitas tinggi.`;
+
+    }
+
+    else {
+
+        prompt =
+            `${values.style}. ` +
+            `${values.camera} showing ${mainSubject}`;
+
+
+        if (mainAction) {
+
+            prompt +=
+                `, ${mainAction}`;
+
+        }
+
+
+        if (environment) {
+
+            prompt +=
+                `, set in ${environment}`;
+
+        }
+
+
+        prompt +=
+            `. Camera movement: ${values.movement}. ` +
+            `${values.lighting}, ${values.mood}, ${values.quality}. ` +
+            `Natural realistic subject motion, consistent physics, ` +
+            `stable object geometry from beginning to end, ` +
+            `professional visual composition`;
+
+
+        if (extra) {
+
+            prompt +=
+                `, ${extra}`;
+
+        }
+
+
+        prompt +=
+            `. Approximately ${duration.value} seconds. ` +
+            `${ratio.value} aspect ratio. ` +
+            `Smooth motion, strong temporal consistency, no flickering, ` +
+            `high-quality final video.`;
+
+    }
+
+
+    const negative =
+        language.value === "indonesian"
+
+        ?
+
+        `buram, kualitas rendah, resolusi rendah, flicker, jitter, ` +
+        `gerakan patah-patah, objek berubah bentuk, deformasi, ` +
+        `anatomi buruk, tangan cacat, jari tambahan, wajah rusak, ` +
+        `objek mengganda, frame tidak konsisten, perubahan warna tiba-tiba, ` +
+        `kamera bergetar berlebihan, teks acak, subtitle, watermark, logo, ` +
+        `noise berlebihan, artefak kompresi`
+
+        :
+
+        `blurry, low quality, low resolution, flickering, jitter, ` +
+        `jerky motion, morphing objects, deformation, bad anatomy, ` +
+        `deformed hands, extra fingers, malformed face, duplicated objects, ` +
+        `inconsistent frames, sudden color changes, excessive camera shake, ` +
+        `random text, subtitles, watermark, logo, excessive noise, ` +
+        `compression artifacts`;
+
+
+    promptOutput.textContent =
+        prompt;
+
+
+    negativeOutput.textContent =
+        negative;
+
+
+    resultArea.style.display =
+        "block";
+
+
+    resultArea.scrollIntoView({
+
+        behavior: "smooth",
+        block: "nearest"
+
+    });
+
+}
+
+
+async function copyText(text) {
+
+    try {
+
+        await navigator.clipboard.writeText(
+            text
+        );
+
+    }
+
+    catch (error) {
+
+        const temp =
+            document.createElement("textarea");
+
+        temp.value =
+            text;
+
+        document.body.appendChild(
+            temp
+        );
+
+        temp.select();
+
+        document.execCommand(
+            "copy"
+        );
+
+        temp.remove();
+
+    }
+
+}
+
+
+generateButton.addEventListener(
+    "click",
+    generatePrompt
+);
+
+
+regenerateButton.addEventListener(
+    "click",
+    generatePrompt
+);
+
+
+copyPromptButton.addEventListener(
+    "click",
+    async function() {
+
+        await copyText(
+            promptOutput.textContent
+        );
+
+
+        copyPromptButton.innerHTML =
+            '<i class="bi bi-check-lg"></i> Copied!';
+
+
+        setTimeout(
+            function() {
+
+                copyPromptButton.innerHTML =
+                    '<i class="bi bi-copy"></i> Copy Prompt';
+
+            },
+            1400
+        );
+
+    }
+);
+
+
+copyNegativeButton.addEventListener(
+    "click",
+    async function() {
+
+        await copyText(
+            negativeOutput.textContent
+        );
+
+
+        copyNegativeButton.innerHTML =
+            '<i class="bi bi-check-lg"></i> Copied!';
+
+
+        setTimeout(
+            function() {
+
+                copyNegativeButton.innerHTML =
+                    '<i class="bi bi-copy"></i> Copy';
+
+            },
+            1400
+        );
+
+    }
+);
+
+
+clearButton.addEventListener(
+    "click",
+    function() {
+
+        subject.value = "";
+        action.value = "";
+        environmentInput.value = "";
+        details.value = "";
+
+        promptOutput.textContent = "";
+        negativeOutput.textContent = "";
+
+        resultArea.style.display =
+            "none";
+
+        subject.focus();
+
+    }
+);
+
+</script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

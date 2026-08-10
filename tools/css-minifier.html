@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N002NWTJ23');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Minifier - EasyTools365</title>
+
+    <meta name="description"
+          content="Minify CSS code online, reduce file size, copy and download optimized CSS instantly with EasyTools365.">
+    <link rel="canonical" href="https://easytools365.com/tools/css-minifier.html">
+    <meta name="robots" content="index, follow">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/style.css">
+
+    <style>
+        .tool-page {
+            min-height: 100vh;
+            padding: 60px 15px 80px;
+        }
+
+        .tool-wrapper {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .top-nav {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 30px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .tool-header {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .tool-icon-large {
+            width: 75px;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            border-radius: 22px;
+            background: rgba(37, 99, 235, .10);
+            color: var(--primary);
+            font-size: 34px;
+        }
+
+        .tool-header h1 {
+            font-size: 38px;
+            font-weight: 800;
+        }
+
+        .tool-header p {
+            max-width: 680px;
+            margin: auto;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .tool-card {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .editor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .editor-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .editor-header label {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .small-btn {
+            padding: 7px 10px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--background);
+            color: var(--text);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .editor {
+            width: 100%;
+            min-height: 350px;
+            padding: 15px;
+            resize: vertical;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--background);
+            color: var(--text);
+            outline: none;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .editor:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, .10);
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 12px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            background: var(--background);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .option-item input {
+            accent-color: var(--primary);
+        }
+
+        .button-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 13px;
+            border-radius: 11px;
+            font-weight: 700;
+        }
+
+        .primary-btn {
+            border: none;
+            background: var(--primary);
+            color: white;
+        }
+
+        .secondary-btn {
+            border: 1px solid var(--border);
+            background: var(--background);
+            color: var(--text);
+        }
+
+        .stats-grid {
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--background);
+            text-align: center;
+        }
+
+        .stat-item span {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--text-light);
+            font-size: 11px;
+        }
+
+        .stat-item strong {
+            font-size: 17px;
+        }
+
+        .error-box,
+        .status-box {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .error-box {
+            background: rgba(220, 38, 38, .10);
+            color: #dc2626;
+        }
+
+        .status-box {
+            background: rgba(22, 163, 74, .08);
+            color: #16a34a;
+        }
+
+        .download-btn {
+            display: none;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .privacy-note {
+            margin-top: 22px;
+            padding: 14px;
+            border-radius: 12px;
+            background: rgba(22, 163, 74, .07);
+            color: var(--text-light);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media(max-width: 750px) {
+            .editor-grid,
+            .button-row,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tool-card {
+                padding: 20px;
+            }
+
+            .tool-header h1 {
+                font-size: 31px;
+            }
+        }
+    </style>
+
+    <!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the CSS Minifier free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The EasyTools365 CSS Minifier is free to use online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does CSS minification remove?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CSS minification can remove unnecessary spaces, line breaks, comments, and other redundant formatting where supported."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does minifying CSS change the design?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Proper CSS minification is intended to reduce unnecessary code without changing the intended styling of a webpage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I keep my original CSS file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Keeping a readable original version makes future editing and maintenance easier."
+      }
+    }
+  ]
+}
+</script>
+<!-- End FAQ Structured Data -->
+</head>
+
+<body>
+
+<nav class="navbar top-nav">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold"
+           href="../index.html">
+            <i class="bi bi-tools"></i>
+            EasyTools365
+        </a>
+
+        <button id="darkModeButton"
+                class="btn btn-outline-primary"
+                type="button">
+            <i class="bi bi-moon-stars"></i>
+        </button>
+
+    </div>
+</nav>
+
+
+<main class="tool-page">
+
+<div class="tool-wrapper">
+
+    <a href="../categories/developer-tools.html"
+       class="back-link">
+        <i class="bi bi-arrow-left"></i>
+        Back to Developer Tools
+    </a>
+
+    <div class="tool-header">
+
+        <div class="tool-icon-large">
+            <i class="bi bi-filetype-css"></i>
+        </div>
+
+        <h1>CSS Minifier</h1>
+
+        <p>
+            Minify CSS code by removing comments,
+            unnecessary whitespace and extra characters.
+        </p>
+
+    </div>
+
+
+    <div class="tool-card">
+
+        <div class="editor-grid">
+
+            <div>
+
+                <div class="editor-header">
+                    <label for="cssInput">CSS Input</label>
+
+                    <button id="sampleButton"
+                            class="small-btn"
+                            type="button">
+                        Load Sample
+                    </button>
+                </div>
+
+                <textarea id="cssInput"
+                          class="editor"
+                          spellcheck="false"
+                          placeholder="Paste your CSS code here..."></textarea>
+
+            </div>
+
+
+            <div>
+
+                <div class="editor-header">
+                    <label for="cssOutput">Minified CSS</label>
+
+                    <button id="copyButton"
+                            class="small-btn"
+                            type="button">
+                        <i class="bi bi-copy"></i>
+                        Copy
+                    </button>
+                </div>
+
+                <textarea id="cssOutput"
+                          class="editor"
+                          readonly
+                          spellcheck="false"
+                          placeholder="Minified CSS will appear here..."></textarea>
+
+            </div>
+
+        </div>
+
+
+        <div class="options">
+
+            <label class="option-item">
+
+                <input id="removeComments"
+                       type="checkbox"
+                       checked>
+
+                Remove Comments
+
+            </label>
+
+        </div>
+
+
+        <div class="button-row">
+
+            <button id="minifyButton"
+                    class="primary-btn"
+                    type="button">
+
+                <i class="bi bi-arrows-collapse"></i>
+                Minify CSS
+
+            </button>
+
+            <button id="clearButton"
+                    class="secondary-btn"
+                    type="button">
+
+                <i class="bi bi-trash"></i>
+                Clear
+
+            </button>
+
+        </div>
+
+
+        <div id="errorBox"
+             class="error-box"></div>
+
+
+        <div id="statsGrid"
+             class="stats-grid">
+
+            <div class="stat-item">
+                <span>Original Size</span>
+                <strong id="originalSize">0 B</strong>
+            </div>
+
+            <div class="stat-item">
+                <span>Minified Size</span>
+                <strong id="minifiedSize">0 B</strong>
+            </div>
+
+            <div class="stat-item">
+                <span>Saved</span>
+                <strong id="savedPercent">0%</strong>
+            </div>
+
+        </div>
+
+
+        <button id="downloadButton"
+                class="primary-btn download-btn"
+                type="button">
+
+            <i class="bi bi-download"></i>
+            Download Minified CSS
+
+        </button>
+
+
+        <div id="statusBox"
+             class="status-box"></div>
+
+
+        <div class="privacy-note">
+            <i class="bi bi-shield-check"></i>
+            Your CSS code is processed locally in your browser.
+        </div>
+
+    </div>
+
+</div>
+<!-- ============ CSS MINIFIER SEO CONTENT ============ -->
+
+<section class="container my-5">
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-4 p-lg-5">
+
+            <h2>What Is a CSS Minifier?</h2>
+            <p>
+                A CSS Minifier is an online tool that reduces the size of CSS
+                code by removing unnecessary whitespace, line breaks, comments,
+                and other redundant characters where supported.
+            </p>
+
+            <p>
+                The EasyTools365 CSS Minifier helps you create compact CSS code
+                directly in your browser without installing additional software.
+            </p>
+
+            <hr class="my-4">
+
+            <h2>How to Minify CSS</h2>
+            <ol>
+                <li>Paste your CSS code into the input area.</li>
+                <li>Click the minify button.</li>
+                <li>Review the minified CSS output.</li>
+                <li>Copy the result and use it in your project.</li>
+            </ol>
+
+            <hr class="my-4">
+
+            <h2>Why Minify CSS?</h2>
+            <p>
+                CSS minification removes unnecessary characters from source
+                code, making stylesheets more compact. Smaller CSS files can
+                reduce the amount of data that needs to be transferred when
+                loading a webpage.
+            </p>
+
+            <hr class="my-4">
+
+            <h2>Frequently Asked Questions</h2>
+
+            <h3 class="h5 mt-4">Is the CSS Minifier free?</h3>
+            <p>
+                Yes. The EasyTools365 CSS Minifier is free to use online.
+            </p>
+
+            <h3 class="h5 mt-4">What does CSS minification remove?</h3>
+            <p>
+                CSS minification can remove unnecessary spaces, line breaks,
+                comments, and other redundant formatting where supported.
+            </p>
+
+            <h3 class="h5 mt-4">Does minifying CSS change the design?</h3>
+            <p>
+                Proper CSS minification is intended to reduce unnecessary code
+                without changing the intended styling of a webpage.
+            </p>
+
+            <h3 class="h5 mt-4">Should I keep my original CSS file?</h3>
+            <p>
+                Yes. Keeping a readable original version makes future editing
+                and maintenance easier.
+            </p>
+
+            <hr class="my-4">
+
+            <h2>Related Tools</h2>
+            <ul>
+                <li><a href="html-minifier.html">HTML Minifier</a></li>
+                <li><a href="html-formatter.html">HTML Formatter</a></li>
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========== END CSS MINIFIER SEO CONTENT ========== -->
+</main>
+
+
+<script>
+
+const cssInput =
+    document.getElementById("cssInput");
+
+const cssOutput =
+    document.getElementById("cssOutput");
+
+const removeComments =
+    document.getElementById("removeComments");
+
+const statsGrid =
+    document.getElementById("statsGrid");
+
+const downloadButton =
+    document.getElementById("downloadButton");
+
+const errorBox =
+    document.getElementById("errorBox");
+
+const statusBox =
+    document.getElementById("statusBox");
+
+
+function byteSize(text) {
+
+    return new Blob([text]).size;
+
+}
+
+
+function formatBytes(bytes) {
+
+    if (bytes < 1024) {
+        return bytes + " B";
+    }
+
+    if (bytes < 1048576) {
+        return (
+            bytes / 1024
+        ).toFixed(2) + " KB";
+    }
+
+    return (
+        bytes / 1048576
+    ).toFixed(2) + " MB";
+
+}
+
+
+function minifyCSS() {
+
+    errorBox.style.display =
+        "none";
+
+
+    const original =
+        cssInput.value;
+
+
+    if (
+        original.trim() === ""
+    ) {
+
+        showError(
+            "Please enter CSS code."
+        );
+
+        return;
+
+    }
+
+
+    let result =
+        original;
+
+
+    if (
+        removeComments.checked
+    ) {
+
+        result =
+            result.replace(
+                /\/\*[\s\S]*?\*\//g,
+                ""
+            );
+
+    }
+
+
+    result =
+        result
+            .replace(/\s+/g, " ")
+            .replace(/\s*{\s*/g, "{")
+            .replace(/\s*}\s*/g, "}")
+            .replace(/\s*:\s*/g, ":")
+            .replace(/\s*;\s*/g, ";")
+            .replace(/\s*,\s*/g, ",")
+            .replace(/;}/g, "}")
+            .trim();
+
+
+    cssOutput.value =
+        result;
+
+
+    const before =
+        byteSize(original);
+
+    const after =
+        byteSize(result);
+
+
+    let saved = 0;
+
+
+    if (before > 0) {
+
+        saved =
+            (
+                (before - after) /
+                before
+            ) * 100;
+
+    }
+
+
+    document.getElementById(
+        "originalSize"
+    ).textContent =
+        formatBytes(before);
+
+
+    document.getElementById(
+        "minifiedSize"
+    ).textContent =
+        formatBytes(after);
+
+
+    document.getElementById(
+        "savedPercent"
+    ).textContent =
+        Math.max(
+            0,
+            saved
+        ).toFixed(1) + "%";
+
+
+    statsGrid.style.display =
+        "grid";
+
+    downloadButton.style.display =
+        "block";
+
+}
+
+
+function showError(message) {
+
+    errorBox.textContent =
+        message;
+
+    errorBox.style.display =
+        "block";
+
+    cssOutput.value =
+        "";
+
+    statsGrid.style.display =
+        "none";
+
+    downloadButton.style.display =
+        "none";
+
+}
+
+
+function loadSample() {
+
+    cssInput.value =
+`/* EasyTools365 Sample CSS */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.button {
+    background: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+}`;
+
+}
+
+
+function clearTool() {
+
+    cssInput.value = "";
+    cssOutput.value = "";
+
+    removeComments.checked =
+        true;
+
+    statsGrid.style.display =
+        "none";
+
+    downloadButton.style.display =
+        "none";
+
+    errorBox.style.display =
+        "none";
+
+    statusBox.style.display =
+        "none";
+
+    cssInput.focus();
+
+}
+
+
+async function copyOutput() {
+
+    if (
+        cssOutput.value === ""
+    ) {
+
+        showStatus(
+            "Minify CSS first."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        await navigator.clipboard.writeText(
+            cssOutput.value
+        );
+
+    }
+
+    catch (error) {
+
+        cssOutput.select();
+
+        document.execCommand(
+            "copy"
+        );
+
+    }
+
+
+    showStatus(
+        "Minified CSS copied!"
+    );
+
+}
+
+
+function downloadCSS() {
+
+    if (
+        cssOutput.value === ""
+    ) {
+        return;
+    }
+
+
+    const blob =
+        new Blob(
+            [cssOutput.value],
+            {
+                type:
+                    "text/css;charset=utf-8"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href =
+        url;
+
+    link.download =
+        "minified.css";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+    link.remove();
+
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+function showStatus(message) {
+
+    statusBox.textContent =
+        message;
+
+    statusBox.style.display =
+        "block";
+
+
+    clearTimeout(
+        showStatus.timer
+    );
+
+
+    showStatus.timer =
+        setTimeout(
+            function() {
+
+                statusBox.style.display =
+                    "none";
+
+            },
+            2000
+        );
+
+}
+
+
+document.getElementById(
+    "minifyButton"
+).addEventListener(
+    "click",
+    minifyCSS
+);
+
+
+document.getElementById(
+    "clearButton"
+).addEventListener(
+    "click",
+    clearTool
+);
+
+
+document.getElementById(
+    "sampleButton"
+).addEventListener(
+    "click",
+    loadSample
+);
+
+
+document.getElementById(
+    "copyButton"
+).addEventListener(
+    "click",
+    copyOutput
+);
+
+
+downloadButton.addEventListener(
+    "click",
+    downloadCSS
+);
+
+</script>
+
+
+<script src="../assets/js/app.js"></script>
+
+</body>
+</html>

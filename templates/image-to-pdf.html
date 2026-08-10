@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Image to PDF Converter - Free Online | EasyTools365</title>
+<meta name="description" content="Free online Image to PDF Converter. Convert JPG, PNG and WebP images into one PDF directly in your browser. No upload required.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/image-to-pdf.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Image to PDF Converter - EasyTools365">
+<meta property="og:description" content="Convert JPG, PNG and WebP images into one PDF directly in your browser.">
+<meta property="og:url" content="https://easytools365.com/tools/image-to-pdf.html">
+<meta property="og:site_name" content="EasyTools365">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Image to PDF Converter - EasyTools365">
+<meta name="twitter:description" content="Free browser-based JPG, PNG and WebP to PDF converter.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<!-- jsPDF: primary CDN + automatic fallback -->
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"
+        onerror="loadJsPdfFallback()"></script>
+<script>
+function loadJsPdfFallback() {
+    var fallback = document.createElement("script");
+    fallback.src = "https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js";
+    fallback.onerror = function () {
+        window.__jsPdfLoadFailed = true;
+    };
+    document.head.appendChild(fallback);
+}
+</script>
+
+<style>
+.tool-page{padding:55px 15px 75px}
+.tool-wrapper{max-width:1000px;margin:auto}
+.tool-header{text-align:center;margin-bottom:30px}
+.tool-header h1{font-size:40px;font-weight:800}
+.tool-header p{color:var(--text-light);line-height:1.7}
+.tool-icon{width:76px;height:76px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;border-radius:22px;background:rgba(37,99,235,.10);color:var(--primary);font-size:35px}
+.updated{font-size:12px;color:var(--text-light);margin-top:10px}
+.tool-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.tool-card{padding:30px}
+.upload-box{min-height:210px;padding:35px 20px;border:2px dashed var(--border);border-radius:18px;text-align:center;cursor:pointer;transition:.2s}
+.upload-box:hover,.upload-box.dragover{border-color:var(--primary);background:rgba(37,99,235,.05)}
+.upload-box i{display:block;color:var(--primary);font-size:48px;margin-bottom:12px}
+.upload-box h5{font-weight:700}
+#imageInput{display:none}
+.image-card{height:100%;border:1px solid var(--border);background:var(--background)}
+.image-card img{height:170px;width:100%;object-fit:cover}
+.file-name{font-size:12px}
+.action-buttons{display:grid;gap:10px}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700}
+.related-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:650px){
+.tool-card,.info-card{padding:20px}
+.tool-header h1{font-size:31px}
+.related-tools{grid-template-columns:1fr}
+}
+</style>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebApplication",
+ "name":"EasyTools365 Image to PDF Converter",
+ "url":"https://easytools365.com/tools/image-to-pdf.html",
+ "applicationCategory":"UtilitiesApplication",
+ "operatingSystem":"Any",
+ "description":"Free browser-based JPG, PNG and WebP to PDF converter.",
+ "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"FAQPage",
+ "mainEntity":[
+  {
+   "@type":"Question",
+   "name":"Is the Image to PDF Converter free?",
+   "acceptedAnswer":{"@type":"Answer","text":"Yes. EasyTools365 Image to PDF Converter is free to use online."}
+  },
+  {
+   "@type":"Question",
+   "name":"Can I convert multiple images into one PDF?",
+   "acceptedAnswer":{"@type":"Answer","text":"Yes. You can select multiple JPG, PNG and WebP images and combine them into one PDF."}
+  },
+  {
+   "@type":"Question",
+   "name":"Are my images uploaded?",
+   "acceptedAnswer":{"@type":"Answer","text":"No. The PDF is generated directly in your browser."}
+  }
+ ]
+}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html">
+<i class="bi bi-tools"></i> EasyTools365
+</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button">
+<i class="bi bi-moon-stars"></i>
+</button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/pdf-tools.html">Tools</a></li>
+<li class="breadcrumb-item active">Image to PDF Converter</li>
+</ol>
+</nav>
+
+<header class="tool-header">
+<div class="tool-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+<h1>Image to PDF Converter</h1>
+<p>Convert JPG, PNG and WEBP images into PDF online for free. No upload required.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="tool-card">
+
+<div class="row g-4">
+
+<div class="col-lg-6">
+
+<label id="uploadBox" class="upload-box d-block" for="imageInput">
+<i class="bi bi-cloud-arrow-up"></i>
+<h5>Drag &amp; Drop Images Here</h5>
+<p class="text-muted mb-3">or click Select Images</p>
+<span class="btn btn-outline-primary">Select Images</span>
+</label>
+
+<input
+type="file"
+id="imageInput"
+accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp"
+multiple>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="d-grid gap-2">
+
+<button id="convertBtn" class="btn btn-primary btn-lg" type="button">
+<i class="bi bi-file-earmark-pdf"></i>
+Convert to PDF
+</button>
+
+<button id="clearBtn" class="btn btn-outline-secondary" type="button">
+<i class="bi bi-trash"></i>
+Clear
+</button>
+
+<a id="downloadBtn" class="btn btn-success" style="display:none" download="easytools365-images.pdf">
+<i class="bi bi-download"></i>
+Download PDF
+</a>
+
+</div>
+
+<hr class="my-4">
+
+<div id="pdfStatus" class="alert alert-light text-center mb-0">
+Select images then click <strong>Convert to PDF</strong>
+</div>
+
+</div>
+</div>
+
+<div id="imagePreview" class="row g-3 mt-3"></div>
+
+</section>
+
+<section class="info-card">
+<h2>About This Tool</h2>
+<p>This free Image to PDF Converter lets you combine multiple JPG, PNG, and WEBP images into a single PDF directly in your browser. Your files stay on your device for maximum privacy.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Convert Images to PDF</h2>
+<ol>
+<li>Click <strong>Select Images</strong> or drag images into the upload area.</li>
+<li>Preview your selected images.</li>
+<li>Remove unwanted images if necessary.</li>
+<li>Click <strong>Convert to PDF</strong>.</li>
+<li>Click <strong>Download PDF</strong> when the PDF is ready.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+<h3 class="h5 mt-4">Is this tool free?</h3>
+<p>Yes. The Image to PDF Converter is free to use online.</p>
+
+<h3 class="h5 mt-4">Can I convert multiple images?</h3>
+<p>Yes. Multiple JPG, PNG and WebP images can be combined into one PDF.</p>
+
+<h3 class="h5 mt-4">Are my images uploaded?</h3>
+<p>No. Image processing and PDF generation happen directly in your browser.</p>
+</section>
+
+<section class="info-card">
+<h2>Related Tools</h2>
+<div class="related-tools">
+<a href="jpg-to-pdf.html" class="btn btn-outline-primary">JPG to PDF</a>
+<a href="image-compressor.html" class="btn btn-outline-primary">Image Compressor</a>
+<a href="image-resizer.html" class="btn btn-outline-primary">Image Resizer</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore dozens of free tools for PDF, Images, Text and more.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<script>
+let selectedImages = [];
+let pdfDoc = null;
+
+const imageInput = document.getElementById("imageInput");
+const preview = document.getElementById("imagePreview");
+const uploadBox = document.getElementById("uploadBox");
+const convertBtn = document.getElementById("convertBtn");
+const clearBtn = document.getElementById("clearBtn");
+const downloadBtn = document.getElementById("downloadBtn");
+const pdfStatus = document.getElementById("pdfStatus");
+
+window.addEventListener("load", function () {
+    setTimeout(function () {
+        if (!window.jspdf || !window.jspdf.jsPDF) {
+            setStatus(
+                "PDF engine could not be loaded. Check your internet connection, then refresh the page.",
+                "danger"
+            );
+        } else if (!selectedImages.length) {
+            setStatus(
+                "Select images then click <strong>Convert to PDF</strong>",
+                "light"
+            );
+        }
+    }, 500);
+});
+
+imageInput.addEventListener("change", function(event) {
+    addImages(Array.from(event.target.files));
+    imageInput.value = "";
+});
+
+uploadBox.addEventListener("dragover", function(event) {
+    event.preventDefault();
+    uploadBox.classList.add("dragover");
+});
+
+uploadBox.addEventListener("dragleave", function() {
+    uploadBox.classList.remove("dragover");
+});
+
+uploadBox.addEventListener("drop", function(event) {
+    event.preventDefault();
+    uploadBox.classList.remove("dragover");
+    addImages(Array.from(event.dataTransfer.files));
+});
+
+convertBtn.addEventListener("click", convertToPDF);
+clearBtn.addEventListener("click", clearImages);
+
+function addImages(files) {
+    const validFiles = files.filter(function(file) {
+        return ["image/jpeg", "image/png", "image/webp"].includes(file.type);
+    });
+
+    selectedImages.push(...validFiles);
+    renderPreview();
+
+    if (files.length !== validFiles.length) {
+        setStatus("Some files were skipped because they are not supported images.", "warning");
+    } else if (selectedImages.length) {
+        setStatus(selectedImages.length + " image(s) selected.", "light");
+    }
+}
+
+function renderPreview() {
+    preview.innerHTML = "";
+
+    selectedImages.forEach(function(file, index) {
+        const reader = new FileReader();
+
+        reader.onload = function(event) {
+            const col = document.createElement("div");
+            col.className = "col-6 col-md-4 col-lg-3";
+
+            col.innerHTML = `
+                <div class="card image-card">
+                    <img src="${event.target.result}" class="card-img-top" alt="Selected image">
+                    <div class="card-body p-2 text-center">
+                        <p class="file-name text-truncate mb-2" title="${escapeHtml(file.name)}">${escapeHtml(file.name)}</p>
+                        <button class="btn btn-sm btn-outline-danger delete-image" type="button">
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            col.querySelector(".delete-image").addEventListener("click", function() {
+                selectedImages.splice(index, 1);
+                pdfDoc = null;
+                downloadBtn.style.display = "none";
+                renderPreview();
+                setStatus(
+                    selectedImages.length
+                        ? selectedImages.length + " image(s) selected."
+                        : "Select images then click Convert to PDF.",
+                    "light"
+                );
+            });
+
+            preview.appendChild(col);
+        };
+
+        reader.readAsDataURL(file);
+    });
+}
+
+async function convertToPDF() {
+    if (!selectedImages.length) {
+        setStatus("Please select images first.", "danger");
+        return;
+    }
+
+    if (!window.jspdf || !window.jspdf.jsPDF) {
+        setStatus(
+            "PDF library is still loading. Please wait a moment and click Convert to PDF again.",
+            "warning"
+        );
+        return;
+    }
+
+    convertBtn.disabled = true;
+    downloadBtn.style.display = "none";
+    setStatus("Creating PDF...", "primary");
+
+    try {
+        const { jsPDF } = window.jspdf;
+        pdfDoc = new jsPDF({
+            orientation: "portrait",
+            unit: "mm",
+            format: "a4"
+        });
+
+        for (let i = 0; i < selectedImages.length; i++) {
+            if (i > 0) {
+                pdfDoc.addPage();
+            }
+
+            const dataURL = await fileToDataURL(selectedImages[i]);
+            const imageData = await prepareImageForPDF(dataURL);
+
+            const pageWidth = 210;
+            const pageHeight = 297;
+            const margin = 10;
+            const maxWidth = pageWidth - (margin * 2);
+            const maxHeight = pageHeight - (margin * 2);
+
+            const ratio = Math.min(
+                maxWidth / imageData.width,
+                maxHeight / imageData.height
+            );
+
+            const width = imageData.width * ratio;
+            const height = imageData.height * ratio;
+
+            const x = (pageWidth - width) / 2;
+            const y = (pageHeight - height) / 2;
+
+            pdfDoc.addImage(
+                imageData.dataURL,
+                "JPEG",
+                x,
+                y,
+                width,
+                height,
+                undefined,
+                "FAST"
+            );
+        }
+
+        const blob = pdfDoc.output("blob");
+        const url = URL.createObjectURL(blob);
+
+        if (downloadBtn.dataset.url) {
+            URL.revokeObjectURL(downloadBtn.dataset.url);
+        }
+
+        downloadBtn.href = url;
+        downloadBtn.dataset.url = url;
+        downloadBtn.style.display = "inline-block";
+
+        setStatus("✅ PDF berhasil dibuat.<br>Click Download PDF.", "success");
+    } catch (error) {
+        console.error(error);
+        pdfDoc = null;
+        setStatus("❌ Failed to create PDF. Please try another image.", "danger");
+    } finally {
+        convertBtn.disabled = false;
+    }
+}
+
+function fileToDataURL(file) {
+    return new Promise(function(resolve, reject) {
+        const reader = new FileReader();
+
+        reader.onload = function(event) {
+            resolve(event.target.result);
+        };
+
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
+
+function prepareImageForPDF(dataURL) {
+    return new Promise(function(resolve, reject) {
+        const image = new Image();
+
+        image.onload = function() {
+            const canvas = document.createElement("canvas");
+            canvas.width = image.naturalWidth || image.width;
+            canvas.height = image.naturalHeight || image.height;
+
+            const context = canvas.getContext("2d");
+
+            if (!context) {
+                reject(new Error("Canvas is not supported."));
+                return;
+            }
+
+            context.fillStyle = "#ffffff";
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            context.drawImage(image, 0, 0);
+
+            resolve({
+                dataURL: canvas.toDataURL("image/jpeg", 0.92),
+                width: canvas.width,
+                height: canvas.height
+            });
+        };
+
+        image.onerror = function() {
+            reject(new Error("Could not read image."));
+        };
+
+        image.src = dataURL;
+    });
+}
+
+function clearImages() {
+    selectedImages = [];
+    pdfDoc = null;
+    preview.innerHTML = "";
+    downloadBtn.style.display = "none";
+
+    if (downloadBtn.dataset.url) {
+        URL.revokeObjectURL(downloadBtn.dataset.url);
+        delete downloadBtn.dataset.url;
+    }
+
+    setStatus("Select images then click <strong>Convert to PDF</strong>", "light");
+}
+
+function setStatus(message, type) {
+    pdfStatus.innerHTML = message;
+    pdfStatus.className = "alert text-center mb-0 alert-" + type;
+}
+
+function escapeHtml(value) {
+    return value.replace(/[&<>"']/g, function(char) {
+        const entities = {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#039;"
+        };
+
+        return entities[char];
+    });
+}
+</script>
+
+<script src="../assets/js/app.js"></script>
+
+</body>
+</html>

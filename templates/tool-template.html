@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Image to PDF Converter | EasyTools365</title>
+
+    <meta name="description"
+          content="Convert JPG, PNG and WEBP images into PDF online for free. No upload required.">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <meta name="author"
+          content="EasyTools365">
+
+    <link rel="canonical"
+          href="https://easytools365.com/tools/image-to-pdf.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:title"
+          content="Image to PDF Converter | EasyTools365">
+
+    <meta property="og:description"
+          content="Convert JPG, PNG and WEBP images into PDF online for free. No upload required.">
+
+    <meta property="og:url"
+          content="https://easytools365.com/tools/image-to-pdf.html">
+
+    <meta property="og:site_name"
+          content="EasyTools365">
+
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- EasyTools365 CSS -->
+    <link rel="stylesheet"
+          href="../assets/css/style.css">
+
+
+    <!-- WebApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image to PDF Converter - EasyTools365",
+        "url": "https://easytools365.com/tools/image-to-pdf.html",
+        "description": "Convert JPG, PNG and WEBP images into PDF online for free. No upload required.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires a modern web browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is the Image to PDF Converter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. EasyTools365 Image to PDF Converter is free to use online."}},
+    {"@type":"Question","name":"Can I convert multiple images into one PDF?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can select multiple JPG, PNG and WEBP images and combine them into one PDF."}},
+    {"@type":"Question","name":"Are my images uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. PDF generation happens directly in your browser."}},
+    {"@type":"Question","name":"Which image formats are supported?","acceptedAnswer":{"@type":"Answer","text":"The converter supports JPG, JPEG, PNG and WEBP images."}}
+  ]
+}
+</script>
+
+
+<style>
+#uploadBox{transition:.2s}
+#uploadBox:hover{background:rgba(13,110,253,.04)}
+#uploadBox.border-primary{background:rgba(13,110,253,.06)}
+#imagePreview .card{overflow:hidden}
+@media(max-width:576px){
+    #uploadBox{padding:35px 15px!important}
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="border-bottom bg-white">
+
+    <div class="container py-3">
+
+        <a href="../index.html"
+           class="text-decoration-none">
+
+            <h2 class="m-0 fw-bold">
+                <i class="bi bi-tools"></i>
+                EasyTools365
+            </h2>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+<div class="container py-5">
+
+
+    <!-- ================= BREADCRUMB ================= -->
+
+    <nav aria-label="breadcrumb"
+         class="mb-4">
+
+        <ol class="breadcrumb">
+
+            <li class="breadcrumb-item">
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+            </li>
+
+            <li class="breadcrumb-item">
+
+                <a href="../index.html#tools">
+                    Tools
+                </a>
+
+            </li>
+
+            <li class="breadcrumb-item active"
+                aria-current="page">
+
+                Image to PDF Converter
+
+            </li>
+
+        </ol>
+
+    </nav>
+
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="text-center mb-5">
+
+        <h1 class="fw-bold">
+            Image to PDF Converter
+        </h1>
+
+        <p class="lead text-muted">
+            Convert JPG, PNG and WEBP images into PDF online for free. No upload required.
+        </p>
+
+        <p class="text-muted small mb-0">
+
+            <i class="bi bi-clock-history"></i>
+
+            Last Updated: August 2026
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= TOOL ================= -->
+
+    <section>
+
+        <div class="card shadow-lg border-0 rounded-4">
+
+            <div class="card-body py-5">
+
+
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <label id="uploadBox"
+                               class="border border-2 border-dashed rounded-4 p-5 text-center d-block"
+                               style="cursor:pointer"
+                               for="imageInput">
+                            <i class="bi bi-cloud-arrow-up fs-1 text-primary"></i>
+                            <h2 class="h5 mt-3">Drag &amp; Drop Images Here</h2>
+                            <p class="text-muted">or click Select Images</p>
+                            <span class="btn btn-outline-primary">Select Images</span>
+                        </label>
+
+                        <input type="file"
+                               id="imageInput"
+                               accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp"
+                               multiple
+                               hidden>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="d-grid gap-2">
+                            <button id="convertBtn"
+                                    type="button"
+                                    class="btn btn-primary btn-lg">
+                                <i class="bi bi-file-earmark-pdf"></i>
+                                Convert to PDF
+                            </button>
+
+                            <button id="clearBtn"
+                                    type="button"
+                                    class="btn btn-outline-secondary">
+                                <i class="bi bi-trash"></i>
+                                Clear
+                            </button>
+
+                            <a id="downloadBtn"
+                               class="btn btn-success"
+                               style="display:none"
+                               download="easytools365-images.pdf">
+                                <i class="bi bi-download"></i>
+                                Download PDF
+                            </a>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div id="pdfStatus"
+                             class="alert alert-light text-center mb-0">
+                            Select images then click <strong>Convert to PDF</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="imagePreview" class="row g-3 mt-3"></div>
+
+                <div class="alert alert-success text-center mt-4 mb-0">
+                    <i class="bi bi-shield-check"></i>
+                    Your images are processed locally in your browser.
+                </div>
+                <!-- =========================================
+                     TOOL END
+                     ========================================= -->
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SHARE ================= -->
+
+    <div class="text-center mt-4 mb-5">
+
+        <button type="button"
+                class="btn btn-primary me-2"
+                onclick="shareTool()">
+
+            <i class="bi bi-share-fill"></i>
+
+            Share
+
+        </button>
+
+
+        <button type="button"
+                class="btn btn-success"
+                onclick="copyToolLink()">
+
+            <i class="bi bi-link-45deg"></i>
+
+            Copy Link
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="card border-0 shadow-sm mb-4">
+
+        <div class="card-body p-4 p-md-5">
+
+            <h2 class="h3 mb-3">
+
+                About Image to PDF Converter
+
+            </h2>
+
+            <p>
+                This free Image to PDF Converter lets you combine multiple JPG, PNG, and WEBP images into a single PDF directly in your browser. Your files stay on your device for maximum privacy.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= HOW TO USE ================= -->
+
+    <section class="card border-0 shadow-sm mb-4">
+
+        <div class="card-body p-4 p-md-5">
+
+            <h2 class="h3 mb-3">
+
+                How to Use Image to PDF Converter
+
+            </h2>
+
+            <p>
+                Follow these simple steps to use this tool.
+            </p>
+
+
+            <ol>
+
+                <li class="mb-2">
+                    Click Select Images or drag and drop JPG, PNG or WEBP images into the upload area.
+                </li>
+
+                <li class="mb-2">
+                    Preview your selected images and remove any unwanted image.
+                </li>
+
+                <li class="mb-2">
+                    Click Convert to PDF to combine the images into one PDF.
+                </li>
+
+                <li class="mb-2">
+                    Click Download PDF to save the generated document.
+                </li>
+
+            </ol>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="card border-0 shadow-sm mb-4">
+
+        <div class="card-body p-4 p-md-5">
+
+            <h2 class="h3 mb-4">
+
+                Features of Image to PDF Converter
+
+            </h2>
+
+
+            <div class="row g-4">
+
+
+                <div class="col-md-6">
+
+                    <h3 class="h5">
+
+                        <i class="bi bi-check-circle text-primary"></i>
+
+                        Multiple Images
+
+                    </h3>
+
+                    <p class="text-muted">
+                        Combine multiple JPG, PNG and WEBP images into one PDF.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <h3 class="h5">
+
+                        <i class="bi bi-check-circle text-primary"></i>
+
+                        Drag & Drop
+
+                    </h3>
+
+                    <p class="text-muted">
+                        Select files normally or drag them directly into the upload area.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <h3 class="h5">
+
+                        <i class="bi bi-check-circle text-primary"></i>
+
+                        Browser Processing
+
+                    </h3>
+
+                    <p class="text-muted">
+                        Images are processed locally in your browser and do not need to be uploaded.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <h3 class="h5">
+
+                        <i class="bi bi-check-circle text-primary"></i>
+
+                        A4 PDF Output
+
+                    </h3>
+
+                    <p class="text-muted">
+                        Each image is placed proportionally on an A4 PDF page.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= TIPS ================= -->
+
+    <section class="card border-0 shadow-sm mb-4">
+
+        <div class="card-body p-4 p-md-5">
+
+            <h2 class="h3 mb-3">
+
+                Tips for Using Image to PDF Converter
+
+            </h2>
+
+            <p>
+                For the best result, use clear images and review the previews before creating the PDF.
+            </p>
+
+
+            <ul>
+
+                <li>
+                    Select only the images you want included in the final PDF.
+                </li>
+
+                <li>
+                    Use JPG, PNG or WEBP files.
+                </li>
+
+                <li>
+                    Remove unwanted images before clicking Convert to PDF.
+                </li>
+
+                <li>
+                    Keep the original images if you need to edit the document later.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FAQ ================= -->
+
+    <section class="card border-0 shadow-sm mb-4">
+
+        <div class="card-body p-4 p-md-5">
+
+            <h2 class="h3 mb-4">
+
+                Frequently Asked Questions
+
+            </h2>
+
+
+            <div class="accordion"
+                 id="faqAccordion">
+
+
+                <!-- FAQ 1 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header">
+
+                        <button class="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqOne">
+
+                            Is the Image to PDF Converter free?
+
+                        </button>
+
+                    </h3>
+
+
+                    <div id="faqOne"
+                         class="accordion-collapse collapse show"
+                         data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            Yes. EasyTools365 Image to PDF Converter is free to use online.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 2 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header">
+
+                        <button class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqTwo">
+
+                            Can I convert multiple images into one PDF?
+
+                        </button>
+
+                    </h3>
+
+
+                    <div id="faqTwo"
+                         class="accordion-collapse collapse"
+                         data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            Yes. You can select multiple JPG, PNG and WEBP images and combine them into one PDF.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 3 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header">
+
+                        <button class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqThree">
+
+                            Are my images uploaded to a server?
+
+                        </button>
+
+                    </h3>
+
+
+                    <div id="faqThree"
+                         class="accordion-collapse collapse"
+                         data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            No. PDF generation happens directly in your browser.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 4 -->
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header">
+
+                        <button class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqFour">
+
+                            Which image formats are supported?
+
+                        </button>
+
+                    </h3>
+
+
+                    <div id="faqFour"
+                         class="accordion-collapse collapse"
+                         data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body">
+
+                            The converter supports JPG, JPEG, PNG and WEBP images.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= RELATED TOOLS ================= -->
+
+    <section class="card border-0 shadow-sm mb-4">
+
+        <div class="card-body p-4 p-md-5">
+
+            <h2 class="h3 mb-3">
+
+                Related Tools
+
+            </h2>
+
+            <p>
+                You may also find these EasyTools365 tools useful.
+            </p>
+
+
+            <div class="row g-3">
+
+
+                <div class="col-md-4">
+
+                    <a href="jpg-to-pdf.html"
+                       class="btn btn-outline-primary w-100">
+
+                        JPG to PDF
+
+                    </a>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <a href="image-compressor.html"
+                       class="btn btn-outline-primary w-100">
+
+                        Image Compressor
+
+                    </a>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <a href="image-resizer.html"
+                       class="btn btn-outline-primary w-100">
+
+                        Image Resizer
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= BROWSE TOOLS ================= -->
+
+    <section class="card border-0 bg-primary text-white mb-5">
+
+        <div class="card-body text-center p-4 p-md-5">
+
+            <h2 class="h3">
+
+                Need More Free Online Tools?
+
+            </h2>
+
+            <p>
+                Explore EasyTools365 for more useful tools for PDF,
+                images, text, calculations, developers and everyday tasks.
+            </p>
+
+            <a href="../index.html#tools"
+               class="btn btn-light">
+
+                Browse All Tools
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="border-top mt-5 py-5">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <div class="col-md-5">
+
+                <h3 class="h5 fw-bold">
+
+                    <i class="bi bi-tools"></i>
+
+                    EasyTools365
+
+                </h3>
+
+                <p class="text-muted mb-0">
+
+                    Simple and useful online tools for everyday digital tasks.
+
+                </p>
+
+            </div>
+
+
+            <div class="col-6 col-md-3">
+
+                <h3 class="h6 fw-bold">
+                    Tools
+                </h3>
+
+                <a href="../categories/text-tools.html"
+                   class="d-block text-decoration-none mb-2">
+
+                    Text
+
+                </a>
+
+                <a href="../categories/image-tools.html"
+                   class="d-block text-decoration-none mb-2">
+
+                    Image
+
+                </a>
+
+                <a href="../categories/pdf-tools.html"
+                   class="d-block text-decoration-none mb-2">
+
+                    PDF
+
+                </a>
+
+                <a href="../categories/developer-tools.html"
+                   class="d-block text-decoration-none mb-2">
+
+                    Developer
+
+                </a>
+
+            </div>
+
+
+            <div class="col-6 col-md-4">
+
+                <h3 class="h6 fw-bold">
+                    Company
+                </h3>
+
+                <a href="../pages/about.html"
+                   class="d-block text-decoration-none mb-2">
+
+                    About
+
+                </a>
+
+                <a href="../pages/contact.html"
+                   class="d-block text-decoration-none mb-2">
+
+                    Contact
+
+                </a>
+
+                <a href="../pages/privacy-policy.html"
+                   class="d-block text-decoration-none mb-2">
+
+                    Privacy Policy
+
+                </a>
+
+                <a href="../pages/terms.html"
+                   class="d-block text-decoration-none mb-2">
+
+                    Terms
+
+                </a>
+
+                <a href="../pages/disclaimer.html"
+                   class="d-block text-decoration-none mb-2">
+
+                    Disclaimer
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <hr class="my-4">
+
+
+        <div class="text-center text-muted small">
+
+            © 2026 EasyTools365. All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- jsPDF -->
+
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"
+        onerror="this.onerror=null;this.src='https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js'"></script>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+let selectedImages = [];
+let pdfDoc = null;
+
+const imageInput = document.getElementById("imageInput");
+const imagePreview = document.getElementById("imagePreview");
+const uploadBox = document.getElementById("uploadBox");
+const convertBtn = document.getElementById("convertBtn");
+const clearBtn = document.getElementById("clearBtn");
+const downloadBtn = document.getElementById("downloadBtn");
+const pdfStatus = document.getElementById("pdfStatus");
+
+imageInput.addEventListener("change", function(event) {
+    addImages(Array.from(event.target.files));
+    imageInput.value = "";
+});
+
+uploadBox.addEventListener("dragover", function(event) {
+    event.preventDefault();
+    uploadBox.classList.add("border-primary");
+});
+
+uploadBox.addEventListener("dragleave", function() {
+    uploadBox.classList.remove("border-primary");
+});
+
+uploadBox.addEventListener("drop", function(event) {
+    event.preventDefault();
+    uploadBox.classList.remove("border-primary");
+    addImages(Array.from(event.dataTransfer.files));
+});
+
+convertBtn.addEventListener("click", convertToPDF);
+clearBtn.addEventListener("click", clearImages);
+
+function addImages(files) {
+    const valid = files.filter(function(file) {
+        return ["image/jpeg", "image/png", "image/webp"].includes(file.type);
+    });
+
+    selectedImages.push(...valid);
+    renderPreview();
+
+    if (files.length !== valid.length) {
+        setStatus("Some files were skipped because they are not supported images.", "warning");
+    } else {
+        setStatus(
+            selectedImages.length + " image(s) selected.",
+            "light"
+        );
+    }
+}
+
+function renderPreview() {
+    imagePreview.innerHTML = "";
+
+    selectedImages.forEach(function(file, index) {
+        const reader = new FileReader();
+
+        reader.onload = function(event) {
+            const col = document.createElement("div");
+            col.className = "col-6 col-md-4 col-lg-3";
+
+            col.innerHTML = `
+                <div class="card h-100">
+                    <img src="${event.target.result}"
+                         class="card-img-top"
+                         style="height:170px;object-fit:cover"
+                         alt="Selected image">
+                    <div class="card-body p-2 text-center">
+                        <p class="small text-truncate mb-2"
+                           title="${escapeHtml(file.name)}">
+                           ${escapeHtml(file.name)}
+                        </p>
+                        <button type="button"
+                                class="btn btn-sm btn-outline-danger delete-image">
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            col.querySelector(".delete-image").addEventListener("click", function() {
+                selectedImages.splice(index, 1);
+                pdfDoc = null;
+                downloadBtn.style.display = "none";
+                renderPreview();
+
+                setStatus(
+                    selectedImages.length
+                        ? selectedImages.length + " image(s) selected."
+                        : "Select images then click <strong>Convert to PDF</strong>",
+                    "light"
+                );
+            });
+
+            imagePreview.appendChild(col);
+        };
+
+        reader.readAsDataURL(file);
+    });
+}
+
+async function convertToPDF() {
+    if (!selectedImages.length) {
+        setStatus("Please select images first.", "danger");
+        return;
+    }
+
+    if (!window.jspdf || !window.jspdf.jsPDF) {
+        setStatus(
+            "PDF library is still loading. Please wait a moment and try again.",
+            "warning"
+        );
+        return;
+    }
+
+    convertBtn.disabled = true;
+    downloadBtn.style.display = "none";
+    setStatus("Creating PDF...", "primary");
+
+    try {
+        const { jsPDF } = window.jspdf;
+
+        pdfDoc = new jsPDF({
+            orientation: "portrait",
+            unit: "mm",
+            format: "a4"
+        });
+
+        for (let i = 0; i < selectedImages.length; i++) {
+            if (i > 0) {
+                pdfDoc.addPage();
+            }
+
+            const dataURL = await fileToDataURL(selectedImages[i]);
+            const image = await prepareImage(dataURL);
+
+            const pageWidth = 210;
+            const pageHeight = 297;
+            const margin = 10;
+            const maxWidth = pageWidth - margin * 2;
+            const maxHeight = pageHeight - margin * 2;
+
+            const ratio = Math.min(
+                maxWidth / image.width,
+                maxHeight / image.height
+            );
+
+            const width = image.width * ratio;
+            const height = image.height * ratio;
+
+            pdfDoc.addImage(
+                image.dataURL,
+                "JPEG",
+                (pageWidth - width) / 2,
+                (pageHeight - height) / 2,
+                width,
+                height,
+                undefined,
+                "FAST"
+            );
+        }
+
+        const blob = pdfDoc.output("blob");
+
+        if (downloadBtn.dataset.url) {
+            URL.revokeObjectURL(downloadBtn.dataset.url);
+        }
+
+        const url = URL.createObjectURL(blob);
+        downloadBtn.href = url;
+        downloadBtn.dataset.url = url;
+        downloadBtn.style.display = "inline-block";
+
+        setStatus("✅ PDF berhasil dibuat.<br>Click Download PDF.", "success");
+    } catch (error) {
+        console.error(error);
+        pdfDoc = null;
+        setStatus("❌ Failed to create PDF. Please try another image.", "danger");
+    } finally {
+        convertBtn.disabled = false;
+    }
+}
+
+function fileToDataURL(file) {
+    return new Promise(function(resolve, reject) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            resolve(event.target.result);
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
+
+function prepareImage(dataURL) {
+    return new Promise(function(resolve, reject) {
+        const image = new Image();
+
+        image.onload = function() {
+            const canvas = document.createElement("canvas");
+            canvas.width = image.naturalWidth || image.width;
+            canvas.height = image.naturalHeight || image.height;
+
+            const context = canvas.getContext("2d");
+
+            if (!context) {
+                reject(new Error("Canvas is not supported."));
+                return;
+            }
+
+            context.fillStyle = "#ffffff";
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            context.drawImage(image, 0, 0);
+
+            resolve({
+                dataURL: canvas.toDataURL("image/jpeg", 0.92),
+                width: canvas.width,
+                height: canvas.height
+            });
+        };
+
+        image.onerror = function() {
+            reject(new Error("Unable to read image."));
+        };
+
+        image.src = dataURL;
+    });
+}
+
+function clearImages() {
+    selectedImages = [];
+    pdfDoc = null;
+    imagePreview.innerHTML = "";
+    downloadBtn.style.display = "none";
+
+    if (downloadBtn.dataset.url) {
+        URL.revokeObjectURL(downloadBtn.dataset.url);
+        delete downloadBtn.dataset.url;
+    }
+
+    setStatus(
+        "Select images then click <strong>Convert to PDF</strong>",
+        "light"
+    );
+}
+
+function setStatus(message, type) {
+    pdfStatus.innerHTML = message;
+    pdfStatus.className = "alert alert-" + type + " text-center mb-0";
+}
+
+function escapeHtml(value) {
+    return value.replace(/[&<>"']/g, function(char) {
+        const entities = {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#039;"
+        };
+        return entities[char];
+    });
+}
+
+function shareTool() {
+    if (navigator.share) {
+        navigator.share({
+            title: document.title,
+            text: "Check out this free online tool from EasyTools365.",
+            url: window.location.href
+        }).catch(function () {});
+    } else {
+        copyToolLink();
+    }
+}
+
+function copyToolLink() {
+    navigator.clipboard.writeText(window.location.href)
+        .then(function () {
+            alert("Tool link copied to clipboard.");
+        })
+        .catch(function () {
+            alert("Unable to copy the link.");
+        });
+}
+</script>
+
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

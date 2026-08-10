@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Prompt Improver - Improve Prompts for Text, Image & Video AI | EasyTools365</title>
+<meta name="description" content="Free AI Prompt Improver for turning simple prompts into clearer, more detailed prompts for text, image and video AI tools. Improve prompts instantly in your browser.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/ai-prompt-improver.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Prompt Improver | EasyTools365">
+<meta property="og:description" content="Improve simple prompts for text, image and video AI with structured instructions, style and improvement levels.">
+<meta property="og:url" content="https://easytools365.com/tools/ai-prompt-improver.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Prompt Improver | EasyTools365">
+<meta name="twitter:description" content="Turn simple AI prompts into clearer, more detailed and structured prompts for free.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:45px 15px 70px}
+.tool-wrapper{max-width:950px;margin:auto}
+.breadcrumb{margin-bottom:25px}
+.back-home{display:inline-flex;align-items:center;gap:8px;margin-bottom:25px;color:var(--primary);font-weight:600;text-decoration:none}
+.tool-header{text-align:center;margin-bottom:32px}
+.tool-icon-large{display:inline-flex;width:74px;height:74px;align-items:center;justify-content:center;margin-bottom:18px;border-radius:22px;background:rgba(124,58,237,.1);color:#7c3aed;font-size:34px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:760px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.improver-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.improver-card{padding:30px}
+.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:20px}
+.field-group{margin-bottom:20px}
+.field-group label{display:block;margin-bottom:8px;font-weight:600}
+.field-control{width:100%;padding:13px 15px;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none}
+.field-control:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.prompt-area{margin-top:10px}
+#originalPrompt,#improvedPrompt{width:100%;min-height:190px;padding:18px;border:1px solid var(--border);border-radius:15px;background:var(--background);color:var(--text);outline:none;resize:vertical;line-height:1.7}
+#improvedPrompt{min-height:320px}
+#originalPrompt:focus,#improvedPrompt:focus{border-color:var(--primary)}
+.counter{margin-top:7px;text-align:right;color:var(--text-light);font-size:13px}
+.improve-btn{width:100%;margin-top:20px;padding:15px;border:0;border-radius:12px;background:var(--primary);color:#fff;font-size:16px;font-weight:700}
+.improve-btn:hover{opacity:.92}
+.result-area{display:none;margin-top:30px}
+.result-title{margin-bottom:10px;font-size:20px;font-weight:700}
+.action-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:15px}
+.action-btn{padding:12px;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);font-weight:600}
+.action-btn:hover{border-color:var(--primary);color:var(--primary)}
+.info-note{margin-top:24px;padding:15px;border-radius:12px;text-align:center;background:rgba(37,99,235,.08);color:var(--text-light);font-size:13px}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:22px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+body.dark-mode .tool-icon-large{background:#312e81;color:#ddd6fe}
+body.dark-mode .field-control,body.dark-mode #originalPrompt,body.dark-mode #improvedPrompt,body.dark-mode .action-btn{background:#0f172a}
+@media(max-width:700px){
+.improver-card,.info-card{padding:20px}
+.form-grid,.action-buttons,.related-grid{grid-template-columns:1fr}
+.tool-header h1{font-size:31px}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 AI Prompt Improver","url":"https://easytools365.com/tools/ai-prompt-improver.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","description":"Free browser-based tool for improving prompts for text, image and video AI tasks.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Improve an AI Prompt","description":"Improve a simple AI prompt with the EasyTools365 AI Prompt Improver.","step":[
+{"@type":"HowToStep","position":1,"name":"Choose the AI type","text":"Select Text / Chat AI, Image AI or Video AI."},
+{"@type":"HowToStep","position":2,"name":"Choose style","text":"Select a style such as professional, creative, cinematic, realistic, viral or educational."},
+{"@type":"HowToStep","position":3,"name":"Choose improvement level","text":"Select Standard, Detailed or Professional improvement."},
+{"@type":"HowToStep","position":4,"name":"Enter your original prompt","text":"Paste or type the prompt you want to improve."},
+{"@type":"HowToStep","position":5,"name":"Improve and copy","text":"Click Improve Prompt, review the result and copy the improved prompt."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the AI Prompt Improver free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 AI Prompt Improver is free to use in your browser."}},
+{"@type":"Question","name":"Does the tool require an AI API key?","acceptedAnswer":{"@type":"Answer","text":"No. The free version improves prompts using structured templates directly in your browser and does not require an API key."}},
+{"@type":"Question","name":"What types of prompts can it improve?","acceptedAnswer":{"@type":"Answer","text":"It can improve prompts for text or chat AI, image AI and video AI."}},
+{"@type":"Question","name":"Can I copy the improved prompt?","acceptedAnswer":{"@type":"Answer","text":"Yes. After improving a prompt, use the Copy Prompt button to copy the result."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/ai-tools.html">AI Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">AI Prompt Improver</li>
+</ol>
+</nav>
+
+<a href="../index.html" class="back-home"><i class="bi bi-arrow-left"></i> Back to Home</a>
+
+<header class="tool-header">
+<div class="tool-icon-large"><i class="bi bi-magic"></i></div>
+<h1>AI Prompt Improver</h1>
+<p>Transform a simple idea into a clearer, more detailed and structured prompt for text, image and video AI tools.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="improver-card">
+
+<div class="form-grid">
+
+<div class="field-group">
+<label for="aiType">AI Type</label>
+<select id="aiType" class="field-control">
+<option value="text">Text / Chat AI</option>
+<option value="image">Image AI</option>
+<option value="video">Video AI</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="promptStyle">Style</label>
+<select id="promptStyle" class="field-control">
+<option value="professional">Professional</option>
+<option value="creative">Creative</option>
+<option value="cinematic">Cinematic</option>
+<option value="realistic">Realistic</option>
+<option value="viral">Viral / Engaging</option>
+<option value="educational">Educational</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="level">Improvement Level</label>
+<select id="level" class="field-control">
+<option value="standard">Standard</option>
+<option value="detailed" selected>Detailed</option>
+<option value="professional">Professional</option>
+</select>
+</div>
+
+</div>
+
+<div class="prompt-area">
+<label for="originalPrompt" class="fw-semibold mb-2">Your Original Prompt</label>
+<textarea id="originalPrompt" maxlength="3000" placeholder="Example: Create a video of a sports car driving through a city at night..."></textarea>
+<div class="counter"><span id="inputCount">0</span>/3000 characters</div>
+</div>
+
+<button id="improveButton" class="improve-btn" type="button"><i class="bi bi-stars"></i> Improve Prompt</button>
+
+<div id="resultArea" class="result-area">
+<div class="result-title"><i class="bi bi-magic"></i> Improved Prompt</div>
+
+<textarea id="improvedPrompt" aria-label="Improved AI prompt"></textarea>
+
+<div class="counter"><span id="outputCount">0</span> characters</div>
+
+<div class="action-buttons">
+<button id="copyButton" class="action-btn" type="button"><i class="bi bi-copy"></i> Copy Prompt</button>
+<button id="regenerateButton" class="action-btn" type="button"><i class="bi bi-arrow-repeat"></i> Improve Again</button>
+<button id="clearButton" class="action-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+</div>
+
+<div class="info-note">
+<i class="bi bi-lightning-charge"></i>
+This free version improves prompts using structured templates directly in your browser. No API key is required.
+</div>
+
+</section>
+
+<section class="info-card">
+<h2>What Is an AI Prompt Improver?</h2>
+<p>An AI Prompt Improver helps transform a simple instruction into a clearer, more detailed and structured prompt. Better-structured instructions can make it easier for an AI system to understand the objective, context, style and expected output.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Improve an AI Prompt</h2>
+<ol>
+<li>Select the AI type: Text / Chat AI, Image AI or Video AI.</li>
+<li>Choose a style that matches your desired result.</li>
+<li>Select Standard, Detailed or Professional improvement.</li>
+<li>Enter or paste your original prompt.</li>
+<li>Click <strong>Improve Prompt</strong>.</li>
+<li>Review and customize the improved prompt.</li>
+<li>Copy the result and use it with your preferred AI platform.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>Why Use an AI Prompt Improver?</h2>
+<p>Simple prompts can sometimes leave important details unclear. Improving a prompt can help organize the objective, requirements, style, constraints and quality expectations into a more useful instruction.</p>
+<ul class="mb-0">
+<li>Make instructions clearer.</li>
+<li>Add relevant context and requirements.</li>
+<li>Structure prompts for different AI types.</li>
+<li>Improve consistency and specificity.</li>
+<li>Save time when rewriting basic ideas.</li>
+</ul>
+</section>
+
+<section class="info-card">
+<h2>Text, Image and Video Prompt Improvement</h2>
+<p>For text AI, the improver focuses on objectives, clarity, organization and useful output. For image AI, it adds guidance for subject, composition, lighting, camera, detail and visual consistency. For video AI, it adds scene, movement, camera, lighting, continuity and visual-quality guidance.</p>
+</section>
+
+<section class="info-card">
+<h2>Does This Tool Require an AI API Key?</h2>
+<p>No. The current free version uses structured templates directly in your browser. Your prompt is processed by the page's JavaScript and no AI API key is required.</p>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the AI Prompt Improver free?</h3>
+<p>Yes. The EasyTools365 AI Prompt Improver is free to use in your browser.</p>
+
+<h3>Does the tool require an AI API key?</h3>
+<p>No. The free version improves prompts using structured templates directly in your browser.</p>
+
+<h3>What types of prompts can it improve?</h3>
+<p>It can improve prompts for text or chat AI, image AI and video AI.</p>
+
+<h3>Can I copy the improved prompt?</h3>
+<p>Yes. Click <strong>Copy Prompt</strong> after generating the improved prompt.</p>
+</section>
+
+<section class="info-card">
+<h2>Related AI Tools</h2>
+<div class="related-grid">
+<a href="ai-prompt-generator.html" class="btn btn-outline-primary">AI Prompt Generator</a>
+<a href="ai-image-prompt-generator.html" class="btn btn-outline-primary">AI Image Prompt Generator</a>
+<a href="../categories/ai-tools.html" class="btn btn-outline-primary">All AI Tools</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for AI, images, PDF, text, calculators and developer tasks.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+
+        const aiType =
+            document.getElementById("aiType");
+
+        const promptStyle =
+            document.getElementById("promptStyle");
+
+        const level =
+            document.getElementById("level");
+
+        const originalPrompt =
+            document.getElementById("originalPrompt");
+
+        const improvedPrompt =
+            document.getElementById("improvedPrompt");
+
+        const improveButton =
+            document.getElementById("improveButton");
+
+        const regenerateButton =
+            document.getElementById("regenerateButton");
+
+        const copyButton =
+            document.getElementById("copyButton");
+
+        const clearButton =
+            document.getElementById("clearButton");
+
+        const resultArea =
+            document.getElementById("resultArea");
+
+        const inputCount =
+            document.getElementById("inputCount");
+
+        const outputCount =
+            document.getElementById("outputCount");
+
+
+        /*
+        =========================
+        CHARACTER COUNTER
+        =========================
+        */
+
+        originalPrompt.addEventListener(
+            "input",
+            function () {
+
+                inputCount.textContent =
+                    originalPrompt.value.length;
+
+            }
+        );
+
+
+        /*
+        =========================
+        STYLE TEXT
+        =========================
+        */
+
+        function getStyleText() {
+
+            const styles = {
+
+                professional:
+                    "professional, polished, clear and high-quality",
+
+                creative:
+                    "creative, imaginative, original and visually interesting",
+
+                cinematic:
+                    "cinematic, dramatic, immersive and visually striking",
+
+                realistic:
+                    "realistic, natural, believable and highly detailed",
+
+                viral:
+                    "engaging, attention-grabbing, memorable and optimized for audience interest",
+
+                educational:
+                    "clear, educational, informative and easy to understand"
+
+            };
+
+
+            return styles[
+                promptStyle.value
+            ];
+
+        }
+
+
+        /*
+        =========================
+        LEVEL TEXT
+        =========================
+        */
+
+        function getLevelText() {
+
+            const levels = {
+
+                standard:
+                    "Improve clarity and add the most important missing details.",
+
+                detailed:
+                    "Add useful context, specific details, constraints, structure and quality requirements.",
+
+                professional:
+                    "Rewrite the request as an advanced professional prompt with precise context, constraints, desired output, quality requirements and consistency instructions."
+
+            };
+
+
+            return levels[
+                level.value
+            ];
+
+        }
+
+
+        /*
+        =========================
+        GENERATE PROMPT
+        =========================
+        */
+
+        function improvePrompt() {
+
+            const input =
+                originalPrompt.value.trim();
+
+
+            if (!input) {
+
+                alert(
+                    "Please enter a prompt first."
+                );
+
+                originalPrompt.focus();
+
+                return;
+
+            }
+
+
+            let result = "";
+
+
+            /*
+            TEXT AI
+            */
+
+            if (aiType.value === "text") {
+
+                result =
+`You are an expert AI assistant.
+
+PRIMARY TASK:
+${input}
+
+STYLE:
+Use a ${getStyleText()} approach.
+
+INSTRUCTIONS:
+${getLevelText()}
+
+REQUIREMENTS:
+- Understand the user's main objective before answering.
+- Provide accurate and relevant information.
+- Organize the response clearly.
+- Add useful context where appropriate.
+- Avoid unnecessary repetition.
+- Use practical examples when they improve understanding.
+- Keep the response focused on the requested task.
+
+OUTPUT:
+Produce a complete, useful and well-structured final response that directly satisfies the request.`;
+
+            }
+
+
+            /*
+            IMAGE AI
+            */
+
+            if (aiType.value === "image") {
+
+                result =
+`Create a high-quality AI-generated image based on the following concept:
+
+MAIN SUBJECT:
+${input}
+
+VISUAL STYLE:
+${getStyleText()}.
+
+SCENE & COMPOSITION:
+Clearly define the main subject, surrounding environment, foreground and background. Use a balanced composition with a strong focal point.
+
+LIGHTING:
+Use lighting that complements the scene and enhances depth, atmosphere and visual impact.
+
+CAMERA:
+Choose an appropriate camera angle, perspective, framing and depth of field for the subject.
+
+DETAIL:
+${getLevelText()}
+
+QUALITY:
+Highly detailed, clean composition, strong visual coherence, realistic textures where appropriate, professional image quality.
+
+CONSISTENCY:
+Keep anatomy, objects, lighting, perspective and environmental details visually consistent.
+
+AVOID:
+Unwanted text, distorted objects, duplicated elements, malformed details, unnecessary clutter and inconsistent lighting.`;
+
+            }
+
+
+            /*
+            VIDEO AI
+            */
+
+            if (aiType.value === "video") {
+
+                result =
+`Create a high-quality AI video based on the following concept:
+
+MAIN SCENE:
+${input}
+
+VISUAL STYLE:
+${getStyleText()}.
+
+OPENING SHOT:
+Establish the environment and clearly introduce the main subject.
+
+SUBJECT ACTION:
+Describe natural and consistent movement appropriate to the scene.
+
+CAMERA MOVEMENT:
+Use smooth cinematic camera movement such as tracking, dolly, pan, tilt or slow push-in where appropriate.
+
+LIGHTING & ATMOSPHERE:
+Use coherent lighting, realistic shadows and atmospheric depth that match the environment.
+
+DETAIL LEVEL:
+${getLevelText()}
+
+VISUAL CONSISTENCY:
+Maintain consistent characters, objects, colors, proportions and environment throughout the shot.
+
+QUALITY:
+Smooth motion, detailed textures, natural physics, professional composition and high visual quality.
+
+AVOID:
+Flickering, warped objects, duplicated subjects, sudden scene changes, unstable camera movement, unwanted text and visual artifacts.`;
+
+            }
+
+
+            improvedPrompt.value =
+                result;
+
+
+            outputCount.textContent =
+                result.length;
+
+
+            resultArea.style.display =
+                "block";
+
+
+            resultArea.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+        }
+
+
+        /*
+        =========================
+        BUTTONS
+        =========================
+        */
+
+        improveButton.addEventListener(
+            "click",
+            improvePrompt
+        );
+
+
+        regenerateButton.addEventListener(
+            "click",
+            improvePrompt
+        );
+
+
+        copyButton.addEventListener(
+            "click",
+            async function () {
+
+                if (!improvedPrompt.value) {
+                    return;
+                }
+
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        improvedPrompt.value
+                    );
+
+
+                    copyButton.innerHTML =
+                        '<i class="bi bi-check-lg"></i> Copied!';
+
+
+                    setTimeout(
+                        function () {
+
+                            copyButton.innerHTML =
+                                '<i class="bi bi-copy"></i> Copy Prompt';
+
+                        },
+                        1500
+                    );
+
+                } catch (error) {
+
+                    improvedPrompt.select();
+
+                    document.execCommand(
+                        "copy"
+                    );
+
+                }
+
+            }
+        );
+
+
+        clearButton.addEventListener(
+            "click",
+            function () {
+
+                originalPrompt.value = "";
+
+                improvedPrompt.value = "";
+
+                inputCount.textContent = "0";
+
+                outputCount.textContent = "0";
+
+                resultArea.style.display =
+                    "none";
+
+                originalPrompt.focus();
+
+            }
+        );
+
+    </script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

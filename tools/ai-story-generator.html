@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Story Generator - Free Story Maker for YouTube, Horror, Anime & Fantasy | EasyTools365</title>
+<meta name="description" content="Free AI Story Generator for creating structured short stories, YouTube stories, horror, kids, anime and fantasy stories. Generate story ideas directly in your browser without an API key.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/ai-story-generator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Story Generator | EasyTools365">
+<meta property="og:description" content="Create free stories for YouTube, Shorts, horror, kids, anime, fantasy and creative writing with customizable characters, tone and endings.">
+<meta property="og:url" content="https://easytools365.com/tools/ai-story-generator.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Story Generator | EasyTools365">
+<meta name="twitter:description" content="Create structured stories for videos and creative writing directly in your browser.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:45px 15px 70px}
+.tool-wrapper{max-width:1000px;margin:auto}
+.breadcrumb{margin-bottom:25px}
+.back-home{display:inline-flex;align-items:center;gap:8px;margin-bottom:25px;color:var(--primary);font-weight:600;text-decoration:none}
+.tool-header{margin-bottom:32px;text-align:center}
+.tool-icon-large{display:inline-flex;width:74px;height:74px;align-items:center;justify-content:center;margin-bottom:18px;border-radius:22px;background:rgba(124,58,237,.1);color:#7c3aed;font-size:34px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:760px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.generator-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.generator-card{padding:30px}
+.field-group{margin-bottom:20px}
+.field-group label{display:block;margin-bottom:8px;font-weight:600}
+.field-control{width:100%;padding:13px 15px;border:1px solid var(--border);border-radius:12px;background:var(--background);color:var(--text);outline:none}
+.field-control:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+textarea.field-control{min-height:125px;resize:vertical}
+.form-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.form-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.generate-btn{width:100%;padding:15px;border:0;border-radius:12px;background:var(--primary);color:#fff;font-size:16px;font-weight:700}
+.generate-btn:hover{opacity:.92}
+.result-area{display:none;margin-top:30px}
+.result-header{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:15px}
+.result-header h2{margin:0;font-size:20px;font-weight:700}
+.copy-btn,.action-btn{padding:10px 14px;border:1px solid var(--border);border-radius:10px;background:var(--background);color:var(--text);font-weight:600}
+.story-output{width:100%;min-height:600px;padding:20px;border:1px solid var(--border);border-radius:16px;background:var(--background);color:var(--text);line-height:1.8;resize:vertical;outline:none}
+.result-stats{display:flex;justify-content:space-between;gap:15px;margin-top:8px;color:var(--text-light);font-size:12px}
+.bottom-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.info-note{margin-top:24px;padding:15px;border-radius:12px;background:rgba(124,58,237,.08);color:var(--text-light);text-align:center;font-size:13px}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:22px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+body.dark-mode .field-control,body.dark-mode .story-output,body.dark-mode .copy-btn,body.dark-mode .action-btn{background:#0f172a}
+body.dark-mode .tool-icon-large{background:#4c1d95;color:#ddd6fe}
+@media(max-width:750px){
+.generator-card,.info-card{padding:20px}
+.form-grid-2,.form-grid-3,.bottom-actions,.related-grid{grid-template-columns:1fr}
+.tool-header h1{font-size:31px}
+.result-header{flex-direction:column;align-items:flex-start}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 AI Story Generator","url":"https://easytools365.com/tools/ai-story-generator.html","applicationCategory":"WritingApplication","operatingSystem":"Any","description":"Free browser-based story generator for short stories, YouTube, horror, kids, anime and fantasy storytelling.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Create a Story with the AI Story Generator","description":"Create a customizable story using the EasyTools365 AI Story Generator.","step":[
+{"@type":"HowToStep","position":1,"name":"Enter a story idea","text":"Describe the main idea or situation for your story."},
+{"@type":"HowToStep","position":2,"name":"Choose the story type","text":"Select Short Story, YouTube Story, Horror, Kids Story, Anime Story or Fantasy."},
+{"@type":"HowToStep","position":3,"name":"Customize the story","text":"Choose language, length, tone, ending and optional character or extra details."},
+{"@type":"HowToStep","position":4,"name":"Generate the story","text":"Click Generate Story to create the story from the selected options."},
+{"@type":"HowToStep","position":5,"name":"Copy or regenerate","text":"Copy the generated story or generate another version."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the AI Story Generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 AI Story Generator is free to use in your browser."}},
+{"@type":"Question","name":"Does the story generator require an AI API key?","acceptedAnswer":{"@type":"Answer","text":"No. The current browser-based version creates stories using structured templates and does not require an AI API key."}},
+{"@type":"Question","name":"What types of stories can I create?","acceptedAnswer":{"@type":"Answer","text":"You can create short stories, YouTube stories, horror, kids, anime and fantasy stories."}},
+{"@type":"Question","name":"Can I choose the story ending?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can choose a happy ending, sad ending, plot twist, cliffhanger or random ending."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/ai-tools.html">AI Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">AI Story Generator</li>
+</ol>
+</nav>
+
+<a href="../index.html" class="back-home"><i class="bi bi-arrow-left"></i> Back to Home</a>
+
+<header class="tool-header">
+<div class="tool-icon-large"><i class="bi bi-book"></i></div>
+<h1>AI Story Generator</h1>
+<p>Turn a simple idea into a structured story for videos, Shorts, entertainment and creative writing.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="generator-card">
+
+<div class="field-group">
+<label for="storyIdea">Story Idea</label>
+<textarea id="storyIdea" class="field-control" maxlength="600" placeholder="Example: A poor boy finds a mysterious glowing door in the forest"></textarea>
+<div class="text-end mt-1" style="font-size:12px;color:var(--text-light);"><span id="ideaCount">0</span>/600</div>
+</div>
+
+<div class="field-group">
+<label for="character">Main Character <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
+<input type="text" id="character" class="field-control" maxlength="80" placeholder="Example: Leo">
+</div>
+
+<div class="form-grid-2">
+<div class="field-group">
+<label for="storyType">Story Type</label>
+<select id="storyType" class="field-control">
+<option value="short">Short Story</option>
+<option value="youtube">YouTube Story</option>
+<option value="horror">Horror</option>
+<option value="kids">Kids Story</option>
+<option value="anime">Anime Story</option>
+<option value="fantasy">Fantasy</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="language">Language</label>
+<select id="language" class="field-control">
+<option value="english">English</option>
+<option value="indonesian">Indonesian</option>
+</select>
+</div>
+</div>
+
+<div class="form-grid-3">
+<div class="field-group">
+<label for="storyLength">Story Length</label>
+<select id="storyLength" class="field-control">
+<option value="short">Short</option>
+<option value="medium" selected>Medium</option>
+<option value="long">Long</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="tone">Tone</label>
+<select id="tone" class="field-control">
+<option value="dramatic">Dramatic</option>
+<option value="emotional">Emotional</option>
+<option value="funny">Funny</option>
+<option value="scary">Scary</option>
+<option value="inspirational">Inspirational</option>
+<option value="adventure">Adventure</option>
+</select>
+</div>
+
+<div class="field-group">
+<label for="ending">Ending</label>
+<select id="ending" class="field-control">
+<option value="happy">Happy Ending</option>
+<option value="sad">Sad Ending</option>
+<option value="twist">Plot Twist</option>
+<option value="cliffhanger">Cliffhanger</option>
+<option value="random">Random</option>
+</select>
+</div>
+</div>
+
+<div class="field-group">
+<label for="extraDetails">Extra Story Details <span style="font-weight:400;color:var(--text-light);">(optional)</span></label>
+<textarea id="extraDetails" class="field-control" maxlength="400" placeholder="Example: The story takes place in an ancient magical forest during a storm"></textarea>
+</div>
+
+<button id="generateButton" class="generate-btn" type="button"><i class="bi bi-stars"></i> Generate Story</button>
+
+<div id="resultArea" class="result-area">
+<div class="result-header">
+<h2><i class="bi bi-book-half"></i> Generated Story</h2>
+<button id="copyButton" class="copy-btn" type="button"><i class="bi bi-copy"></i> Copy Story</button>
+</div>
+
+<textarea id="storyOutput" class="story-output" aria-label="Generated story" readonly></textarea>
+
+<div class="result-stats">
+<span><span id="wordCount">0</span> words</span>
+<span><span id="characterCount">0</span> characters</span>
+</div>
+
+<div class="bottom-actions">
+<button id="regenerateButton" class="action-btn" type="button"><i class="bi bi-arrow-repeat"></i> Generate Again</button>
+<button id="clearButton" class="action-btn" type="button"><i class="bi bi-trash"></i> Clear</button>
+</div>
+</div>
+
+<div class="info-note">
+<i class="bi bi-lightning-charge"></i>
+This browser-based tool creates stories from structured templates and does not require an AI API key.
+</div>
+
+</section>
+
+<section class="info-card">
+<h2>What Is an AI Story Generator?</h2>
+<p>An AI story generator helps turn a simple idea, character or situation into a structured fictional story. EasyTools365 provides customizable options for story type, language, length, tone and ending so you can create a useful starting point for creative writing and video storytelling.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Use the AI Story Generator</h2>
+<ol>
+<li>Enter your main story idea.</li>
+<li>Add a main character if you have one.</li>
+<li>Select the story type and language.</li>
+<li>Choose the desired story length.</li>
+<li>Select a tone such as dramatic, funny, scary or inspirational.</li>
+<li>Choose the ending you want.</li>
+<li>Add optional story details.</li>
+<li>Click <strong>Generate Story</strong>.</li>
+<li>Copy the result or generate another version.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>Story Types Available</h2>
+<ul>
+<li><strong>Short Story:</strong> Quick fictional stories for general creative writing.</li>
+<li><strong>YouTube Story:</strong> Story concepts suitable for video storytelling.</li>
+<li><strong>Horror:</strong> Dark and suspenseful story ideas.</li>
+<li><strong>Kids Story:</strong> Light and imaginative stories for children.</li>
+<li><strong>Anime Story:</strong> Adventure-focused anime-style story concepts.</li>
+<li><strong>Fantasy:</strong> Magical worlds, mysteries and imaginative adventures.</li>
+</ul>
+</section>
+
+<section class="info-card">
+<h2>Why Use a Story Generator?</h2>
+<p>Starting a story can be difficult when you do not know what should happen next. A story generator can provide a starting structure that you can then expand with your own characters, dialogue, settings and plot ideas.</p>
+</section>
+
+<section class="info-card">
+<h2>Ideas for YouTube and Short-Form Videos</h2>
+<p>Generated stories can be used as a starting point for YouTube videos, Shorts, narration projects and fictional entertainment. Before publishing, customize the generated material with your own creative direction, narration, visuals and editing.</p>
+</section>
+
+<section class="info-card">
+<h2>Does This Tool Require an AI API Key?</h2>
+<p>No. The current version creates stories from structured templates directly in your browser. It does not require an AI API key.</p>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the AI Story Generator free?</h3>
+<p>Yes. The EasyTools365 AI Story Generator is free to use in your browser.</p>
+
+<h3>Does the story generator require an AI API key?</h3>
+<p>No. The current browser-based version uses structured templates and does not require an API key.</p>
+
+<h3>What types of stories can I create?</h3>
+<p>You can create short stories, YouTube stories, horror, kids, anime and fantasy stories.</p>
+
+<h3>Can I choose the story ending?</h3>
+<p>Yes. You can select a happy ending, sad ending, plot twist, cliffhanger or random ending.</p>
+</section>
+
+<section class="info-card">
+<h2>Related AI Tools</h2>
+<div class="related-grid">
+<a href="ai-prompt-generator.html" class="btn btn-outline-primary">AI Prompt Generator</a>
+<a href="ai-prompt-improver.html" class="btn btn-outline-primary">AI Prompt Improver</a>
+<a href="../categories/ai-tools.html" class="btn btn-outline-primary">All AI Tools</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for AI, images, PDF, text, calculators and developer tasks.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<footer class="border-top mt-5 py-4">
+<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+</footer>
+
+<script>
+
+        const storyIdea =
+            document.getElementById("storyIdea");
+
+        const ideaCount =
+            document.getElementById("ideaCount");
+
+        const character =
+            document.getElementById("character");
+
+        const storyType =
+            document.getElementById("storyType");
+
+        const language =
+            document.getElementById("language");
+
+        const storyLength =
+            document.getElementById("storyLength");
+
+        const tone =
+            document.getElementById("tone");
+
+        const ending =
+            document.getElementById("ending");
+
+        const extraDetails =
+            document.getElementById("extraDetails");
+
+        const generateButton =
+            document.getElementById("generateButton");
+
+        const regenerateButton =
+            document.getElementById("regenerateButton");
+
+        const copyButton =
+            document.getElementById("copyButton");
+
+        const clearButton =
+            document.getElementById("clearButton");
+
+        const resultArea =
+            document.getElementById("resultArea");
+
+        const storyOutput =
+            document.getElementById("storyOutput");
+
+        const wordCount =
+            document.getElementById("wordCount");
+
+        const characterCount =
+            document.getElementById("characterCount");
+
+
+        storyIdea.addEventListener(
+            "input",
+            function () {
+
+                ideaCount.textContent =
+                    storyIdea.value.length;
+
+            }
+        );
+
+
+        function cleanText(text) {
+
+            return text
+                .trim()
+                .replace(/\s+/g, " ");
+
+        }
+
+
+        function randomItem(array) {
+
+            return array[
+                Math.floor(
+                    Math.random() * array.length
+                )
+            ];
+
+        }
+
+
+        const englishOpenings = {
+
+            short: [
+                "It began on a day that seemed completely ordinary.",
+                "No one expected that a single moment would change everything.",
+                "At first, there was nothing unusual about that day."
+            ],
+
+            youtube: [
+                "What happened next was something no one could have predicted.",
+                "This story begins with a discovery that changed everything.",
+                "It started with one strange event that seemed impossible to explain."
+            ],
+
+            horror: [
+                "The night was unnaturally quiet.",
+                "Something was wrong with the darkness that night.",
+                "The first warning came just after midnight."
+            ],
+
+            kids: [
+                "Once upon a bright and beautiful day, an unexpected adventure began.",
+                "In a place filled with wonder, something magical was about to happen.",
+                "One cheerful morning, a very unusual adventure began."
+            ],
+
+            anime: [
+                "The sky looked different on the day everything changed.",
+                "It was supposed to be another ordinary day, but destiny had other plans.",
+                "A strange feeling filled the air as a new adventure began."
+            ],
+
+            fantasy: [
+                "Beyond the edge of the known world, an ancient mystery waited.",
+                "Long ago, people whispered about a secret that should never be found.",
+                "Deep within a forgotten land, something magical had begun to awaken."
+            ]
+
+        };
+
+
+        const indonesianOpenings = {
+
+            short: [
+                "Semua bermula pada hari yang terlihat biasa saja.",
+                "Tak seorang pun menyangka satu kejadian akan mengubah segalanya.",
+                "Awalnya, tidak ada yang aneh pada hari itu."
+            ],
+
+            youtube: [
+                "Apa yang terjadi setelah itu benar-benar tidak pernah mereka bayangkan.",
+                "Kisah ini bermula dari sebuah penemuan yang mengubah segalanya.",
+                "Semuanya dimulai dari satu kejadian aneh yang sulit dijelaskan."
+            ],
+
+            horror: [
+                "Malam itu terasa terlalu sunyi.",
+                "Ada sesuatu yang tidak beres dengan kegelapan malam itu.",
+                "Tanda pertama muncul tepat setelah tengah malam."
+            ],
+
+            kids: [
+                "Pada suatu hari yang cerah, sebuah petualangan tak terduga dimulai.",
+                "Di sebuah tempat penuh keajaiban, sesuatu yang istimewa akan terjadi.",
+                "Suatu pagi yang indah, sebuah petualangan ajaib dimulai."
+            ],
+
+            anime: [
+                "Langit terlihat berbeda pada hari ketika semuanya berubah.",
+                "Seharusnya itu menjadi hari biasa, tetapi takdir memiliki rencana lain.",
+                "Perasaan aneh memenuhi udara ketika sebuah petualangan baru dimulai."
+            ],
+
+            fantasy: [
+                "Di balik batas dunia yang dikenal manusia, sebuah misteri kuno menunggu.",
+                "Sejak dahulu orang-orang berbisik tentang rahasia yang tidak boleh ditemukan.",
+                "Jauh di sebuah negeri terlupakan, kekuatan misterius mulai terbangun."
+            ]
+
+        };
+
+
+        function getEnglishStory(
+            idea,
+            hero,
+            type,
+            selectedTone,
+            selectedEnding,
+            extra
+        ) {
+
+            const opening =
+                randomItem(
+                    englishOpenings[type]
+                );
+
+
+            const toneText = {
+
+                dramatic:
+                    "Every step carried a growing sense of tension, as if one wrong decision could change the course of everything.",
+
+                emotional:
+                    "Behind every decision was a powerful emotion, forcing the hero to confront memories, fears and hopes that had long been hidden.",
+
+                funny:
+                    "Unfortunately, almost nothing went according to plan, and every attempt to fix the situation somehow created an even bigger problem.",
+
+                scary:
+                    "A cold feeling followed every step. Strange sounds seemed to come from places that should have been empty.",
+
+                inspirational:
+                    "Although the challenge seemed impossible, giving up was never the only choice. Every setback became another reason to keep moving.",
+
+                adventure:
+                    "The journey quickly became an adventure filled with unfamiliar places, unexpected obstacles and discoveries waiting around every corner."
+
+            };
+
+
+            let paragraphs = [];
+
+
+            paragraphs.push(
+                `${opening} ${hero} became caught in a strange situation: ${idea}.`
+            );
+
+
+            if (extra) {
+
+                paragraphs.push(
+                    `There was another important detail that made the situation even more unusual: ${extra}.`
+                );
+
+            }
+
+
+            paragraphs.push(
+                `${hero} could have walked away, but curiosity was stronger than fear. Moving closer, ${hero} began to notice small details that had been easy to miss at first. Nothing seemed accidental anymore.`
+            );
+
+
+            paragraphs.push(
+                toneText[selectedTone]
+            );
+
+
+            paragraphs.push(
+                `The deeper ${hero} went, the clearer it became that the original discovery was only the beginning. A hidden connection started to emerge, linking the strange events together in a way that made the situation far more important than it had first appeared.`
+            );
+
+
+            if (
+                storyLength.value === "medium" ||
+                storyLength.value === "long"
+            ) {
+
+                paragraphs.push(
+                    `Soon, a difficult choice appeared. Taking the safe path meant turning back without answers, while continuing forward meant facing something completely unknown. After a moment of hesitation, ${hero} chose to continue.`
+                );
+
+
+                paragraphs.push(
+                    `That decision changed everything. The surroundings seemed to respond, revealing a new clue and forcing ${hero} to think differently. What once looked like a simple mystery had become a test of courage, patience and judgment.`
+                );
+
+            }
+
+
+            if (
+                storyLength.value === "long"
+            ) {
+
+                paragraphs.push(
+                    `Time passed as ${hero} followed each clue. There were moments of doubt and moments when success seemed close, only for another obstacle to appear. Yet every challenge revealed something new about the mystery and about ${hero}.`
+                );
+
+
+                paragraphs.push(
+                    `Eventually, all the scattered details began to form a single picture. The answer had been present from the beginning, hidden behind assumptions that no one had questioned.`
+                );
+
+            }
+
+
+            const endings = {
+
+                happy:
+                    `In the end, ${hero} made the right choice. The mystery was finally understood, the danger passed, and what began as an uncertain journey became a memory that would never be forgotten.`,
+
+                sad:
+                    `When the truth was finally revealed, victory no longer felt possible. ${hero} understood that some answers arrive too late to change what has already happened. The journey ended, but its memory remained.`,
+
+                twist:
+                    `Then came the final revelation. ${hero} had believed the entire journey was about discovering the truth behind the mystery. But the truth was far stranger: the mystery had been waiting specifically for ${hero} from the very beginning.`,
+
+                cliffhanger:
+                    `Just when ${hero} believed the mystery was over, a new sound came from behind. Slowly turning around, ${hero} saw something that should not have been there. And then everything went dark.`
+
+            };
+
+
+            let finalEnding =
+                selectedEnding;
+
+
+            if (
+                selectedEnding === "random"
+            ) {
+
+                finalEnding =
+                    randomItem([
+                        "happy",
+                        "sad",
+                        "twist",
+                        "cliffhanger"
+                    ]);
+
+            }
+
+
+            paragraphs.push(
+                endings[finalEnding]
+            );
+
+
+            return paragraphs.join("\n\n");
+
+        }
+
+
+        function getIndonesianStory(
+            idea,
+            hero,
+            type,
+            selectedTone,
+            selectedEnding,
+            extra
+        ) {
+
+            const opening =
+                randomItem(
+                    indonesianOpenings[type]
+                );
+
+
+            const toneText = {
+
+                dramatic:
+                    "Setiap langkah membuat ketegangan semakin terasa, seolah satu keputusan yang salah dapat mengubah semuanya.",
+
+                emotional:
+                    "Di balik setiap keputusan tersimpan emosi yang kuat, memaksa sang tokoh menghadapi ketakutan, kenangan, dan harapan yang selama ini tersembunyi.",
+
+                funny:
+                    "Sayangnya, hampir semua rencana berjalan tidak sesuai harapan. Setiap usaha memperbaiki keadaan justru menimbulkan masalah baru yang lebih lucu.",
+
+                scary:
+                    "Rasa dingin terus mengikuti setiap langkah. Suara-suara aneh terdengar dari tempat yang seharusnya kosong.",
+
+                inspirational:
+                    "Walaupun tantangannya terlihat mustahil, menyerah bukanlah satu-satunya pilihan. Setiap kegagalan justru menjadi alasan untuk terus maju.",
+
+                adventure:
+                    "Perjalanan itu segera berubah menjadi petualangan penuh tempat asing, rintangan tak terduga, dan penemuan baru."
+
+            };
+
+
+            let paragraphs = [];
+
+
+            paragraphs.push(
+                `${opening} ${hero} terjebak dalam sebuah kejadian aneh: ${idea}.`
+            );
+
+
+            if (extra) {
+
+                paragraphs.push(
+                    `Ada satu hal lain yang membuat keadaan semakin tidak biasa: ${extra}.`
+                );
+
+            }
+
+
+            paragraphs.push(
+                `${hero} sebenarnya bisa pergi dan melupakan semuanya. Namun rasa penasaran ternyata lebih kuat daripada rasa takut. Saat mendekat, ${hero} mulai melihat detail-detail kecil yang sebelumnya tidak terlihat.`
+            );
+
+
+            paragraphs.push(
+                toneText[selectedTone]
+            );
+
+
+            paragraphs.push(
+                `Semakin jauh ${hero} mencari jawaban, semakin jelas bahwa kejadian pertama hanyalah permulaan. Perlahan muncul hubungan antara berbagai petunjuk yang membuat misteri itu jauh lebih besar daripada dugaan awal.`
+            );
+
+
+            if (
+                storyLength.value === "medium" ||
+                storyLength.value === "long"
+            ) {
+
+                paragraphs.push(
+                    `Tak lama kemudian, ${hero} harus membuat pilihan sulit. Kembali berarti hidup tanpa mengetahui jawabannya, sedangkan melanjutkan perjalanan berarti menghadapi sesuatu yang sama sekali belum dikenal. Setelah berpikir sejenak, ${hero} memilih maju.`
+                );
+
+
+                paragraphs.push(
+                    `Keputusan itu mengubah segalanya. Sebuah petunjuk baru muncul dan memaksa ${hero} melihat keadaan dari sudut pandang berbeda. Misteri itu kini menjadi ujian keberanian, kesabaran, dan keyakinan.`
+                );
+
+            }
+
+
+            if (
+                storyLength.value === "long"
+            ) {
+
+                paragraphs.push(
+                    `Waktu terus berjalan sementara ${hero} mengikuti setiap petunjuk. Beberapa kali jawaban terasa sudah dekat, tetapi selalu ada rintangan baru yang muncul. Meski demikian, setiap tantangan membawa ${hero} semakin dekat pada kebenaran.`
+                );
+
+
+                paragraphs.push(
+                    `Pada akhirnya, semua detail yang sebelumnya terlihat terpisah mulai membentuk satu gambaran utuh. Jawabannya ternyata sudah ada sejak awal, tersembunyi di balik sesuatu yang selama ini dianggap biasa.`
+                );
+
+            }
+
+
+            const endings = {
+
+                happy:
+                    `Pada akhirnya, ${hero} berhasil mengambil keputusan yang tepat. Misteri itu terpecahkan, bahaya berlalu, dan perjalanan tersebut menjadi pengalaman yang tidak akan pernah terlupakan.`,
+
+                sad:
+                    `Ketika kebenaran akhirnya terungkap, semuanya sudah terlambat untuk diperbaiki. ${hero} menyadari bahwa tidak semua jawaban mampu mengubah sesuatu yang telah terjadi. Perjalanan berakhir, tetapi kenangannya tetap tinggal.`,
+
+                twist:
+                    `Namun pada saat terakhir, sebuah kenyataan mengejutkan terungkap. Selama ini ${hero} mengira sedang mencari jawaban dari misteri tersebut. Padahal sejak awal, misteri itulah yang sebenarnya sedang menunggu kedatangan ${hero}.`,
+
+                cliffhanger:
+                    `Saat ${hero} mengira semuanya telah selesai, terdengar suara dari belakang. Perlahan ${hero} berbalik dan melihat sesuatu yang seharusnya tidak mungkin berada di sana. Sesaat kemudian, semuanya menjadi gelap.`
+
+            };
+
+
+            let finalEnding =
+                selectedEnding;
+
+
+            if (
+                selectedEnding === "random"
+            ) {
+
+                finalEnding =
+                    randomItem([
+                        "happy",
+                        "sad",
+                        "twist",
+                        "cliffhanger"
+                    ]);
+
+            }
+
+
+            paragraphs.push(
+                endings[finalEnding]
+            );
+
+
+            return paragraphs.join("\n\n");
+
+        }
+
+
+        function createTitle(
+            idea,
+            hero
+        ) {
+
+            const mainWords =
+                cleanText(idea)
+                    .split(" ")
+                    .filter(word => word.length > 3)
+                    .slice(0, 4)
+                    .join(" ");
+
+
+            if (
+                language.value === "indonesian"
+            ) {
+
+                const titles = [
+                    `Misteri ${mainWords}`,
+                    `${hero} dan Rahasia yang Tersembunyi`,
+                    `Perjalanan ${hero}`,
+                    `Rahasia di Balik ${mainWords}`,
+                    `Ketika Semuanya Berubah`
+                ];
+
+                return randomItem(titles);
+
+            }
+
+
+            const titles = [
+                `The Mystery of ${mainWords}`,
+                `${hero} and the Hidden Secret`,
+                `The Journey of ${hero}`,
+                `Beyond ${mainWords}`,
+                `The Day Everything Changed`
+            ];
+
+
+            return randomItem(titles);
+
+        }
+
+
+        function generateStory() {
+
+            const idea =
+                cleanText(
+                    storyIdea.value
+                );
+
+
+            if (!idea) {
+
+                alert(
+                    "Please enter your story idea."
+                );
+
+                storyIdea.focus();
+
+                return;
+
+            }
+
+
+            let hero =
+                cleanText(
+                    character.value
+                );
+
+
+            if (!hero) {
+
+                hero =
+                    language.value === "indonesian"
+                        ? "Alex"
+                        : "Alex";
+
+            }
+
+
+            const extra =
+                cleanText(
+                    extraDetails.value
+                );
+
+
+            const title =
+                createTitle(
+                    idea,
+                    hero
+                );
+
+
+            let story = "";
+
+
+            if (
+                language.value === "indonesian"
+            ) {
+
+                story =
+                    getIndonesianStory(
+                        idea,
+                        hero,
+                        storyType.value,
+                        tone.value,
+                        ending.value,
+                        extra
+                    );
+
+            } else {
+
+                story =
+                    getEnglishStory(
+                        idea,
+                        hero,
+                        storyType.value,
+                        tone.value,
+                        ending.value,
+                        extra
+                    );
+
+            }
+
+
+            const endText =
+                language.value === "indonesian"
+                    ? "TAMAT"
+                    : "THE END";
+
+
+            const result =
+`TITLE:
+${title}
+
+STORY:
+
+${story}
+
+${endText}`;
+
+
+            storyOutput.value =
+                result;
+
+
+            updateStats(result);
+
+
+            resultArea.style.display =
+                "block";
+
+
+            resultArea.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+        }
+
+
+        function updateStats(text) {
+
+            const words =
+                text
+                    .trim()
+                    .split(/\s+/)
+                    .filter(Boolean);
+
+
+            wordCount.textContent =
+                words.length;
+
+
+            characterCount.textContent =
+                text.length;
+
+        }
+
+
+        async function copyText(text) {
+
+            try {
+
+                await navigator.clipboard.writeText(
+                    text
+                );
+
+            } catch (error) {
+
+                const temp =
+                    document.createElement("textarea");
+
+                temp.value = text;
+
+                document.body.appendChild(temp);
+
+                temp.select();
+
+                document.execCommand("copy");
+
+                temp.remove();
+
+            }
+
+        }
+
+
+        generateButton.addEventListener(
+            "click",
+            generateStory
+        );
+
+
+        regenerateButton.addEventListener(
+            "click",
+            generateStory
+        );
+
+
+        copyButton.addEventListener(
+            "click",
+            async function () {
+
+                if (!storyOutput.value) {
+                    return;
+                }
+
+
+                await copyText(
+                    storyOutput.value
+                );
+
+
+                copyButton.innerHTML =
+                    '<i class="bi bi-check-lg"></i> Copied!';
+
+
+                setTimeout(
+                    function () {
+
+                        copyButton.innerHTML =
+                            '<i class="bi bi-copy"></i> Copy Story';
+
+                    },
+                    1500
+                );
+
+            }
+        );
+
+
+        clearButton.addEventListener(
+            "click",
+            function () {
+
+                storyIdea.value = "";
+
+                character.value = "";
+
+                extraDetails.value = "";
+
+                ideaCount.textContent = "0";
+
+                storyOutput.value = "";
+
+                wordCount.textContent = "0";
+
+                characterCount.textContent = "0";
+
+                resultArea.style.display =
+                    "none";
+
+                storyIdea.focus();
+
+            }
+        );
+
+    </script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

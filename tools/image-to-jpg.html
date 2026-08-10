@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Image to JPG Converter - Convert PNG & WebP to JPG | EasyTools365</title>
+<meta name="description" content="Free online Image to JPG Converter. Convert PNG, WebP and JPG images to JPG directly in your browser, choose quality and download the result.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="EasyTools365">
+<link rel="canonical" href="https://easytools365.com/tools/image-to-jpg.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Image to JPG Converter | EasyTools365">
+<meta property="og:description" content="Convert PNG, WebP and JPG images to JPG in your browser. Adjust JPG quality and download the converted image.">
+<meta property="og:url" content="https://easytools365.com/tools/image-to-jpg.html">
+<meta property="og:site_name" content="EasyTools365">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Image to JPG Converter | EasyTools365">
+<meta name="twitter:description" content="Free browser-based PNG, WebP and JPG to JPG converter with adjustable quality.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-N002NWTJ23');
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<style>
+.tool-page{min-height:calc(100vh - 80px);padding:55px 15px 75px}
+.tool-wrapper{max-width:900px;margin:auto}
+.breadcrumb{margin-bottom:22px}
+.back-home{display:inline-flex;align-items:center;gap:8px;margin-bottom:25px;color:var(--primary);font-weight:600;text-decoration:none}
+.tool-header{text-align:center;margin-bottom:32px}
+.tool-icon-large{display:inline-flex;width:76px;height:76px;align-items:center;justify-content:center;margin-bottom:18px;border-radius:22px;background:rgba(37,99,235,.10);color:var(--primary);font-size:35px}
+.tool-header h1{font-size:40px;font-weight:800;margin-bottom:10px}
+.tool-header p{max-width:720px;margin:auto;color:var(--text-light);line-height:1.7}
+.updated{margin-top:10px;color:var(--text-light);font-size:12px}
+.converter-card,.info-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.converter-card{padding:30px}
+.upload-area{padding:48px 20px;text-align:center;border:2px dashed var(--border);border-radius:18px;cursor:pointer;transition:.2s}
+.upload-area:hover,.upload-area.dragover{border-color:var(--primary);background:rgba(37,99,235,.05)}
+.upload-area i{display:block;margin-bottom:12px;color:var(--primary);font-size:46px}
+.upload-area h2{font-size:20px;font-weight:700}
+.upload-area p{margin:0;color:var(--text-light)}
+#imageInput{display:none}
+.editor-area{display:none;margin-top:28px}
+.preview-image{width:100%;max-height:420px;object-fit:contain;border:1px solid var(--border);border-radius:16px;background:var(--background)}
+.file-info{margin-top:12px;text-align:center;color:var(--text-light);font-size:14px}
+.quality-area{margin-top:25px}
+.quality-header{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px;font-weight:700}
+#quality{width:100%;accent-color:var(--primary)}
+.convert-btn,.download-btn,.reset-btn{width:100%;margin-top:22px;padding:14px;border-radius:12px;font-weight:700}
+.convert-btn{border:none;background:var(--primary);color:#fff}
+.download-btn{display:block;margin-top:12px;text-align:center;text-decoration:none;background:#16a34a;color:#fff}
+.reset-btn{border:1px solid var(--border);background:var(--background);color:var(--text)}
+.result-area{display:none;margin-top:28px}
+.result-title{margin-bottom:14px;font-size:20px;font-weight:700}
+.privacy-note{margin-top:22px;padding:14px;border-radius:12px;background:rgba(37,99,235,.08);color:var(--text-light);text-align:center;font-size:13px;line-height:1.6}
+.info-card{margin-top:24px;padding:28px}
+.info-card h2{font-size:24px;font-weight:700;margin-bottom:13px}
+.info-card h3{font-size:18px;font-weight:700;margin-top:22px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+body.dark-mode .tool-icon-large{background:#1e3a8a}
+body.dark-mode .preview-image,body.dark-mode .reset-btn{background:#0f172a}
+@media(max-width:650px){
+.converter-card,.info-card{padding:20px}
+.related-grid{grid-template-columns:1fr}
+.tool-header h1{font-size:31px}
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"EasyTools365 Image to JPG Converter","url":"https://easytools365.com/tools/image-to-jpg.html","applicationCategory":"MultimediaApplication","operatingSystem":"Any","description":"Free browser-based converter for PNG, WebP and JPG images to JPG format.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to Convert an Image to JPG","description":"Convert an image to JPG using EasyTools365.","step":[
+{"@type":"HowToStep","position":1,"name":"Choose an image","text":"Select or drag a PNG, WebP or JPG image into the upload area."},
+{"@type":"HowToStep","position":2,"name":"Set JPG quality","text":"Adjust the JPG Quality slider to choose the desired output quality."},
+{"@type":"HowToStep","position":3,"name":"Convert to JPG","text":"Click Convert to JPG to create the JPG version."},
+{"@type":"HowToStep","position":4,"name":"Download the JPG","text":"Review the converted image and click Download JPG."}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the Image to JPG Converter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The EasyTools365 Image to JPG Converter is free to use online."}},
+{"@type":"Question","name":"Which image formats are supported?","acceptedAnswer":{"@type":"Answer","text":"The tool accepts PNG, WebP and JPG images and creates a JPG output."}},
+{"@type":"Question","name":"Can I choose the JPG quality?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the JPG Quality slider to select a value from 10% to 100%."}},
+{"@type":"Question","name":"What happens to transparent backgrounds?","acceptedAnswer":{"@type":"Answer","text":"JPG does not support transparency, so transparent PNG or WebP areas are rendered with a white background during conversion."}},
+{"@type":"Question","name":"Is my image uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"The conversion is performed locally in your browser and does not need to upload the image to the EasyTools365 server."}}
+]}
+</script>
+</head>
+
+<body>
+
+<nav class="navbar bg-white border-bottom shadow-sm sticky-top">
+<div class="container">
+<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
+<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+</div>
+</nav>
+
+<main class="tool-page">
+<div class="tool-wrapper">
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="../categories/image-tools.html">Image Tools</a></li>
+<li class="breadcrumb-item active" aria-current="page">Image to JPG</li>
+</ol>
+</nav>
+
+<a href="../categories/image-tools.html" class="back-home"><i class="bi bi-arrow-left"></i> Back to Image Tools</a>
+
+<header class="tool-header">
+<div class="tool-icon-large"><i class="bi bi-file-earmark-image"></i></div>
+<h1>Image to JPG Converter</h1>
+<p>Convert PNG, WebP and JPG images to JPG directly in your browser. Adjust quality and download the converted image.</p>
+<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
+</header>
+
+<section class="converter-card">
+
+<div id="uploadArea" class="upload-area">
+<i class="bi bi-cloud-arrow-up"></i>
+<h2>Choose an Image</h2>
+<p>Click or drag &amp; drop PNG, WebP or JPG</p>
+</div>
+
+<input type="file" id="imageInput" accept="image/png,image/webp,image/jpeg">
+
+<div id="editorArea" class="editor-area">
+<img id="previewImage" class="preview-image" alt="Image preview">
+
+<div class="file-info">
+<span id="fileName">-</span> &nbsp;•&nbsp; <span id="fileSize">-</span>
+</div>
+
+<div class="quality-area">
+<div class="quality-header">
+<span>JPG Quality</span>
+<span id="qualityValue">90%</span>
+</div>
+<input type="range" id="quality" min="10" max="100" value="90">
+</div>
+
+<button id="convertButton" class="convert-btn" type="button">
+<i class="bi bi-arrow-repeat"></i> Convert to JPG
+</button>
+
+<div id="resultArea" class="result-area">
+<div class="result-title">Converted JPG</div>
+<img id="resultImage" class="preview-image" alt="Converted JPG preview">
+
+<a id="downloadButton" class="download-btn">
+<i class="bi bi-download"></i> Download JPG
+</a>
+</div>
+
+<button id="resetButton" class="reset-btn" type="button">
+<i class="bi bi-arrow-counterclockwise"></i> Choose Another Image
+</button>
+</div>
+
+<div class="privacy-note">
+<i class="bi bi-shield-check"></i>
+Your image is processed locally in your browser and does not need to be uploaded to our server.
+</div>
+
+</section>
+
+<section class="info-card">
+<h2>What Is an Image to JPG Converter?</h2>
+<p>An Image to JPG Converter changes a supported image into the widely compatible JPG format. JPG is commonly used for photographs, websites, social media, email attachments and general image sharing.</p>
+</section>
+
+<section class="info-card">
+<h2>How to Convert an Image to JPG</h2>
+<ol>
+<li>Select or drag a PNG, WebP or JPG image into the upload area.</li>
+<li>Adjust <strong>JPG Quality</strong> if needed.</li>
+<li>Click <strong>Convert to JPG</strong>.</li>
+<li>Review the converted image.</li>
+<li>Click <strong>Download JPG</strong>.</li>
+</ol>
+</section>
+
+<section class="info-card">
+<h2>Why Convert Images to JPG?</h2>
+<p>JPG is supported by a wide range of websites, devices and applications. Converting an image can be useful when a service does not accept the original PNG or WebP format or when you need a broadly compatible image file.</p>
+</section>
+
+<section class="info-card">
+<h2>JPG Quality and File Size</h2>
+<p>The quality slider controls the JPEG output quality. Higher values generally preserve more visual detail but may create a larger file. Lower values generally create smaller files but can introduce more visible compression.</p>
+</section>
+
+<section class="info-card">
+<h2>Transparency and JPG</h2>
+<p>JPG does not support transparent backgrounds. When a PNG or WebP image contains transparency, this converter renders transparent areas on a white background before creating the JPG.</p>
+</section>
+
+<section class="info-card">
+<h2>Local Browser Processing</h2>
+<p>The conversion uses browser image and canvas APIs. Your selected image does not need to be uploaded to the EasyTools365 server, so the conversion can happen locally in your browser.</p>
+</section>
+
+<section class="info-card">
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is the Image to JPG Converter free?</h3>
+<p>Yes. The EasyTools365 Image to JPG Converter is free to use online.</p>
+
+<h3>Which image formats are supported?</h3>
+<p>The tool accepts PNG, WebP and JPG images and creates a JPG output.</p>
+
+<h3>Can I choose the JPG quality?</h3>
+<p>Yes. Use the JPG Quality slider to select a value from 10% to 100%.</p>
+
+<h3>What happens to transparent backgrounds?</h3>
+<p>JPG does not support transparency, so transparent PNG or WebP areas are rendered with a white background during conversion.</p>
+
+<h3>Is my image uploaded to a server?</h3>
+<p>The conversion is performed locally in your browser and does not need to upload the image to the EasyTools365 server.</p>
+</section>
+
+<section class="info-card">
+<h2>Related Image Tools</h2>
+<div class="related-grid">
+<a href="image-compressor.html" class="btn btn-outline-primary">Image Compressor</a>
+<a href="image-resizer.html" class="btn btn-outline-primary">Image Resizer</a>
+<a href="image-to-pdf.html" class="btn btn-outline-primary">Image to PDF</a>
+</div>
+</section>
+
+<section class="info-card text-center bg-primary text-white">
+<h2>Need More Free Online Tools?</h2>
+<p>Explore EasyTools365 tools for images, PDF, text, calculators, developer tasks and more.</p>
+<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
+</section>
+
+</div>
+</main>
+
+<canvas id="canvas" style="display:none;"></canvas>
+
+<script>
+const uploadArea =
+            document.getElementById("uploadArea");
+
+        const imageInput =
+            document.getElementById("imageInput");
+
+        const editorArea =
+            document.getElementById("editorArea");
+
+        const previewImage =
+            document.getElementById("previewImage");
+
+        const fileName =
+            document.getElementById("fileName");
+
+        const fileSize =
+            document.getElementById("fileSize");
+
+        const quality =
+            document.getElementById("quality");
+
+        const qualityValue =
+            document.getElementById("qualityValue");
+
+        const convertButton =
+            document.getElementById("convertButton");
+
+        const resultArea =
+            document.getElementById("resultArea");
+
+        const resultImage =
+            document.getElementById("resultImage");
+
+        const downloadButton =
+            document.getElementById("downloadButton");
+
+        const resetButton =
+            document.getElementById("resetButton");
+
+        const canvas =
+            document.getElementById("canvas");
+
+
+        let selectedFile = null;
+        let sourceImage = null;
+        let previewURL = null;
+        let resultURL = null;
+
+
+        function formatBytes(bytes) {
+
+            if (bytes < 1024 * 1024) {
+
+                return (
+                    bytes / 1024
+                ).toFixed(2) + " KB";
+
+            }
+
+            return (
+                bytes / (1024 * 1024)
+            ).toFixed(2) + " MB";
+
+        }
+
+
+        /* SELECT FILE */
+
+        uploadArea.addEventListener(
+            "click",
+            function () {
+
+                imageInput.click();
+
+            }
+        );
+
+
+        imageInput.addEventListener(
+            "change",
+            function () {
+
+                if (imageInput.files[0]) {
+
+                    loadImage(
+                        imageInput.files[0]
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* DRAG & DROP */
+
+        uploadArea.addEventListener(
+            "dragover",
+            function (event) {
+
+                event.preventDefault();
+
+                uploadArea.classList.add(
+                    "dragover"
+                );
+
+            }
+        );
+
+
+        uploadArea.addEventListener(
+            "dragleave",
+            function () {
+
+                uploadArea.classList.remove(
+                    "dragover"
+                );
+
+            }
+        );
+
+
+        uploadArea.addEventListener(
+            "drop",
+            function (event) {
+
+                event.preventDefault();
+
+                uploadArea.classList.remove(
+                    "dragover"
+                );
+
+                const file =
+                    event.dataTransfer.files[0];
+
+                if (file) {
+
+                    loadImage(file);
+
+                }
+
+            }
+        );
+
+
+        /* LOAD IMAGE */
+
+        function loadImage(file) {
+
+            const allowedTypes = [
+                "image/png",
+                "image/webp",
+                "image/jpeg"
+            ];
+
+
+            if (!allowedTypes.includes(file.type)) {
+
+                alert(
+                    "Please choose a PNG, WebP or JPG image."
+                );
+
+                return;
+
+            }
+
+
+            selectedFile = file;
+
+
+            if (previewURL) {
+
+                URL.revokeObjectURL(
+                    previewURL
+                );
+
+            }
+
+
+            previewURL =
+                URL.createObjectURL(file);
+
+
+            const img =
+                new Image();
+
+
+            img.onload = function () {
+
+                sourceImage = img;
+
+                previewImage.src =
+                    previewURL;
+
+                fileName.textContent =
+                    file.name;
+
+                fileSize.textContent =
+                    formatBytes(
+                        file.size
+                    );
+
+                editorArea.style.display =
+                    "block";
+
+                resultArea.style.display =
+                    "none";
+
+            };
+
+
+            img.src = previewURL;
+
+        }
+
+
+        /* QUALITY */
+
+        quality.addEventListener(
+            "input",
+            function () {
+
+                qualityValue.textContent =
+                    quality.value + "%";
+
+            }
+        );
+
+
+        /* CONVERT */
+
+        convertButton.addEventListener(
+            "click",
+            function () {
+
+                if (!sourceImage) {
+
+                    return;
+
+                }
+
+
+                canvas.width =
+                    sourceImage.naturalWidth;
+
+                canvas.height =
+                    sourceImage.naturalHeight;
+
+
+                const ctx =
+                    canvas.getContext("2d");
+
+
+                /*
+                JPG does not support transparency.
+                Transparent PNG/WebP areas become white.
+                */
+
+                ctx.fillStyle =
+                    "#ffffff";
+
+
+                ctx.fillRect(
+                    0,
+                    0,
+                    canvas.width,
+                    canvas.height
+                );
+
+
+                ctx.drawImage(
+                    sourceImage,
+                    0,
+                    0
+                );
+
+
+                const jpgQuality =
+                    Number(
+                        quality.value
+                    ) / 100;
+
+
+                canvas.toBlob(
+                    function (blob) {
+
+                        if (!blob) {
+
+                            alert(
+                                "Unable to convert this image."
+                            );
+
+                            return;
+
+                        }
+
+
+                        if (resultURL) {
+
+                            URL.revokeObjectURL(
+                                resultURL
+                            );
+
+                        }
+
+
+                        resultURL =
+                            URL.createObjectURL(
+                                blob
+                            );
+
+
+                        resultImage.src =
+                            resultURL;
+
+
+                        const baseName =
+                            selectedFile.name.replace(
+                                /\.[^/.]+$/,
+                                ""
+                            );
+
+
+                        downloadButton.href =
+                            resultURL;
+
+
+                        downloadButton.download =
+                            baseName + ".jpg";
+
+
+                        resultArea.style.display =
+                            "block";
+
+
+                        resultArea.scrollIntoView({
+                            behavior: "smooth",
+                            block: "nearest"
+                        });
+
+                    },
+
+                    "image/jpeg",
+
+                    jpgQuality
+
+                );
+
+            }
+        );
+
+
+        /* RESET */
+
+        resetButton.addEventListener(
+            "click",
+            function () {
+
+                selectedFile = null;
+
+                sourceImage = null;
+
+                imageInput.value = "";
+
+
+                editorArea.style.display =
+                    "none";
+
+                resultArea.style.display =
+                    "none";
+
+
+                if (previewURL) {
+
+                    URL.revokeObjectURL(
+                        previewURL
+                    );
+
+                    previewURL = null;
+
+                }
+
+
+                if (resultURL) {
+
+                    URL.revokeObjectURL(
+                        resultURL
+                    );
+
+                    resultURL = null;
+
+                }
+
+
+                previewImage.removeAttribute(
+                    "src"
+                );
+
+                resultImage.removeAttribute(
+                    "src"
+                );
+
+            }
+        );
+</script>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

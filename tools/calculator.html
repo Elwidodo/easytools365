@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8549153951726575" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N002NWTJ23');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Online Basic Calculator - EasyTools365</title>
+    <meta name="author" content="EasyTools365">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Online Basic Calculator - EasyTools365">
+    <meta property="og:description" content="Free online basic calculator for addition, subtraction, multiplication, division, decimals and percentages.">
+    <meta property="og:url" content="https://easytools365.com/tools/calculator.html">
+    <meta property="og:site_name" content="EasyTools365">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Free Online Basic Calculator - EasyTools365">
+    <meta name="twitter:description" content="Perform quick arithmetic calculations directly in your browser.">
+
+    <meta name="description"
+          content="Free online basic calculator for addition, subtraction, multiplication, division and percentage calculations.">
+    <link rel="canonical" href="https://easytools365.com/tools/calculator.html">
+    <meta name="robots" content="index, follow">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/style.css">
+
+    <style>
+        .tool-page {
+            min-height: calc(100vh - 70px);
+            padding: 60px 15px 80px;
+        }
+
+        .tool-wrapper {
+            max-width: 520px;
+            margin: auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 25px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .tool-icon-large {
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            border-radius: 20px;
+            background: rgba(37, 99, 235, .10);
+            color: var(--primary);
+            font-size: 32px;
+        }
+
+        .tool-header h1 {
+            font-size: 36px;
+            font-weight: 800;
+        }
+
+        .tool-header p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .calculator-card {
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .calculator-display {
+            width: 100%;
+            min-height: 105px;
+            margin-bottom: 18px;
+            padding: 16px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--background);
+            text-align: right;
+            overflow: hidden;
+        }
+
+        .previous-operation {
+            min-height: 25px;
+            color: var(--text-light);
+            font-size: 14px;
+            word-break: break-all;
+        }
+
+        .current-operation {
+            min-height: 50px;
+            margin-top: 5px;
+            font-size: 32px;
+            font-weight: 700;
+            word-break: break-all;
+        }
+
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .calc-btn {
+            min-height: 62px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: var(--background);
+            color: var(--text);
+            font-size: 18px;
+            font-weight: 700;
+            transition: .2s;
+        }
+
+        .calc-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+
+        .operator {
+            color: var(--primary);
+            background: rgba(37,99,235,.08);
+        }
+
+        .clear-btn {
+            color: #dc2626;
+            background: rgba(220,38,38,.08);
+        }
+
+        .equal-btn {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        .zero-btn {
+            grid-column: span 2;
+        }
+
+        .calculator-note {
+            margin-top: 20px;
+            padding: 13px;
+            border-radius: 12px;
+            background: rgba(37,99,235,.07);
+            color: var(--text-light);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .top-nav {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        body.dark-mode .calculator-display,
+        body.dark-mode .calc-btn {
+            background: #0f172a;
+        }
+
+        @media(max-width:500px) {
+            .tool-header h1 {
+                font-size: 30px;
+            }
+
+            .calculator-card {
+                padding: 16px;
+            }
+
+            .calc-btn {
+                min-height: 58px;
+            }
+        }
+    </style>
+    <!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the EasyTools365 Calculator free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The EasyTools365 Calculator is free to use online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I calculate percentages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The calculator supports percentage calculations. For more specialized calculations, you can also use the EasyTools365 Percentage Calculator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use decimals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Decimal numbers can be used for supported mathematical operations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to install anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The calculator works directly in your web browser and does not require software installation."
+      }
+    }
+  ]
+}
+</script>
+<!-- End FAQ Structured Data -->
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"EasyTools365 Basic Calculator",
+  "url":"https://easytools365.com/tools/calculator.html",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "description":"Free online calculator for addition, subtraction, multiplication, division, decimals and percentages.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+
+</head>
+
+<body>
+
+<nav class="navbar top-nav">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="../index.html">
+            <i class="bi bi-tools"></i>
+            EasyTools365
+        </a>
+
+        <button id="darkModeButton"
+                class="btn btn-outline-primary"
+                type="button">
+            <i class="bi bi-moon-stars"></i>
+        </button>
+
+    </div>
+</nav>
+
+
+<main class="tool-page">
+
+<div class="tool-wrapper">
+
+    <a href="../categories/calculator.html"
+       class="back-link">
+        <i class="bi bi-arrow-left"></i>
+        Back to Calculator Tools
+    </a>
+
+
+    <div class="tool-header">
+
+        <div class="tool-icon-large">
+            <i class="bi bi-calculator"></i>
+        </div>
+
+        <h1>Basic Calculator</h1>
+
+        <p>
+            Perform quick arithmetic calculations directly in your browser.
+        </p>
+        <div class="small text-muted mt-2">
+            <i class="bi bi-clock-history"></i> Last Updated: August 2026
+        </div>
+
+    </div>
+
+
+    <div class="calculator-card">
+
+        <div class="calculator-display">
+
+            <div id="previousOperation"
+                 class="previous-operation">
+            </div>
+
+            <div id="currentOperation"
+                 class="current-operation">
+                0
+            </div>
+
+        </div>
+
+
+        <div class="calculator-buttons">
+
+            <button class="calc-btn clear-btn"
+                    data-action="clear">
+                AC
+            </button>
+
+            <button class="calc-btn"
+                    data-action="delete">
+                <i class="bi bi-backspace"></i>
+            </button>
+
+            <button class="calc-btn operator"
+                    data-action="percent">
+                %
+            </button>
+
+            <button class="calc-btn operator"
+                    data-operation="÷">
+                ÷
+            </button>
+
+
+            <button class="calc-btn number" data-number="7">7</button>
+            <button class="calc-btn number" data-number="8">8</button>
+            <button class="calc-btn number" data-number="9">9</button>
+
+            <button class="calc-btn operator"
+                    data-operation="×">
+                ×
+            </button>
+
+
+            <button class="calc-btn number" data-number="4">4</button>
+            <button class="calc-btn number" data-number="5">5</button>
+            <button class="calc-btn number" data-number="6">6</button>
+
+            <button class="calc-btn operator"
+                    data-operation="-">
+                −
+            </button>
+
+
+            <button class="calc-btn number" data-number="1">1</button>
+            <button class="calc-btn number" data-number="2">2</button>
+            <button class="calc-btn number" data-number="3">3</button>
+
+            <button class="calc-btn operator"
+                    data-operation="+">
+                +
+            </button>
+
+
+            <button class="calc-btn number zero-btn"
+                    data-number="0">
+                0
+            </button>
+
+            <button class="calc-btn number"
+                    data-number=".">
+                .
+            </button>
+
+            <button class="calc-btn equal-btn"
+                    data-action="equals">
+                =
+            </button>
+
+        </div>
+
+
+        <div class="calculator-note">
+            <i class="bi bi-lightbulb"></i>
+            Supports addition, subtraction, multiplication,
+            division, decimals and percentages.
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ============ CALCULATOR SEO CONTENT ============ -->
+
+<section class="container my-5">
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-4 p-lg-5">
+
+            <h2>What Is an Online Calculator?</h2>
+            <p>
+                An online calculator is a simple tool for performing common
+                mathematical calculations directly in your browser. You can use
+                it for addition, subtraction, multiplication, division, decimals,
+                and percentages.
+            </p>
+
+            <p>
+                The EasyTools365 Calculator is designed for quick everyday
+                calculations without installing any software.
+            </p>
+
+            <hr class="my-4">
+
+            <h2>How to Use the Calculator</h2>
+            <ol>
+                <li>Enter a number using the calculator buttons.</li>
+                <li>Select the mathematical operation you want to perform.</li>
+                <li>Enter the next number.</li>
+                <li>Press the equals button to display the result.</li>
+                <li>Use the clear button to start a new calculation.</li>
+            </ol>
+
+            <hr class="my-4">
+
+            <h2>What Calculations Are Supported?</h2>
+            <p>
+                This calculator supports common arithmetic operations including
+                addition, subtraction, multiplication, and division. It can also
+                be used with decimal numbers and percentages.
+            </p>
+
+            <hr class="my-4">
+
+            <h2>Frequently Asked Questions</h2>
+
+            <h3 class="h5 mt-4">Is the EasyTools365 Calculator free?</h3>
+            <p>
+                Yes. The EasyTools365 Calculator is free to use online.
+            </p>
+
+            <h3 class="h5 mt-4">Can I calculate percentages?</h3>
+            <p>
+                Yes. The calculator supports percentage calculations. For more
+                specialized calculations, you can also use the Percentage Calculator.
+            </p>
+
+            <h3 class="h5 mt-4">Can I use decimals?</h3>
+            <p>
+                Yes. Decimal numbers can be used for supported mathematical operations.
+            </p>
+
+            <h3 class="h5 mt-4">Do I need to install anything?</h3>
+            <p>
+                No. The calculator works directly in your web browser and does
+                not require software installation.
+            </p>
+
+            <hr class="my-4">
+
+            <h2>Related Calculator Tools</h2>
+            <ul>
+                <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+                <li><a href="discount-calculator.html">Discount Calculator</a></li>
+                <li><a href="loan-calculator.html">Loan Calculator</a></li>
+                <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                <li><a href="age-calculator.html">Age Calculator</a></li>
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========== END CALCULATOR SEO CONTENT ========== -->
+
+</main>
+<script>
+
+const currentDisplay =
+    document.getElementById("currentOperation");
+
+const previousDisplay =
+    document.getElementById("previousOperation");
+
+const numberButtons =
+    document.querySelectorAll("[data-number]");
+
+const operationButtons =
+    document.querySelectorAll("[data-operation]");
+
+const clearButton =
+    document.querySelector('[data-action="clear"]');
+
+const deleteButton =
+    document.querySelector('[data-action="delete"]');
+
+const percentButton =
+    document.querySelector('[data-action="percent"]');
+
+const equalsButton =
+    document.querySelector('[data-action="equals"]');
+
+
+let currentValue = "0";
+let previousValue = "";
+let selectedOperation = null;
+let resetDisplay = false;
+
+
+function updateDisplay() {
+
+    currentDisplay.textContent =
+        currentValue;
+
+    if (selectedOperation && previousValue !== "") {
+
+        previousDisplay.textContent =
+            previousValue + " " + selectedOperation;
+
+    } else {
+
+        previousDisplay.textContent = "";
+
+    }
+
+}
+
+
+function inputNumber(number) {
+
+    if (resetDisplay) {
+
+        currentValue =
+            number === "." ? "0." : number;
+
+        resetDisplay = false;
+
+        updateDisplay();
+
+        return;
+    }
+
+
+    if (number === ".") {
+
+        if (currentValue.includes(".")) {
+            return;
+        }
+
+        currentValue += ".";
+
+    } else {
+
+        if (currentValue === "0") {
+
+            currentValue = number;
+
+        } else {
+
+            currentValue += number;
+
+        }
+
+    }
+
+    updateDisplay();
+
+}
+
+
+function chooseOperation(operation) {
+
+    if (selectedOperation !== null &&
+        previousValue !== "" &&
+        !resetDisplay) {
+
+        calculate();
+
+    }
+
+    previousValue = currentValue;
+    selectedOperation = operation;
+    resetDisplay = true;
+
+    updateDisplay();
+
+}
+
+
+function calculate() {
+
+    if (selectedOperation === null ||
+        previousValue === "") {
+        return;
+    }
+
+    const previous =
+        parseFloat(previousValue);
+
+    const current =
+        parseFloat(currentValue);
+
+    if (Number.isNaN(previous) ||
+        Number.isNaN(current)) {
+        return;
+    }
+
+
+    let result;
+
+
+    switch (selectedOperation) {
+
+        case "+":
+            result = previous + current;
+            break;
+
+        case "-":
+            result = previous - current;
+            break;
+
+        case "×":
+            result = previous * current;
+            break;
+
+        case "÷":
+
+            if (current === 0) {
+
+                currentValue = "Error";
+                previousValue = "";
+                selectedOperation = null;
+                resetDisplay = true;
+
+                updateDisplay();
+                return;
+            }
+
+            result = previous / current;
+            break;
+
+        default:
+            return;
+    }
+
+
+    result =
+        Math.round(
+            (result + Number.EPSILON) * 10000000000
+        ) / 10000000000;
+
+
+    currentValue =
+        String(result);
+
+    previousValue = "";
+    selectedOperation = null;
+    resetDisplay = true;
+
+    updateDisplay();
+
+}
+
+
+function clearCalculator() {
+
+    currentValue = "0";
+    previousValue = "";
+    selectedOperation = null;
+    resetDisplay = false;
+
+    updateDisplay();
+
+}
+
+
+function deleteNumber() {
+
+    if (resetDisplay ||
+        currentValue === "Error") {
+
+        currentValue = "0";
+        resetDisplay = false;
+
+        updateDisplay();
+        return;
+
+    }
+
+
+    if (currentValue.length <= 1) {
+
+        currentValue = "0";
+
+    } else {
+
+        currentValue =
+            currentValue.slice(0, -1);
+
+    }
+
+    updateDisplay();
+
+}
+
+
+function calculatePercent() {
+
+    const value =
+        parseFloat(currentValue);
+
+    if (Number.isNaN(value)) {
+        return;
+    }
+
+    currentValue =
+        String(value / 100);
+
+    updateDisplay();
+
+}
+
+
+numberButtons.forEach(function(button) {
+
+    button.addEventListener(
+        "click",
+        function() {
+
+            inputNumber(
+                button.dataset.number
+            );
+
+        }
+    );
+
+});
+
+
+operationButtons.forEach(function(button) {
+
+    button.addEventListener(
+        "click",
+        function() {
+
+            chooseOperation(
+                button.dataset.operation
+            );
+
+        }
+    );
+
+});
+
+
+equalsButton.addEventListener(
+    "click",
+    calculate
+);
+
+
+clearButton.addEventListener(
+    "click",
+    clearCalculator
+);
+
+
+deleteButton.addEventListener(
+    "click",
+    deleteNumber
+);
+
+
+percentButton.addEventListener(
+    "click",
+    calculatePercent
+);
+
+
+/* Keyboard support */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            (event.key >= "0" && event.key <= "9") ||
+            event.key === "."
+        ) {
+
+            inputNumber(event.key);
+
+        }
+
+
+        if (event.key === "+") {
+            chooseOperation("+");
+        }
+
+
+        if (event.key === "-") {
+            chooseOperation("-");
+        }
+
+
+        if (event.key === "*") {
+            chooseOperation("×");
+        }
+
+
+        if (event.key === "/") {
+
+            event.preventDefault();
+
+            chooseOperation("÷");
+        }
+
+
+        if (
+            event.key === "Enter" ||
+            event.key === "="
+        ) {
+
+            calculate();
+
+        }
+
+
+        if (event.key === "Backspace") {
+            deleteNumber();
+        }
+
+
+        if (event.key === "Escape") {
+            clearCalculator();
+        }
+
+    }
+);
+
+
+updateDisplay();
+
+</script>
+
+<script src="../assets/js/app.js"></script>
+
+</body>
+</html>
