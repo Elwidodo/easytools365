@@ -1,512 +1,2204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Free QR Code Generator | Create QR Codes Online | EasyTools365</title>
-<meta name="description" content="Create QR codes online for URLs, text, phone numbers, email addresses and WiFi. Customize QR size and colors, then download or copy your QR code for free.">
-<meta name="robots" content="index, follow">
-<meta name="author" content="EasyTools365">
-<link rel="canonical" href="https://easytools365.com/tools/qr-code-generator.html">
+    <!-- Google AdSense -->
+    <script async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8549153951726575"
+        crossorigin="anonymous"></script>
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Free QR Code Generator | EasyTools365">
-<meta property="og:description" content="Create customizable QR codes for URLs, text, phone numbers, email and WiFi.">
-<meta property="og:url" content="https://easytools365.com/tools/qr-code-generator.html">
-<meta property="og:site_name" content="EasyTools365">
+    <!-- Google Analytics -->
+    <script async
+        src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js?id=ca-pub-8549153951726575" crossorigin="anonymous"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N002NWTJ23"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-N002NWTJ23');
-</script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css">
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+        gtag('js', new Date());
+        gtag('config', 'G-N002NWTJ23');
+    </script>
 
-<style>
-.tool-page{padding:45px 15px 70px}
-.tool-wrapper{max-width:900px;margin:auto}
-.tool-header{text-align:center;margin-bottom:30px}
-.tool-icon{width:68px;height:68px;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;border-radius:18px;background:rgba(37,99,235,.10);color:var(--primary);font-size:30px}
-.tool-header h1{font-size:38px;font-weight:800;margin-bottom:8px}
-.tool-header p{max-width:760px;margin:auto;color:var(--text-light);line-height:1.7}
-.updated{margin-top:10px;color:var(--text-light);font-size:12px}
-.tool-card,.content-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow)}
-.tool-card{padding:28px}
-textarea{resize:vertical}
-.qr-preview{min-height:330px;display:flex;align-items:center;justify-content:center;padding:25px;border:1px dashed var(--border);border-radius:16px;background:var(--background)}
-#qrcode img{max-width:100%;height:auto}
-.color-input{width:100%;height:44px;padding:4px;border:1px solid var(--border);border-radius:10px;background:var(--background)}
-.qr-info{display:none;margin-top:20px}
-.info-value{font-weight:600}
-.history-item{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.history-text{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.content-card{margin-top:24px;padding:28px}
-.content-card h2{font-size:24px;font-weight:700;margin-bottom:14px}
-.content-card h3{font-size:17px;font-weight:700;margin-top:18px}
-.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.feature-item{padding:16px;border:1px solid var(--border);border-radius:12px}
-.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.related-grid a{text-decoration:none}
-.share-row{display:flex;justify-content:center;gap:10px;margin-top:18px}
-@media(max-width:600px){.feature-grid,.related-grid{grid-template-columns:1fr}.tool-card,.content-card{padding:20px}.tool-header h1{font-size:31px}}
-</style>
 
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"WebApplication",
-"name":"EasyTools365 QR Code Generator",
-"url":"https://easytools365.com/tools/qr-code-generator.html",
-"description":"Free online QR code generator for URLs, text, phone numbers, email addresses and WiFi.",
-"applicationCategory":"UtilitiesApplication",
-"operatingSystem":"Any",
-"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
-}
-</script>
+    <meta charset="UTF-8">
 
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"FAQPage",
-"mainEntity":[
-{"@type":"Question","name":"What can I put into a QR code?","acceptedAnswer":{"@type":"Answer","text":"You can create QR codes for website URLs, text, phone numbers, email addresses and WiFi information supported by the generator."}},
-{"@type":"Question","name":"Can I customize the QR code size and colors?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can choose the QR code size, QR color and background color before generating it."}},
-{"@type":"Question","name":"Can I download the QR code?","acceptedAnswer":{"@type":"Answer","text":"Yes. After generating the QR code, you can download it as a PNG image."}},
-{"@type":"Question","name":"Can I use the QR code on printed materials?","acceptedAnswer":{"@type":"Answer","text":"Yes. Test the generated QR code with a smartphone before printing or publishing it."}}
-]
-}
-</script>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Free QR Code Generator | Create QR Codes Online | EasyTools365
+    </title>
+
+    <meta name="description"
+        content="Create free QR codes online for URLs, text, phone numbers, email addresses and WiFi information. Customize QR size and colors, then download or copy your QR code.">
+
+    <meta name="robots"
+        content="index, follow">
+
+    <meta name="author"
+        content="EasyTools365">
+
+
+    <!-- Canonical -->
+
+    <link rel="canonical"
+        href="https://easytools365.com/tools/qr-code-generator.html">
+
+
+    <!-- Open Graph -->
+
+    <meta property="og:type"
+        content="website">
+
+    <meta property="og:title"
+        content="Free QR Code Generator | EasyTools365">
+
+    <meta property="og:description"
+        content="Create customizable QR codes for URLs, text, phone numbers, email addresses and WiFi information.">
+
+    <meta property="og:url"
+        content="https://easytools365.com/tools/qr-code-generator.html">
+
+    <meta property="og:site_name"
+        content="EasyTools365">
+
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- EasyTools365 CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css">
+
+
+    <!-- QR Code Library -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+    </script>
+
+
+    <!-- Page Styles -->
+
+    <style>
+
+        .tool-page {
+            padding: 45px 15px 70px;
+        }
+
+        .tool-wrapper {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .tool-icon {
+            width: 72px;
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 18px;
+
+            border-radius: 20px;
+
+            background: rgba(37, 99, 235, .10);
+
+            color: var(--primary);
+
+            font-size: 34px;
+        }
+
+        .tool-header h1 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .tool-header p {
+            max-width: 760px;
+            margin: auto;
+
+            color: var(--text-light);
+
+            line-height: 1.8;
+        }
+
+        .updated {
+            margin-top: 12px;
+
+            color: var(--text-light);
+
+            font-size: 13px;
+        }
+
+        .tool-card,
+        .content-card {
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .tool-card {
+            padding: 30px;
+        }
+
+        .content-card {
+
+            margin-top: 24px;
+
+            padding: 30px;
+        }
+
+        .content-card h2 {
+
+            font-size: 25px;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+        }
+
+        .content-card h3 {
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        .content-card p,
+        .content-card li {
+
+            line-height: 1.8;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .qr-preview {
+
+            min-height: 330px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 25px;
+
+            border: 1px dashed var(--border);
+
+            border-radius: 16px;
+
+            background: var(--background);
+        }
+
+        #qrcode img {
+
+            max-width: 100%;
+
+            height: auto;
+
+        }
+
+        .color-input {
+
+            width: 100%;
+
+            height: 44px;
+
+            padding: 4px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            background: var(--background);
+
+        }
+
+        .qr-info {
+
+            display: none;
+
+            margin-top: 20px;
+        }
+
+        .info-value {
+
+            font-weight: 600;
+        }
+
+        .feature-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 16px;
+        }
+
+        .feature-item {
+
+            padding: 18px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+        }
+
+        .feature-item i {
+
+            font-size: 25px;
+
+            color: var(--primary);
+
+        }
+
+        .related-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 12px;
+        }
+
+        .related-grid a {
+
+            text-decoration: none;
+
+        }
+
+        .share-row {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-top: 20px;
+
+        }
+
+        .privacy-note {
+
+            padding: 18px;
+
+            border-radius: 14px;
+
+            background: rgba(25, 135, 84, .08);
+
+            border: 1px solid rgba(25, 135, 84, .18);
+
+        }
+
+        .privacy-note i {
+
+            color: #198754;
+
+        }
+
+        @media (max-width: 600px) {
+
+            .feature-grid,
+            .related-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .tool-card,
+            .content-card {
+
+                padding: 21px;
+
+            }
+
+            .tool-header h1 {
+
+                font-size: 31px;
+
+            }
+
+            .tool-icon {
+
+                width: 64px;
+                height: 64px;
+
+                font-size: 30px;
+
+            }
+
+        }
+
+    </style>
+
+
+    <!-- WebApplication Schema -->
+
+    <script type="application/ld+json">
+
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+
+        "name": "EasyTools365 QR Code Generator",
+
+        "url": "https://easytools365.com/tools/qr-code-generator.html",
+
+        "description": "Free online QR code generator for URLs, text, phone numbers, email addresses and WiFi information.",
+
+        "applicationCategory": "UtilitiesApplication",
+
+        "operatingSystem": "Any",
+
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+
+    </script>
+
+
+    <!-- FAQ Schema -->
+
+    <script type="application/ld+json">
+
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+
+        "mainEntity": [
+
+            {
+                "@type": "Question",
+
+                "name": "What can I put into a QR code?",
+
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can create QR codes for website URLs, text, phone numbers, email addresses and WiFi information supported by the generator."
+                }
+            },
+
+            {
+                "@type": "Question",
+
+                "name": "Can I customize the QR code size and colors?",
+
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You can choose the QR code size, QR color and background color before generating it."
+                }
+            },
+
+            {
+                "@type": "Question",
+
+                "name": "Can I download the QR code?",
+
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. After generating the QR code, you can download it as a PNG image."
+                }
+            },
+
+            {
+                "@type": "Question",
+
+                "name": "Can I use the QR code for printed materials?",
+
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You can use generated QR codes for printed materials, but you should test the QR code with a smartphone before publishing or printing it."
+                }
+            }
+
+        ]
+    }
+
+    </script>
+
 </head>
+
 
 <body>
 
+
+<!-- ================= NAVBAR ================= -->
+
 <nav class="navbar bg-white border-bottom shadow-sm">
-<div class="container">
-<a class="navbar-brand fw-bold text-decoration-none" href="../index.html"><i class="bi bi-tools"></i> EasyTools365</a>
-<button id="darkModeButton" class="btn btn-outline-primary" type="button" aria-label="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
-</div>
+
+    <div class="container">
+
+        <a
+            class="navbar-brand fw-bold text-decoration-none"
+            href="../index.html">
+
+            <i class="bi bi-tools"></i>
+
+            EasyTools365
+
+        </a>
+
+
+        <a
+            href="../index.html"
+            class="btn btn-outline-primary btn-sm">
+
+            <i class="bi bi-house-door"></i>
+
+            Home
+
+        </a>
+
+    </div>
+
 </nav>
+
+
+<!-- ================= MAIN ================= -->
 
 <main class="container tool-page">
-<div class="tool-wrapper">
 
-<nav aria-label="breadcrumb" class="mb-4">
-<ol class="breadcrumb">
-<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-<li class="breadcrumb-item"><a href="../index.html#tools">Tools</a></li>
-<li class="breadcrumb-item active" aria-current="page">QR Code Generator</li>
-</ol>
-</nav>
+    <div class="tool-wrapper">
 
-<section class="tool-header">
-<div class="tool-icon"><i class="bi bi-qr-code"></i></div>
-<h1>Free QR Code Generator</h1>
-<p>Generate QR codes for URLs, text, phone numbers, email addresses, WiFi and more. Customize the size and colors without registration.</p>
-<div class="updated"><i class="bi bi-clock-history"></i> Last Updated: August 2026</div>
-</section>
 
-<section class="tool-card">
-<label for="qrText" class="form-label fw-bold">Enter text, URL or information</label>
-<textarea id="qrText" oninput="countCharacters()" class="form-control mb-2" rows="5" placeholder="Example: https://easytools365.com"></textarea>
+        <!-- Breadcrumb -->
 
-<div class="small text-muted">
-<strong>Examples:</strong>
-<ul class="mb-0 mt-2">
-<li>https://easytools365.com</li>
-<li>Hello World</li>
-<li>tel:+123456789</li>
-<li>mailto:hello@example.com</li>
-<li>WIFI:T:WPA;S:MyWiFi;P:Password123;;</li>
-</ul>
-</div>
+        <nav
+            aria-label="breadcrumb"
+            class="mb-4">
 
-<p class="text-end text-muted mt-2"><span id="charCount">0</span> characters</p>
+            <ol class="breadcrumb">
 
-<div class="d-grid gap-2 d-md-flex flex-wrap">
-<button class="btn btn-primary btn-lg" onclick="generateQR()"><i class="bi bi-qr-code"></i> Generate QR</button>
-<button class="btn btn-outline-secondary btn-lg" onclick="clearQR()">Clear</button>
-<button id="downloadBtn" class="btn btn-success btn-lg" style="display:none" onclick="downloadQR()"><i class="bi bi-download"></i> Download PNG</button>
-<button id="copyImageBtn" class="btn btn-warning btn-lg" style="display:none" onclick="copyQRImage()"><i class="bi bi-clipboard-image"></i> Copy Image</button>
-<button id="copyBtn" class="btn btn-info btn-lg" onclick="copyText()"><i class="bi bi-clipboard"></i> Copy Text</button>
-</div>
+                <li class="breadcrumb-item">
 
-<hr class="my-4">
+                    <a href="../index.html">
+                        Home
+                    </a>
 
-<div class="row g-3">
-<div class="col-md-4">
-<label for="qrSize" class="form-label fw-semibold">QR Size</label>
-<select id="qrSize" class="form-select">
-<option value="200">200 × 200</option>
-<option value="300" selected>300 × 300</option>
-<option value="500">500 × 500</option>
-</select>
-</div>
-<div class="col-md-4">
-<label for="qrColor" class="form-label fw-semibold">QR Color</label>
-<input type="color" id="qrColor" class="color-input" value="#000000">
-</div>
-<div class="col-md-4">
-<label for="bgColor" class="form-label fw-semibold">Background</label>
-<input type="color" id="bgColor" class="color-input" value="#ffffff">
-</div>
-</div>
+                </li>
 
-<div class="qr-preview mt-4">
-<div id="qrcode" class="d-inline-block"></div>
-</div>
+                <li class="breadcrumb-item">
 
-<div id="qrInfo" class="card qr-info">
-<div class="card-body">
-<h5 class="mb-3"><i class="bi bi-info-circle"></i> QR Information</h5>
-<div class="row g-3">
-<div class="col-md-4"><strong>Type</strong><br><span id="contentType" class="badge bg-primary">Text</span></div>
-<div class="col-md-4"><strong>Characters</strong><br><span id="infoChars" class="info-value">0</span></div>
-<div class="col-md-4"><strong>Size</strong><br><span id="infoSize" class="info-value">300 × 300</span></div>
-</div>
-</div>
-</div>
+                    <a href="../categories/pdf-tools.html">
+                        Tools
+                    </a>
 
-<div class="card mt-4">
-<div class="card-body">
-<h5 class="mb-3"><i class="bi bi-clock-history"></i> Recent History</h5>
-<ul id="historyList" class="list-group"></ul>
-</div>
-</div>
-</section>
+                </li>
 
-<div class="share-row">
-<button id="shareButton" class="btn btn-primary btn-sm" type="button"><i class="bi bi-share-fill"></i> Share</button>
-<button id="copyLinkButton" class="btn btn-success btn-sm" type="button"><i class="bi bi-link-45deg"></i> Copy Link</button>
-</div>
+                <li
+                    class="breadcrumb-item active"
+                    aria-current="page">
 
-<section class="content-card">
-<h2>What Is a QR Code?</h2>
-<p>A QR code is a two-dimensional barcode that can store information such as website addresses, text, contact details and other data. When scanned with a compatible smartphone or QR code reader, the stored information can be accessed quickly.</p>
-<p class="mb-0">QR codes are commonly used on websites, product packaging, business cards, menus, posters, advertisements, event materials and many other forms of printed or digital communication.</p>
-</section>
+                    QR Code Generator
 
-<section class="content-card">
-<h2>How to Create a QR Code</h2>
-<ol class="mb-0">
-<li>Enter the URL, text, phone number, email or other information you want to share.</li>
-<li>Choose the QR size and colors if needed.</li>
-<li>Click <strong>Generate QR</strong>.</li>
-<li>Review the generated QR code and its information.</li>
-<li>Download the QR code as a PNG or copy it.</li>
-<li>Test the QR code with a smartphone before publishing or printing it.</li>
-</ol>
-</section>
+                </li>
 
-<section class="content-card">
-<h2>Common Uses for QR Codes</h2>
-<div class="feature-grid">
-<div class="feature-item"><h3>Website Links</h3><p class="mb-0">Share a website or landing page without requiring users to type a long web address.</p></div>
-<div class="feature-item"><h3>Business Information</h3><p class="mb-0">Place QR codes on business cards, brochures, posters and promotional materials.</p></div>
-<div class="feature-item"><h3>Events and Menus</h3><p class="mb-0">Provide quick access to menus, schedules, registration pages or event information.</p></div>
-<div class="feature-item"><h3>Digital Sharing</h3><p class="mb-0">Move information from printed material or another screen to a smartphone quickly.</p></div>
-</div>
-</section>
+            </ol>
 
-<section class="content-card">
-<h2>Tips for Creating Better QR Codes</h2>
-<ul class="mb-0">
-<li>Use strong contrast between the QR code and its background.</li>
-<li>Do not make the QR code unnecessarily small when printing it.</li>
-<li>Test the QR code with more than one smartphone when possible.</li>
-<li>Make sure the encoded URL or information is correct before publishing.</li>
-<li>Keep enough empty space around the QR code for reliable scanning.</li>
-</ul>
-</section>
+        </nav>
 
-<section class="content-card">
-<h2>Frequently Asked Questions</h2>
-<div class="accordion" id="qrFaq">
-<div class="accordion-item">
-<h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#qrFaqOne">What can I put into a QR code?</button></h3>
-<div id="qrFaqOne" class="accordion-collapse collapse show" data-bs-parent="#qrFaq"><div class="accordion-body">You can create QR codes for website URLs, text, phone numbers, email addresses and WiFi information supported by the generator.</div></div>
-</div>
-<div class="accordion-item">
-<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#qrFaqTwo">Can I customize the QR code size and colors?</button></h3>
-<div id="qrFaqTwo" class="accordion-collapse collapse" data-bs-parent="#qrFaq"><div class="accordion-body">Yes. You can choose the QR code size, QR color and background color before generating it.</div></div>
-</div>
-<div class="accordion-item">
-<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#qrFaqThree">Can I download the QR code?</button></h3>
-<div id="qrFaqThree" class="accordion-collapse collapse" data-bs-parent="#qrFaq"><div class="accordion-body">Yes. After generating the QR code, you can use Download PNG to save the generated image.</div></div>
-</div>
-<div class="accordion-item">
-<h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#qrFaqFour">Can I use the QR code on printed materials?</button></h3>
-<div id="qrFaqFour" class="accordion-collapse collapse" data-bs-parent="#qrFaq"><div class="accordion-body">Yes. Test the generated QR code with a smartphone before printing or publishing it.</div></div>
-</div>
-</div>
-</section>
 
-<section class="content-card">
-<h2>More Useful Tools</h2>
-<p>Explore other EasyTools365 utilities for everyday digital tasks.</p>
-<div class="related-grid">
-<a href="word-counter.html" class="btn btn-outline-primary">Word Counter</a>
-<a href="case-converter.html" class="btn btn-outline-primary">Case Converter</a>
-<a href="json-formatter.html" class="btn btn-outline-primary">JSON Formatter</a>
-</div>
-</section>
+        <!-- Tool Header -->
 
-<section class="content-card text-center bg-primary text-white">
-<h2>Need More Free Online Tools?</h2>
-<p>Explore EasyTools365 tools for calculators, PDF, images, text and more.</p>
-<a href="../index.html#tools" class="btn btn-light">Browse All Tools</a>
-</section>
+        <section class="tool-header">
 
-</div>
+            <div class="tool-icon">
+
+                <i class="bi bi-qr-code"></i>
+
+            </div>
+
+
+            <h1>
+                Free QR Code Generator
+            </h1>
+
+
+            <p>
+
+                Create QR codes online for URLs, text,
+                phone numbers, email addresses, WiFi information
+                and other text-based content. Customize the size
+                and colors, then download or copy your QR code.
+
+            </p>
+
+
+            <div class="updated">
+
+                <i class="bi bi-clock-history"></i>
+
+                Last Updated: August 2026
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QR TOOL ================= -->
+
+        <section class="tool-card">
+
+
+            <label
+                for="qrText"
+                class="form-label fw-bold">
+
+                Enter text, URL or information
+
+            </label>
+
+
+            <textarea
+                id="qrText"
+                class="form-control mb-2"
+                rows="5"
+                oninput="countCharacters()"
+                placeholder="Example: https://easytools365.com">
+            </textarea>
+
+
+            <div class="small text-muted">
+
+                <strong>Examples:</strong>
+
+                <ul class="mb-0 mt-2">
+
+                    <li>
+                        https://easytools365.com
+                    </li>
+
+                    <li>
+                        Hello World
+                    </li>
+
+                    <li>
+                        tel:+123456789
+                    </li>
+
+                    <li>
+                        mailto:hello@example.com
+                    </li>
+
+                    <li>
+                        WIFI:T:WPA;S:MyWiFi;P:Password123;;
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <p class="text-end text-muted mt-2">
+
+                <span id="charCount">0</span>
+                characters
+
+            </p>
+
+
+            <!-- Buttons -->
+
+            <div class="d-grid gap-2 d-md-flex flex-wrap">
+
+
+                <button
+                    class="btn btn-primary btn-lg"
+                    onclick="generateQR()">
+
+                    <i class="bi bi-qr-code"></i>
+
+                    Generate QR
+
+                </button>
+
+
+                <button
+                    class="btn btn-outline-secondary btn-lg"
+                    onclick="clearQR()">
+
+                    Clear
+
+                </button>
+
+
+                <button
+                    id="downloadBtn"
+                    class="btn btn-success btn-lg"
+                    style="display:none"
+                    onclick="downloadQR()">
+
+                    <i class="bi bi-download"></i>
+
+                    Download PNG
+
+                </button>
+
+
+                <button
+                    id="copyImageBtn"
+                    class="btn btn-warning btn-lg"
+                    style="display:none"
+                    onclick="copyQRImage()">
+
+                    <i class="bi bi-clipboard-image"></i>
+
+                    Copy Image
+
+                </button>
+
+
+                <button
+                    id="copyBtn"
+                    class="btn btn-info btn-lg"
+                    onclick="copyText()">
+
+                    <i class="bi bi-clipboard"></i>
+
+                    Copy Text
+
+                </button>
+
+            </div>
+
+
+            <hr class="my-4">
+
+
+            <!-- Settings -->
+
+            <div class="row g-3">
+
+
+                <div class="col-md-4">
+
+                    <label
+                        for="qrSize"
+                        class="form-label fw-semibold">
+
+                        QR Size
+
+                    </label>
+
+
+                    <select
+                        id="qrSize"
+                        class="form-select">
+
+                        <option value="200">
+                            200 × 200
+                        </option>
+
+                        <option
+                            value="300"
+                            selected>
+
+                            300 × 300
+
+                        </option>
+
+                        <option value="500">
+                            500 × 500
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <label
+                        for="qrColor"
+                        class="form-label fw-semibold">
+
+                        QR Color
+
+                    </label>
+
+
+                    <input
+                        type="color"
+                        id="qrColor"
+                        class="color-input"
+                        value="#000000">
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <label
+                        for="bgColor"
+                        class="form-label fw-semibold">
+
+                        Background
+
+                    </label>
+
+
+                    <input
+                        type="color"
+                        id="bgColor"
+                        class="color-input"
+                        value="#ffffff">
+
+                </div>
+
+            </div>
+
+
+            <!-- Preview -->
+
+            <div class="qr-preview mt-4">
+
+                <div id="qrcode"></div>
+
+            </div>
+
+
+            <!-- QR Info -->
+
+            <div
+                id="qrInfo"
+                class="card qr-info">
+
+                <div class="card-body">
+
+                    <h5 class="mb-3">
+
+                        <i class="bi bi-info-circle"></i>
+
+                        QR Information
+
+                    </h5>
+
+
+                    <div class="row g-3">
+
+
+                        <div class="col-md-4">
+
+                            <strong>
+                                Type
+                            </strong>
+
+                            <br>
+
+                            <span
+                                id="contentType"
+                                class="badge bg-primary">
+
+                                Text
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <strong>
+                                Characters
+                            </strong>
+
+                            <br>
+
+                            <span
+                                id="infoChars"
+                                class="info-value">
+
+                                0
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <strong>
+                                Size
+                            </strong>
+
+                            <br>
+
+                            <span
+                                id="infoSize"
+                                class="info-value">
+
+                                300 × 300
+
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- History -->
+
+            <div class="card mt-4">
+
+                <div class="card-body">
+
+                    <h5 class="mb-3">
+
+                        <i class="bi bi-clock-history"></i>
+
+                        Recent History
+
+                    </h5>
+
+
+                    <ul
+                        id="historyList"
+                        class="list-group">
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- Share -->
+
+        <div class="share-row">
+
+            <button
+                id="shareButton"
+                class="btn btn-primary btn-sm"
+                type="button">
+
+                <i class="bi bi-share-fill"></i>
+
+                Share
+
+            </button>
+
+
+            <button
+                id="copyLinkButton"
+                class="btn btn-success btn-sm"
+                type="button">
+
+                <i class="bi bi-link-45deg"></i>
+
+                Copy Link
+
+            </button>
+
+        </div>
+
+
+        <!-- ================= PRIVACY ================= -->
+
+        <section class="content-card">
+
+            <div class="privacy-note">
+
+                <h3 class="mt-0">
+
+                    <i class="bi bi-shield-check"></i>
+
+                    Simple and Browser-Friendly
+
+                </h3>
+
+                <p class="mb-0">
+
+                    EasyTools365 is designed to make QR code creation
+                    simple and convenient. The QR generator works directly
+                    in your web browser for the generation process.
+                    Avoid entering sensitive or confidential information
+                    into any online tool unless you are comfortable doing so.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WHAT IS QR ================= -->
+
+        <section class="content-card">
+
+            <h2>
+                What Is a QR Code?
+            </h2>
+
+
+            <p>
+
+                A QR code is a two-dimensional barcode that can store
+                information such as website addresses, text, contact
+                information and other data.
+
+                When scanned using a compatible smartphone or QR code
+                reader, the stored information can be accessed quickly.
+
+            </p>
+
+
+            <p class="mb-0">
+
+                QR codes are commonly used on websites, business cards,
+                menus, posters, advertisements, event materials,
+                product packaging and other printed or digital
+                communication.
+
+            </p>
+
+        </section>
+
+
+        <!-- ================= HOW TO ================= -->
+
+        <section class="content-card">
+
+            <h2>
+                How to Create a QR Code
+            </h2>
+
+
+            <ol class="mb-0">
+
+                <li>
+                    Enter the URL, text, phone number, email address
+                    or other information you want to share.
+                </li>
+
+                <li>
+                    Choose the QR size and colors if needed.
+                </li>
+
+                <li>
+                    Click <strong>Generate QR</strong>.
+                </li>
+
+                <li>
+                    Review the generated QR code.
+                </li>
+
+                <li>
+                    Download the QR code as a PNG image or copy it.
+                </li>
+
+                <li>
+                    Test the QR code with a smartphone before
+                    printing or publishing it.
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- ================= BENEFITS ================= -->
+
+        <section class="content-card">
+
+            <h2>
+                Benefits of Using QR Codes
+            </h2>
+
+
+            <div class="feature-grid">
+
+
+                <div class="feature-item">
+
+                    <i class="bi bi-lightning-charge"></i>
+
+                    <h3>
+                        Quick Access
+                    </h3>
+
+                    <p class="mb-0">
+
+                        Users can scan a QR code to access information
+                        without manually typing a long URL.
+
+                    </p>
+
+                </div>
+
+
+                <div class="feature-item">
+
+                    <i class="bi bi-phone"></i>
+
+                    <h3>
+                        Mobile Friendly
+                    </h3>
+
+                    <p class="mb-0">
+
+                        QR codes make it easy to connect printed
+                        information with smartphones.
+
+                    </p>
+
+                </div>
+
+
+                <div class="feature-item">
+
+                    <i class="bi bi-share"></i>
+
+                    <h3>
+                        Easy to Share
+                    </h3>
+
+                    <p class="mb-0">
+
+                        QR codes can be added to posters, cards,
+                        menus, documents and digital content.
+
+                    </p>
+
+                </div>
+
+
+                <div class="feature-item">
+
+                    <i class="bi bi-palette"></i>
+
+                    <h3>
+                        Customizable
+                    </h3>
+
+                    <p class="mb-0">
+
+                        This generator allows you to adjust the
+                        QR code size and colors.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= COMMON USES ================= -->
+
+        <section class="content-card">
+
+            <h2>
+                Common Uses for QR Codes
+            </h2>
+
+
+            <div class="feature-grid">
+
+
+                <div class="feature-item">
+
+                    <h3>
+                        Website Links
+                    </h3>
+
+                    <p class="mb-0">
+
+                        Share websites, landing pages and online
+                        resources quickly.
+
+                    </p>
+
+                </div>
+
+
+                <div class="feature-item">
+
+                    <h3>
+                        Business Information
+                    </h3>
+
+                    <p class="mb-0">
+
+                        Add QR codes to business cards, brochures,
+                        posters and promotional materials.
+
+                    </p>
+
+                </div>
+
+
+                <div class="feature-item">
+
+                    <h3>
+                        Events and Menus
+                    </h3>
+
+                    <p class="mb-0">
+
+                        Provide quick access to menus, event schedules,
+                        registration pages and information.
+
+                    </p>
+
+                </div>
+
+
+                <div class="feature-item">
+
+                    <h3>
+                        Digital Sharing
+                    </h3>
+
+                    <p class="mb-0">
+
+                        Move information from printed material or
+                        another screen to a smartphone quickly.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TIPS ================= -->
+
+        <section class="content-card">
+
+            <h2>
+                Tips for Creating Better QR Codes
+            </h2>
+
+
+            <ul class="mb-0">
+
+                <li>
+                    Use strong contrast between the QR code and
+                    its background.
+                </li>
+
+                <li>
+                    Avoid making the QR code unnecessarily small
+                    when printing it.
+                </li>
+
+                <li>
+                    Test the QR code with a smartphone before
+                    publishing it.
+                </li>
+
+                <li>
+                    Make sure the encoded URL or information
+                    is correct.
+                </li>
+
+                <li>
+                    Keep enough empty space around the QR code
+                    for reliable scanning.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- ================= FAQ ================= -->
+
+        <section class="content-card">
+
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+
+            <div
+                class="accordion"
+                id="qrFaq">
+
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header">
+
+                        <button
+                            class="accordion-button"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#qrFaqOne">
+
+                            What can I put into a QR code?
+
+                        </button>
+
+                    </h3>
+
+
+                    <div
+                        id="qrFaqOne"
+                        class="accordion-collapse collapse show"
+                        data-bs-parent="#qrFaq">
+
+                        <div class="accordion-body">
+
+                            You can create QR codes for website URLs,
+                            text, phone numbers, email addresses and
+                            WiFi information supported by the generator.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header">
+
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#qrFaqTwo">
+
+                            Can I customize the QR code size and colors?
+
+                        </button>
+
+                    </h3>
+
+
+                    <div
+                        id="qrFaqTwo"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#qrFaq">
+
+                        <div class="accordion-body">
+
+                            Yes. You can choose the QR code size,
+                            QR color and background color before
+                            generating it.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header">
+
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#qrFaqThree">
+
+                            Can I download the QR code?
+
+                        </button>
+
+                    </h3>
+
+
+                    <div
+                        id="qrFaqThree"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#qrFaq">
+
+                        <div class="accordion-body">
+
+                            Yes. After generating the QR code,
+                            you can download it as a PNG image.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="accordion-item">
+
+                    <h3 class="accordion-header">
+
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#qrFaqFour">
+
+                            Can I use the QR code for printed materials?
+
+                        </button>
+
+                    </h3>
+
+
+                    <div
+                        id="qrFaqFour"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#qrFaq">
+
+                        <div class="accordion-body">
+
+                            Yes. Test the generated QR code with
+                            a smartphone before printing or publishing
+                            it to make sure it scans correctly.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RELATED TOOLS ================= -->
+
+        <section class="content-card">
+
+            <h2>
+                More Useful Tools
+            </h2>
+
+
+            <p>
+
+                Explore other EasyTools365 utilities for everyday
+                digital tasks.
+
+            </p>
+
+
+            <div class="related-grid">
+
+
+                <a
+                    href="word-counter.html"
+                    class="btn btn-outline-primary">
+
+                    <i class="bi bi-body-text"></i>
+
+                    Word Counter
+
+                </a>
+
+
+                <a
+                    href="case-converter.html"
+                    class="btn btn-outline-primary">
+
+                    <i class="bi bi-fonts"></i>
+
+                    Case Converter
+
+                </a>
+
+
+                <a
+                    href="json-formatter.html"
+                    class="btn btn-outline-primary">
+
+                    <i class="bi bi-braces"></i>
+
+                    JSON Formatter
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section
+            class="content-card text-center bg-primary text-white">
+
+
+            <h2>
+                Explore More Free Online Tools
+            </h2>
+
+
+            <p>
+
+                Find useful tools for PDF files, images,
+                text, calculators, developers and AI productivity.
+
+            </p>
+
+
+            <a
+                href="../index.html"
+                class="btn btn-light">
+
+                Browse EasyTools365
+
+                <i class="bi bi-arrow-right"></i>
+
+            </a>
+
+        </section>
+
+
+    </div>
+
 </main>
 
+
+<!-- ================= FOOTER ================= -->
+
 <footer class="border-top mt-5 py-4">
-<div class="container text-center"><p class="mb-0">© 2026 EasyTools365. All Rights Reserved.</p></div>
+
+    <div class="container text-center">
+
+        <p class="mb-2">
+
+            © 2026 EasyTools365.
+            All Rights Reserved.
+
+        </p>
+
+
+        <p class="mb-0">
+
+            <a href="../pages/about.html">
+                About
+            </a>
+
+            ·
+
+            <a href="../pages/contact.html">
+                Contact
+            </a>
+
+            ·
+
+            <a href="../pages/privacy-policy.html">
+                Privacy Policy
+            </a>
+
+            ·
+
+            <a href="../pages/terms.html">
+                Terms
+            </a>
+
+            ·
+
+            <a href="../pages/disclaimer.html">
+                Disclaimer
+            </a>
+
+        </p>
+
+    </div>
+
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- QR Generator -->
 
 <script>
 
-let qr=null;
+    let qr = null;
 
-function generateQR(){
 
-const text=document.getElementById("qrText").value.trim();
+    function generateQR() {
 
-if(text===""){
+        const text =
+            document.getElementById("qrText")
+                .value
+                .trim();
 
-alert("Please enter text or URL.");
 
-return;
+        if (text === "") {
 
-}
+            alert(
+                "Please enter text or URL."
+            );
 
-document.getElementById("qrcode").innerHTML="";
-const size =
-parseInt(document.getElementById("qrSize").value);
+            return;
 
-const qrColor =
-document.getElementById("qrColor").value;
+        }
 
-const bgColor =
-document.getElementById("bgColor").value;
-qr=new QRCode(document.getElementById("qrcode"),{
 
-text:text,
+        document.getElementById(
+            "qrcode"
+        ).innerHTML = "";
 
-width:size,
 
-height:size,
+        const size =
+            parseInt(
+                document.getElementById(
+                    "qrSize"
+                ).value
+            );
 
-colorDark:qrColor,
 
-colorLight:bgColor
+        const qrColor =
+            document.getElementById(
+                "qrColor"
+            ).value;
 
-});
 
-document.getElementById("downloadBtn").style.display="inline-block";
-document.getElementById("copyImageBtn").style.display="inline-block";
-document.getElementById("qrInfo").style.display="block";
-saveHistory(text);
-loadHistory();
-document.getElementById("infoChars").innerHTML=text.length;
+        const bgColor =
+            document.getElementById(
+                "bgColor"
+            ).value;
 
-document.getElementById("infoSize").innerHTML=size + " x " + size;
 
-let type="Text";
+        qr = new QRCode(
 
-if(text.startsWith("http://") || text.startsWith("https://")){
+            document.getElementById(
+                "qrcode"
+            ),
 
-type="URL";
+            {
 
-}else if(text.startsWith("WIFI:")){
+                text: text,
 
-type="WiFi";
+                width: size,
 
-}else if(text.startsWith("mailto:")){
+                height: size,
 
-type="Email";
+                colorDark: qrColor,
 
-}else if(text.startsWith("tel:")){
+                colorLight: bgColor
 
-type="Phone";
+            }
 
-}
+        );
 
-document.getElementById("contentType").innerHTML=type;
-}
 
-function clearQR(){
-document.getElementById("qrInfo").style.display="none";
+        document.getElementById(
+            "downloadBtn"
+        ).style.display =
+            "inline-block";
 
-document.getElementById("qrText").value="";
 
-document.getElementById("qrcode").innerHTML="";
+        document.getElementById(
+            "copyImageBtn"
+        ).style.display =
+            "inline-block";
 
-document.getElementById("downloadBtn").style.display="none";
-document.getElementById("copyImageBtn").style.display="none";
-document.getElementById("charCount").innerHTML="0";
 
-}
+        document.getElementById(
+            "qrInfo"
+        ).style.display =
+            "block";
 
-function copyText(){
 
-const text=document.getElementById("qrText").value;
+        saveHistory(text);
 
-navigator.clipboard.writeText(text);
+        loadHistory();
 
-alert("Copied to clipboard!");
 
-}
-function downloadQR(){
+        document.getElementById(
+            "infoChars"
+        ).textContent =
+            text.length;
 
-const img=document.querySelector("#qrcode img");
 
-if(!img){
+        document.getElementById(
+            "infoSize"
+        ).textContent =
+            size + " × " + size;
 
-alert("Generate a QR Code first.");
 
-return;
+        let type = "Text";
 
-}
 
-const link=document.createElement("a");
+        if (
+            text.startsWith("http://") ||
+            text.startsWith("https://")
+        ) {
 
-link.href=img.src;
+            type = "URL";
 
-link.download="easytools365-qrcode.png";
+        }
 
-link.click();
+        else if (
+            text.startsWith("WIFI:")
+        ) {
 
-}
-async function copyQRImage(){
+            type = "WiFi";
 
-const img = document.querySelector("#qrcode img");
+        }
 
-if(!img){
-    alert("Generate a QR Code first.");
-    return;
-}
+        else if (
+            text.startsWith("mailto:")
+        ) {
 
-try{
+            type = "Email";
 
-    const response = await fetch(img.src);
-    const blob = await response.blob();
+        }
 
-    await navigator.clipboard.write([
-        new ClipboardItem({
-            [blob.type]: blob
-        })
-    ]);
+        else if (
+            text.startsWith("tel:")
+        ) {
 
-    alert("QR Image copied!");
+            type = "Phone";
 
-}catch(e){
+        }
 
-    alert("Browser doesn't support image clipboard.");
 
-}
+        document.getElementById(
+            "contentType"
+        ).textContent =
+            type;
 
-}
-function saveHistory(text){
+    }
 
-let history =
-JSON.parse(localStorage.getItem("qrHistory")) || [];
 
-history.unshift(text);
+    function clearQR() {
 
-history = [...new Set(history)];
+        document.getElementById(
+            "qrInfo"
+        ).style.display =
+            "none";
 
-if(history.length > 10){
-    history = history.slice(0,10);
-}
 
-localStorage.setItem("qrHistory",JSON.stringify(history));
+        document.getElementById(
+            "qrText"
+        ).value =
+            "";
 
-}
-function loadHistory(){
 
-const history =
-JSON.parse(localStorage.getItem("qrHistory")) || [];
+        document.getElementById(
+            "qrcode"
+        ).innerHTML =
+            "";
 
-const list =
-document.getElementById("historyList");
 
-list.innerHTML="";
+        document.getElementById(
+            "downloadBtn"
+        ).style.display =
+            "none";
 
-history.forEach(item=>{
 
-const li=document.createElement("li");
+        document.getElementById(
+            "copyImageBtn"
+        ).style.display =
+            "none";
 
-li.className="list-group-item";
 
-const wrap = document.createElement("div");
-wrap.className = "d-flex justify-content-between align-items-center gap-2";
+        document.getElementById(
+            "charCount"
+        ).textContent =
+            "0";
 
-const span = document.createElement("span");
-span.className = "text-truncate";
-span.textContent = item;
+    }
 
-const useBtn = document.createElement("button");
-useBtn.className = "btn btn-sm btn-outline-primary";
-useBtn.type = "button";
-useBtn.textContent = "Use";
-useBtn.addEventListener("click", function () {
-    document.getElementById("qrText").value = item;
-    countCharacters();
-});
 
-wrap.appendChild(span);
-wrap.appendChild(useBtn);
-li.appendChild(wrap);
+    async function copyText() {
 
-list.appendChild(li);
+        const text =
+            document.getElementById(
+                "qrText"
+            ).value;
 
-});
 
-}
-loadHistory();
+        if (!text) {
+
+            alert(
+                "Please enter text first."
+            );
+
+            return;
+
+        }
+
+
+        try {
+
+            await navigator.clipboard
+                .writeText(text);
+
+            alert(
+                "Copied to clipboard!"
+            );
+
+        }
+
+        catch (error) {
+
+            alert(
+                "Unable to copy text."
+            );
+
+        }
+
+    }
+
+
+    function downloadQR() {
+
+        const img =
+            document.querySelector(
+                "#qrcode img"
+            );
+
+
+        if (!img) {
+
+            alert(
+                "Generate a QR Code first."
+            );
+
+            return;
+
+        }
+
+
+        const link =
+            document.createElement(
+                "a"
+            );
+
+
+        link.href =
+            img.src;
+
+
+        link.download =
+            "easytools365-qrcode.png";
+
+
+        link.click();
+
+    }
+
+
+    async function copyQRImage() {
+
+        const img =
+            document.querySelector(
+                "#qrcode img"
+            );
+
+
+        if (!img) {
+
+            alert(
+                "Generate a QR Code first."
+            );
+
+            return;
+
+        }
+
+
+        try {
+
+            const response =
+                await fetch(
+                    img.src
+                );
+
+
+            const blob =
+                await response.blob();
+
+
+            await navigator.clipboard.write([
+
+                new ClipboardItem({
+
+                    [blob.type]:
+                        blob
+
+                })
+
+            ]);
+
+
+            alert(
+                "QR Image copied!"
+            );
+
+        }
+
+        catch (error) {
+
+            alert(
+                "Your browser does not support image clipboard."
+            );
+
+        }
+
+    }
+
+
+    function saveHistory(text) {
+
+        let history =
+            JSON.parse(
+                localStorage.getItem(
+                    "qrHistory"
+                )
+            ) || [];
+
+
+        history.unshift(text);
+
+
+        history =
+            [...new Set(history)];
+
+
+        if (history.length > 10) {
+
+            history =
+                history.slice(0, 10);
+
+        }
+
+
+        localStorage.setItem(
+            "qrHistory",
+            JSON.stringify(history)
+        );
+
+    }
+
+
+    function loadHistory() {
+
+        const history =
+            JSON.parse(
+                localStorage.getItem(
+                    "qrHistory"
+                )
+            ) || [];
+
+
+        const list =
+            document.getElementById(
+                "historyList"
+            );
+
+
+        list.innerHTML = "";
+
+
+        history.forEach(
+            function (item) {
+
+
+                const li =
+                    document.createElement(
+                        "li"
+                    );
+
+
+                li.className =
+                    "list-group-item";
+
+
+                const wrap =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                wrap.className =
+                    "d-flex justify-content-between align-items-center gap-2";
+
+
+                const span =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                span.className =
+                    "text-truncate";
+
+
+                span.textContent =
+                    item;
+
+
+                const useBtn =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                useBtn.className =
+                    "btn btn-sm btn-outline-primary";
+
+
+                useBtn.type =
+                    "button";
+
+
+                useBtn.textContent =
+                    "Use";
+
+
+                useBtn.addEventListener(
+                    "click",
+                    function () {
+
+                        document.getElementById(
+                            "qrText"
+                        ).value =
+                            item;
+
+
+                        countCharacters();
+
+                    }
+                );
+
+
+                wrap.appendChild(
+                    span
+                );
+
+
+                wrap.appendChild(
+                    useBtn
+                );
+
+
+                li.appendChild(
+                    wrap
+                );
+
+
+                list.appendChild(
+                    li
+                );
+
+            }
+        );
+
+    }
+
+
+    function countCharacters() {
+
+        const text =
+            document.getElementById(
+                "qrText"
+            ).value;
+
+
+        document.getElementById(
+            "charCount"
+        ).textContent =
+            text.length;
+
+    }
+
+
+    /* Load history */
+
+    loadHistory();
+
+
+    /* Share */
+
+    document.getElementById(
+        "shareButton"
+    ).addEventListener(
+        "click",
+        async function () {
+
+            try {
+
+                if (navigator.share) {
+
+                    await navigator.share({
+
+                        title:
+                            "EasyTools365 QR Code Generator",
+
+                        text:
+                            "Free QR Code Generator",
+
+                        url:
+                            window.location.href
+
+                    });
+
+                }
+
+                else {
+
+                    await navigator.clipboard
+                        .writeText(
+                            window.location.href
+                        );
+
+
+                    this.innerHTML =
+                        '<i class="bi bi-check-lg"></i> Link Copied!';
+
+
+                    setTimeout(
+                        () => {
+
+                            this.innerHTML =
+                                '<i class="bi bi-share-fill"></i> Share';
+
+                        },
+                        1500
+                    );
+
+                }
+
+            }
+
+            catch (error) {
+
+                /* User cancelled share */
+
+            }
+
+        }
+    );
+
+
+    /* Copy Link */
+
+    document.getElementById(
+        "copyLinkButton"
+    ).addEventListener(
+        "click",
+        async function () {
+
+            try {
+
+                await navigator.clipboard
+                    .writeText(
+                        window.location.href
+                    );
+
+
+                this.innerHTML =
+                    '<i class="bi bi-check-lg"></i> Link Copied!';
+
+
+                setTimeout(
+                    () => {
+
+                        this.innerHTML =
+                            '<i class="bi bi-link-45deg"></i> Copy Link';
+
+                    },
+                    1500
+                );
+
+            }
+
+            catch (error) {
+
+                alert(
+                    "Unable to copy link."
+                );
+
+            }
+
+        }
+    );
+
 </script>
 
-<script>
-function countCharacters(){
-const text=document.getElementById("qrText").value;
-document.getElementById("charCount").textContent=text.length;
-}
 
-document.getElementById("shareButton").addEventListener("click", async function(){
-try{
-if(navigator.share){
-await navigator.share({title:"EasyTools365 QR Code Generator",text:"Free QR Code Generator",url:window.location.href});
-}else{
-await navigator.clipboard.writeText(window.location.href);
-this.innerHTML='<i class="bi bi-check-lg"></i> Link Copied!';
-setTimeout(()=>this.innerHTML='<i class="bi bi-share-fill"></i> Share',1500);
-}
-}catch(error){}
-});
-
-document.getElementById("copyLinkButton").addEventListener("click", async function(){
-try{
-await navigator.clipboard.writeText(window.location.href);
-this.innerHTML='<i class="bi bi-check-lg"></i> Link Copied!';
-setTimeout(()=>this.innerHTML='<i class="bi bi-link-45deg"></i> Copy Link',1500);
-}catch(error){}
-});
-</script>
+<!-- EasyTools365 JS -->
 
 <script src="../assets/js/app.js"></script>
+
+
 </body>
+
 </html>
