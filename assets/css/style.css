@@ -767,3 +767,52 @@ body.dark-mode .coming-soon {
     }
 
 }
+
+
+/* =========================================
+   EASYTOOLS365 - NAVBAR BRAND THEME FIX
+   Pastikan nama brand terlihat pada mode terang
+   maupun mode gelap.
+========================================= */
+
+/* Default / light mode */
+body:not(.dark-mode) .navbar-brand,
+body:not(.dark-mode) .navbar-brand span,
+body:not(.dark-mode) .navbar-brand strong,
+body:not(.dark-mode) .navbar-brand b {
+    color: #0f172a !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #0f172a;
+}
+
+/* Nomor 365 tetap kuning pada mode terang */
+body:not(.dark-mode) .navbar-brand .brand-number,
+body:not(.dark-mode) .navbar-brand .text-warning {
+    color: #f4b400 !important;
+    -webkit-text-fill-color: #f4b400;
+}
+
+/* Dark mode */
+body.dark-mode .navbar-brand,
+body.dark-mode .navbar-brand span,
+body.dark-mode .navbar-brand strong,
+body.dark-mode .navbar-brand b {
+    color: #f8fafc !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #f8fafc;
+}
+
+/* Nomor 365 tetap kuning pada mode gelap */
+body.dark-mode .navbar-brand .brand-number,
+body.dark-mode .navbar-brand .text-warning {
+    color: #ffd43b !important;
+    -webkit-text-fill-color: #ffd43b;
+}
+
+/* Ikon/logo gambar tidak ikut berubah warna */
+.navbar-brand img,
+.navbar-brand svg,
+.navbar-brand i {
+    opacity: 1 !important;
+    -webkit-text-fill-color: initial;
+}
