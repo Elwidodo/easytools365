@@ -816,3 +816,14 @@ body.dark-mode .navbar-brand .text-warning {
     opacity: 1 !important;
     -webkit-text-fill-color: initial;
 }
+/* EasyTools365 Navbar Logo */
+.brand-logo {
+    width: 42px !important;
+    height: 42px !important;
+    max-width: 42px !important;
+    max-height: 42px !important;
+    object-fit: contain;
+    display: inline-block;
+    flex-shrink: 0;
+    margin-right: 8px;
+}
